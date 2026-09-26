@@ -1,0 +1,49 @@
+Transcript
+0:00
+Back at our really basic example, we now have a function which returns the promise that we created a few scrims back.
+0:07
+As you'll remember, it resolves about fifty percent of the time.
+0:10
+Let's say I want to have three of these promises and I want to call them all concurrently and either resolve them all or if one rejects then execute the code in the catch block.
+0:21
+So it's all or nothing.
+0:23
+They either all resolve or we handle the error.
+0:26
+Now we have a tool for doing this and it's called promise dot all.
+0:31
+Let's create a try catch block and see how it works.
+0:34
+First, we need to create three instances of our promise.
+0:39
+So calling create promise just returns a new instance of that promise.
+0:43
+We want three of those.
+0:45
+I'm just calling them promise one, promise two and promise three.
+0:48
+Now let's take our results and we'll set that equals to awaiting and now we'll use promise with an upper case p so we're accessing the constructor.
+0:59
+We'll chain on dot all and we'll pass in an array of our promises.
+1:05
+And let's just log the result.
+1:07
+We need a catch block and that can take in an error and just log the error.
+1:13
+Now when I open the Console and we run this, it's actually going to fail most of the time because it only takes one promise to reject to trigger this catch code right here.
+1:25
+But if I keep saving eventually we get operation successful, operation successful, operation successful So all of the promises resolved.
+1:33
+So this fifty percent chance of resolving that we've got here came up three times in a row.
+1:39
+So what we're doing here is we're using promise dot all.
+1:42
+We're passing in an array of our promises and we can pass in as many as we want and we attempt to resolve them concurrently.
+1:50
+And if one or more does not resolve, we catch the error and run the code in this block instead and look in the console what we get out when it's successful, we get out an array and that will be useful later.
+2:01
+So do remember that the output from Promise dot all is an array of resolved promises.
+2:08
+Okay.
+2:08
+Let's see how we can use Promise dot all on our three images to finish off this section.
