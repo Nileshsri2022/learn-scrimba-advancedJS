@@ -1,0 +1,196 @@
+
+Transcript
+0:00
+When we're sending data to the server using a post request or perhaps a put request if we're updating, we're going to need a body to hold that data.
+0:08
+The JSON placeholder API has the ability to add a post.
+0:12
+As I said, this will allow us to go through the motions of passing data to an API but we won't actually be adding anything to their dataset as we would be in the real world but we will get an acknowledgment back from the API as if we had added our data.
+0:27
+Now we're going to do this as a challenge.
+0:29
+Here is a code snippet from the JSON placeholder API.
+0:33
+I want you to apply this code to the code we've already got written right here.
+0:39
+So this is your challenge.
+0:40
+Using the code snippet in the slide, add a body property to the object we are passing with the fetch request.
+0:46
+I want you to create a new post with the title holiday nightmares and the body when I was kidnapped in Scotland.
+0:52
+And you'll notice in this code snippet, you've also got a user ID property here.
+0:56
+You can use any number you want for that.
+0:59
+Now don't worry if you don't understand all of this code yet.
+1:02
+We are going to break it down when we solve the challenge together.
+1:05
+So get to work on that now.
+1:09
+Okay.
+1:09
+So congratulations if you got that done.
+1:11
+Not too hard but a little bit tricky especially if this is new to you and you might have been put off a little bit by this JSON dot stringify which we'll talk about in just a moment.
+1:21
+So we're working in an object here and we've already got the method of post.
+1:26
+So all we need to do is add a body property.
+1:29
+And I'm thinking it's gonna be neater here to bring this onto a new line.
+1:33
+Now body is itself an object and it's got title, body, and user ID properties.
+1:41
+Our title wants to be holiday nightmares.
+1:44
+The body is going to be when I was kidnapped in Scotland.
+1:48
+And for user ID, I'm just gonna put one hundred.
+1:51
+Now we also need to deal with this JSON dot stringify.
+1:56
+Now we need this because before we send this off, we need to convert it to JSON.
+2:00
+So it's really the opposite of what we do when we call the dot JSON method on the response just like we're doing right here.
+2:08
+So the dot JSON method here takes a JSON string and converts it to a JavaScript object.
+2:14
+We're taking a JavaScript object and converting it to a JSON string which is the format we want it in for sending.
+2:20
+So whenever it's in transit, it will be in that format.
+2:24
+So we'll say JSON dot stringify and just wrap that object in parenthesis.
+2:30
+Okay.
+2:30
+Let's hit save.
+2:32
+And down in the console we get ID one zero one.
+2:35
+That is our expected outcome.
+2:37
+I did put that right here.
+2:39
+So that has worked.
+2:40
+And what the API is saying to us is, yes, I got your post and I created a record with the ID one zero one.
+2:48
+Now in reality, if this were a true API, we would likely get back the data we sent in the object and a bunch of other info as well.
+2:55
+And actually, we can improve on this response by including headers.
+2:59
+What are headers?
+3:00
+Let's take a quick look.
+3:02
+So headers contain some extra information that we send along with our request.
+3:07
+This could be extra info about the request.
+3:10
+Think of metadata like you might get with a photo.
+3:13
+It could be authentication information.
+3:15
+It could be the type of data being sent and this is not an exhaustive list at all.
+3:20
+In fact, there are plenty of things that we could send with headers.
+3:23
+And this screenshot right here is from the Chrome console and it shows the headers that were actually sent with the request we've got in our code right now.
+3:32
+If we have a look through this, we get an idea of the types of things which are being sent.
+3:37
+We've got the method post of course, we've got the path it's being sent to, we've got the scheme HTTPS, something about encoding, even the platform I'm working on macOS.
+3:48
+Now we have got something a little bit strange right here.
+3:51
+It says content type, text, plain, character set, utf eight.
+3:57
+Well, that's not actually true because we're sending JSON.
+4:00
+We actually used JSON dot stringify right here to do exactly that.
+4:04
+Now we can correct this information by updating our headers.
+4:08
+So just bear with me while I type in a challenge for you and it's gonna be a challenge that requires some research.
+4:14
+Okay.
+4:15
+There's your challenge.
+4:16
+You will need to do a bit of research to figure it out.
+4:19
+But what I want you to do then is add a headers object setting the content type to application JSON.
+4:26
+And I should put that in quotation marks just to make it clear that that is a string.
+4:30
+So get stuck into that challenge now.
+4:32
+Do some research.
+4:33
+You can look in the docs or just search online.
+4:35
+You're gonna find the answer I think pretty quickly.
+4:39
+Okay.
+4:39
+So hopefully you got that working.
+4:41
+All we need to do is add to this big object that we're passing into the fetch request.
+4:47
+So so far we've got a method property and a body property.
+4:51
+Next, let's have a headers property.
+4:53
+That will also hold an object and we want to set the content type to application JSON.
+4:59
+And I'm going to use inverted commas just to be consistent.
+5:03
+And just note how I've got uppercase on content and type.
+5:06
+That's a pretty strong convention.
+5:08
+Also I've put these inside inverted commas because we've got a hyphen there.
+5:13
+I believe it's not gonna work without them.
+5:15
+We're gonna get an error.
+5:16
+Yes, we are.
+5:17
+Okay.
+5:17
+Let's hit save and see what happens.
+5:20
+And look what we get now in the console.
+5:22
+We get title holiday nightmares, body when I was kidnapped in Scotland, the user ID of one hundred, and the ID of one zero one.
+5:30
+So we're actually getting a much better quality object back, much more helpful information.
+5:36
+And this tells us that without specifying the content type properly, the API didn't really know how to handle our request.
+5:43
+Once we gave it the correct information, it was able to pass the body properly and add it to the database.
+5:49
+And now we have that data and the user ID in the API.
+5:53
+Although, we don't really because this is just a mock up.
+5:56
+Okay.
+5:56
+That is it for APIs.
+5:57
+But but to round this off and for a bit of self study, why don't you head over to the docs and see if you can figure out how you would update a resource on this API.
+6:07
+So just do that for a bit of self practice.
+6:09
+It's very similar to what we've done.
+6:11
+I think you're gonna manage to do it pretty easily and it will be a really useful learning experience.
+6:17
+Okay.
+6:18
+When you're ready, we have got more to talk about with promises.
+6:20
+We're coming on to that next.
