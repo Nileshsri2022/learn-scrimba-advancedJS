@@ -1,0 +1,30 @@
+
+Transcript
+0:00
+Congratulations on making it to the end of this first section.
+0:03
+Now you have the foundations you need to become a great JavaScript developer.
+0:08
+We have studied the ternary operator, a neat concise alternative to the if else.
+0:14
+We've looked at the switch statement and alternative to the else if.
+0:17
+We've looked at object destructuring a concise way of accessing properties from objects.
+0:22
+Set timeout and set interval were two asynchronous methods that give us control over when our code executes.
+0:29
+And then we looked in detail at the event loop so we could understand what was going on under the hood.
+0:34
+We examined scope and hoisting and we used import and export to make our code modular.
+0:40
+We then saw two built in constructors, the date constructor and error constructor.
+0:44
+And then we finished off with some numbers.
+0:46
+We had pre increment, the big int data type, JavaScript's way of handling very high numbers, and numeric separators to make numbers easier to read.
+0:56
+Wow.
+0:56
+That was quite a lot, but there is plenty more to do.
+1:00
+Take a break now, relax, put your feet up, have a sleep, and when you're ready, come back for the next section.
