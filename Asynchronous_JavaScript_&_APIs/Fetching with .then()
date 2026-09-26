@@ -1,0 +1,128 @@
+
+Transcript
+0:00
+Let's get into some code and write our first fetch request.
+0:03
+JavaScript gives us two ways to write fetch requests and we're going to start with this older way first using fetch with then.
+0:11
+This is still used today and you will definitely see it in lots of legacy code so it's absolutely worth knowing.
+0:17
+In the previous scrim, we used the dog API, but let's just investigate it a bit deeper.
+0:22
+This screenshot is a link through to the API homepage where you can access the docs.
+0:27
+And when working with APIs, you'll need the docs to figure out what data you can get from which endpoints and plenty of other info like what authentication you'll need if any.
+0:37
+Now this API is very simple with this endpoint down here.
+0:41
+It gives us an object with a random dog image URL every time we call it.
+0:46
+And if we scroll down, we'll actually see an example of the JSON data we can expect to get and what that image might look like.
+0:53
+You'll notice that the URL we've got here is not the same as the URL we used in the previous scrim that I've just pasted in here.
+1:00
+That's because when you're recording a course like this, you face a problem.
+1:03
+This API could change format or disappear completely and then this course would be broken.
+1:09
+To avoid that, instead of using the URL they give us here in the docs, I'm using a Scrimba proxy.
+1:15
+It works in exactly the same way but just means if anything were to change with this API, the course wouldn't break.
+1:22
+Now, you're welcome to use this original URL that you see right here if you prefer.
+1:27
+Okay.
+1:28
+Let's make a fetch request to this dog API.
+1:31
+So we start with the fetch method and we need to pass it a string containing the URL we're going to fetch from which we've got right here.
+1:39
+This needs to be the full URL so the base URL and the endpoint.
+1:44
+Next, we use a special method that fetch has access to which is then.
+1:49
+And we're actually going to chain this on so it needs a dot.
+1:53
+And we could chain it right on the end, but it looks so much neater to bring it onto a new line and format it.
+1:59
+So what is then?
+2:01
+Then is a method which will pick up what we get back from fetch and make it available to us in a parameter in a callback function.
+2:08
+Um, by convention we call this parameter response.
+2:12
+Although you don't have to and you will likely see it called other things as well.
+2:17
+Now we're going to use an arrow function here and as we've only got one parameter we don't need to wrap it in parenthesis.
+2:24
+Now let's return the response.
+2:26
+But we need to make some changes to it.
+2:29
+If you recall when we looked at the API in the browser we saw the JSON that we get back.
+2:34
+And to make that JSON usable to us in our app, we need to convert it to a JavaScript object and we can do that with the JSON method.
+2:42
+So we're going to call the JSON method on the end right here.
+2:45
+So it's dot JSON and parenthesis.
+2:48
+So the JSON method takes the JSON data we've got stored in the response and converts it to a JavaScript object.
+2:55
+And just to be clear, APIs don't always give you JSON data but it is common.
+3:00
+You just have to read the docs of the API you're using to be sure of exactly what data you're going to get.
+3:06
+To actually see what we've got here, let's chain another then.
+3:10
+This will follow the same pattern as the first.
+3:13
+We're going to pass in an arrow function and the parameter in this arrow function will be data and this will hold what we get back from calling the JSON method on the response.
+3:23
+So what you can see here is everything is moving along a chain and you can read it like you're giving a set of instructions to be followed in order.
+3:31
+First, we fetch and we pass the response down the line to this then where it comes in as a parameter and gets converted from the JSON.
+3:39
+That is then passed down the chain to the next then where we take the data as a parameter and log it to the console or do whatever else we want to do with it.
+3:47
+So let's just complete the arrow function and I will just log the data.
+3:52
+Let's hit save.
+3:53
+And in the console, we've got our object.
+3:55
+It looks like we've got a mountain Bernese and we've got a URL for that image.
+4:01
+And just to prove it, let's paste in some JavaScript to render it.
+4:05
+So I'll delete the console dot log, open up some curly braces.
+4:09
+That's the JavaScript we need.
+4:11
+We're just creating an image element, giving it a source and an out tag, and then the image container we've already got in the HTML this section right here.
+4:20
+Okay.
+4:20
+Let's just save that.
+4:22
+And if we open up the mini browser, well, there you can see our dog.
+4:26
+Pretty big image so we might just want to use some CSS to make that a more manageable size.
+4:32
+So just take a moment to marvel at what we've done here.
+4:35
+We've got access to some data which is sitting on a server somewhere and we're using it in our app.
+4:41
+There are various directions we could go in here.
+4:44
+We need to talk more about what's going on under the hood with all of this code.
+4:47
+We've just taken an overview so far.
+4:49
+We also need to look at the newer syntax for making fetch requests and we need some practice.
+4:54
+I think the practice should come first.
+4:56
+So in the next scrim, let's have a challenge with fetch requests.
+5:00
+Make sure you have a good look at this code before moving on.
