@@ -1,0 +1,102 @@
+
+Transcript
+0:00
+Let's look at how we handle inheritance when building objects with class syntax.
+0:04
+We're back with the events venue app.
+0:06
+We've got a class producing an event object with general properties for events, name, location, and date, and each of those are assigned to this.
+0:15
+We've also got one method on this class, get details, and all it does is return this string with the details of the event.
+0:22
+What we're going to do next is build another class for a specific event type, in this case a concert, and that class is going to inherit from event.
+0:31
+So down here, I'll say class Concert.
+0:34
+And because this is going to inherit from event, I'm going to use the extends keyword.
+0:39
+And so we'll just say class Concert extends event.
+0:43
+Next, we need the constructor and parameters.
+0:46
+I'm going to take in the parameters that event is expecting and add one more called headliner.
+0:53
+And this will hold the name of the act headlining the concert.
+0:56
+And before we forget, let's open up the body of the constructor and assign headliner to this.
+1:02
+To properly connect concert as a child of event, we need one more line of code, and we're going to use the super keyword.
+1:09
+The super keyword is used to do two things.
+1:12
+We can access properties on the super classes prototype, and we can invoke the super classes constructor.
+1:19
+In our example, as we're extending event, event is the superclass.
+1:24
+And so down here, we are going to use super to do the second one on this list.
+1:29
+We're going to invoke the superclass's constructor.
+1:32
+So it's just super, and we need to pass in what the superclass is expecting, so that is name, location, and date.
+1:40
+So actually, we end up having those twice.
+1:43
+Now if I hit save, we shouldn't see anything down in the console.
+1:46
+We're not logging anything out.
+1:47
+We're not getting any errors.
+1:49
+That is good.
+1:50
+And by the way, calling super has to come before we assign this.
+1:54
+Else when we come to run this code, we will get an error.
+1:57
+Okay, let's give our concert class a method, and I'm going to call it getDetails.
+2:03
+And when we have methods with the same name, the method on the child class, which in this case is concert, is going to override the method on the parent class, which is this method right here on event.
+2:14
+And I'm doing that deliberately.
+2:16
+I don't want to call this method directly.
+2:18
+I'm actually going to call it from inside this child classes get details method and use what it's returning right here.
+2:26
+So let's have a const event basics, and that's going to hold whatever is returned when we call this method.
+2:33
+Now to get access to this method, we need to use the super keyword.
+2:37
+Remember the super keyword accesses properties on the super classes prototype.
+2:42
+So we'll say super to access the SuperClass, and then we can use dot notation to access that method and brackets to invoke it.
+2:51
+Now all I want this get details method to do is return a string with all of the details.
+2:58
+So we'll return whatever is being returned from right here, plus the headliner, which we can access from this dot headliner.
+3:06
+Okay.
+3:07
+Let's set up a new instance of concerts.
+3:09
+So I'm asking for a new instance of concert.
+3:11
+I'm passing in summer beats, city stadium, the date, and the headline act, which is the electrons.
+3:18
+Let's call it inside a console dot log.
+3:20
+And actually what we're calling is this method.
+3:23
+And of course we need to invoke it.
+3:26
+Let's hit save.
+3:27
+And down in the console, we are logging out our event, the location, the date, and the headliner.
+3:34
+So this concert class is successfully inheriting from this event parent class.
+3:39
+And that syntax is so much nicer than trying to do this with a constructor function.
+3:44
+Okay.
+3:45
+In the next scrim, let's go for a challenge.
