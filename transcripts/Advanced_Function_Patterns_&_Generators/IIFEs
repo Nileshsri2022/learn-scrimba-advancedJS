@@ -1,0 +1,102 @@
+
+Transcript
+0:00
+In this scrim, we're going to take a look at immediately invoked function expressions or IFEs for short.
+0:05
+These functions are effectively self calling, so they run without having to wait to be invoked.
+0:11
+Let's see them in action.
+0:12
+Here's a regular function set up.
+0:14
+I've got the function right here and we're invoking it down here on line ten.
+0:19
+But look what this function's doing.
+0:21
+Its sole purpose is to check-in local storage to see if a user has given a theme preference.
+0:26
+If they have, it will log out that theme and if not, it will log out the default theme which is light.
+0:32
+We just want this code to run once at the beginning of a session.
+0:35
+We don't need it to run again and that makes it the perfect use case for an immediately invoked function expression.
+0:42
+All I need to do is wrap this whole function in brackets and then we invoke it in the normal way with brackets.
+0:51
+Let's delete this line right here and when I hit save, we're logging out light so the function is working.
+0:58
+But what's more is that we're still naming this function and actually there's no need.
+1:02
+We can make it anonymous.
+1:05
+Again, I'll hit save and it works.
+1:07
+And what's really cool about that is that we're not polluting the global namespace with things we don't need.
+1:12
+And that's a bonus because it's best to keep things as clean as possible to avoid the risk of conflicts and confusion.
+1:18
+So now, there's no way that this function can be called accidentally.
+1:21
+We've got no other way of accessing it.
+1:24
+It's actually just going to be invoked as the name suggests immediately.
+1:28
+So syntactically, this is pretty easy.
+1:30
+We just wrap the function in brackets and then call it with brackets.
+1:34
+Okay, take a good look at that code because in a moment I'm going to delete it and replace it with a challenge.
+1:41
+Okay, here's your challenge.
+1:43
+I've got this function here which takes in some data asynchronously from a JSON file over on the left hand side which we can see right here.
+1:51
+And all this function does is take in a country as a parameter and then it logs out this sentence giving the weather for that country.
+2:00
+Now we can imagine that this would be a small widget on a website that we want it to execute just once at the start of a session when the page loads.
+2:07
+So again, an IFFE would be perfect.
+2:10
+So I want you to convert this function to an IFFE and you'll need to figure out how to make it asynchronous and how to pass in parameters.
+2:17
+And I think you're gonna find both of these things pretty intuitive.
+2:20
+So take all of the time you need, play around with the code as much as you need to and we'll have a look together in just a moment.
+2:27
+Okay.
+2:28
+Hopefully you got that working.
+2:29
+Now the fact that this is an async function and that it takes in a parameter doesn't really matter.
+2:34
+The process we follow is basically the same.
+2:37
+So let's start off by wrapping the entire thing in brackets.
+2:42
+And this can be an anonymous function.
+2:45
+And to invoke it, we want brackets right here.
+2:47
+And because it's expecting a parameter, we need to pass in the UK.
+2:52
+Now we can delete this and let's hit save.
+2:56
+And down in the console, we can see it's working.
+2:58
+The weather in the UK today is twenty degrees c, sixty eight f and sunny which is a lie by the way, it's raining.
+3:05
+Okay.
+3:05
+You might also have done this as an arrow function.
+3:08
+So let's delete the function keyword, add in the arrow, hit save again and it works.
+3:15
+So that is also possible.
+3:17
+Okay.
+3:17
+There we are.
+3:18
+That is the immediately invoked function expression or IFFE useful for a function you want to execute once without polluting the global name space.
+3:25
+And when you're ready, let's move on.
