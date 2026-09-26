@@ -1,0 +1,114 @@
+
+Transcript
+0:00
+In this scrim, I want to go straight into a thinking challenge.
+0:03
+What are we going to see in the console if we execute this code?
+0:07
+I want you to go through the code carefully and really consider what's going on.
+0:11
+Don't execute the code until you thought about it and made some predictions.
+0:15
+Then hit save and see if you're right.
+0:18
+Did you get it right?
+0:19
+In a moment, we're going to go through this together but before we do that, let's rewind.
+0:23
+I'm asking you about this code because I want to talk about hoisting.
+0:27
+And hoisting is the behavior where variable and function declarations are moved to the top of their containing scope during the compilation phase before code execution.
+0:38
+What that means in practice is that this function right here behaves as if it's been declared right up here or sort of.
+0:46
+Let's check it out with real code.
+0:48
+And actually, I'm going to comment out some of these so we can take them one by one.
+0:53
+So remember, as we declare these functions and the variable we'll come to later, they're hoisted to the top of the scope which in this case is the global scope.
+1:02
+So for this first function, it should be fairly obvious.
+1:05
+JavaScript is read from the top down.
+1:07
+We're declaring the function right here and invoking the function here.
+1:11
+When we hit save, of course it works.
+1:13
+So no great puzzle about that.
+1:15
+Let's move on to the second example.
+1:18
+Now we're invoking the function here but we're not declaring the function until afterwards down here.
+1:24
+Is this going to work?
+1:26
+Yes, it is.
+1:27
+So this is an example of hoisting in action.
+1:30
+The function declaration has been moved to the top of its scope so it's effectively above the function invocation.
+1:37
+That all happens under the hood at compilation so when we invoke the function right here, JavaScript already knows about it.
+1:45
+Okay.
+1:45
+Let's take the third example.
+1:47
+When we hit save, things go wrong.
+1:50
+We get the error cannot access traffic info before initialization.
+1:55
+And by the way, that would be the same if this were a const.
+1:59
+When it comes to scope and hoisting, let and const behave the same.
+2:03
+And so we can't access these variables before we initialize them.
+2:07
+And some people would just say that the let and the const in JavaScript are not hoisted.
+2:12
+But that is not quite true.
+2:14
+If we try to log out a variable that simply hasn't been declared,
+2:20
+we get a different error.
+2:21
+Random var is not defined.
+2:23
+So it's not that JavaScript doesn't know this code exists.
+2:27
+As it says, we cannot access traffic info before initialization.
+2:31
+And why is that?
+2:32
+Well, that is because traffic info exists in what's called the temporal dead zone.
+2:38
+And the temporal dead zone is a semi zombie like state like those first few minutes of an early morning where you know who you are but you can't quite function.
+2:46
+In code, it's literally the space where the variable has been declared and JavaScript knows about it because the declaration has been hoisted but it's not available to access until it's been initialized.
+2:59
+Just to explain that, we did say variable and function declarations are moved to the top of their containing scope, not invocations or initializations.
+3:08
+So what we're actually hoisting is essentially just this part right here And then we're invoking it down here.
+3:15
+That's what's effectively happening under the hood.
+3:18
+And that's why JavaScript knows that traffic info exists but we can't actually access the part that we're adding in here, the initialization because that is not being hoisted.
+3:28
+Okay.
+3:29
+Let's just put that back to how it was.
+3:31
+And just out of interest, let's see what happens if we try to use var.
+3:35
+Well, var is a little bit more forgiving.
+3:37
+We get undefined rather than an error but that doesn't matter because you're not going to use var anyway But that's the behavior you'll see if you're working on legacy code.
+3:46
+So the important take home from this is that while function declarations, consts, and lets are hoisted, only function declarations can be used before they've been declared.
+3:57
+Let's and const will only be usable after initialization.
+4:00
+Now as we go on in this course, we're going to see other types of functions, function expressions, arrow functions, and we'll also see classes and generators and where appropriate, we'll talk about hoisting in those cases.
+4:12
+But from now on, when you learn a new concept, you know how you can quickly and easily check if it's hoisted or not.
