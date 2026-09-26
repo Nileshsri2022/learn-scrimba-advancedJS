@@ -1,0 +1,105 @@
+Transcript
+0:00
+Okay.
+0:00
+Let's have a challenge with class syntax and inheritance.
+0:03
+This challenge is basically to reconstruct the code we just wrote in the previous scrim.
+0:08
+Here is what I want you to do.
+0:10
+Set up a class tennis match, which should take in player one and player two as parameters.
+0:15
+Tennis match should inherit properties and methods from event, and we've still got the same event class right here.
+0:21
+Tennis match should have its own method get details, which calls events get details method to get the basic details of the event.
+0:28
+It should return this string.
+0:30
+And so I've just given you that right there.
+0:32
+You can just copy and paste that into the return statement.
+0:35
+Okay.
+0:36
+When you've done all of that, uncomment my code below to create a new instance of tennis match and call the get details method.
+0:42
+I've done all of that for you right here.
+0:44
+You just need to uncomment that.
+0:45
+I have given you this file, hint dot MD.
+0:48
+It's right here.
+0:49
+It's got some pseudo code in it because there is quite a lot of new syntax to remember here.
+0:53
+So that will surely jog your memory if you need it, but only use it if you do really need it.
+0:59
+Try and do this challenge without it.
+1:01
+And of course, if that's not enough help, you can skip back to the previous scrim and look at the code we wrote there.
+1:07
+Okay.
+1:07
+You can start writing code right here and get to work on this challenge.
+1:12
+Okay.
+1:13
+Massive congratulations if you got that working without using the hint dot MD file or checking back to the previous scrim.
+1:19
+Really quite a lot to do here.
+1:21
+If you did need to check, that is fine.
+1:23
+Totally understandable.
+1:24
+A lot of new code involved in this.
+1:26
+Okay.
+1:26
+Let's make a start.
+1:28
+So we'll set up the tennis match class, And Tennis match is going to inherit from event, so we need to use the extends keyword, and then event.
+1:39
+Now we need the constructor, and it will need to take in everything which event is expecting, plus player one and player two.
+1:49
+Let's assign those new parameters to this.
+1:53
+And we also need to call events constructor.
+1:56
+So right here, we'll use the super keyword and pass in name, location, and date.
+2:03
+Okay.
+2:03
+If we look back at the challenge, we've covered one and two, so let's work on the method.
+2:07
+This method is going to be called get details, and we're overriding this method.
+2:12
+We do want what it returns, and we're going to save that to a const.
+2:17
+And we can access the super classes methods with the super keyword.
+2:21
+So it's super dot get details, which we invoke, and then we just need to return our string.
+2:27
+And we've actually got that right here in the challenge text.
+2:31
+And we should be done.
+2:32
+So down at the bottom, let's uncomment all of this.
+2:36
+And I'll hit save.
+2:37
+And down in the console, we are getting the event grand slam final, location of Wimbledon.
+2:42
+We've got the date, and the match between J Bloggs and B Dough.
+2:46
+So that's working and now you know how to inherit from a parent class.
+2:51
+Okay.
+2:51
+That is the end of this section on inheritance and it's been pretty intense.
+2:55
+So now is a really good time to take a break.
+2:58
+And when you're ready to come back, we'll start looking at putting static methods on our classes.
