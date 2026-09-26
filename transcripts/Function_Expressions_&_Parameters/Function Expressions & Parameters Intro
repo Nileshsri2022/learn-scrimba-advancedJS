@@ -1,0 +1,20 @@
+
+Transcript
+0:00
+Functions are at the heart of JavaScript.
+0:02
+And so far, we've only really seen the basics.
+0:05
+Let's put that right in this scrim.
+0:08
+We are going to look at how you can create function expressions, which is all about storing functions in variables.
+0:14
+And we'll also look at the super concise arrow function syntax which basically involves making functions look like arrows so they confuse more people.
+0:25
+But actually, they're pretty cool and you're gonna learn to love them.
+0:28
+After we've done that, we'll take a look at default parameters and finish up on the rest parameter, which is not that kind of rest, it's rest as in all of the rest.
+0:41
+In fact, this is no time to rest.
+0:44
+So let's go.
