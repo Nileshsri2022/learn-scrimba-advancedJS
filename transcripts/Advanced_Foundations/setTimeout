@@ -1,0 +1,118 @@
+
+Transcript
+0:00
+If you've been looking for a way to delay the execution of your code, then set time out is the method you've been waiting for.
+0:08
+Normally, our code is read from top to bottom and executes in order.
+0:13
+With set time out, we can remove a block of code from that flow and have it execute later.
+0:20
+Let's have a look at that in practice.
+0:22
+I'm starting out making a general knowledge quiz site.
+0:25
+At the moment, all I've got is these three console dot logs.
+0:29
+The first one asks a question, the second one gives the answer, and the third one asks the user if they're ready for the next question.
+0:36
+I've got the console open down here, so let's hit save and see what happens.
+0:41
+And there we are.
+0:41
+It looks like they all log out at the same time.
+0:44
+In fact, they are logging out in order, question, answer, and then ready for the next question.
+0:51
+Now what I want to do is give the user some thinking time.
+0:55
+So before the answer to the question appears, I want there to be a three second wait, and I can do that with set time out.
+1:03
+So I'm going to create a bit of space here, and I'm going to say set time out.
+1:08
+And set time out is a method, so it needs these parentheses or brackets.
+1:13
+We need to give it two things.
+1:15
+We need to give it the function it's going to call and the delay, and that will actually be a time in milliseconds.
+1:24
+Now what we can do here is name a function that we've already written somewhere else and just call it right here.
+1:29
+Or just like we do with event listeners, we can use an anonymous inline function, and that's what I'm going to do today.
+1:37
+So all I need is the function keyword, the brackets, and then the curly braces.
+1:42
+And then this delay expressing the number of milliseconds or thousandths of a second that set time out should wait.
+1:50
+So I want three seconds, so that will be three thousand milliseconds.
+1:55
+Now all we need to do is put the code that we want to execute right here in the body of this anonymous function.
+2:02
+So let's just cut this answer and paste it right in here.
+2:07
+Now when I hit save, keep an eye on the console and see what happens.
+2:12
+So we get the question and ready for next question, and then three seconds later, Lima is logged out.
+2:20
+So we can really see how set time out removed this line of code from the regular flow, but this line of code here, the final console dot log executed as normal.
+2:30
+It didn't have to wait for this one to execute.
+2:33
+So now we can actually execute code out of order and that can be really useful for loads and loads of things.
+2:40
+Now right now we are logging out ready for next question before we've given the user the answer to the original question.
+2:46
+So that doesn't work.
+2:48
+What I want you to do then is to complete this challenge.
+2:51
+I want you to make this third console dot log fire three seconds after this answer appears.
+2:59
+So think about that.
+3:00
+Get that working.
+3:01
+You've got all of the syntax you need, and I'll see you back here in just a minute.
+3:06
+Okay.
+3:06
+So hopefully, you managed to get that working just fine.
+3:09
+So let's set up a second set time out.
+3:12
+And, again, I will use an anonymous inline function.
+3:16
+And before we forget, let's give this a time delay here.
+3:20
+Now we want this to fire three seconds after the answer appears.
+3:24
+So you might have been tempted to put another three thousand milliseconds in there.
+3:29
+Well, let's just try that and see if that works.
+3:33
+So now when I put the console dot log inside this function, um, we hit save.
+3:40
+We get the three second delay, and then Lima and ready for next question appear at the same time.
+3:47
+Now we did say we want this three seconds after.
+3:50
+And if you'll remember, these two pieces of code are now completely out of the flow.
+3:56
+So this three second pause is not coming after this three second pause.
+4:00
+They're actually happening effectively at the same time.
+4:03
+So what we really need to do is change that to a six second pause.
+4:07
+Let's give that a go now.
+4:08
+What's the capital of Peru?
+4:10
+The answer, Lima.
+4:13
+And now are you ready for the next question?
+4:15
+Okay.
+4:16
+That's a really good job and a really useful method to remember.
+4:19
+When you're ready, let's move on.
