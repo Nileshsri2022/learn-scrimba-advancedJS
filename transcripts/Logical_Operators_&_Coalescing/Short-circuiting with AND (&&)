@@ -1,0 +1,79 @@
+Transcript
+0:00
+So we've seen short circuiting with the or operator.
+0:03
+Now let's see how we can short circuit with the and operator.
+0:07
+In the editor I've got an object holding a user and it's got properties for a username and a role and at the moment the role is set to admin.
+0:15
+Now if the user is an admin, I want to render out the dashboard and if the user is not an admin, I don't need to do anything.
+0:22
+So let's come down here and I'm just going to say user.
+0:26
+Role is triple equals to admin and now I can use my and operator to short circuit.
+0:33
+And next I'm going to put what I want to happen if the user.
+0:37
+Role is triple equals to admin.
+0:39
+Now I'm not going to write code to render out a whole dashboard.
+0:42
+Let's just log out dashboard displayed.
+0:45
+And let's see if it works.
+0:47
+And down in the console we're logging out dashboard displayed.
+0:51
+So again, why does this work?
+0:54
+Well the AND operator has got short circuiting behaviour which is kind of the opposite to what we saw with the OR operator.
+1:01
+Again the code is read from left to right and if what we have on the left hand side is true or a truthy value, the code on the right hand side will execute.
+1:11
+Let's just quickly console dot log user dot role is triple equals to admin and when we run that we get true.
+1:19
+Let's comment this out.
+1:21
+Now we get false.
+1:22
+Okay, so let's try running this code again.
+1:25
+User.
+1:26
+Role is triple equals to admin that is false.
+1:29
+So this code on the right hand side should not run.
+1:32
+In fact, we should see absolutely nothing in the console.
+1:35
+Let's save and try And there we are, nothing happens.
+1:39
+So if what we have on the left hand side is full store or full c value, the code on the right hand side will not execute.
+1:47
+So this and operator will short circuit things right there and the code will stop.
+1:52
+And just to be clear, we've been working with the console dot log and with strings a lot.
+1:57
+This could actually be any code we wanted.
+1:59
+It could be a function call.
+2:01
+And let's just create that function quickly.
+2:04
+So what do you think is going to happen when I hit save?
+2:06
+Just think about that for two seconds.
+2:10
+If you said absolutely nothing you'd be quite right because at the moment the role property with the string admin is commented out.
+2:18
+So this here will be false and this code will never run so the function will never get called.
+2:24
+Let's just prove that.
+2:25
+I'll hit save and nothing happens.
+2:28
+Now let's just uncomment this code and I'll hit save and we get hi admin so this was true and therefore this expression right here executed it called the function and we logged out hi admin.
+2:42
+Okay.
+2:43
+Again, a little bit to get used to here so let's go straight into a challenge.
