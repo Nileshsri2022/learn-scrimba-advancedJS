@@ -1,0 +1,112 @@
+
+Transcript
+0:00
+Let's take a look at the for of, which is a nicer way of iterating.
+0:05
+Over in index dot JS, I've got an array called characters, and this array holds four objects, and each object is a character for a game.
+0:16
+And each object has got three properties.
+0:19
+So we've got the title, ninja, sorcerer, ogre, and unicorn, an emoji for each character, and powers.
+0:27
+And powers is actually an array holding the powers that that character has.
+0:33
+What I want to do is iterate over this array and access each character.
+0:38
+And I could do that with a for loop.
+0:41
+But as we know, that can get clunky and messy really quickly, especially if we want to get access to each element in an array like this powers array, which is inside an object.
+0:52
+So I'm going to do this with a for of.
+0:55
+So let's come down here and have a look at the syntax for the for of.
+1:00
+So we start off with the for keyword.
+1:03
+I'm going to say for, and then I'll open up the brackets, and I'll say let character of characters.
+1:12
+Now I'm just going to open up some curly braces.
+1:15
+That is the syntax of the four of.
+1:18
+Now let's just talk about what is actually happening there.
+1:22
+So we've got characters, and characters is the array that we are iterating over.
+1:28
+So what this for of is going to do is it's going to iterate over characters, and then each element inside the array, which is each object, will be assigned to character one at a time.
+1:42
+So firstly, this ninja will be assigned to character, and then whatever code we put in the curly braces will be applied to character.
+1:52
+When that's finished, the next element in the array, the sorcerer, will be assigned to character.
+1:58
+And this code inside the curly braces will be called on the sorcerer.
+2:02
+And that will keep going until the unicorn's done at which point the four of will finish.
+2:08
+So let's just come in here, and I'm just going to use a console dot log to demonstrate that.
+2:13
+So let's just log out character.
+2:15
+I'll hit save.
+2:16
+And down in the console, what you'll see is we're just getting each of our objects.
+2:22
+On the first pass, the ninja is being assigned to character and is being logged out, then the sorcerer, then the ogre, and then the unicorn.
+2:31
+Now because these are objects, we can actually access individual properties with dot notation.
+2:36
+So let's say we just want the title property from each character, I'll put dot title on the end and hit save, and there we are.
+2:45
+We get a list just of the titles.
+2:48
+And again, if we want just the emoji, I hit save.
+2:52
+We get the emoji.
+2:53
+We want the powers dot powers, and there we are.
+2:57
+We see the array of powers for each character.
+3:01
+So that's just a really nice simple way of iterating.
+3:05
+Now I'm just going to close the console and give me a second, and I'll type you out a mini challenge.
+3:10
+Okay.
+3:11
+So I want you to come inside this four of that I've just written, and I want you to nest a second four of.
+3:18
+And I want this four of to iterate over the powers array for each character and log out each individual power.
+3:27
+Now we've got four character objects, and each powers array has got three powers.
+3:32
+So what we should end up within the console is a list of twelve powers.
+3:37
+Okay.
+3:37
+Pause now, get this sorted out, and I'll see you back here in just a minute.
+3:45
+Okay.
+3:45
+So hopefully, you managed to do that just fine.
+3:48
+So I'm going to come in here, and I'm going to set up the new four of.
+3:51
+So I'll say four and then in the brackets let power because we're going to be iterating over arrays of powers of, and now we need the array that we want to iterate over.
+4:03
+Well, that array can be found inside each character in their powers property.
+4:08
+So what we want to iterate over is exactly what we were logging out, which is character dot powers.
+4:15
+Now we can open up the curly braces, and let's just log out each individual power.
+4:20
+And just so it doesn't confuse us, I'll delete this console dot log now.
+4:24
+Let's hit save.
+4:26
+And down in the console, there we are.
+4:28
+We have got our list of twelve powers, all of the powers from all of the characters.
+4:34
+Okay.
+4:34
+In the next grim, we're going to take a look at something which is very similar to the four of and that is the four in.
