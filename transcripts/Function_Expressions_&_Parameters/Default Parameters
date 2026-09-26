@@ -1,0 +1,66 @@
+
+Transcript
+0:00
+You've seen this code before.
+0:01
+We're using the reduce method to calculate the total cost of some items we've bought.
+0:06
+Just take a moment to re familiarize yourself with this code before we move on.
+0:11
+Now this code has a problem which we're illustrating right here.
+0:14
+We're taking in these two parameters but at the moment, I'm not passing in discount where we call the function.
+0:20
+When I hit save, what we actually log out is null and that's a problem that could happen in real life.
+0:26
+For some reason, a parameter could not be passed in.
+0:29
+So wouldn't it be cool if there was a way to give this parameter a default value?
+0:33
+We could just check if discount is giving us a falsy value and if it is we could set discount to zero.
+0:40
+So now our code has a number to work with and we're assuming that if no discount has been passed in as a parameter then the discount should be zero which seems reasonable.
+0:49
+There we are.
+0:50
+Now the app is working but we've done it in a rather inelegant way.
+0:54
+Luckily JavaScript gives us a much easier way to do this and it's called default parameters.
+1:00
+Let's delete this if clause that I've just put into the code.
+1:04
+And actually the syntax for default parameters is really really simple.
+1:08
+All I need to do is come here and use the equal sign and then set the default parameter to whatever I want it to be.
+1:14
+And I'm just going to space that out to make it look a bit nicer.
+1:17
+Again, let's save and it works.
+1:19
+We're logging out seventy three.
+1:21
+Let's supply a discount of ten by default and now we're getting sixty three.
+1:26
+So that should behave exactly the same way as if we come in here and pass in ten.
+1:32
+Let's pass in twenty and now we can see that we're overriding the default parameter.
+1:39
+So this default parameter will only be used if no parameter comes in.
+1:43
+So that is the default parameter.
+1:45
+It's really really simple to use.
+1:46
+We've used a number here but actually the default parameter could be whatever you want it to be.
+1:51
+It could be a string.
+1:52
+It could even be another function.
+1:54
+It just depends what you need it to be in your logic.
+1:57
+So whatever saves the function from throwing an error or breaking silently.
+2:01
+Now, I don't think we need a challenge for this tiny little bit of syntax right here but later on when we have a super challenge, you will get the opportunity to use a default parameter.
+2:10
+So just remember it exists.
