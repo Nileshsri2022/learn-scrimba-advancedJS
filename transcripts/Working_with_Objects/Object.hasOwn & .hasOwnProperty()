@@ -1,0 +1,180 @@
+
+Transcript
+0:00
+Sometimes we need to know if an object has a property and JavaScript gives us two ways of doing that.
+0:06
+The more modern way which is has own and the older way which is still widely in use has own property.
+0:13
+Let's see how they used and then we'll talk about the differences between them.
+0:17
+I have two users for a service here, user one and user two and I want to see if these objects have the access premium feature property.
+0:25
+This one does and user one does not.
+0:28
+Let's take the older method first.
+0:31
+So I'll take the object, call hasOwn property and pass in the property name as a string.
+0:38
+Let's save that and in the console we see false.
+0:41
+So access premium feature is not available on user one.
+0:45
+Let's change this to user two and now it returns true.
+0:48
+So we're getting a boolean to tell us whether this property exists on this object and just look at how we're using this method.
+0:55
+The method is called on the instance of the object.
+0:58
+We take the name of the object and we call the method directly on it just like we do with array methods.
+1:03
+This newer method has own is a static method.
+1:07
+So the syntax for that one is more like the other object methods that we've seen.
+1:11
+Let's see it in action.
+1:12
+So I'll delete all of this and we need to start with object.
+1:16
+And remember this one takes an upper case first letter.
+1:19
+Now we take the method hasOwn and we need to pass in two pieces of information which are the object we want to check and the property name we're looking for.
+1:29
+And the property I want to check is access premium feature.
+1:33
+Let's hit save and we get false user one does not have access premium feature, user two does.
+1:39
+Let's check and that one returns true.
+1:42
+Okay.
+1:42
+Coming up I've got a challenge for you.
+1:44
+I'm just going to tidy up the code we've got on the page right now.
+1:47
+Okay.
+1:48
+Here's your challenge.
+1:49
+This function can access premium feature, takes in an object and a property as parameters.
+1:55
+I want you to write logic to check if the object has the property.
+1:59
+And I want you to do this challenge twice, once with hasOwn and once with hasOwn property and all the function needs to do is return a boolean.
+2:07
+We're already calling the function inside this console dot log right here.
+2:10
+We've got the arguments it needs so all you need to do is write logic in here.
+2:14
+Now for a bonus, you can use short circuiting to only return true if access premium feature both exists and is true.
+2:22
+And then of course, you can test that by adding access premium feature for example here but setting it to false.
+2:29
+Okay.
+2:29
+Get to work on that.
+2:31
+Okay.
+2:32
+Hopefully, you managed to do that just fine.
+2:34
+So inside the body of this function then, let's do it the old way first.
+2:38
+So I'm going to return user object dot hasOwnProperty.
+2:44
+Let's try prop in here.
+2:46
+Let's hit save and see if that works.
+2:48
+And it does.
+2:49
+We're getting false and true.
+2:51
+Now let's just make this bonus challenge happen.
+2:54
+So I want to only return true if it both exists and is true.
+2:59
+Well, let's put false on user one.
+3:02
+If I hit save now, they're both true.
+3:05
+So how about we short circuit this, so we can use the and operator and here we can say user object and we can try with dot notation.
+3:14
+Let's hit save and we get undefined and that's because actually dot notation is not going to work here.
+3:19
+We need bracket notation and this should work.
+3:22
+Let's check.
+3:24
+It does.
+3:24
+So what's happening here is that this is being evaluated from left to right and if hasOwnProperty is returning true, then here we're checking if the user object property I e access premium feature is returning a truthy or falsy value, is returning the boolean false in this case.
+3:42
+So as both of these are not true, we're returning false overall.
+3:45
+Here access premium feature is set to true so both of these will be true and we're returning true overall.
+3:51
+Let's just flip that to true and now they're both true.
+3:55
+Okay.
+3:55
+Let's just comment out that line and let's do this with hasOwn.
+4:00
+So we take object dot hasOwn and let's pass in the user object and the property we're looking for.
+4:08
+We can delete all of this and let's hit save.
+4:12
+And again, that seems to be working.
+4:13
+We'll flip this one to false and it works.
+4:17
+Okay.
+4:18
+So what's the difference between hasOwn and hasOwnProperty?
+4:21
+Why did JavaScript introduce a new method?
+4:24
+Well, let's do a little bit of digging.
+4:26
+Sometimes it's beneficial to create a very pure object.
+4:30
+That is an object that does not inherit anything from the prototype chain.
+4:34
+So you can imagine that in a complex code base an object could be inheriting a ton of methods it doesn't need and that could be using up memory and resources and potentially affecting performance.
+4:44
+So we have got the option of setting up an object like this.
+4:47
+Let's call it user three and now we use object dot create.
+4:52
+So that sets up a new object and here we tell it what we want as the objects prototype.
+4:57
+I'm going to pass in null.
+4:59
+That means the object will be pure, it will not have any methods including JavaScript's built in methods.
+5:05
+So now let's say console dot log user three dot hasOwnProperty and we can pass in say username.
+5:15
+Now when I save that, we get an error.
+5:18
+It says hasOwnProperty is not a function.
+5:21
+Now you might be thinking that that's happening because username doesn't exist on user three.
+5:26
+That's not true but we can set it up anyway.
+5:29
+And when I save again, we get the same outcome.
+5:32
+So what's actually going on here is that the hasOwnProperty method does not exist on user three because we created user three as a pure object.
+5:41
+It has no methods.
+5:43
+But this is where the static method on object hasOwn wins.
+5:47
+Because it exists on object and not on the instance of object user three, it's going to work here.
+5:53
+Let's give it a try.
+5:55
+Now when I say, we get true because we actually do have username as a property, comment that out and now we get false.
+6:03
+So that's why the new method hasOwn is better.
+6:06
+It guards against some edge cases where hasOwn property is not available.
