@@ -1,0 +1,150 @@
+
+Transcript
+0:00
+We've already seen quite a lot of Array methods and we've covered the most useful and most complex ones in-depth.
+0:05
+In this scrim, I want to take a quick look at a few more methods which are really not that complex so don't need detailed analysis.
+0:13
+That said, they do have their uses and you should know about them.
+0:16
+I have an array of data from my pedometer or step counter app which shows the number of steps I walked every day last week.
+0:23
+I'm going to use the array method every to check if I walked at least ten thousand steps every day.
+0:29
+You're probably familiar with this syntax by now.
+0:31
+I'm going to take the array, call the every method on it, and the every method takes in a function as a parameter and that function takes in a parameter which will represent each element in the array.
+0:43
+This is an array of step counts, so I'm going to call this one stepCount.
+0:47
+And then in the body of the function we can add our logic.
+0:50
+I want to check if my step count every day was greater than or equal to ten thousand and each element in the array is going to be subjected to that test and it's going to return me a boolean true or false.
+1:02
+So let's just use the return keyword right here.
+1:06
+And now let's save this to a const and log it out.
+1:09
+And I've used r here because this is gonna return us a boolean.
+1:14
+Let's see what we get and we're getting true because everything in this array is greater than or equal to ten thousand.
+1:22
+Let's just delete this one.
+1:23
+Now one of the items is below ten thousand and we return false.
+1:28
+So every returns true if every item passes the test.
+1:33
+Okay.
+1:33
+Let's comment out this console.
+1:35
+Log and move on.
+1:36
+The next method is almost the opposite of the every method, it is the sum method.
+1:40
+And I'm actually going to borrow all of this code and just change every for sum.
+1:45
+And here I'll change all for sum because this is going to return true if just some of the items in this array pass the test.
+1:54
+Let's log it out and see what we get.
+1:56
+And we get true of course because we've definitely got some items in this array which are over ten thousand.
+2:02
+If I delete one digit from them all, now they're all under ten thousand.
+2:07
+When I hit Save, we get false.
+2:09
+So the sum method returns true if one or more items pass the test.
+2:15
+Okay, I'm just going to delete the console.
+2:16
+Logs to keep things tidy.
+2:18
+We've got quite a lot of code to put into one file.
+2:21
+And now I'm going to bring in a new array.
+2:24
+This is an array of invoice amounts in US dollars, and I'm going to use the find method to find the first invoice in the array that is over one thousand US dollars Again the syntax is a familiar pattern, so the logic will be return invoice which is greater than one thousand dollars Let's save it to a const and this one is not going to return a boolean.
+2:48
+Let's see what we get.
+2:50
+We actually get the item itself.
+2:52
+This is the first one which is over a thousand and that and that is what the find method gives us.
+2:58
+It returns the value of the first item that passes the test.
+3:02
+Now if no items pass the test, it returns undefined.
+3:06
+But imagine we don't want the item itself, in this case twelve ninety nine, but we want the index of that item.
+3:13
+Well, we've got another option very similar to this.
+3:15
+Again, I'm gonna copy all of the code and I'm just going to change the method name to findIndex.
+3:22
+And let's update the name of our const and when I save, we get three, so it's zero, one, two, three.
+3:30
+It's still finding us the first item which is greater than a thousand dollars but now it's giving us the index.
+3:36
+And if no item passes the test, it will give us minus one.
+3:40
+So in summary, findIndex returns the index of the first item that passes the test.
+3:46
+Now we also have the indexOf method and I can just show you that in a console.
+3:50
+Log.
+3:51
+So let's take the original array, call indexOf and pass in the item we want the index of.
+3:57
+In this case, I'm just gonna go for twenty six dollars we get two, so it's zero, one, two.
+4:03
+That's giving us the index of the item that we're looking for.
+4:06
+And that is certainly a very useful method.
+4:09
+And finally we have the 'at' method.
+4:12
+So let's just use a console.
+4:13
+Log again.
+4:14
+We'll take the original array again and we all know that you can use bracket notation and an integer to get the item at the given index of an array.
+4:23
+So if we look back at that array, well the zeroth item is two zero one.
+4:28
+Let's just hit save and there we are we get two zero one.
+4:31
+But what if you wanted the last item in the array?
+4:34
+What if I wanted seventy six?
+4:36
+Well, you might think that you'd be able to put a minus one here.
+4:40
+But when we do that, actually we just log out undefined.
+4:44
+So that doesn't work, but it does if we use the at method.
+4:49
+So I'm gonna delete this, call dot at and then we just pass it an integer to tell it which item we want.
+4:56
+So zero will get us two zero one and three will get us one two nine nine.
+5:02
+Now that's nothing special because we could have done that with bracket notation just as easily.
+5:07
+But what's really cool about the at method is that we can pass it a negative integer and what that will do is count back from the end of the array.
+5:15
+Let's hit save and now look we're getting seventy six.
+5:19
+And if I put that down to minus two we get sixty.
+5:23
+So the at method takes a positive or negative integer and it returns the item at that index.
+5:29
+Negative integers count backwards from the end of the array.
+5:33
+Okay.
+5:34
+That was a whirlwind tour through some of the LesserTor array methods.
+5:37
+No challenges with these, but do pause and have a play around with them.
+5:41
+And then when you're ready, let's move on.
