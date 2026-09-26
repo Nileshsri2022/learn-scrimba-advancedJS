@@ -1,0 +1,52 @@
+
+Transcript
+0:00
+It used to be pretty hard to make a deep clone of an object or an array in JavaScript.
+0:04
+But in this scrim, we're going to use structured clone which makes it all so much easier.
+0:09
+We've got the same object here, student details, and now I'm going to deep clone it.
+0:15
+So I'll set up a const and I'm going to call it deep cloned student details.
+0:22
+And we'll set that equals to structured clone And we'll pass into structured clone student details.
+0:31
+And let's log out deep clone student details.
+0:37
+And in the console, we have got our clone and it's exactly the same.
+0:41
+Let's just log out the original while we're at it.
+0:45
+And then now so we can do a comparison, let's take deep clone student details and we'll come into this array right here.
+0:52
+So we'll say dot modules completed And we'll take what's the element zero which is HTML and let's change that to TypeScript.
+1:00
+Okay.
+1:01
+Let's hit save.
+1:02
+And I'm just going to paste the console output into the editor
+1:08
+just so I can highlight the really important momentous occasion here.
+1:12
+In this original where we're logging out student details, we've still got HTML just like we've got here.
+1:18
+But in the deep clone student details, we've now got the TS of TypeScript as we updated here.
+1:24
+So we're actually going deeper, we're going into nested arrays, nested objects, and we're actually making a deep clone of that object.
+1:32
+So now in memory, there is a whole new object.
+1:35
+They are completely independent.
+1:37
+Now structured clone is quite a new addition to the language and you might find that support is still a little bit patchy, but it does now work in most browsers, Chrome, Firefox, Safari, etcetera.
+1:48
+So there shouldn't really be any problem in using it.
+1:51
+Backwards compatibility to say Internet Explorer is not going to happen but I don't think you need to worry too much about that.
+1:57
+Okay.
+1:57
+That is the end of the copying and cloning section.
+2:00
+In the next scrim, we'll start looking at adding our own methods to objects and working with the this keyword.
