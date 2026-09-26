@@ -1,0 +1,140 @@
+
+Transcript
+0:00
+We've seen how to do some basic fetching with APIs, but in this scrim, we're going to take it to the next level.
+0:06
+We are going to be using the JSON Placeholder API, which is a really cool API.
+0:11
+It's great for prototyping and testing code, and it's got a few more options than the other APIs we've worked with including the ability to simulate not just getting data from the server but also uploading data to the server.
+0:24
+You can click on this screenshot if you want to take a look at the docs.
+0:28
+But basically, the API has got a whole load of placeholder data such as posts, comments, photos, users, to do lists, etcetera.
+0:36
+Now for some practice, here you have got the base URL and an endpoint for some posts.
+0:42
+Again, we're using Scrimper's proxy.
+0:44
+I want you to make a fetch request to get all of the available posts and I've just put here remember to handle all errors.
+0:51
+So this is just a recap challenge.
+0:53
+You should be able to do this pretty easily by now but it's good to have a bit more practice especially with handling errors.
+0:59
+So just get that sorted quickly.
+1:03
+Okay.
+1:03
+Hopefully, you managed to do that.
+1:05
+I'm going to do this inside a try catch.
+1:08
+So in the try, we'll have a const response and we will await our fetch request and we'll pass in the base URL and the endpoint.
+1:18
+Now let's just check the response.
+1:20
+So if the response object has the okay property and that is false, let's throw an error.
+1:28
+It doesn't matter what custom message you put in there as long as you put in something.
+1:33
+Okay.
+1:33
+If the response is okay, let's set up a const to store our data and we will await the response and call the JSON method on it.
+1:42
+And let's just log that data.
+1:45
+Now when we have a try block, we also need a catch block to catch the errors.
+1:49
+And I'm just going to log out the error for now.
+1:52
+Let's just see if that works.
+1:54
+And it looks like it does down in the console.
+1:56
+I'm getting a load of posts.
+1:58
+Why don't we quickly break the API?
+2:01
+And now in the console, I'm getting the fail to fetch error because we've broken the base URL.
+2:07
+Let's break the endpoint and we get our custom error.
+2:11
+Okay.
+2:11
+So that is working.
+2:13
+Now when we use a fetch request like this we are getting something.
+2:16
+And what we're making here is actually called a get request.
+2:20
+And there are other types of requests.
+2:23
+So the get request is for getting data.
+2:25
+We also have a post request for posting data I e I e adding data to something like Instagram or a forum or a blog post.
+2:33
+We use put for updating data, although you can also use post for that depending on the API.
+2:39
+And then we have delete which as you can guess is for deleting data.
+2:44
+There are a couple of other options, patch and one called options.
+2:47
+We don't use them so often so we're not gonna spend more time on them now.
+2:51
+I do just want you to notice that I've put get post, put, delete, patch and options in upper case.
+2:56
+That's a really strong convention to use when you're writing your code.
+3:00
+So what happens with these different kinds of requests is that they can be made to different endpoints.
+3:05
+And as always, we have to consult the docs of the specific API we're working with to know exactly what to do.
+3:11
+The JSON placeholder API gives you those details.
+3:14
+We've got some examples right here.
+3:15
+You can explore the docs to get the specifics if you need to.
+3:18
+But what I want to worry about now is how we make these kinds of fetch requests.
+3:23
+How do we make it clear to the API what our intentions are?
+3:26
+Are we posting?
+3:27
+Are we deleting?
+3:28
+Are we updating?
+3:29
+Well, fetch can actually take in a second parameter.
+3:33
+So if we have a comma here, we can add in an object.
+3:36
+And this one where we're just trying to get the post is a get request.
+3:40
+So in this object, we can have method which is the key and the value is get in upper case.
+3:48
+Now if we try that, oh, and I broke the endpoint.
+3:51
+Let's try again.
+3:53
+There we are.
+3:53
+So that works just the same.
+3:55
+We get all of the posts but actually we didn't need to do that in this case because when you make a fetch request, get is the default method.
+4:03
+So this code I've just added is unnecessary.
+4:06
+But if we move on to a post request, so let's say we want to add some more data to the API, we want to add for example a new blog post or a new Instagram post, then we will need to make a post request.
+4:18
+But simply stating post as a method is not enough.
+4:21
+We also need to tell the API what it is that we want to post.
+4:25
+If we just look back in the console, well each post has got a user ID, an ID, a title, a body.
+4:31
+So it needs to know that information for our new post.
+4:34
+In order to do that, we need to add a body to this object.
+4:39
+Let's look at that in the next screen.
