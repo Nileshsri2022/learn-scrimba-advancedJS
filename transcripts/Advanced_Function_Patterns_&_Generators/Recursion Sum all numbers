@@ -1,0 +1,118 @@
+
+Transcript
+0:00
+Let's look at a more complex example of recursion.
+0:03
+This is an oldie but a goodie.
+0:04
+I want to sum all of the numbers up to a given number.
+0:08
+So if the given number were two, we would sum one and two which would equals of course three.
+0:14
+And if the given number were three, we would sum one and two to get three and then add three to get six.
+0:23
+And as I recall adding the numbers one to ten should get you fifty five.
+0:28
+Okay.
+0:28
+So let's declare a function and the function will take in a number that we want to sum to.
+0:34
+And if the number is less than or equal to zero, we can return zero because there are no numbers that make up zero.
+0:43
+So that is our base case.
+0:45
+Now in the else, this is where the recursion is coming.
+0:49
+Let's return n plus and then the function call but to bite off one chunk of the problem, it's going to be n minus one that gets passed in.
+1:01
+So what we're returning here is n plus whatever's returned by calling the function sum to n passing in n minus one.
+1:09
+Don't worry at all at the moment if you don't get what's going on or you can't see why this will work.
+1:13
+We are going to break this down.
+1:15
+But just be aware that this is more complex than the previous example because we're actually returning a function call and what's more we're adding something to it inside this return statement.
+1:26
+If it's looking pretty weird that is absolutely fine at this stage just bear with me.
+1:30
+Okay.
+1:31
+Let's just check this is actually working by calling sum to n inside a console dot log And we'll pass in five and let's hit save and in the console we're getting fifteen.
+1:42
+That looks good.
+1:43
+Let's pass in ten and we're getting fifty five which is what we expected.
+1:48
+Okay.
+1:49
+So why does this work?
+1:50
+So here we're returning n in its current state and adding it to what gets returned when we call sum to n with n minus one.
+1:58
+And we can get a better look at what's going on by storing a running total actually outside of this function.
+2:05
+And we're going to hard code running total to whatever number we're passing in right here.
+2:10
+And I'm actually gonna pass in five.
+2:12
+If we pass in ten, we're going to see really quite a lot in the console.
+2:15
+It might get a bit overwhelming.
+2:17
+Let's go for a lower number.
+2:19
+And now before we return anything, let's console dot log running total and also update running total.
+2:28
+So I'm gonna say running total plus equals n minus one.
+2:33
+So each time this code runs, we're going to add n minus one to running total.
+2:38
+Okay.
+2:38
+Let's hit save.
+2:40
+And I'm just going to take what we get from the console and paste it into the editor so we can see it more clearly.
+2:46
+Okay.
+2:46
+So we started off by passing in five and five is of course greater than zero so we skip the base case.
+2:52
+And so we logged out five and that's what we see right here.
+2:56
+We updated running total with n minus one so five minus one is four.
+3:01
+So now running total will be at nine and then we return five plus whatever we get back from this function call passing in five minus one or four.
+3:11
+So now, this function has been called again passing in four.
+3:15
+Of course, we skip the base case because four is greater than zero.
+3:18
+We console dot log running total which is now nine.
+3:22
+We update running total with four minus one which is three, nine plus three gives us twelve and then we return four plus whatever we get back when we call this function again with n minus one which is three.
+3:35
+Three is greater than zero.
+3:36
+We console dot log running total which is currently twelve and then we update running total with n minus one that's two.
+3:44
+So that's gonna take running total to fourteen and then the process starts again three minus one is two.
+3:50
+So down here running total will next be fourteen and then when the process runs for the final time with one, running total will be fifteen.
+3:59
+And then on the next go, we're going to hit the base case and this function will return and the recursion is over.
+4:05
+But if you're anything like I was when I first saw recursion, there's still a big mystery because eventually when the base case is met and this code right here executes, we return zero.
+4:15
+So when we run it, how on earth are we returning fifteen?
+4:18
+Because that's what we're doing right here inside this console dot log.
+4:21
+And that's confusing, right?
+4:23
+Because somewhere all of these return values are being stored ready to be returned at the very end.
+4:28
+And to understand this, we need to understand the process of unwinding.
+4:33
+And to understand unwinding, we need to go back to the call stack.
+4:37
+So in the next scrim, let's look at unwinding and find out how we actually reach this result.
