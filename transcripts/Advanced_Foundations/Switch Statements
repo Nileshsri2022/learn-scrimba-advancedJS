@@ -1,0 +1,152 @@
+
+Transcript
+0:00
+Let's take a look at the switch statement which can be used when there are multiple possible code blocks you might want to execute.
+0:06
+We already know that if we want code to run if a condition is met, we can use an if, an if else, and multiple else ifs.
+0:13
+But all of that can get kind of messy and a switch statement makes the whole thing neater and more readable.
+0:18
+When ifs and else's get complex, they actually take quite a high cognitive load to disentangle.
+0:24
+So let's see a switch statement in action.
+0:26
+I'm making an app for a vending machine that allows you to buy one item of food or drink in a given transaction.
+0:32
+Here's my price list.
+0:34
+All we want this app to do is to log out for example, you selected salad that will be four dollars.
+0:39
+So So I'm going to come down here and set up a function called select item and this function will take in an item as a parameter.
+0:47
+And inside the body of the function the first thing I want to do is set up a let to hold our price And I'm going to initialize that to zero.
+0:56
+Okay.
+0:56
+Now let's set up the switch statement.
+0:58
+So I'm going to say switch and switch takes in the item as a parameter and then we give it curly braces and each item on our price list can become a case.
+1:10
+So we use the case keyword and for each case we need something to match against so we'll put a menu item in a string and add a colon.
+1:19
+If the case, in this case coffee, matches the item that came in as a parameter and is passed into switch right here, the code we write here will execute.
+1:28
+So here we'll set the price to the price of a coffee which is two dollars.
+1:33
+Now if the case matches we want the switch statement to end so we use the break keyword.
+1:38
+This breaks us out of the switch statement.
+1:40
+Any other cases we might have in the switch statement will not be looked at.
+1:45
+And then outside of the switch statement our function can just return our string.
+1:50
+And note the double dollar sign is not accidental.
+1:53
+The first one here is just to actually denote the currency of the prices.
+1:57
+Okay.
+1:58
+This is a switch statement with just one case, but let's come down here and we'll try it.
+2:03
+So in a console dot log then I'm calling select item and I'm passing in the string coffee.
+2:09
+We hit save and down in the console you selected coffee that will be two dollars so it's working.
+2:16
+Now let's try passing in something else and we get you selected biscuits and that will be not dollars.
+2:22
+Well that's something that we don't want to happen so we will need to handle the situation where it gets passed an item that doesn't exist.
+2:28
+But before we do that let's get the other price list items into our switch statement as cases.
+2:34
+But firstly, I just want to sort out our formatting here.
+2:38
+That's better when those two are tabbed in.
+2:40
+It makes it much much clearer that that's the code that's going with this case.
+2:45
+Okay.
+2:46
+Bear with me while I paste in a challenge.
+2:49
+And there's your challenge.
+2:50
+Add the remaining price list items as cases.
+2:54
+Now that is a pretty easy challenge.
+2:56
+You've got this template right here to work from.
+2:58
+But this is great for building up muscle memory, so just pause now and get this sorted.
+3:05
+Okay.
+3:06
+Hopefully, that wasn't too hard at all.
+3:08
+So I'm going to come in here and I'll set up the second case.
+3:11
+So that is the case for sandwiches.
+3:15
+So we've got the case keyword sandwiches, the colon, and then we'll set the price equal to five.
+3:20
+And then if sandwiches match, we need to break out of the switch statement.
+3:25
+Okay.
+3:26
+Just bear with me while I speed type the rest.
+3:33
+Okay, that's our finished switch statement, although it's not actually quite finished because we still have the issue of what happens when the parameter doesn't match any case.
+3:42
+And for that, I'm going to come down right to the bottom after the last case and add the default keyword.
+3:50
+And here, we can put code to execute to cover the scenario that the item inputted doesn't match any case.
+3:56
+So I'm just going to return the phrase, sorry, we don't sell that item.
+4:03
+And this red line is just reminding me that I've forgotten my colon after default.
+4:08
+Okay.
+4:08
+Let's do some testing.
+4:10
+At the moment, we're calling select item with biscuits.
+4:13
+We don't have biscuits on our price list.
+4:15
+Let's hit save and see what we get.
+4:18
+And down in the console, sorry, we don't sell biscuits.
+4:20
+So that is working.
+4:22
+Let's just try a few things that we do sell.
+4:25
+So we've got salad.
+4:26
+It says you selected salad that will be four dollars.
+4:30
+And let's just check lemon cake.
+4:32
+You selected lemon cake that will be three dollars.
+4:35
+Now I should just point out a couple of things.
+4:37
+After this default, we don't have the break keyword and that's because it's coming right at the end.
+4:43
+And the default doesn't have to be at the end of the switch statement.
+4:46
+It could be anywhere but by convention it is at the end that makes it easier to read.
+4:51
+But just to clarify, whether you have a case or a default at the end of the switch statement, you will not need the break keyword on that last item.
+4:59
+And the last thing that I want to point out is that the comparison that happens between the item and the case is actually a strict comparison.
+5:07
+So it's equivalent to saying, for example, item triple equals coffee.
+5:13
+So look out for that because it could cause issues if, for example, you were comparing a number and a string.
+5:19
+Okay.
+5:19
+So there we are.
+5:20
+That's the switch statement and is really good for some situations where else and else if would be less easy to understand.
