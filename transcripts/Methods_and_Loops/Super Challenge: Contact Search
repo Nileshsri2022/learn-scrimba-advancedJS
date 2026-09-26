@@ -1,0 +1,58 @@
+
+Transcript
+0:00
+It's time for a super challenge.
+0:02
+We have an app that performs a simple pattern match search on some contacts.
+0:07
+You enter a contact name like Smith, and when you hit search, any matching names are displayed in these cards.
+0:14
+But it also works if you enter a partial name.
+0:17
+Let's just put in Joe, and that actually brings up these two cards because John has got j o and so has Johnson.
+0:24
+So here is your challenge.
+0:26
+I want you to wire up this search pattern app so that inputting a full or partial name brings up the matching contact or contacts.
+0:33
+And if we look at the data I've included right here, we can see that each object has got a name, an email, and a phone number, but our app will only be matching on the name.
+0:44
+You could make a more complex version that matches a search query with any part of the contact details but for our purposes today, we're just going to work with the name.
+0:52
+I have given you some code mostly to take control of the elements that you're going to need to use.
+0:58
+And also down here, I've given you the skeleton of a render function that creates an aside element for you and gives it the class contact card.
+1:07
+And talking of CSS, the CSS for this contact card has already been done for you and the name, email, and phone that you'll need to display for each contact can just be put inside a p element and then placed inside the contact card element that's being created right here.
+1:24
+And if we open up the mini browser, we can see that actually a lot of the background CSS and the HTML is already in place.
+1:31
+You don't need to work inside index HTML or index dot CSS.
+1:36
+Okay.
+1:36
+The rest though is up to you.
+1:38
+I'm not going to say more.
+1:39
+I want you to figure this out on your own.
+1:42
+But in the next slide, which you can access just by hitting the right arrow key on your keyboard, I've put a list of the JavaScript that I think is best for you to use to complete this challenge.
+1:51
+By all means, try by yourself first.
+1:54
+But then before you watch my solution, check the list and refactor if necessary.
+1:58
+But do practice with those concepts.
+2:00
+That's the whole purpose of these super challenges.
+2:03
+Okay.
+2:03
+Get to work on this.
+2:04
+Expect to do some figuring out and some searching.
+2:07
+Feel free to rewatch previous scrims and keep going until it works.
+2:11
+I'll show you my solution in the next scrim.
