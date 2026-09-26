@@ -1,0 +1,88 @@
+
+Transcript
+0:00
+When we make a request to an API, we need to use that API's URL.
+0:04
+The URL is essentially the address where your desired resource is located.
+0:09
+The URL for an API can usually be broken up into two portions.
+0:13
+First of all, there's the base URL and then there's what's called the endpoint.
+0:18
+So if we imagine that Scrimba had an API which gave you all of the info you could possibly want on Scrimba, courses, users, templates, etcetera, the base URL could look something like this, scrimba dot com slash API.
+0:32
+Although, of course, the precise format is up to the owner or designer of that API.
+0:37
+This base URL is the portion of the full URL which will not change no matter what kind of resource you're getting from this API.
+0:45
+So every request I make to this fictitious Scrimba API will start with this base URL.
+0:50
+The endpoint is the specific resource I want to retrieve.
+0:54
+So if I want to get the course data, it might be slash courses or perhaps I want the users or the templates.
+1:01
+And also the endpoint might be several layers deep.
+1:04
+So it might be slash resources slash challenges.
+1:06
+And with some APIs, you'll be able to request resources by providing query strings.
+1:11
+So you might take the endpoint resources slash tests.
+1:15
+And then this bit underlined right here is the query string.
+1:19
+So we might be asking for a test on TypeScript.
+1:22
+But that is a bit outside the scope of this course.
+1:24
+I want to focus on the JavaScript.
+1:27
+Now this Scrimba API doesn't exist or at least it's not publicly accessible so let's get real.
+1:33
+Over in URL dot MD, are the details of a live API.
+1:38
+It's a fun API that gets you some information on dogs.
+1:42
+This is the base URL right here and there are two possible endpoints.
+1:46
+One which gets you all of the dogs and the other which gets you a single random dog.
+1:51
+We're going to talk more about this API in the coming scrims.
+1:55
+We're going to use it a few times in fact.
+1:56
+But for now, here is a challenge.
+1:59
+I want you to take the base URL and the endpoint that gets you a list of all dogs and paste the full URL into your regular browser.
+2:07
+So I mean not the Scrumba Mini Browser but Chrome, Firefox, Safari, Edge, Opera, Internet Explorer, or Netscape Navigator if you're really old or using a time machine.
+2:19
+And just paste in that URL and see what you get.
+2:22
+Do that now.
+2:24
+What you should have seen is something like this.
+2:27
+We have what looks like an object holding a bunch of other objects.
+2:30
+And oftentimes, the data we get back from an API looks something like this.
+2:34
+And this is actually JSON data.
+2:37
+And by the way, if yours wasn't formatted like this, that's because there are plenty of browser plugins that will format JSON and make it more readable in the browser and include syntax highlighting, etcetera, if that's what you want.
+2:48
+I'm using one of them here so you can just search online for a JSON formatted browser plug in and find one you like.
+2:55
+It is useful to have because using your browser can be a really good way to see what the data looks like when it comes back from an API.
+3:02
+Now if I put in this other endpoint, this single random dog, what I got back was this.
+3:08
+So we've just got one object and under messages, we can see we get the URL for a JPEG.
+3:14
+But again, remember this is JSON.
+3:16
+It's not a JavaScript object.
+3:18
+Before we can use this in an app, we will need to convert it and we'll see that process in action when we start making fetch requests.
+3:25
+So let's do that in the next screen.
