@@ -1,0 +1,83 @@
+Transcript
+0:00
+Let's look at how we can protect the properties on our objects with private fields.
+0:04
+But what exactly do I mean by protect the properties on our objects?
+0:08
+Well, right here, I've got a simple class creating holiday objects, which takes in a destination and a price.
+0:14
+I'm setting up a new instance of it right here, so when we hit save, we get an object down in the console.
+0:21
+But look what I can do, I could come in here and say Safari dot destination equals Tanzania.
+0:28
+And now when I save, I've modified the destination in our object.
+0:32
+But let's say I want to lock this destination down.
+0:35
+I want to make it so it can't be accessed or modified directly from outside the class.
+0:40
+And I can do that with private fields.
+0:43
+The syntax we need here is the hashtag.
+0:45
+That makes destination private.
+0:48
+But before we can use it, we actually need to declare it outside of the constructor.
+0:52
+So again, it's hashtag destination.
+0:55
+And before we change anything, let's just log out Safari.
+0:58
+And what we see is that we log out the price as the only property of the object.
+1:02
+The private field is not being logged by Scrimba although you would see it in the Chrome or Firefox console with the hashtag appended to it.
+1:10
+So what's important to understand when you declare private fields is that they are technically not properties of this in the same way that public properties are.
+1:19
+Instead, private fields are bound to the class instance in a way that makes them only accessible within the class body using the hashtag prefix.
+1:28
+This means that even though they behave as if they are properties of the instance, I e each instance of the class has its own separate copy, they are not accessible or visible as properties on this from outside of the class.
+1:40
+And the fact that we appear to be setting up a property on this here doesn't change that.
+1:45
+Now we do have some options here unlike public properties we don't have to initialize private properties inside the constructor.
+1:52
+We could declare and initialize right here.
+1:55
+For example, I could set that equals to an empty string and then there would be no need to actually do anything inside the constructor.
+2:02
+However, in this case, I am actually assigning a parameter to it so I need to declare it outside of the constructor and then assign the parameter inside the constructor.
+2:12
+Okay.
+2:12
+Let's see if we can modify destination.
+2:15
+So I'll add the hashtag and when we hit save we get an error.
+2:19
+Private field destination must be declared in an enclosing class.
+2:23
+And this error is assuming that we're trying to create a new private field and this shows us that destination is protected.
+2:30
+We cannot update destination from outside the class and when we try it just treats it as if we're trying to create a new private property called destination from outside the class.
+2:40
+It can't see the destination already exists so it just tells us that is not possible.
+2:44
+Now in the past, there was a convention to mark private fields with an underscore.
+2:48
+So instead of declaring a private field like this, there would be an underscore right there.
+2:54
+And that was just a signal to other developers that the property should not be accessed or modified directly from outside the class.
+3:00
+It was just a convention.
+3:02
+It can't actually prevent access or modification like we're doing here.
+3:06
+So this method that we're using with the hashtag which is relatively new to JavaScript is much better.
+3:12
+Although you should be aware that it won't work in older browsers.
+3:16
+It doesn't work for example in Internet Explorer.
+3:19
+Okay.
+3:19
+We have locked down this destination property and in the next few scrims, let's see how we can use getters and setters to access the property and modify it in a controlled way.
