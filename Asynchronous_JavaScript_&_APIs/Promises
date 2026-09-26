@@ -1,0 +1,94 @@
+
+Transcript
+0:00
+Let's get to the bottom of promises.
+0:02
+We've been using them without really mentioning them in the past few scrims, and I want to investigate them using the analogy of a job interview.
+0:10
+And I borrowed this analogy straight from another course by Bob Zirell.
+0:14
+When you go to a job interview, you typically don't anticipate it concluding with either you've got the job or we're choosing another candidate.
+0:22
+More often than not, the interview wraps up with something like, we'll contact you within a week to let you know.
+0:28
+And essentially, this is a promise with a time frame and this concept is pretty similar to how promises work in JavaScript.
+0:35
+If that were JavaScript, that promise will let you know within a week would be in one of three states.
+0:41
+The first state is known as the pending state which simply means that the promise hasn't been completed yet.
+0:48
+It's still in process.
+0:49
+And we can relate this to the promises we've encountered when using the fetch method.
+0:53
+When we call the fetch with a URL, it takes some time for the request to be sent, for the server to handle it, and then for the response to be sent back over the Internet.
+1:02
+During this time, the Promise remains in a pending state.
+1:05
+From this pending state, a Promise can transition to one of two other states.
+1:10
+The one we're most familiar with so far is the fulfilled or resolved state.
+1:15
+This is when the promise has been successfully completed.
+1:17
+And just to be clear, you'll sometimes hear it called resolved and sometimes hear it called fulfilled.
+1:22
+It's the same thing.
+1:23
+Returning to our earlier analogy of the job interview, we'll let you know within a week.
+1:29
+I want you just to pause for a moment and consider what the fulfilled state of that promise would look like in a job interview scenario.
+1:36
+Just think about that for a moment and I'm going to note down the question for you.
+1:42
+If you said the resolved state would be that we got the job, you'd be wrong.
+1:46
+The promise was we'll let you know within a week.
+1:50
+Not that we'll let you have a positive answer in a week.
+1:52
+So they might get in touch within a week to say you've got the job or it might be to say thanks but no thanks.
+1:58
+Both of those are fulfilled or resolved promises and that's important to understand.
+2:03
+So a resolved or fulfilled promise, the promise was completed as promised.
+2:08
+But bear in mind that doesn't necessarily mean you got what you wanted.
+2:12
+Okay.
+2:12
+So what about the third state which is rejected?
+2:15
+I want you to think about that with the same analogy.
+2:18
+Just give that some thought.
+2:23
+Well, again, if you said you didn't get the job that would be wrong.
+2:27
+This would simply mean that they did not get back to you within a week.
+2:31
+So the promise was not completed as promised.
+2:34
+Now if we have a look at the code that we wrote before, we've actually got two promises here.
+2:39
+As we've seen, if we comment out this line and we log out the response, but we don't await it, we just see what fetch brings us, in the console we see we've got a promise.
+2:51
+Now let's await this fetch.
+2:53
+We will convert the response to JSON, but we won't await it.
+2:57
+Let's just log out the data and again we get another promise.
+3:01
+And in this case both of the promises are resolving just fine.
+3:05
+We're successfully resolving the first promise and storing our response in this const and then when we call the JSON method on the response that promise is resolving, restoring it in this const data and logging that data to the console.
+3:19
+So up until now, we've only really seen promises in the pending and the resolved or fulfilled state.
+3:25
+We haven't touched on how to handle rejected promises.
+3:28
+In the case of fetch, a rejected promise would usually mean that you've got some kind of network error or some other similar problem.
+3:34
+And of course, you need to be able to handle that situation.
+3:38
+So that is exactly what we're gonna look at in the next screen.
