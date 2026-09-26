@@ -1,0 +1,160 @@
+
+Transcript
+0:00
+So why are promises a good thing?
+0:02
+Well, in the past, developers faced what is known as callback hell.
+0:06
+And callback hell is a situation where multiple asynchronous operations are chained together using nested callbacks, which makes the code difficult to read and maintain often leading to complexity and errors.
+0:20
+Okay.
+0:20
+So multiple async operations chained together using nested callbacks.
+0:26
+Sounds complex.
+0:27
+Well, we are going to see an example of it right here.
+0:31
+I'm building an app component and I need it to do these three things.
+0:35
+I want it to upload a file, process the file and notify the user.
+0:39
+Now, we're not actually going to do these three things.
+0:41
+We're just going to log that they're being done and use some set timeouts to mimic the asynchronous nature of the operations.
+0:48
+So this is the expected output of the app.
+0:51
+I want it to log step one, uploading file, step two, processing file, step three, notifying user, and then finally, all steps completed.
+1:00
+So let's set up three functions to do exactly that.
+1:03
+I'll start with upload file
+1:06
+and I'll use setTimeout to give a one second delay before calling the next function.
+1:12
+Okay.
+1:12
+I'll just speed type the next two functions.
+1:16
+Okay.
+1:16
+So we've got the basics of the three functions and I want them to execute in order so we're going to use callbacks.
+1:23
+So that means each function is going to take in the next function as a parameter.
+1:28
+And I've just called that parameter callback which is a little bit generic but I think it's fine for the purposes of this demonstration.
+1:33
+And anyway, these functions could be reusable.
+1:36
+Now inside the setTimeout of each function, we are going to invoke the callback.
+1:41
+Okay.
+1:41
+So the code is ready but how do we run it?
+1:44
+Well, we need to call this first function and pass in the second function as the callback and then the second function should take the third function as its callback and so on.
+1:54
+Does that sound confusing?
+1:55
+Well, it's known as callback hell for a reason.
+1:58
+So here's a challenge for you and I have given you hint dot MD to help as well.
+2:03
+Try to invoke these functions so they run-in sequence.
+2:06
+The callback function passed to the final function notify user can just be an anonymous function that logs all steps completed.
+2:14
+You are going to come up against the gotcha here and hint dot MD is here to help.
+2:18
+Just remember that this is the expected output and we've got this one second delay on each step.
+2:24
+Now normally, I tell you to keep working until a challenge is completed.
+2:28
+In this case, I will say don't spend too long on it if you get really stuck.
+2:32
+This is the old way and in a moment, we're going to see how promises solves this problem for us.
+2:37
+Okay.
+2:38
+Go ahead and give this a go.
+2:41
+Okay.
+2:41
+Great stuff if you got that working.
+2:43
+So let's just move the challenge text out of the way and we'll write our function calls right here.
+2:48
+So I'll start off by calling upload file and we know it expects the second function as a parameter.
+2:55
+So let's just open up the console, hit save and see what we get.
+3:00
+Starts off well.
+3:02
+We get the first two steps and then we get the error.
+3:04
+The error is fine because we're not actually passing in the third function yet.
+3:08
+So process file is expecting a callback.
+3:11
+It wants to execute that callback.
+3:13
+So let's do that now.
+3:14
+Let's give process file its parenthesis and pass in notify user.
+3:18
+And again, hit save.
+3:20
+Oh, and something's gone wrong.
+3:22
+Look, we're out of order.
+3:23
+We've gone step two, then step one, then step three.
+3:26
+And if I hit save again, notice what happens to the one thousand millisecond delay that we've got on all of our functions.
+3:34
+Well, it doesn't happen.
+3:35
+Step two and step one execute without delay.
+3:38
+The problem we've got here is that when we pass in process file with the argument of notify user, we need to actually include its parenthesis.
+3:46
+Now doing that actually causes that function to invoke immediately and not after the one thousand millisecond delay that we want.
+3:54
+Now the way around this is to pass these functions in inside the bodies of anonymous functions.
+4:00
+So let's start again.
+4:01
+I'll start with upload file.
+4:03
+I'm going to pass in an anonymous function.
+4:05
+I'm gonna go for an arrow function and all that arrow function need do is call the next function which in this case is process file.
+4:14
+Now process file also needs to take in a parameter so let's give it its parenthesis and because it's inside the body of this arrow function, it's now not going to execute immediately.
+4:24
+Again, we need to use an anonymous function And here we want notify user which again is expecting a callback so we need another anonymous function.
+4:34
+And this time we just want to log and we've got it in the challenge text all steps completed.
+4:41
+Now that is one nightmare long line of code.
+4:44
+Let's just hit save and see if it's working.
+4:48
+So it does work.
+4:49
+We've got our one second delay step one, step two, step three, all steps completed.
+4:54
+That is looking good.
+4:55
+And we can improve this a little bit by bringing each function down onto a new line.
+5:01
+And that of course will work just the same.
+5:06
+But to me and probably to you, this code looks like a complete nightmare and you can really see how confusing this could get.
+5:13
+Imagine if we had twenty functions to execute asynchronously.
+5:16
+It's just so hard to read and debug and actually this shape that we're forming right here is known as the pyramid of doom.
+5:24
+So we've got the code working but we've seen what a nightmare it is and in the next scrim we're going to see how promises can make our life much much easier when we need to do something like this.
