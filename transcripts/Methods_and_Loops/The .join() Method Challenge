@@ -1,0 +1,66 @@
+
+Transcript
+0:00
+We use the map method to help us render this neat playlist component but it has an issue in that these commas right here are ruining it.
+0:08
+So your challenge is this.
+0:10
+I want you to use the join method to remove those annoying commas.
+0:14
+And I've just put a warning here.
+0:16
+You'll need to chain two methods together to complete this challenge.
+0:19
+Now chaining is something that you've seen before but you might not have heard it called chaining before.
+0:24
+Let me just put a line of code in here from a previous project.
+0:28
+So what's going on in this line of code is that a method, the toggle method in this case, has been chained on to the class list property and the class list property has been chained on to the GetElementById right here.
+0:43
+So that is chaining in action and chaining two methods together is exactly the same principle.
+0:48
+You just put a dot and add the method on the end.
+0:52
+Okay.
+0:52
+Get this challenge sorted.
+0:54
+Okay.
+0:54
+Hopefully you got that sorted.
+0:56
+So let's just save and see where we are.
+0:58
+So we've got the commas right there.
+1:00
+I'm going to come down here to the end of the map method and I'm going to chain on the join method.
+1:06
+And we need to pass join a separator and in this case, we don't want the separator to be anything.
+1:12
+We don't want a space, we don't want a dot, we don't want a comma.
+1:15
+So I'm just going to pass it an empty string so there is nothing between those inverted commas not even a space.
+1:22
+Let's hit save and there we are the commas have gone and that is looking beautiful.
+1:29
+Now there is actually another way of doing this.
+1:31
+We could take this join method and we could paste it over here.
+1:35
+So instead of chaining the join method on the end of the map method, we could just add it to this array which is the array that we're building with the map method.
+1:45
+Let's just save that and again it works perfectly.
+1:49
+I think this way is a little bit clunky.
+1:52
+I much prefer to do it right here.
+1:54
+Okay.
+1:54
+In the future, you are gonna find it really useful to use the join method and the map method together.
+2:00
+So the join method is a really good addition to your skills.
+2:03
+Now we're almost done talking about the map method but there's one issue I want to deal with.
+2:09
+The map method is very similar to the for each so in the next scrim I want to compare and contrast the two.
