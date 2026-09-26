@@ -1,0 +1,138 @@
+
+Transcript
+0:00
+Okay.
+0:00
+Let's take a look at the spread operator which is useful for expanding and joining arrays.
+0:06
+And to be honest, it's kind of hard to describe what can be done with the spread operator in words alone.
+0:11
+So let's go straight to the editor and look at some examples.
+0:15
+I own a restaurant and for my restaurant, I've got three arrays and each array is a menu.
+0:21
+We've got the lunch menu, dinner menu, and the sweet menu as well.
+0:26
+Now a wedding planner has got in touch with me and they want a simple list of all of the dishes that we could supply for a wedding party.
+0:33
+So I want to combine all of these into one array.
+0:37
+We're going to use the spread operator to do that and we're going to explore a little bit along the way as well.
+0:43
+So let's just take one of these arrays and I'm going to come down here and we'll start off inside the console.
+0:50
+Now to use the spread operator on this array, all we need to do is use the same dot dot dot or triple dot syntax that we used with the rest parameter.
+1:00
+Now they do look very similar and yes, that can cause confusion.
+1:04
+Now before we log this out, let's just delete the spread operator from this second console dot log and then we can compare what gets logged out when we're using the spread operator and when we're not.
+1:16
+And I'm just going to copy these into the editor so we can see them a little bit better.
+1:20
+Okay.
+1:21
+So when we log out the array without the spread operator, what we get down in the console is the array which is exactly what you'd expect.
+1:29
+We've got the opening bracket, the closing bracket, and then each of the elements in the array.
+1:34
+Now when we use the spread operator, we don't have the square brackets of the array.
+1:40
+And that is because we've used the spread operator to expand out the individual elements of the array.
+1:47
+So it's no longer an array, it's just got all of the elements that were in the array.
+1:52
+Now fair enough if that doesn't look particularly exciting right now.
+1:55
+But honestly, this is really powerful and I'm going to show you why.
+2:00
+So I'm just deleting the one with the regular array.
+2:03
+And now let's continue with our mission to join these three arrays into one big array.
+2:10
+So I'm going to come down here and I'm going to set up a const to store this new array that we're going to create.
+2:16
+And I'm going to call this array event menu.
+2:19
+Now what do we want in this array?
+2:21
+Well, we want the expanded individual values from each of these three arrays and we've just seen how to do that.
+2:29
+So let's take in the first array and of course we'll use the triple dot syntax to spread it.
+2:35
+Now I'm going to comment out this console dot log and then let's log out event menu.
+2:41
+And we'll hit save.
+2:43
+And down in the console, what do we see?
+2:46
+Well, firstly, we've got an array and that figures because where we've spread lunch menu and expanded it into its individual elements, we've put that inside an array.
+2:56
+So what we've actually achieved here, and this is the first really important take home, is that using the spread operator is a really good way of making a copy of an array.
+3:06
+So now to join these three arrays together, all we need to do is add them in here and of course spread them.
+3:13
+Okay.
+3:14
+Let's hit save.
+3:15
+Down in the console we have successfully combined these three arrays into one big array.
+3:21
+And do you see what's happened here?
+3:23
+We have used the spread operator to expand each of these arrays into their individual values and we've stored those values in this new array.
+3:34
+So where we logged out lunch menu but it was not inside an array, we just got the individual values from that array listed out.
+3:42
+Now we've done that inside square brackets and that's given us this new array with all of our menu items.
+3:49
+Now while this is an easy way to copy an array, you need to know that this is a shallow copy.
+3:54
+If we were to make this array deeper by setting this to say an array of various ice creams.
+4:01
+So now we can see in the console that we've got that array of ice creams nested inside the larger array and it's at element eight.
+4:08
+So let's try and reassign one of those ice cream types.
+4:12
+So we're accessing element eight and then element zero of that array.
+4:16
+It should be mixed berry ice cream.
+4:18
+Let's change it to tutti frutti.
+4:21
+And let's log out sweet menu as well as event menu.
+4:26
+And when we save that, well look what's happened, sweet menu has also been changed to tutti frutti.
+4:32
+There is no sign of this mixed berry ice cream.
+4:35
+So the spread operator is a great way of making a shallow copy if that is what you want.
+4:39
+But as soon as you go deeper, nesting the array just one level, the reference here will point to the original in memory.
+4:46
+That's absolutely fine, but just be aware you're making a shallow copy.
+4:49
+Now while we're here, I might just comment out all of this code and just show you the same thing is true when working with objects.
+4:57
+So here's an object salad one.
+4:59
+We've got the name of green and then ingredients is holding an array.
+5:03
+In salad two, we're using the spread operator, we're taking in salad one so that's creating us a new object.
+5:10
+We're then changing salad two's name to Greek and salad two's ingredients at the first element, I e lettuce to cucumber.
+5:18
+Let's just log them out and see what we get.
+5:21
+So we can see that reassigning the name Greek only affects salad two.
+5:25
+It doesn't change green in salad one.
+5:27
+So we are making again a shallow copy.
+5:29
+But then as soon as we get into this array, so we've gone one level deeper, that's where we see the problem.
+5:34
+Lettuce has disappeared.
+5:36
+It's been replaced by a cucumber not just in salad two but also in salad one.
+5:41
+So in the next scrim, let's have a challenge with the spread operator and then we'll look at another way to make a shallow copy of an object.
