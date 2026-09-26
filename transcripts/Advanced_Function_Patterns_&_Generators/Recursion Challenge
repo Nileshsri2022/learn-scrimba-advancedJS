@@ -1,0 +1,160 @@
+
+Transcript
+0:00
+It's time for a big challenge with recursion.
+0:02
+And as this is likely quite difficult, I'm going to give you two options.
+0:06
+But first, let's check out the challenge.
+0:09
+I want you to write logic for a recursive function that reverses a string.
+0:13
+You've got the string right here, scrimba, and down in this console dot log, we're calling this function and passing in that string.
+0:19
+Okay.
+0:20
+So option one is just to go for it now.
+0:22
+Be prepared to do some of your own research and with perseverance, I'm sure you're going to get there.
+0:27
+If that sounds like you, if you're feeling ready, you can see the challenge on the timeline.
+0:31
+Just scrub ahead to that point and get going.
+0:34
+There is hint dot m d up here if you need a little extra help.
+0:38
+But if you're not feeling so confident with recursion, which by the way makes you normal, I'm going to break with tradition and walk through how I would tackle this challenge.
+0:47
+I'm not actually going to do the challenge, of course, but we will end up with some pseudo code.
+0:51
+Now if at any point while I'm speaking, you feel ready to start the challenge, if things just snap into place, go ahead and dive right in.
+1:00
+Okay.
+1:00
+So first, we know with recursion, we need to bite off the smallest chunk of the problem each time.
+1:06
+So my first question is, what is the small bite we want to take?
+1:10
+So in the previous example we were adding or subtracting a number.
+1:14
+Here it's a little bit more complex so just take a moment and think about it.
+1:19
+Okay.
+1:19
+What we want to do is remove the first letter.
+1:23
+And so if we do that, we get this.
+1:26
+We start with scrimba, crimba, rimba, imba, MBA, b a, a, and finally an empty string.
+1:36
+Okay.
+1:37
+That's pretty cool, but it's not enough.
+1:39
+We also want to take the first letter of the string and put it at the end of what gets returned to us.
+1:44
+So on the unwind, we want to get this.
+1:51
+So that's basically the logic we need pseudo coded out.
+1:54
+We return the function call with the string minus the first letter and that gets us this.
+1:59
+And then we add that first letter to what we get back from that function call and that is what gets picked up on the unwind.
+2:06
+So my second question is what is the base case?
+2:09
+What is actually going to stop this recursion?
+2:12
+Think about that for a moment.
+2:16
+Okay.
+2:16
+So the base case is right here.
+2:19
+That's what stops the recursion.
+2:20
+So the base case is the string's length being zero.
+2:25
+Okay.
+2:26
+Let me just comment out all of this.
+2:28
+Now to get this working, you're going to likely need to use the slice method.
+2:33
+And slice takes two parameters, the start and the end.
+2:37
+The start is inclusive and the end is exclusive.
+2:41
+So for example, if the start value is zero on our string, well, that should give us the letter s.
+2:47
+Now if you don't specify an end value, it's going to default to the last character in the string, in this case, a.
+2:54
+Okay.
+2:54
+I think I've given you a really big push in the right direction here.
+2:57
+So let's get going.
+3:00
+Okay.
+3:01
+Congratulations if you got that working.
+3:03
+Recursion is tough even if you used all of that extra help.
+3:07
+Okay.
+3:07
+Let's start with the base case.
+3:09
+So I'm going to say if and then we're just going to check if string dot length is triple equals to zero.
+3:15
+If it is, let's just return the string.
+3:18
+And we know what we'll be returning there is actually an empty string.
+3:21
+Okay.
+3:22
+Let's have the else.
+3:24
+And this is where we can do our recursion.
+3:26
+So we're going to return and we'll just return the function call.
+3:30
+And then what we want to pass in here then is the string minus its first letter.
+3:36
+So we can do that with string dot slice.
+3:39
+And all I need to do here is put in the number one.
+3:43
+So what that is going to do is it's going to start from position one which is c.
+3:47
+I'm not specifying an end so it's going to go right to the end of the string and that's what will get us our crimber right here.
+3:55
+Now we're not quite done because we want to add to what we get returned back to us.
+4:00
+And what we want to add is the first letter.
+4:02
+So let's say string dot slice.
+4:07
+And we want to start at position zero and end at position one not inclusive.
+4:13
+So that is going to take the s and it's gonna stop right there.
+4:16
+Let's hit save and see what we get.
+4:20
+And it works.
+4:21
+We are getting an error and I think that's just because I forgot to comment out that.
+4:26
+I'm sure you noticed that.
+4:27
+Let's hit save again and there we are.
+4:29
+We get our reversed string.
+4:31
+Now as I say, recursion is hard.
+4:33
+If you struggled even with that extra help, don't worry.
+4:36
+It takes practice and more practice, and it is worth rewatching the explainer and the earlier examples and then trying this again from scratch if you struggled.
+4:45
+And later on in this course, there will be another chance to use recursion in a super challenge.
