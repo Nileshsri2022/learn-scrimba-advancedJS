@@ -1,0 +1,30 @@
+
+Transcript
+0:00
+How long will it be before this code executes?
+0:02
+We've set a delay of five thousand milliseconds.
+0:05
+So fair enough if you said five seconds.
+0:08
+But actually, the answer is a bit more complex than that.
+0:10
+And as you continue learning and using JavaScript, it's useful to understand a bit more about the language and why it behaves the way it does.
+0:19
+So I want to talk a bit about how JavaScript works under the hood and that means investigating the call stack, the event loop, and various other goodies.
+0:26
+You might have heard this, that JavaScript is a single threaded non blocking language.
+0:31
+And honestly, that might not mean too much to you right now.
+0:33
+It certainly didn't mean much to me when I first heard it.
+0:36
+So let's see if we can discover what it really means.
+0:39
+So JavaScript has a runtime environment.
+0:42
+The most famous one is v eight, which is used by Chrome based browsers, but there are others.
+0:46
+The JavaScript runtime environment gives us the heap where memory is allocated.
+0:51
+And luckily, it does all of that for us.
