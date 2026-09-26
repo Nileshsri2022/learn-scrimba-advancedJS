@@ -1,0 +1,82 @@
+
+Transcript
+0:00
+It's time for a super challenge.
+0:02
+In this scrim, you're gonna put some of what you've learned so far to the test.
+0:05
+I'm going to set you a big challenge and I'm not going to give you too much help or guidance.
+0:10
+I want you to think for yourself.
+0:14
+We are building this component, which is what we in the UK would call an estate agent, and I believe in the United States, they call a realtor.
+0:22
+It's the people who buy and sell houses.
+0:25
+This company wants to render out cards with the properties they're currently selling, and each card has got an image of the property.
+0:32
+It's got the property's location, the price, a brief description, and then the total area of the property in square meters.
+0:41
+So this is your challenge.
+0:43
+I want you to render out a card for each of the properties in the property for sale array, and you've got that right here.
+0:51
+Each card should have an image, a property location, a price, a comment, which is basically this little description, and the total property size in square meters.
+1:00
+And each object has an array with the size in square meters of the individual rooms.
+1:06
+So if we go back to that array, you can see that each property has got this array.
+1:12
+So these are the individual square meter sizes of the rooms you are going to have to provide just a total square meterage of the entire property.
+1:22
+Now there's a little bit more.
+1:23
+If no array of properties is passed to get property HTML, the placeholder property stored in placeholder property object, which again is this one right here in the properties folder, should be rendered instead.
+1:37
+So then you're going to get something which looks like this.
+1:40
+So instead of any real properties, we've got this placeholder image, a generic street name, a generic price, this is the description, and fifty meters squared.
+1:49
+And all of that information is saved right here in placeholder property object.
+1:53
+And actually, it says one Joe Blogg Street here and anywhere street here.
+1:57
+That doesn't really matter.
+1:59
+Yours is gonna say one Joe Blogg Street.
+2:01
+Okay.
+2:01
+So there's quite a lot of JavaScript that I want you to use to complete this challenge.
+2:05
+You're going to need to use import and export, the map method, the join method, object destructuring, the reduce method, default parameters.
+2:14
+You don't need to worry about the HTML and CSS.
+2:16
+That's all been done for you.
+2:18
+This is the HTML template string that you need.
+2:21
+Of course, you're going to need to replace everything which is in upper case.
+2:25
+And the last thing to mention is that down here, we're rendering out whatever is returned by this function get property HTML, which I've already set up for you right here.
+2:35
+So the only way you're allowed to change this line down here is by adding an argument to the function call.
+2:41
+Apart from that, this line should stay the same.
+2:44
+Okay.
+2:44
+I'm going to leave you to figure this out and in the next scrim, I'm going to show you my way of doing it.
+2:49
+Now, of course, you're welcome to go back to previous scrims and check for syntax or Google anything you want.
+2:54
+There are only two things which you're completely forbidden from doing, and that is you're not allowed to copy and paste code, and you're not allowed to just skip ahead to the answer.
+3:04
+The best students will take their time and figure this out even if it's difficult.
+3:09
+That is how you learn.
+3:10
+Okay.
+3:11
+Pause now, get to work on that, and then when you've got it working, move on to the next scrim, and I'll show you my solution.
