@@ -1,0 +1,113 @@
+Transcript
+0:00
+I have a refactor challenge for you with arrow functions and we're going in for some spaced repetition here.
+0:06
+A while back we studied the reduce method and I showed you how we could use it on an array of objects.
+0:12
+Well, here I have an array of objects and each object is an item that's just been purchased.
+0:18
+We've got some pretty weird stuff here.
+0:19
+For example, we've got this invisible milk and down at the bottom we've got glow in the dark eggs which apparently make your breakfast an illuminating experience.
+0:29
+Now each object has got the name of the item, the price in US dollars, and a description.
+0:34
+And we're going to focus in on the price for this challenge because I want you to calculate the total cost of all of these purchases.
+0:42
+Over in index dot JS, I've got a function set up to do exactly that.
+0:47
+It's taking in the array of objects that we just saw as a parameter which we're importing right here.
+0:53
+So this is your challenge.
+0:54
+Use the reduce method to calculate the total cost of items which have been bought.
+0:59
+And I do want you to do this with arrow functions.
+1:02
+Okay.
+1:02
+Refer back if necessary and we'll have a look together when you've got this sorted in just a moment.
+1:08
+Okay.
+1:08
+Hopefully, you got that working.
+1:10
+No problem at all if it took you a while.
+1:12
+You did have to think back to something we studied some scrims ago.
+1:15
+So it's a pretty good workout for your brain.
+1:17
+Right.
+1:18
+Let's take this array, items bought array, and I'll call the reduce method and we'll open up the brackets and we're going to pass the reduce method a function.
+1:27
+Of course, I'm using an arrow function and this arrow function is going to need brackets because we've got two parameters.
+1:33
+So I'm going for total and current item.
+1:36
+Let's add in the arrow and I'm going to bring this onto a new line here.
+1:41
+Now we don't need the return keyword because we've just got one line of logic to return.
+1:46
+So we want that to be total plus current item.
+1:51
+And then for each item we need to access the price in US dollars.
+1:55
+And if you record each item has got that property.
+1:59
+Now is this going to work?
+2:00
+Let's save and try.
+2:02
+And it doesn't.
+2:03
+If we have a look in the console, we'll be getting object object and a number and that's because we haven't added the second parameter.
+2:10
+Remember this entire arrow function is the first parameter so we need a comma and the second parameter will be zero.
+2:17
+So that is the starting value for our total.
+2:20
+Let's hit save now and see if it's worked.
+2:22
+And look there we are we have got seventy three.
+2:25
+And if we check the maths, well the first item is forty, ten makes fifty, fifteen makes sixty five, and eight makes seventy three.
+2:34
+So that is working.
+2:35
+So that is it for the reduce method.
+2:37
+It is one of the trickiest methods.
+2:39
+So congratulations on wrapping your head around it.
+2:42
+Don't feel bad if you found it a little bit tricky.
+2:45
+It is worth taking time to get the reduce method firmly under your control though because it is really really useful.
+2:51
+Now just before we finish, I want to show you something that's going to lead us into the next concept that we study.
+2:56
+I just want to remove this challenge text so we've got that out of the way.
+3:00
+Now imagine we wanted to give each customer a discount.
+3:04
+Let's add a parameter to this function and we'll just call it discount.
+3:08
+And then instead of returning the total, let's return the total minus the discount.
+3:13
+Okay.
+3:14
+So where we're calling this function I'm going to pass in the array and a discount of ten.
+3:18
+At the moment we're logging out seventy three, let's hit save and we log out sixty three that figures seventy three minus ten.
+3:25
+But what would happen if no discount was passed in?
+3:28
+I'll hit save now and look we're logging null.
+3:31
+We've effectively broken the function.
+3:34
+So in the next scrim I want to talk about what happens when we've got a parameter which we use right here in the logic but we fail to pass in when calling the function.
+3:43
+When you're ready to talk about that, I'll see you in the next scrim.
