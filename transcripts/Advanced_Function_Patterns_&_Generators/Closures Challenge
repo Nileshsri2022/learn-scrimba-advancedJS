@@ -1,0 +1,82 @@
+
+Transcript
+0:00
+Let's have a challenge with closures.
+0:02
+I want you to write a function that simulates a simple bank account.
+0:06
+The function should store the balance and enable users to deposit money, withdraw money, and check the balance.
+0:13
+These are the requirements.
+0:14
+The account balance should start at zero.
+0:17
+The function should return an object containing three functions, one for depositing money, one for withdrawing money, and a get balance function which logs the balance and the account holder's name.
+0:27
+Deposits should, of course, add to the balance and withdrawals should subtract from it.
+0:32
+I've given you the basic skeleton of the function right here and then down here, we're setting up two accounts and these constants are going to hold whatever is returned when we call create bank accounts.
+0:42
+So you can write the main logic for the closure right here and then down here, you can create some test cases for your code.
+0:49
+Take all of the time you need to do this.
+0:50
+It really doesn't matter if it takes you a long time.
+0:53
+Of course, you can go back to the previous scrims and check the syntax if you need to.
+0:56
+So when you're ready, get to work on this challenge.
+1:01
+Hopefully, you managed to do that just fine.
+1:03
+So let's start right in here.
+1:06
+We'll set up a let to hold the balance and initialize it at zero.
+1:11
+Now we need to return an object and this object is going to hold our three functions.
+1:16
+The first function will be deposit and that will take in an amount as a parameter.
+1:22
+And in the body of this function, we can just update balance.
+1:25
+So balance will plus equals amount.
+1:29
+Next, we need a function to withdraw.
+1:35
+And, again, it will take in an amount as a parameter and balance can minus equals amount.
+1:42
+And finally, we'll have the get balance function and that needs to log the balance and the account holder's name.
+1:49
+So let's set up a template string
+1:53
+and I'll put a currency symbol here.
+1:55
+Okay.
+1:55
+So for this, we just need balance.
+1:58
+And how are we gonna get our hands on the name?
+2:00
+Well, let's take it in as Use it right here and then pass it in where we call the function.
+2:04
+Okay.
+2:04
+Let's set up some test cases and I'll hit save.
+2:05
+And in the console, we've got Dave has fifty in their account.
+2:09
+Wendy has a hundred and forty in their account.
+2:18
+Well, that looks like it makes sense to me.
+2:19
+So in Dave's account, we deposited one hundred and we withdrew fifty.
+2:24
+That leaves Dave with fifty.
+2:25
+Wendy deposited two hundred, took away sixty, that leaves one forty.
+2:30
+Congratulations for completing that challenge and using a closure.
+2:33
+Quite a tricky thing to get your head around.
+2:35
+So be proud of yourself for achieving that.
