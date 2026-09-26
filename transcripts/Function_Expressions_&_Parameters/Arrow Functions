@@ -1,0 +1,139 @@
+Transcript
+0:00
+It's time to talk about arrow functions which are an ultra concise type of function.
+0:05
+Let's go back to getSpendAlert, a function expression that we're really familiar with by now and we're going to see how this would look as an arrow function.
+0:15
+So I'm going to comment out all of this code and because an arrow function is a function expression, we're going to declare a const and give it a name just like we did with this regular function expression.
+0:26
+And this is where things start to get weird.
+0:29
+I'm going to set this equals to some brackets.
+0:32
+There's no function keyword inside.
+0:34
+Now we know this function takes in a parameter so I'm going to put that in right now and it lives inside the brackets like a parameter in any other function.
+0:43
+Next, we need the arrow and this is of course the arrow that gives the arrow function its name and we make it with the equal sign and an angle bracket.
+0:51
+Right after the arrow, we can open up the curly braces.
+0:54
+So now we've got the body of the function and we can return exactly the same logic that we were returning in the old function.
+1:02
+And that's it.
+1:02
+We can hit save and we can see that it works.
+1:06
+We have an arrow function.
+1:07
+It looks strange at first but you do really quickly get used to that rather peculiar syntax.
+1:13
+Okay.
+1:13
+There's a little bit more to arrow functions or perhaps I should say a little bit less because actually we have written code here that is not strictly speaking necessary and we can make this arrow function even more concise.
+1:26
+I'm going to start off by removing these brackets and we'll just let that parameter sit there.
+1:32
+Let's hit save and it still works.
+1:35
+In arrow functions, when you have one parameter, you do not need the brackets.
+1:39
+Now some developers think this is harder to read.
+1:42
+There's just a bit more cognitive processing needed to recognize that what you're looking at here is a function.
+1:48
+We've got no brackets and we've got no function keyword and this parameter is just sitting there all on its own effectively between two equal signs.
+1:57
+So opinions on this do vary.
+1:59
+Now, let's just see what happens if we have a function with no parameters.
+2:04
+So I'm going to take away the parameter from here and I'll take away the parameter from the function call and instead of saying you just spent and then having the amount, I'm going to change this to you just spent some money.
+2:18
+Now we can see already that we've got a red line.
+2:20
+It's a bad omen.
+2:22
+Let's save and of course we get an error.
+2:25
+Now if we put back empty brackets, the red line disappears and it works.
+2:31
+So that tells us that if it's a function with no parameters we do need these brackets.
+2:37
+Now imagine we actually had two parameters.
+2:40
+Let's take in name and amount.
+2:44
+And I'm just going to speed type those variables into this template string.
+2:49
+And now let's call the function.
+2:50
+So for the name, I'll give my name and for the amount we can put one hundred.
+2:55
+Let's hit save and it works.
+2:57
+Hey Tom, you just spent one hundred.
+2:59
+And it looks like I forgot the pound symbol right here but that doesn't matter at all.
+3:03
+Now let's try removing these brackets again and look we're getting a red line here underneath the arrow.
+3:10
+So again, I think we're going to get an error.
+3:12
+Yes, we do.
+3:13
+So when we have two or more parameters, we do need the brackets.
+3:17
+Now that is quite a lot to take in so let's just recap when to use brackets.
+3:22
+Well, if you have one parameter, brackets are not needed.
+3:27
+If you have zero or two or more parameters, brackets are needed.
+3:33
+So the exception is one parameter.
+3:36
+When you've got one parameter you can omit the brackets.
+3:40
+Now we're not quite done making this arrow function concise because we can actually get rid of these curly braces.
+3:47
+Now when we do that, you'll see that we've got the red line underneath the return keyword.
+3:51
+Well, let's get rid of the return keyword as well.
+3:54
+And now the red line has gone.
+3:56
+Let's hit save and it's working.
+3:59
+So what you might well see is an arrow function which is all on one line and that is a really concise function.
+4:06
+And if we take that down to just one parameter and then of course we can remove these brackets, well that is the most concise you can make an arrow function.
+4:16
+Let's just save to see it in action and there we are A really really concise one line function.
+4:23
+Now it's not always possible to remove the curly braces and the return keyword.
+4:27
+What we're doing here is returning just one line of code.
+4:31
+Let's make this a little bit more complex by adding some more logic.
+4:35
+Imagine we only want to alert customers when they spent a minimum of fifty pounds Well, let's try adding an if statement to this function.
+4:48
+And you can already see that we've got red lines here and here so this is not going to work.
+4:53
+We get our error.
+4:55
+Let's just return this string here.
+4:57
+It's still not going to work but if we add the curly braces back then the red lines disappear and it works again.
+5:05
+So again, let's just quickly recap.
+5:07
+So when do we need to use the curly braces and the return keyword?
+5:11
+Well, you can return one line of code without curly braces or the return keyword but more complex logic requires the curly braces and the return keyword assuming you want the function to return something.
+5:23
+So what you really need to remember is if you've got more than one line of code you're going to need the curly braces.
+5:28
+Now the syntax for arrow functions is a bit strange, it's only going to stick in your head with practice.
+5:34
+So when you're ready, move on to the next scrim and I have got your first arrow function challenge waiting for you there.
