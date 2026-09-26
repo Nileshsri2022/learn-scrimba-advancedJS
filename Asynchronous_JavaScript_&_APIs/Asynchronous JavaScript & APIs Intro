@@ -1,0 +1,50 @@
+
+Transcript
+0:00
+In this section, we're going to enter the world of asynchronous JavaScript and use it to access data from elsewhere on the Internet.
+0:07
+If you haven't worked with APIs before, you've probably stored any data you used for your projects in arrays and objects right there in your code base on your local machine.
+0:17
+Real world, the data we use in apps, for example, the data holding your account details on scrimba dot com is stored on a server somewhere in the cloud.
+0:26
+APIs enable us to get our hands on that data.
+0:29
+They are the bridge we use to access it, create it, read it, update it, and delete it.
+0:36
+And when we have those powers, we can do amazing things.
+0:40
+Learning to work with APIs takes you in the direction of becoming a full stack developer.
+0:44
+APIs are the link between the front end and the data on the back end.
+0:48
+So a strong understanding of how we can use asynchronous JavaScript to access APIs is essential.
+0:54
+Let's take a look at what we're going to study.
+0:56
+And in this section, you have not one but two teachers.
+0:59
+We're going to start with Scrimpers, Bob Zirole, taking you through some of the fundamentals.
+1:04
+With Bob, we'll take an overview of what an API actually is.
+1:08
+We'll look at clients and servers and requests and responses.
+1:12
+We'll also take an overview of JSON, a data format often used by APIs.
+1:18
+With that theory out of the way, we'll talk more about the URLs we use to access APIs and then we'll get into fetching data.
+1:25
+And we'll actually look at two ways JavaScript gives us of fetching data.
+1:29
+We'll learn how to handle errors when working asynchronously.
+1:33
+And in fetching data, we will be working with promises which might well be a completely new concept to you.
+1:39
+But we are going to take a deep dive into it, and I promise you promises will become clearer.
+1:44
+I hope that sounds promising.
+1:47
+Okay.
+1:48
+There's plenty to be done.
+1:49
+So without further ado, let's jump right in.
