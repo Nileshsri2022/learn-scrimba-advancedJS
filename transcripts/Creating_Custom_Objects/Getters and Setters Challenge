@@ -1,0 +1,90 @@
+
+Transcript
+0:00
+It's time for a challenge, and I've put the challenge text right here at the top of the class.
+0:04
+But actually, you'll need to write code in a couple of different places.
+0:08
+I'll leave that to you to figure out.
+0:10
+So firstly, I want you to make price a private field.
+0:14
+Secondly, create a getter for price which appends a dollar sign to the front and displays it to a max of two decimal places.
+0:21
+And that can actually be really useful when you're working with figures that might come from exchange rate calculators as prices can come in to crazy multiple decimal places.
+0:30
+Then I want you to create a set up for price which updates a price with a new price, and finally test it.
+0:37
+Okay.
+0:38
+A lot to do here, so take your time and get this sorted.
+0:42
+Okay.
+0:42
+There was a lot to do there.
+0:43
+So hopefully, you got everything working.
+0:45
+Let's start off by making price a private field.
+0:49
+And we need to add the hashtag right here as well.
+0:52
+Now let's create our getter for price.
+0:54
+And I'll do that underneath the setter for destination.
+0:58
+So it's get price.
+1:00
+And what we want this getter to do then is append a dollar sign to the front and display it to a max of two decimal places.
+1:07
+So we can return this dot hashtag price,
+1:11
+But let's wrap that in back ticks, and we'll append a dollar sign to the front.
+1:15
+And we want it to two decimal places only, so let's use the toFixed method.
+1:21
+And maybe we'll quickly test that one to make sure it is working.
+1:24
+So I'm already logging out Safari dot price.
+1:27
+Let's see what we get.
+1:28
+And indeed, we do get one thousand dollars to two decimal places.
+1:31
+Let's just add some more decimal places right here.
+1:35
+And that is definitely working.
+1:37
+Okay.
+1:38
+Let's move on to the setter.
+1:40
+So it's the set keyword and again it's for price.
+1:44
+And all we want this setter to do then is update price with a new price.
+1:49
+Very similar to what we're doing here.
+1:51
+So let's take in a parameter new price.
+1:54
+And we can just set this dot hashtag price to new price.
+1:59
+And likewise, we could add some logic in here if we wanted to check the price, for example, is not below zero or not below five hundred or not more than ten thousand in case of some error where somebody added too many zeros.
+2:12
+Okay.
+2:12
+Let's save this and see if it works.
+2:14
+So we're going to come in here and modify price.
+2:18
+And let's see what we get in the console.
+2:20
+And the price has been updated.
+2:23
+So everything's working and we've completed that challenge.
+2:26
+Okay.
+2:26
+We're nearing the end of this section.
+2:28
+Next up, it's time for a super challenge.
