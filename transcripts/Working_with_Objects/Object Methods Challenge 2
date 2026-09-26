@@ -1,0 +1,146 @@
+
+Transcript
+0:00
+For the final challenge in this set, let's ramp up the complexity by combining an object method with more array methods.
+0:07
+And this might involve some research.
+0:09
+You might need to go back to check things you've previously studied or do some searching online.
+0:14
+Firstly, let me introduce object dot entries.
+0:18
+Object dot entries returns an array of arrays where each inner array contains two elements, the key and the value of each property in the object.
+0:27
+Now if you can't visualize what that means, that's totally understandable.
+0:30
+But you're going to use it in just a moment and you can just log that to the console and see what you get.
+0:35
+And then that should make perfect sense.
+0:37
+So let's head into the challenge.
+0:39
+I want you to use object dot entries to create an array from books.
+0:43
+We've got the books object right here.
+0:46
+Use an array method to filter out the books which cost less than sixteen.
+0:50
+And when I do this, I'll use sixteen pounds but you can use any currency you want.
+0:55
+And also, you can use whatever array method you think would work best here.
+0:59
+When you've done that, iterate over the remaining books and log a string for each book in this format.
+1:04
+So we've got an example right here and in fact, I've given you the expected output right here at the bottom.
+1:10
+Now two stretch goals, make your code drier by destructuring the array where it's passed into a method and also chain the array methods together.
+1:19
+Okay.
+1:19
+Quite a lot to do here.
+1:20
+So take all of the time you need to do your research and to really get this working and to tackle these stretch goals and we'll have a look together in just a moment.
+1:29
+Well done for getting that working and especially well done if you met the bonus stretch goals as well.
+1:36
+Let's start by setting up our array.
+1:38
+So we'll use object dot entries and we'll pass in books.
+1:43
+And let's just log that out and see what we get.
+1:46
+And I'll just bring that into the editor.
+1:48
+And what we have is an array of arrays.
+1:50
+So that is the big array.
+1:52
+And then inside, we've got these smaller arrays and each one has got two elements.
+1:57
+So we've got the book ID right here and then the object with the rest of the book's information right here.
+2:03
+And if we look up to our original object, that is exactly the same as the object we've got right here.
+2:09
+Okay.
+2:09
+I'm going to just tidy up here a little bit.
+2:12
+We'll delete the console dot log but we'll leave this output here just in case we need to refer to it as we go.
+2:18
+Okay.
+2:18
+Let's move on to the second part of the challenge.
+2:21
+So it says use an array method to filter out the books which cost less than sixteen.
+2:27
+So let's say book entries and I'm going to use the filter method.
+2:31
+We need to pass filter a function and at this point, we'd normally pass this function a parameter representing each element in our array.
+2:39
+However, I want to do some destructuring here.
+2:41
+I'm going to meet this first stretch goal.
+2:45
+So instead of bringing in a single parameter, I'm going to open up some square brackets and I'm going to destructure the array that we've got right here for example because obviously this will be called on each array.
+2:57
+So firstly, we have an ID that's the first element so I'll call it ID.
+3:02
+And then we've got the rest of the info about the book.
+3:05
+I'm just going to call it book.
+3:07
+Now we need the arrow and what I want to return is the test condition.
+3:11
+Remember the filter method will return everything that passes the test.
+3:14
+In this case, it's going to be book dot price is greater than sixteen.
+3:19
+Okay.
+3:20
+Let's move on to part three.
+3:21
+We want to iterate over the remaining books and log a string for each book in this format.
+3:25
+I'm going to use a for each and I'm going to reach my second stretch goal by chaining it straight on to the array that we're working with already.
+3:34
+And for the function that we passed to foreach, I'm going to do exactly the same destructuring.
+3:39
+And then what we want to return here is something in this format.
+3:43
+So let's just borrow that.
+3:45
+And in fact, we're not actually going to return it.
+3:46
+We're going to log it.
+3:48
+And because the line of code is getting pretty long, I am gonna bring this down onto a new line.
+3:53
+That just keeps it looking a little bit neater.
+3:55
+Now we can use some interpolation.
+3:59
+And because we've destructured, this is really simple so we'll just have the ID in here.
+4:03
+And then we want book dot title and book dot price.
+4:07
+Let's hit save and see what we get in the console.
+4:10
+And there we are.
+4:11
+That looks like we've met our expected output.
+4:14
+Yep.
+4:14
+That is exactly right.
+4:16
+Congratulations again on completing that challenge.
+4:19
+That was a big one.
+4:20
+It was pretty difficult.
+4:21
+And now you've seen some of the more common inbuilt static methods.
+4:24
+There are a few more, and we will explore another one later.
+4:28
+But for now, let's move on.
