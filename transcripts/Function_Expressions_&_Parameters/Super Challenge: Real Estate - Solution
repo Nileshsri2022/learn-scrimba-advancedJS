@@ -1,0 +1,182 @@
+
+Transcript
+0:00
+Hopefully, you got that working.
+0:01
+Even if it took you a long time and you had to do a lot of searching and head scratching, really well done for doing that.
+0:07
+It's really really important that you put in the work to solve these challenges.
+0:11
+That is how you learn.
+0:13
+Now before we make a start on this, I'm just going to move all of this challenge text out of the way so it's not taking up the entire page.
+0:20
+And the first thing I want to do is import the array that we need from this properties folder.
+0:25
+So it's import property for sale array from and now we just need the location.
+0:33
+So that's properties slash property for sale array.
+0:38
+And we're not exporting anything at the moment so let's do that next.
+0:42
+I'm going to go for a default export here.
+0:45
+Now back in index dot JS then, we could just try and log out this array and we actually get the error that we can't use an import statement outside of module.
+0:55
+So sorry if that one tripped you up.
+0:56
+We just need to add that right in here.
+0:59
+Type equals module.
+1:02
+Okay.
+1:03
+Now when we save we're logging out our array.
+1:05
+So we've got the ball rolling.
+1:07
+Okay.
+1:07
+Now we can get to work on this getPropertyHTML function and it's going to take in a parameter and I'm just going to call it property array.
+1:16
+And let's delete this console dot log.
+1:18
+Now inside the body of this function we want to map over property array and produce HTML string which we've got down here for each property.
+1:27
+Now we could save the array that the map method is going to return us to a const but we don't need to and I am just going to return it.
+1:34
+So let's say return and then we'll take property array dot map.
+1:40
+We'll pass in an arrow function and this arrow function will just have one parameter property so I don't actually need those brackets.
+1:48
+Let's keep things concise.
+1:50
+And we're going to return the HTML string but actually we will have more logic to write in here so I am going to open up the curly braces.
+1:57
+So let's grab the HTML string that we've got right here and return it inside backticks.
+2:03
+And let's just tidy that up a little bit.
+2:07
+We've got all of these upper case letters to deal with image, property location, etcetera.
+2:12
+The best way to get at that data is to destructure this object.
+2:16
+So we'll say const and then inside curly braces we want property location, price in GB pounds, rooms meter squared, comments and image.
+2:29
+And all of that is coming from property.
+2:32
+Now we can use these inside the template string.
+2:35
+So instead of image in upper case, we want the dollar sign and the curly braces and image.
+2:41
+Let me just speed type the rest.
+2:44
+And at the moment, I'm going to leave this total size and square meters alone because we need to write a little bit more code to get that working.
+2:52
+But let's do a test run.
+2:53
+We can add an argument to this function call right here.
+2:56
+Of course we want to pass in property for sale array.
+2:59
+I'll do that and hit save.
+3:01
+And if we have a look in the Mini Browser, we are getting our properties.
+3:05
+We've got this total size in square meters, meter squared.
+3:08
+That's fine.
+3:09
+We're gonna deal with that next.
+3:10
+But it's looking pretty good.
+3:11
+We've got it working so far.
+3:13
+So let's come in here after we've destructured this property but before we return anything and I'll set up a const total room size in square meters.
+3:25
+And we'll set that equals to rooms square meter.
+3:28
+And if we just check back at the data, we'll see the rooms square meter gives us an array.
+3:34
+So we've got an array to work with.
+3:36
+Let's call the reduce method and we can sum the totals from that array and we need to pass in an arrow function.
+3:42
+The arrow function is going to take two parameters.
+3:45
+When we're using reduce we can have a total and a current.
+3:50
+So total to take the first item in the array and add to it and current to work through the other items in the array one by one.
+3:56
+And what we want to return is just total plus current.
+4:01
+Let's take total room size in meter squared and come in here, hit save and look there we are.
+4:08
+Everything is working.
+4:09
+We have got our meter squared, the description, the price, and the location.
+4:14
+And I think the price should actually have for example a pound sign or a dollar sign or something.
+4:19
+There we are.
+4:20
+That actually makes more sense.
+4:22
+Perfect.
+4:23
+Now there's one more thing that we've got to do because we did say that if we don't pass in an array it should still work.
+4:28
+Well, now we're getting an error but we know we've got this placeholder property object.
+4:33
+So let's export it And at the top of index dot JS, we can import it.
+4:40
+And let's add that here as a default.
+4:43
+Okay.
+4:43
+Let's hit save and see what happens.
+4:45
+And look, we've got an error.
+4:47
+It's saying property array dot map is not a function.
+4:51
+And those is not a function errors can be quite confusing.
+4:54
+But what this is telling us is that JavaScript expected something to be returned by a function and that didn't happen.
+5:00
+Now if you got stuck here before, just pause for a moment and see if you can figure out why.
+5:05
+So what's happening here is placeholder property object, if we look right here is an object.
+5:11
+Look, it's just between these curly braces.
+5:14
+Property for sale array as the name suggests is an array.
+5:18
+It is between these square brackets.
+5:20
+When we're using this default parameter because we've actually deleted the argument we were passing in right there, well now we're trying to map over an object not an array and that doesn't work.
+5:32
+So we're a bit stuck.
+5:33
+But luckily, there is a good way around this.
+5:36
+All we need to do is place this one right here in square brackets.
+5:41
+Now it's an array with a single object in it.
+5:43
+So map should be able to map over that array without any problem.
+5:47
+Let's hit save and find out.
+5:50
+And there we are look, we have got our default card.
+5:53
+So now when we take our array, pass it in here, we hit save, we get all of our properties but then when we delete it, we just get the default property.
+6:04
+Now that was quite a lot to do so congratulations if you worked through all of it.
+6:08
+I really really hope you did.
+6:10
+So now we've reached the end of the section.
+6:12
+Let's just take one more scrim as a recap.
