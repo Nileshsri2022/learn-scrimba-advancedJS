@@ -1,0 +1,18 @@
+
+Transcript
+0:00
+Congratulations.
+0:01
+You've made it to the end of this section.
+0:03
+Let's just recap what we've studied.
+0:05
+We took an overview of what an API actually is, and we looked at clients and servers, requests and responses, JSON data, and the URLs we use to access APIs.
+0:17
+We then saw two ways to fetch data, the traditional use of the fetch API with chained then methods, and then the more modern way using the async and await keywords.
+0:27
+We looked at handling errors with try catch and checking the response object for the okay property.
+0:33
+And we finished up taking a deep dive into promises and the promise constructor.
+0:38
+We got through quite a lot so now is definitely time to relax and take a long break before starting the next section.
