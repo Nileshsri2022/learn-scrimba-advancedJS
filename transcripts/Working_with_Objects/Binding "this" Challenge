@@ -1,0 +1,104 @@
+
+Transcript
+0:00
+Here's a common problem related to this.
+0:02
+We've got a button on a website, we've taken control of the button right here and saved it in this const button.
+0:08
+And down here, I've got an event listener listening out for clicks and when it detects a click, it should fire this function product dot get product info which is the method on this object.
+0:19
+Does it work?
+0:20
+What do you think?
+0:21
+Let's give it a go.
+0:22
+We hit click down in the console, stock level four s k u undefined colon undefined.
+0:29
+So something is not going to plan.
+0:32
+And that gives us two challenges.
+0:34
+And the first one is purely theoretical.
+0:36
+I want you to figure out what is the this value of product dot get product info as we're using it now in the event listener right here.
+0:44
+And I put write your answer here.
+0:46
+I really want you to think about this.
+0:48
+And of course, you can use a console dot log wherever you want to get the answer.
+0:53
+The second challenge is of course to debug the code so it works as intended.
+0:58
+And I'll leave you to think about that and you can refer back to the previous stream if you need to.
+1:03
+Okay.
+1:04
+Get to work on this.
+1:07
+Okay.
+1:07
+So the first question is designed to make you think about what the value of this can be.
+1:12
+So here, if we comment out the console dot log and let's just log this.
+1:18
+I'll hit save and press the button.
+1:21
+And look what the value of this is.
+1:23
+This is actually the element that triggered this event listener.
+1:27
+So if we go over to the HTML and we were to come to the button element and add say a name attribute,
+1:36
+let's save that and we'll try that again.
+1:39
+And this time, let's log out this dot name.
+1:43
+When I hit click, we log out a random b t n.
+1:46
+So what we can see is that where we're calling product dot get product info, the this value that we've got here is nothing to do with the rest of the object.
+1:55
+It's actually coming right from this button element.
+1:59
+Okay.
+1:59
+Let's just take away that before it gets in the way.
+2:03
+And so hopefully, what you wrote here was something along the lines of the element that was clicked.
+2:09
+Now let's move on to the second part of the challenge.
+2:12
+Debug the code so it works as intended.
+2:15
+Well, we know what to do here.
+2:16
+We need to use bind.
+2:18
+And what is the this value, the context that we want to bind?
+2:22
+Well, it's the product object.
+2:24
+So now let's comment this one, uncomment the main console dot log, hit save, click and there we are.
+2:31
+Now it works.
+2:32
+Stock level for vanilla lip gloss, s k u w twenty three four f g is two hundred and seventy six.
+2:39
+Okay.
+2:39
+Good work for understanding that because I chose this example for a reason.
+2:44
+When we're using event listeners, the this value of the function that they call will actually be the element that fired the event.
+2:52
+In this case, it was the click of the button that fired the event.
+2:56
+So the this value was set to that button element itself.
+3:00
+It's important for you to understand the various possibilities of what the this value can be and how you can use bind to override it.
+3:08
+Okay.
+3:08
+There's an awful lot more to say about creating objects and working with objects and working with this.
+3:14
+So when you're ready, keep moving forward.
