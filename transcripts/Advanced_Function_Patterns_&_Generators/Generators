@@ -1,0 +1,134 @@
+
+Transcript
+0:00
+Let's talk about generators.
+0:02
+Generators are special functions that can be paused and resumed allowing them to produce a sequence of values over time rather than computing them all at once and sending them back like a normal function does.
+0:13
+There are some common use cases for generators.
+0:16
+We can use them in async operations, for handling state, and for lazy evaluation.
+0:21
+And it's lazy evaluation that we're going to focus on in our example.
+0:26
+Imagine an app for giving presentations.
+0:28
+We've got some slides right here in an array and we want them to appear one by one when we're ready for them.
+0:34
+And we're going to do that by clicking this next button.
+0:37
+These slides are just text.
+0:38
+There's no pictures in them and we're just going to display them in the console.
+0:42
+We're not actually going to render them out to the Dom.
+0:44
+Let's start by setting up a generator.
+0:47
+And to keep things simple and reusable, I'm going to give it a really generic name.
+0:51
+So we start with the function keyword because generators are a type of function.
+0:56
+And then we have an asterisk and that is the first bit of new syntax with generators.
+1:01
+I'll give it a name and open up the curly braces.
+1:05
+And let's take in an array as a parameter.
+1:09
+And inside the body of the function, we're just going to iterate over that array with a four of.
+1:17
+And then we'll yield each item using generators special yield keyword.
+1:23
+And that's it.
+1:23
+And now I'm going to set up a const called slide generator.
+1:28
+And slide generator is going to store our generator and we'll pass in the array of slides.
+1:36
+Okay.
+1:36
+Now we need to just wire up this event listener.
+1:38
+So inside the callback function, I'll have a const result and that's going to equal slide generator.
+1:46
+And here's the last bit of generator specific syntax we're going to call the next method.
+1:52
+And what the next method does is it asks the generator to yield the next value.
+1:56
+That's what yield means in this case is yield as in give.
+2:00
+So we're saying give us the next value.
+2:02
+Okay.
+2:02
+Let's just console dot log those results.
+2:06
+And let's open up the console.
+2:08
+I'll hit save.
+2:09
+And now let's see if it works.
+2:10
+I'll press the new slide button.
+2:12
+And look, we're getting an object and it's got two key value pairs.
+2:16
+The value which actually holds the slide information that we've got from the array and then done which will be a boolean.
+2:24
+It's false in this case because the yielding is not over.
+2:27
+There is more to do.
+2:28
+Let's keep going.
+2:30
+There's the second one, the third, the fourth, the fifth and then we get value undefined and done is true.
+2:37
+So let's just tidy this up with some simple logic inside this callback function.
+2:41
+I'm going to say if result dot done is actually falsy, then let's console dot log result dot value, which we can see down in the console in each object.
+2:55
+And else, let's just log out.
+2:57
+That's the end of the presentation.
+3:03
+Okay.
+3:03
+I'll open up the console.
+3:05
+Oh, and we're getting result is not defined.
+3:07
+Oh, it's just a typo.
+3:08
+Here we are.
+3:10
+Let's try again.
+3:11
+There we are.
+3:11
+Intro slide, the current situation, setbacks, plans, a positive future, and that is the end of the presentation.
+3:19
+So the real power of generators is that they can give us or yield the value we want when we want it instead of producing everything all at once.
+3:28
+Before we finish, I just want to quickly show you how the return keyword behaves in generators because we can use it to stop a generator yielding.
+3:36
+So if we come up to this array and maybe in this position, I'll add an element that just says slide malfunction.
+3:44
+And then inside the generator, let's just have an if and we'll check if item is equals to slide malfunction.
+3:52
+And if that is the case, let's return.
+3:55
+And if it's not the case, we'll just yield the item as per usual.
+3:58
+Okay.
+3:59
+Let's hit save and let's start the presentation.
+4:02
+Intro slide, current situation, setbacks and then we get to that is the end of the presentation because we've hit slide malfunction and we have returned out of the generator.
+4:14
+So that has actually stopped the generator in its tracks and no further code inside the generator will be executed.
+4:20
+So the return keyword is useful when you want to stop generation and you can, of course, use it to return a value if that's relevant to what you're doing.
+4:28
+Okay.
+4:28
+In the next scrim, let's have a challenge with generators.
