@@ -1,0 +1,115 @@
+Transcript
+0:00
+I want to introduce you to two JavaScript methods which we're going to need in the coming scrims.
+0:05
+Call and apply are two powerful methods that allow you to control the value of this when invoking functions.
+0:12
+We've seen how objects have this, but functions also have this and it can be really useful to control what the this value of a function is.
+0:21
+I'm gonna show you why.
+0:23
+Here we have a function which gives us some information about a politician.
+0:27
+At the moment, we're just logging out this.
+0:30
+So when I hit save, in the console, we get undefined.
+0:34
+And that's because in a function, the value of this is undefined when we're in strict mode.
+0:40
+Now, we're in strict mode at the moment and that is enforced by the fact that we have type set to module.
+0:47
+Now, if we delete that and I hit save, well, now the value of this is actually the window object.
+0:54
+But oftentimes when you're working with JavaScript, strict mode will be enforced and the value of this in a function will default to undefined.
+1:03
+But as we'll see shortly, we can overrule that.
+1:06
+Now, let me comment out the console dot log and we'll uncomment this code.
+1:09
+And in here we're actually accessing this twice.
+1:13
+Let's just hit save and see what happens.
+1:16
+Well we get an error and that's not particularly surprising.
+1:19
+We've just seen that this is undefined and so we can't access the name property on something which is undefined.
+1:27
+So how can we get this function working?
+1:29
+Well, it's expecting one parameter and so the obvious way would just be to give it more parameters.
+1:35
+So name and age.
+1:38
+And then we would just get rid of this and that would work if we just passed in our arguments right here.
+1:45
+But that's not what we're going to do.
+1:48
+Why not?
+1:48
+Well, two reasons.
+1:50
+We might want a ton of properties from this object, this object could be huge.
+1:54
+And also we might not have access to this code, we might simply not be able to just add some parameters to this function.
+2:01
+So let me put this back as it was and let's take this object and use it as this function's this value.
+2:09
+And the call method allows us to do that.
+2:12
+So where we're invoking the function, let's just say dot call.
+2:16
+Now let's pass in the object which we're going to set as the functions this value.
+2:21
+And then in a comma separated list any other arguments we want to pass in and we need current situation in jail for corruption.
+2:30
+Let's hit save and it looks like it's working.
+2:33
+Carly Fowler is forty years old, current situation in jail for corruption.
+2:37
+Oh, and it looks like we've repeated the full stop there.
+2:41
+That's better.
+2:42
+Now, just to prove the point, let's comment this line of code and uncomment this line, hit save and we can see that the this value of this function is now this object.
+2:53
+So the call functions first argument is whatever we want to be the this value of the function we're calling.
+3:00
+Let's set up a second politician and we'll invoke the function for a second time.
+3:05
+We're going to use the call method.
+3:07
+This time we'll pass in politician two and the current status for Dave Bland is resigned due to incompetence.
+3:16
+Let's just comment out the console dot log, reinstate this line of code, hit save and look what we get now.
+3:24
+So Dave Bland is fifty five years old, current situation resigned due to incompetence.
+3:28
+But what we're proving there is that we've called this function twice with different this values in each case.
+3:36
+So that is what the call method does.
+3:39
+Now the apply method is very similar.
+3:41
+The only difference is that it takes an array of arguments.
+3:45
+We've only got one argument here but to make it work with apply, well, let's try saving that.
+3:52
+And we get an error and that's because this list of arguments needs to be an array.
+3:58
+Make it into an array with just one element and it works just fine.
+4:02
+So that could be useful if you've got lots and lots of arguments in an array that you can pass in.
+4:07
+And by the way, the arguments in this array will effectively be destructured.
+4:11
+So they can be used individually as we're doing here.
+4:14
+We don't actually need to do anything that happens under the hood.
+4:18
+Okay.
+4:19
+There's no challenge with this.
+4:20
+I just wanted you to know about call and apply so you understand what's going on when we use them in more complex scenarios shortly.
+4:27
+Because it's time to make a start on one of the more complex aspects of working with constructors which is inheritance.
