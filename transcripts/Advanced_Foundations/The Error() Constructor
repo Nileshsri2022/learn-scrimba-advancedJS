@@ -1,0 +1,84 @@
+
+Transcript
+0:00
+We hate errors but they are a fact of life in coding and error detection is obviously really important and makes debugging a whole lot easier.
+0:08
+When an app fails and there's no clue as to why you're getting that unexpected behavior, it can be a long and frustrating process to get it working.
+0:16
+So the error constructor gives us the ability to create a custom error message.
+0:21
+Now here we've got a function that expects a username as a parameter and logs it out.
+0:27
+And it's working.
+0:28
+We're logging out YummyCoder sixty four.
+0:31
+But what happens if we don't pass in a username?
+0:35
+Well, we log out undefined.
+0:37
+So let's use the error constructor to come up with our own custom error message.
+0:42
+So I'm going to say if the username exists, log it out.
+0:47
+And then I'll say else.
+0:49
+And here we'll log out a new instance of error.
+0:52
+So we'll take the new keyword and then error with an upper case e for the constructor.
+0:59
+The constructor needs its brackets and we can pass in our custom error message.
+1:04
+Okay, let's hit save now.
+1:06
+And in the console we see our custom error message.
+1:09
+Now I could also have done this with the throw keyword which I think is a little bit neater.
+1:14
+So let's delete the console dot log and let's save again.
+1:18
+And that works just fine but just be aware that when we use the throw keyword it will stop any code after it from being executed.
+1:26
+Let's just prove that with a couple of console dot logs.
+1:31
+So I've added I execute and I do not execute.
+1:34
+Let's hit save.
+1:35
+And we see I execute in the console but not I do not execute.
+1:39
+So this throw keyword actually ends the execution.
+1:43
+Okay.
+1:43
+So that's a really shallow dive into the error constructor and something to be aware of because you will see it quite often.
+1:51
+Now I'm just going to delete all of this and list out some constructors for the common data types.
+1:58
+Okay.
+1:59
+Those are the data types that we've seen so far and notice how each one has got an upper case first letter and the brackets.
+2:05
+That's because these are constructors.
+2:08
+So we could for example take the object constructor and do something like this.
+2:13
+That will store a new object in the const person and we could then add properties and values using dot notation.
+2:21
+And down in the console we've got an object.
+2:23
+It's got one property name and the value Tom.
+2:26
+So that does work but it's so rare to see that and we do not advise using it.
+2:31
+It's much better just to use the object literal.
+2:35
+So that does exactly the same thing but that is the more normal way of doing it.
+2:40
+Now you can do something similar with all of these data types and by all means pause and see what they do if you want to but I want to stress again very rarely used so we won't be spending more time on them.
+2:51
+I just wanted to draw them to your attention so you know they're there.
+2:55
+The exception to that is this object constructor though which we will see again as we get into objects more deeply and we want to access some of the methods it offers but we're going to deal with that later in this course.
+3:07
+For now it's enough to know that these constructors exist.
