@@ -1,0 +1,299 @@
+Transcript
+0:00
+It's time for a super challenge with debouncing and generators.
+0:04
+This is going to be a debug challenge.
+0:06
+I have some code here, but it doesn't work.
+0:09
+We're building a site for a cafe called been there, done that.
+0:13
+Get it?
+0:13
+Bean as in coffee bean?
+0:16
+Anyway, as the site loads, we should get the header which we've got here, the hero section, and this nav.
+0:24
+But as we scroll, more content should load as per these screenshots.
+0:29
+So that's what we see at the beginning.
+0:30
+We scroll down to see the nav and then as we scroll, more content loads and it keeps loading until we get to the very end.
+0:38
+In fact, there are ten content sections to load and they're all coming from this file right here, API data dot j s.
+0:47
+And these objects have got the text for the ten content sections.
+0:50
+Now what's happening right now if I refresh this page is that we scroll down and in the console, we're getting no more sections to load.
+0:58
+So that's the problem.
+0:59
+We're not loading in any of our ten pieces of content.
+1:03
+Now loading in the content should be debounced and we've already got the function for that right down here and we want the delay on the debounce to be a hundred milliseconds if no other delay is specified.
+1:15
+So let's just check out the challenge and I've just summarized it all right here.
+1:19
+So when the page loads, the site should display the header hero and nav.
+1:22
+It's doing that already.
+1:24
+As a user scrolls, more content should be added.
+1:27
+There are ten content sections in total which are loaded from API data dot j s.
+1:32
+The handle scroll function should be debounced to limit the number of times the scroll event is triggered.
+1:37
+If no debounce time is passed in, it should default to one hundred milliseconds.
+1:42
+So I'm talking here about the delay on the debounce.
+1:45
+At the moment, the code is broken.
+1:47
+Your challenge is to identify and fix the bugs in this code.
+1:51
+Now there are not too many problems with this code, but there are a few.
+1:55
+But to get to work on it, you'll have to follow the process and really understand how generators and debouncing works.
+2:01
+So take as much time as you need and good luck.
+2:05
+Okay.
+2:06
+Congratulations if you got that working.
+2:08
+No problem at all if it took a bit of trial and error.
+2:11
+Quite tricky to debug this code because because what we're getting in the console and the error messages that you might have come across didn't really give you that much help in finding out exactly where the problems lay.
+2:23
+So you probably really had to go through the code quite carefully.
+2:27
+Let's have a look together.
+2:28
+So I'm going to start off right down at the bottom where we've got this debounce function and we know we want to set a default if nothing is passed in.
+2:37
+Well, we're calling the function right here and at the moment, we're just passing in the handle scroll function but we're not passing in any delay.
+2:44
+So we might do that next.
+2:46
+I'll pass in one hundred milliseconds and we did say that that should default to one hundred milliseconds.
+2:51
+So let's just put a default param in there as well.
+2:55
+Now we've got a clear time out here but that clear time out is not doing anything because it's not identifying the set time out that we want to clear.
+3:04
+So the next thing to do is actually to declare a timer And this is going to hold our set time out.
+3:12
+And now we can tell the clear time out the set time out we want it to clear and it's identified of course by timer.
+3:19
+Okay.
+3:19
+We should have made some progress there.
+3:21
+Let's hit save.
+3:23
+And we open up the browser and we've got the browser.
+3:26
+So let's scroll down and see what happens next.
+3:28
+We're still getting no more sections to load.
+3:30
+So we've still got some problems to find.
+3:33
+So if we follow the flow of the code, we know that this function which we're invoking right here is being passed into debounce is actually handle scroll that we're passing in as an argument right here in the event listener.
+3:46
+So let's go on up to handle scroll and let's deal with what's going on here.
+3:50
+So the first thing we do here is call the generator with the dot next method and save what we get back to result.
+3:57
+So let's just move on up and check what's going on with generator.
+4:01
+Here is our generator.
+4:02
+We've got the asterisk and we've got a big problem here which is that generators do not use the return keyword to give us whatever they've generated.
+4:11
+They use the yield keyword.
+4:13
+So let's swap out return for yield.
+4:16
+And now let's hit save and see what that has got us.
+4:20
+If we open up the console, I'll start scrolling.
+4:23
+And we're still getting the problem.
+4:25
+No more sections to load.
+4:26
+So still some untangling to do.
+4:28
+Let's go back down to the handle scroll function and see what's going on here.
+4:33
+So we're getting the result right here and it could be a good idea just to log that out quickly and see if that helps.
+4:40
+And again, we scroll and we're logging out value promise done and done is set to false.
+4:47
+Interesting.
+4:48
+Remember done gives us a Boolean.
+4:50
+In this case, it's giving us false.
+4:52
+Right here, we're checking if result is a falsy value because we've got this exclamation mark at the beginning.
+4:57
+And result is not a falsy value.
+4:59
+Result is actually giving us an object with a promise in it and a boolean in it.
+5:03
+So that is very much a truthy value.
+5:06
+So this code here is not going to execute and we're gonna move straight on to this else console dot log no more sections to load.
+5:13
+So that's why we're seeing that down in the console.
+5:15
+So what we've forgotten to do right here is check whether done is false.
+5:21
+So in the console, we see that result is an object.
+5:24
+It's got two key value pairs.
+5:25
+The value property holds a promise and done holds a Boolean.
+5:29
+So instead of checking if that's a falsie value, let's just check the Boolean.
+5:33
+We know the Boolean is stored in the done property.
+5:35
+So now, this should check if result dot done is falsie and it will be a full c value because in fact it is the boolean force.
+5:42
+Let's give it a try.
+5:44
+And we'll start scrolling and now we've seen a positive change.
+5:47
+We're still logging out the result and as we keep scrolling, we get some content appearing.
+5:52
+So things are really really picking up.
+5:55
+Okay.
+5:56
+Let's keep scrolling to the bottom, make sure everything works.
+5:59
+Visit us is the last section that we have in our data.
+6:02
+If we scroll right down, here we are.
+6:05
+It's this one right at the end.
+6:07
+So we've got to the end, but I think if we have a look at what's in the console at the bottom, we're now getting some errors.
+6:13
+Cannot read properties of undefined reading heading.
+6:17
+So there's still a little bit more of a problem that we need to find.
+6:20
+Let's just go back to index dot j s and see if we can figure out what it is.
+6:25
+Now the rest of handle scroll looks fine to me because all we've got here is the DOM manipulation and then we're catching the error and logging out no more sections to load.
+6:34
+Well, we've already dealt with that.
+6:35
+But what's interesting down in the console is that we're not seeing no more sections to load anymore.
+6:41
+What we are seeing is max section limit reached stopping generator.
+6:45
+So let's scroll up and see if we can find that text and we see it right here.
+6:51
+Max section limit reached stopping generator.
+6:54
+And this is where we're gonna find our final problem.
+6:56
+Because what a generator does is it yields us something.
+7:00
+It gives us something.
+7:02
+But when it's reached the end which is what we've done right here because section count is greater than max sections.
+7:08
+Max sections is defaulting to ten which is useful because we've got ten pieces of data in API data dot JS.
+7:15
+Well, what it needs to do here is return.
+7:18
+So while we're logging that out, which is absolutely fine, we want to do that.
+7:23
+Now, we want to just return and that will stop the generator.
+7:27
+When the generator stops, what we're actually going to see down here when we check for whether result dot done is a truthy or falsy value, well, now it's going to be a truthy value.
+7:39
+It's actually going to be the Boolean true.
+7:41
+And that will mean that this code right here is going to execute.
+7:45
+No more sections to load and that is the behavior we want.
+7:49
+Let's save and see if it works.
+7:52
+And we'll scroll down.
+7:53
+We're starting to log things out so some content is loading.
+7:57
+We're getting the first couple we keep going.
+7:59
+Let's go right down to the end to the one about visit us.
+8:03
+We've reached the end and if we scroll down in the console, we're not getting any errors.
+8:08
+Max section limit reach stopping generator that is fine.
+8:11
+No more sections to load that is fine.
+8:13
+No errors.
+8:14
+So this code is working.
+8:17
+Oh, but if we look carefully there is one more problem.
+8:21
+If we compare the data that we've got in API data dot j s to the dom, well let's just scroll up.
+8:27
+We should start off with our commitment to our growers.
+8:30
+But right here, our first one is explore our menu.
+8:33
+So we're actually missing this first chunk of data.
+8:37
+Now that's a really easy fix.
+8:39
+You probably noticed when you did the challenge, you did notice, right?
+8:43
+Well, if not, don't worry.
+8:45
+I didn't notice at first either.
+8:46
+But it is a pretty easy problem to debug.
+8:49
+So just pause now and fix that problem.
+8:55
+Okay.
+8:55
+So all we need to do up here, I think it's line twenty seven.
+8:59
+Here, we're incrementing and we're actually incrementing before all of this logic.
+9:03
+We want to move that increment down.
+9:05
+Let's hit save again.
+9:07
+And now when we scroll, our commitment to growers comes first.
+9:11
+And if we keep going down, we eventually get to visit us.
+9:16
+And that is all of the data, our commitment to our growers down to visit us.
+9:21
+So that is now working properly.
+9:24
+Okay.
+9:24
+Congrats if you got that one done.
+9:26
+That was pretty tricky.
+9:27
+A lot to think about that even though you had most of the code, it was really hard to find those problems.
+9:33
+Now we're getting really near to the end of the course.
+9:35
+You've just got a few scrims to go.
