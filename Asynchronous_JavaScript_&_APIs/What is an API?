@@ -1,0 +1,154 @@
+
+Transcript
+0:00
+One of the first things we should do since this entire module is about APIs is we should talk about what actually is an API.
+0:07
+Well, sort of the stuffy definition for an API or rather what does an API stand for is the application programming interface.
+0:15
+However, this is just another one of those programming acronyms that is more confusing if you learn what it actually stands for.
+0:22
+So that can lead to more confusion.
+0:23
+Let's put it in simpler terms.
+0:25
+The way that I like to think about what an API is is that it's any tool that will help connect your program with someone else's program.
+0:34
+This definition I came up with is intentionally vague and that's because an API can do multiple things.
+0:40
+So first, I think it's helpful to think in terms of a restaurant.
+0:44
+When you go to a restaurant, you sit at your table and maybe you're with your family, you've got your own system happening there at the table.
+0:51
+Now, of course, your purpose for being at the restaurant is to place an order and to receive some food.
+0:56
+However, there's more than one system at play at a restaurant, but the primary one we're concerned with is the kitchen.
+1:02
+Back in the kitchen, there's an entire ecosystem of work that's happening essentially without your knowledge.
+1:08
+So you know that it's there and you know that it's happening, but you don't need to know as patron of the restaurant exactly how things work on the other side of the restaurant in the kitchen, for example.
+1:19
+Instead, you're sort of if you kinda stretch the analogy a little bit, given some documentation
+1:29
+menu.
+1:31
+To you, and that's how you essentially can place a command or an order to the kitchen.
+1:37
+Now there's an in between, and that in between is your server, your waiter, your waitress, the person that will talk to you and then go talk to the kitchen and relay the order to them.
+1:48
+This waiter or waitress server, this person is analogous to the API.
+1:53
+The restaurant has made available a portal for you to interface between your party, your family, and the restaurant itself.
+2:03
+So think of that waiter or waitress as the API, the in between between your system and their system or bringing it back to programming, your program and their program.
+2:12
+And like I said, this definition here is intentionally vague and that's because I personally have heard API used in sort of vague terms.
+2:20
+And I kinda wanna talk about the two main ones that I hear about.
+2:24
+The one that we will mostly be concerned with in this module as we are talking about interfacing with servers, getting data from databases, and so forth is getting data from a server.
+2:35
+Now the server that you interact with hosts an API and in this scenario that API consists of exposed endpoints which we'll be defining a little bit later where we can get access to data from the server.
+2:48
+However, it's important to note that the server doesn't just give us access to absolutely everything on the server because that would be a pretty significant security risk.
+2:56
+But instead, they open up just the things that they want us to have access to.
+3:00
+Kind of like how the restaurant will give us a menu of items that we can order from, but they won't give us an entire list of all the ingredients and allow us to just make our own dishes.
+3:11
+I guess it maybe depends on the kind of restaurant you're at, but I'm just talking about a traditional one.
+3:15
+And so when you hear me talk about an API throughout this module, I'm mostly talking about this kind of API where there's a server and a database that lives somewhere outside of my computer where I can where I can request of the server to send me back some data that I can use.
+3:33
+However, I think it's important to touch on a different, not definition, but I guess use case of APIs and that's when there is prewritten code that allows you to do cool stuff.
+3:44
+This is probably most obvious with something like the DOM API, which includes things like dot get element by ID, which you have used up until now along with any of the other Dom API methods you may have used.
+3:56
+Now this is code that's prewritten by the creators of JavaScript that allows us to do some cool stuff, but we don't really know how get element by ID is doing what it's doing.
+4:08
+Instead, it's a method that is exposed to us or given to us to do that task.
+4:13
+And that way, all we have to do is say document dot get element by ID and pass a predefined parameter, which is the string ID of the element in the HTML that we want to grab, but we don't need to know how it's doing what it's doing.
+4:27
+Something like this is sometimes referred to as a black box.
+4:30
+We don't know what's happening on the inside, but we just know what it returns to us.
+4:34
+And so there's plenty of examples like this.
+4:36
+There's array methods, for example, like dot filter dot map.
+4:39
+This is in a way kind of like an API.
+4:42
+There's something happening in the background when we call an array method like dot filter.
+4:47
+The same thing goes for maybe local storage.
+4:49
+We have access to local storage dot get item, local storage dot set item.
+4:54
+We don't need to know how it's doing what it's doing.
+4:57
+Those are pieces of an API that we get to use.
+4:59
+Remember again, the API is any tool that helps us connect our program with someone else's program.
+5:05
+In the case of their program, we're talking about the DOM API.
+5:10
+That's the program, the JavaScript that someone else has written.
+5:12
+And then pretty much any third party package that anybody has ever created, it has an API.
+5:18
+They expose methods or functions that you can use as a part of their API, as a part of their program.
+5:24
+We don't need to know how all of those methods work behind the scenes.
+5:28
+Of course with open source stuff, we could just probably go to GitHub and look at how it's doing things under the hood And there's a ton more.
+5:35
+Now this many more is mostly referring to the web APIs.
+5:38
+If you click this link here, that'll send you to the Mozilla developer network list of web APIs and you'll see that there's dozens and dozens of them.
+5:46
+It's pretty cool the kinds of things you can do like push notifications and geolocation querying, even things like figuring out the ambient light on certain devices and stuff like that.
+5:56
+It's it's pretty cool.
+5:58
+It's pretty impressive what they've given us access to.
+6:00
+But again, when I talk about an API in this module, I'm mostly talking about getting data from a server.
+6:07
+So hopefully that kind of clarifies what API is and don't get bogged down in technical definitions like application programming interface.
+6:16
+So because I don't just want to lecture at you, I want to give you a little bit of a quiz.
+6:20
+Let me write something up really quick.
+6:24
+Alright.
+6:24
+So here's a quick quiz.
+6:25
+Pause here, answer these questions, and then we'll go through them really quick together.
+6:33
+K.
+6:34
+Well, API stands for application programming interface.
+6:40
+Sounds really complicated when you actually type it out, but how would you describe an API in your own words?
+6:46
+This is more crucial, I think.
+6:48
+For me, this is a tool that allows your code to talk with or maybe use the goodness from someone else's code.
+7:01
+And usually someone else's code is something like the web APIs or maybe something from a third party package and so forth.
+7:11
+And then an example of an API I've used, well, in terms of getting data from a server, we're going to be looking at the board API, which if you want a little preview of, you can find at this URL.
+7:24
+This is an example of getting data from a server and things like local storage, which I guess is more spelled like local storage with the camel case there.
+7:37
+And these are sort of the two different types of APIs or applications for APIs that I've seen where it's either getting data from a server or just tools that are exposed to me that allow me to do cool things like saving data in local storage.
+7:52
+Okay.
+7:52
+Hopefully, you were able to answer those quiz questions.
+7:55
+Of course, if any of this is confusing, the beauty of Scrumba is you can just watch it again.
+7:59
+When you're ready, let's keep going forward.
