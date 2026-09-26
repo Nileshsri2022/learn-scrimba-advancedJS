@@ -1,0 +1,22 @@
+
+Transcript
+0:00
+Knowing about programmatically creating objects is a key aspect of advanced JavaScript, and that is what we're going to study in this unit.
+0:07
+Firstly, we're going to take an overview of what it means to create objects, and then we'll look at factory functions, constructor functions, classes, the apply and call methods, inheritance, static methods, private fields, and getters and setters.
+0:23
+I've got to be honest with you, some of this stuff is hard.
+0:26
+When I first came across it, it made me wanna go and learn Python instead or just become a hermit.
+0:31
+But clinical fact, learning difficult things is good for you.
+0:35
+It's much better than all of that brain gym stuff they try to sell you.
+0:39
+This is really going to nourish your mind.
+0:42
+But if you're studying this for the first time, go easy and don't be disappointed with yourself if you need to take a bit of extra time and space to really get something.
+0:50
+Okay.
+0:51
+When you're ready, let's go.
