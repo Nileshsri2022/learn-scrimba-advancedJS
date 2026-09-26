@@ -1,0 +1,101 @@
+Transcript
+0:00
+In this scrim we're going to talk about JavaScript's ternary operator which I've said here is an alternative to the if else sometimes.
+0:09
+So let's be clear, we're not replacing the if else but the ternary operator can be really useful in some situations.
+0:16
+The syntax with the ternary looks peculiar at first.
+0:20
+So let's take a look at an outline diagram.
+0:23
+The ternary starts with a condition to be tested and this should return either a truthy or falsy value.
+0:30
+Then we have a question mark.
+0:32
+And now we have our first expression and this expression will execute if the condition is truthy.
+0:39
+Now we have a colon and then the second expression and this expression will execute if the condition is full c.
+0:46
+So that's an outline of the syntax.
+0:48
+Let's jump over to the editor and see this in action.
+0:52
+So I've got some code here from one of those obnoxious health apps that supposedly gives you encouragement or makes you do more exercise.
+0:59
+So what we've got here is an exercise time in minutes which at the moment is set to twenty and the if else down here is just checking if the exercise time in minutes is less than thirty.
+1:11
+If it is, it's saying you need to try harder and if not, it's saying you're doing good.
+1:17
+And in either case we've got this message variable up here declared with a let and that is what's being updated by this conditional.
+1:25
+So let's just hit save and see if it's working and it is.
+1:29
+We're getting the message down in the console you need to try harder.
+1:32
+Well, twenty is definitely less than thirty.
+1:35
+So that is working just fine.
+1:37
+Now updating the value of a variable depending on whether a condition has been met is a great use case for a ternary.
+1:45
+So let's comment out all of this and see if we can refactor this code as a ternary.
+1:50
+So I'm going to start off by declaring a const.
+1:53
+And I'll call this const message.
+1:56
+And there we see the first benefit of using a ternary to set the value of a variable.
+2:00
+We can use a const and assign it once.
+2:02
+Remember, a const is preferable to a let because a let can be unintentionally updated by other code and that, of course, can cause bugs.
+2:11
+Okay.
+2:11
+I'm going to set this equals to our condition.
+2:14
+If you'll remember, the first thing that we need is the condition to test and that will be exactly the same condition as we've got right here.
+2:22
+Next, I need the question mark.
+2:24
+And you can say this in your head as if you're asking a question.
+2:28
+So it's like we're asking, is the exercise time in minutes less than thirty?
+2:32
+And if it is, we want to execute our first expression.
+2:37
+What we've got right here is updating the message variable with this string, well, we don't need to keep writing out message.
+2:45
+We're just going to be assigning it to this const.
+2:47
+So all we need is that string.
+2:50
+So now if this condition is truthy then the const message is going to store this string.
+2:57
+So now we need to deal with what happens if this is full c.
+3:01
+And to introduce that we need the colon.
+3:04
+So let's just put the colon right here and then we'll have our final expression.
+3:10
+And so this is what we'll execute if the condition is full c and again we just need this string right here doing good.
+3:17
+Let's hit save and see if it works.
+3:20
+And it does.
+3:21
+So we have got that ternary working.
+3:24
+Let's just whack up our exercise in minutes to forty And again, I'll hit save and now we're getting doing good.
+3:31
+So this condition here is full c and that means that this string is being assigned to the const message.
+3:39
+And just look at how much cleaner it is when we compare this line of code here to all of this code we've got here.
+3:47
+That is really quite a big saving.
+3:49
+Now what we've done here is convert a fairly simple if else to a ternary.
+3:54
+What I want to talk about next is what happens when the conditional is a bit more complicated.
+3:58
+So let's deal with that in the next scrim.
