@@ -1,0 +1,128 @@
+
+Transcript
+0:00
+It's time for a challenge and I have invented the new Wordle.
+0:04
+It's a game that's going to take the internet by storm and make me rich.
+0:07
+Here's the object of the game.
+0:09
+A player is trying to guess a number between one and ten And we've got the correct answer stored in a const right here.
+0:15
+At the moment, it's set to six and then this is the player's guess and it's set to three.
+0:21
+And then down here, we've got some conditional logic.
+0:23
+So if the player guess is triple equals to the correct answer, this message is set to correct and if that's not the case, the message is set to wrong and then we just log out the message.
+0:34
+What do you think?
+0:35
+Exciting game This is really gonna go viral.
+0:39
+Anyway, well, your challenge is to refactor this conditional logic that we've got right here.
+0:44
+It looks a bit clunky to me.
+0:46
+So I've just said here, refactor the if else statement to use a ternary operator.
+0:51
+Pause now.
+0:51
+Have a go at that.
+0:52
+Don't steal my idea for this amazing game and we'll have a look together in just a moment.
+1:03
+Okay.
+1:04
+Hopefully, you managed to do that without too many problems.
+1:06
+So I'm just gonna start by commenting out this if else.
+1:09
+And now I'm going to come up here to message and I'm going to set that equals to a condition and we've got the condition right here.
+1:17
+And let's just ask the question, is the playerGuess triple equals to the correct answer?
+1:22
+If it is, message should store the string correct.
+1:25
+Now we have the colon and if playerGuess is not triple equals to the correct answer then message should be wrong.
+1:32
+And there's one more change we can make.
+1:34
+We're not going to be reassigning any value to message anymore so we can convert this let to a const.
+1:40
+And using a const instead of a let is always a good idea if it's possible so that is a good change to make.
+1:46
+Okay.
+1:47
+Let's hit save and down in the console we're saying wrong and that's correct.
+1:51
+PlayerGuess is three.
+1:52
+The correct answer is six.
+1:54
+Now let's change PlayerGuess to six.
+1:56
+Hit save and it says correct.
+1:59
+We got the right answer.
+2:00
+So there is the game in action.
+2:02
+Okay.
+2:03
+We're not quite done.
+2:04
+I thought of a way that we can improve this game.
+2:06
+So I'm just going to paste another challenge right in here.
+2:10
+Now I want you to improve the functionality of this code by letting the player know if their guess was too high, too low or exactly right.
+2:17
+So we just need to up the complexity of this ternary right here.
+2:21
+Pause now, get that sorted and we'll have a look together in just a moment.
+2:31
+Okay.
+2:31
+Hopefully you managed to solve that one.
+2:33
+So we want to come in here then and let's ask the question, is playerGuess less than correct answer?
+2:40
+If that's true then this string should say too low.
+2:43
+If that's not true we need to ask another question.
+2:47
+Is playerGuess greater than correct answer?
+2:49
+And if that's the case then message should be too high.
+2:54
+And if that's not the case we can have the colon and then the only other possibility it's not too low, it's not too high, it must be exactly right.
+3:04
+Now what we've got here is a really long line of code.
+3:07
+It's a bit hard to deal with so I'm going to bring it down onto a couple of lines.
+3:11
+Okay, let's hit save and see if it works.
+3:15
+So it's logging out at the moment exactly right.
+3:17
+Well six and six are the same.
+3:19
+Let's go too low and let's go too high.
+3:23
+And it is working.
+3:24
+We just forgot the exclamation mark there.
+3:26
+No problem.
+3:27
+That is pretty good.
+3:28
+So we've got a more complex ternary working and just remember, think about the complexity.
+3:33
+Is it difficult to read?
+3:35
+If it is then refactor your code because complex ternaries really can be very hard to decipher.
+3:40
+Okay.
+3:40
+When you're ready let's move on.
