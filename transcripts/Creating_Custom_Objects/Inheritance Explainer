@@ -1,0 +1,102 @@
+
+Transcript
+0:00
+Let's explore inheritance.
+0:01
+Inheritance is the mechanism by which objects inherit properties and methods from other objects.
+0:07
+So inheritance is all about sharing functionality and promoting reusability.
+0:12
+So imagine we have an object for an event with the properties name, date, location, and a method that returns details of the event.
+0:21
+Then we have another object for a specific type of event in this case a concert.
+0:26
+It also has name, date, location, the get details method and adds a concert specific property headliner.
+0:32
+So obviously, we're covering a lot of the same ground here and we can see that it would be better to have a general object for all events and some children objects for specific events.
+0:41
+And those children objects should take from the parent object whatever they need.
+0:46
+So through inheritance, Concert can inherit all of these properties from base event.
+0:52
+That saves us from having to redefine them all inside concert and creating extra work and extra problems if we need to update our code.
+0:59
+What we're doing here is forming what's called a prototype chain.
+1:03
+And to really understand inheritance, we should understand the prototype chain.
+1:07
+So let's dig deeper with the aid of a diagram.
+1:10
+Here are three objects that have some properties and methods.
+1:14
+Under the hood objects also have a prototype and you can think of a prototype as being a reference to another object.
+1:22
+So if object two's prototype is object one, then object two can inherit from object one.
+1:29
+And if object three's prototype is a reference to object two, then object three can inherit from object two.
+1:37
+And as object two inherits from object one, object three can indirectly inherit from object one.
+1:43
+This is the prototype chain.
+1:45
+If you create an object and you don't specify a prototype to inherit from which is likely the case with every object you've created so far and is the case right here with our first object, object one, then that object will inherit from object.
+1:59
+And you can see I've put an upper case o for object right there.
+2:03
+That was deliberate.
+2:04
+And if we take a look at a screenshot from the console, this object here event has a prototype of object with an upper case o.
+2:12
+This upper case o object is JavaScript's base object and it sits at the top of the prototype chain.
+2:19
+And as this is an example of an object and it's called object, it's often referred to somewhat unhelpfully as the object object.
+2:26
+And on this base object, there are some methods and properties which are built into JavaScript and available to all objects in JavaScript unless you do something special to override them.
+2:36
+So if we look back at our code, we could set up inheritance here, concerts prototype would be the base event.
+2:43
+So concert would be inheriting from base event and base events prototype would be the base object or the object object.
+2:51
+Now we need to examine the prototype lookup mechanism.
+2:54
+So when you try to access a property or method on an object, say object three, JavaScript first looks to see if that property or method exists on the object itself.
+3:05
+If it's not found, JavaScript will look up the prototype chain moving on to the next object.
+3:10
+In this case, object two and it will check if that property or method exists here.
+3:15
+If not, it will continue checking each linked objects prototype until it finds the property or reaches the end of the chain.
+3:23
+Remember, this prototypal chain could be much much longer with grandchildren and great grandchildren etcetera etcetera.
+3:29
+So just be aware that JavaScript is checking up the chain sequentially until it finds the property or method that it's looking for.
+3:36
+Now, the last thing I want to cover is polymorphism and that's a concept which might sound intimidating because of its ridiculously long name but it's actually quite straightforward.
+3:46
+Inheritance allows methods to have different implementations of different objects.
+3:51
+So in our code, concert is going to be a different implementation of the base object with some added extras.
+3:58
+With polymorphism, that also means an object can override a method it inherits adapting it for specific needs.
+4:05
+So in practical terms, this method right here get details which we're defining on base event can be taken in by concert and then repurposed to do something specifically useful for this concert object.
+4:18
+So although concert inherited get details from the base event, it can override its original functionality.
+4:24
+So polymorphism allows methods to have different implementations on different objects.
+4:29
+An object can override a method it inherits adapting it for specific needs.
+4:34
+So polymorphism or the ability to change a method's functionality is a really flexible aspect of inheritance and we will see that in action in the coming scrims.
+4:43
+Okay.
+4:43
+That's all the theory.
+4:44
+Let's see how it works in practice.
+4:46
+We've seen three ways to create objects in JavaScript.
+4:49
+Factory functions which are simple but do not support inheritance directly so we won't be talking about them more.
+4:55
+Constructor functions which can handle inheritance but in a very verbose way as we'll see shortly and classes which provide a much more pleasant syntactical approach to inheritance and will come onto them after we've dealt with inheritance with constructor functions which we'll get stuck into in the next scrim.
