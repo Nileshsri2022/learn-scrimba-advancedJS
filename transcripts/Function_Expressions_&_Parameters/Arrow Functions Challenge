@@ -1,0 +1,107 @@
+Transcript
+0:00
+It is arrow functions challenge time.
+0:03
+Elon Musk himself has called us, and he has asked us to write him a function for his Tesla software that warns drivers when they are going too fast.
+0:14
+We can't say no to Elon.
+0:15
+We have done that right here.
+0:18
+This function declaration takes in a driver's speed and warns them that they are going too fast.
+0:25
+It works fine, but Elon is not happy.
+0:28
+He wants this to be an arrow function.
+0:31
+So here is your challenge.
+0:33
+Refactor this function to use an arrow function.
+0:35
+Make sure you write the least code possible.
+0:39
+Do not let Elon down, and I'll see you back here in just a moment.
+0:44
+Okay.
+0:44
+Hopefully, you managed to do that.
+0:46
+Let's see how this would look.
+0:48
+So I'm going to comment out all of this code up here, and I'm going to declare a const.
+0:56
+And we'll keep the same name, speed warning, and we will set that equals to our single parameter.
+1:03
+We're going to omit the brackets, and then we're going to have the arrow, and we will return this string right here.
+1:12
+And now if we hit save, there we are.
+1:16
+It works.
+1:17
+So we've used the most concise form here.
+1:20
+We don't have any brackets.
+1:21
+We don't have the return keyword, and we don't have the curly braces.
+1:25
+Okay.
+1:25
+It's pretty good if you manage to do that, but Elon has been back on the phone.
+1:31
+He's realized that this function sucks pretty badly because it's warning all drivers, not just those breaking the speed limit.
+1:40
+Okay.
+1:41
+Here is your new challenge.
+1:42
+I've increased the complexity of this just a little bit.
+1:46
+Now I want you to refactor this function so it only warns drivers if they're going over the speed limit.
+1:53
+The function is now going to take in two parameters.
+1:56
+The first is the speed limit, in this case thirty, and the second is the driver's actual speed, in this case forty.
+2:04
+So have a go at this and I'll see you back here in just a moment.
+2:09
+Okay.
+2:09
+Hopefully, you figured out what you need to do.
+2:12
+So we're now going to bring in two parameters.
+2:14
+We have got the first one as the speed limit, and the second one is the speed.
+2:19
+So let's come right in here, and we will say speed limit and a comma between the parameters.
+2:25
+We're immediately getting the red line, which reminds us that we now need to put these inside brackets because we have two parameters.
+2:34
+Right.
+2:34
+We only want to give out a warning if the driver is doing more than the speed limit.
+2:40
+So we need an if statement that's come in here.
+2:43
+I'm going to say if speed is greater than speed limit,
+2:51
+then we want to use this string right here.
+2:56
+Now, again, we've got the red squiggly line, and that is reminding us that because we've increased the complexity, it's no longer just one line of code we're returning.
+3:05
+We need to open up the curly braces, and we will cut and paste all of that logic right in there.
+3:12
+I'm just going to format it.
+3:14
+And, of course, we need to return that statement if we want to see it in the console dot log.
+3:20
+Let's hit save, and it's warning us you are going at forty miles per hour.
+3:27
+Okay.
+3:27
+Now let's try it with a different speed limit, say, sixty, and we hit save.
+3:33
+And we're logging out undefined, and that's because obviously the code inside this if statement is not running, so we're not really returning anything.
+3:42
+We've got a tiny bit more to do with arrow functions.
+3:45
+When you're ready, I'll see you in the next scrim.
