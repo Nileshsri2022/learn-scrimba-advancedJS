@@ -1,0 +1,116 @@
+
+Transcript
+0:00
+We've now seen multiple ways of iterating over arrays.
+0:03
+We've seen the for loop, the for of, the for each, and the map method.
+0:07
+And you might well be forgiven for thinking that the original one, the for loop is now dead and never used.
+0:13
+But actually, you'd be wrong.
+0:15
+The array methods like map are of course really really useful, but you'll probably come across some situations where a for loop is the simplest solution to a given problem and you're bound to see them in code bases you work on anyway.
+0:26
+For that reason, I want to show you a bit more for loop functionality, Specifically, how we can break out of them early or skip one element and continue looping.
+0:36
+Let me show you what I mean.
+0:38
+Here, we've got an array of expenses and refunds.
+0:41
+Now it's an array of object and each object has got a description, an amount and a year.
+0:47
+The amounts can be either positive numbers like fifty or negative like minus thirty and these negative numbers are actually refunds.
+0:55
+They are not expenses.
+0:57
+Imagine we want to iterate over this array and get the total amount we spent just in the year twenty twenty three.
+1:03
+We're not interested in refunds and we're not interested in twenty twenty four.
+1:08
+So what we want to do then is iterate over this array.
+1:11
+We want to skip any element in the array that has a minus number for the amount and we also want to ignore all of the elements from the year twenty twenty four.
+1:21
+Now array methods like map and foreach are designed to iterate over the entirety of the array.
+1:27
+So if we wanted to actually skip an element in the array or break out of it early, well, then you'd have to create your own work around or possibly do something more complex with the filter method.
+1:36
+But the for loop actually has that functionality built in.
+1:40
+So let's give it a go.
+1:41
+I've already got a let set up to hold the total spent and that is initialized to zero and I've got a const holding the cutoff date which is twenty twenty four.
+1:50
+So we're only interested in what happens before twenty twenty four.
+1:54
+So let's come in here and we'll set up the basics of the for loop and I'm sure you're pretty familiar with this by now.
+2:01
+So first let's let I equal zero, Then we're going to check if I is less than the length of our array expenses and refunds.
+2:10
+And if it is, let's increment I.
+2:14
+Inside the body of the for loop, let's keep things clear by using a const to hold the current expense object and that will be at the element of this array with the index I.
+2:27
+Now let's use an if to check if the year of our expense is greater than or equal to our cutoff date.
+2:37
+And if it is, that means we've iterated through all of our twenty twenty three expenses and because we're not interested in the twenty twenty four expenses, we can actually stop this loop.
+2:47
+We can break out of it and we do that using the break keyword.
+2:52
+And just to make it clear what's happening, let's just log out a message.
+2:56
+So we'll just say reach cutoff date exiting loop.
+2:59
+Now, we want to deal with a situation where we have a refund and not an expense.
+3:04
+So let's say if and then we'll check if the current expense or refund amount is less than zero.
+3:11
+And if that is the case, if we're dealing with a refund, we can actually skip that element and we do that using the continue keyword.
+3:20
+And again, let's just log out a message to make it clear what's happening.
+3:24
+So what that continue keyword will do is it will say, there's nothing to see here.
+3:29
+Just skip this element and start the next iteration.
+3:33
+Finally, all we need to do is update total spent.
+3:36
+So we can do that with plus equals current expense or refund dot amount.
+3:42
+Okay.
+3:43
+Down here, we are already ready to log out the result of the loop.
+3:47
+So let's hit save and open up the console and what we'll see is that we're skipping electronics due to a refund.
+3:54
+Well, we've got electronics right here, it's minus thirty.
+3:57
+That is a refund.
+3:58
+It's good to skip it.
+3:59
+And then we've reached the cutoff date so we're exiting the loop and the total amount spent on items in twenty twenty three is a hundred and seventy five dollars.
+4:08
+So that is the total of adding fifty and forty which is ninety plus sixty which makes a hundred and fifty plus twenty five which makes a hundred and seventy five.
+4:19
+So that is working and we have successfully used the break statement to end the for loop when we wanted to and we've used the continue statement to skip an element in the array and continue with the next iteration.
+4:32
+So as I said, you could do this with an array method but they don't have concepts of break and continue built into them.
+4:38
+So for this use case, a for loop is a really neat way of doing it and you don't have to mess around with building your own work around.
+4:45
+Now there is just one potential pitfall here I want to warn you about.
+4:48
+In this array, the data is actually in chronological order.
+4:53
+If it wasn't, then this method wouldn't work.
+4:56
+It would break out of the loop when it first encountered the cutoff date, potentially missing data.
+5:01
+So just make sure when you use the break keyword, you know the style of the data you're working with and that there's no risk of missing something that you wanted to include.
+5:10
+Okay.
+5:11
+That's all useful stuff to know.
+5:12
+Let's move on.
