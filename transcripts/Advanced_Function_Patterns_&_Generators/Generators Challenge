@@ -1,0 +1,122 @@
+
+Transcript
+0:00
+It is challenge time and I've got an app right here which produces a random hex code on demand.
+0:06
+When it's working, pressing this next color button will display a hex code right here and update the background color of this box.
+0:14
+The DOM work is already done for you.
+0:16
+So all you need to do is add a generator, but there is a little bit more logic going on with this.
+0:22
+So your first challenge is to create a generator that yields a random hex code on demand.
+0:27
+You might need to research how you can do something infinitely inside a generator and see if you can work out how to generate a random hex code.
+0:35
+In hint dot MD, I have actually answered both of those questions but it's always best to do your own research.
+0:40
+But I wanted to give you some really strong pointers just so you can focus in on the generators if you're finding this bit confusing.
+0:47
+Also, my method of producing random hex codes is a very basic simplistic method.
+0:51
+You can probably actually find a better solution really easily.
+0:53
+This is just for demonstration purposes.
+0:56
+Definitely do not copy my code and use it in production because I'm sure it's not that robust.
+1:01
+And I think eventually it would give you a hex code that doesn't exist.
+1:04
+Now down here, you can get whatever the generator yields and do what's necessary to update the DOM.
+1:10
+I'll leave you to figure that one out.
+1:12
+So get this challenge sorted.
+1:15
+Okay.
+1:15
+Hopefully, you got that working.
+1:16
+I expect it took a little bit of research.
+1:18
+If you needed hint dot MD, that is absolutely fine.
+1:22
+Right.
+1:22
+Let's set up our generator right here.
+1:25
+So the function keyword and we need to add the asterisk and I'll call it color generator.
+1:32
+Now my rather basic way of generating a random hex code went like this.
+1:37
+So I start off by declaring a let and that's gonna hold a color and we'll initialize that with just the hash symbol.
+1:45
+Next, I use the good old fashioned for loop.
+1:51
+So we're just using the number six here because the hex codes are gonna have six characters.
+1:57
+Now I want to create a random number and that will be between zero and sixteen.
+2:06
+And I'm using sixteen because the hex code is going to be made up of numbers zero to nine.
+2:11
+So that's ten potential characters and then letters a b c d e f that is six characters.
+2:17
+So now let's update color.
+2:20
+So I'll say color plus equals
+2:23
+and I'll take the string of possible numbers.
+2:25
+So there's the sixteen possibilities and we'll just take the random index of that with the random number.
+2:33
+And then we can yield color.
+2:36
+Before we do anything else, I just want to log something out and make sure it's working.
+2:40
+So inside the callback function of the event listener, let's have a const called generated color.
+2:49
+And we'll set that equals to our color generator so it can store whatever gets returned.
+2:56
+And now let's just console dot log
+3:00
+generated color dot next.
+3:03
+And next is a method.
+3:04
+Okay.
+3:05
+Let's open up the console and we'll hit next color.
+3:08
+And we're getting an error and that's fine because we're actually logging out what I wanted to log out which is that object with the value and done as false.
+3:15
+We've got a random hex there.
+3:17
+That is great.
+3:18
+We're only getting that error because down here we're using color and we haven't actually defined color yet.
+3:24
+So let's do that next.
+3:25
+I'm going to change this console dot log to a const result.
+3:30
+And here color can be result dot value.
+3:35
+Okay.
+3:36
+Let's hit save and I'll hit next color.
+3:38
+And look, we're updating the background color of this element and we're getting the hex code underneath.
+3:44
+So that is working on each click.
+3:46
+We are getting a randomly generated hex code yielded to us by our color generator.
+3:52
+Really good job if you got that working.
+3:54
+No problem at all if you did it a different way to me.
+3:56
+As I say, the logic that you put right here could have been quite different to mine and could well have been better than mine.
+4:02
+So excellent work on that.
+4:04
+Let's move on.
