@@ -1,0 +1,110 @@
+
+Transcript
+0:00
+Let's have a challenge with promises.
+0:02
+Here we have an empty function, preload image.
+0:06
+It takes in a URL as a parameter.
+0:08
+And at the moment, all it's doing is returning, well, nothing.
+0:13
+Now down here, we've got a try catch block.
+0:16
+We're awaiting preload image and we're passing in this URL, which is unfortunately rather long.
+0:22
+Now your challenge is this.
+0:24
+I want you to write logic in the body of this function and that logic needs to return a new promise.
+0:31
+The promise should create a new image and assign the incoming URL to its source attribute.
+0:37
+Make sure you use the image constructor for this.
+0:40
+Then listen out for a load event.
+0:42
+If a load event is detected, the promise should resolve providing the image element.
+0:47
+Remember, when we resolve, we pass something down, it can just be a string.
+0:51
+We've used that in previous examples, but it can equally be the image element that we've just created.
+0:57
+Also, listen out for an error event and if an error event is detected, the promise should reject giving the message image has not loaded and that can just be a string.
+1:07
+We've got a little bit of JavaScript down here just to render the image in the browser when you've got it working properly.
+1:12
+You can check back to the screen before last if you need to.
+1:15
+This is very similar to what we did just with the complexity of returning a promise from inside a function.
+1:20
+Okay.
+1:21
+Get to work on this now.
+1:25
+Okay.
+1:25
+Really good job if you got that working.
+1:27
+Let me show you how I did it.
+1:29
+So we're going to return a new instance of the promise constructor, and we'll pass in the callback with resolve and reject.
+1:37
+Now let's set up our new image.
+1:39
+So we're using the image constructor, and we want to set the source attribute to the URL that's coming in.
+1:46
+For accessibility, we should include some out text.
+1:49
+I didn't mention that in the challenge, but I should have.
+1:52
+And now we need our event listeners.
+1:55
+So we'll put an event listener on this image.
+1:58
+We'll listen out for a load event.
+2:00
+And if we detect a load event, we will resolve and we'll resolve passing our new image.
+2:06
+Let's deal with the rejection.
+2:08
+So we'll listen for an error in which case we will reject and we'll just pass down the string image has not loaded.
+2:16
+Okay.
+2:17
+It's the moment of truth.
+2:18
+Let's hit save.
+2:19
+And there we are.
+2:20
+It is working.
+2:21
+We're down in the console getting our result which is the image element we just created and we are successfully rendering it right here.
+2:30
+So that is working.
+2:32
+Good job if you got that done.
+2:34
+Now if you attempted to create the image up there, I think that will actually work.
+2:40
+Yes, it will.
+2:41
+But doing that, you can run into issues.
+2:44
+If the source loads before the event listeners have been set up, then there might be cases where the code behaves unexpectedly because events don't get detected.
+2:51
+So it is better to have all of the logic in here.
+2:55
+Okay.
+2:55
+So we got this working, but you might well think that I can do this without the promise and it's true.
+3:00
+You can load resources asynchronously without promises.
+3:03
+Indeed, in the past, you had to.
+3:05
+So in the next grim, let's see an example of how building our own promises can be a real lifesaver.
+3:11
+And a little bit later on, we will be coming back to loading images asynchronously using some of the techniques you've used here and a few more besides.
+3:18
+So make sure you understand this code before moving on.
