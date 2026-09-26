@@ -1,0 +1,144 @@
+
+Transcript
+0:00
+Let's talk about short circuiting which is often used as a way of writing more concise code for conditional logic.
+0:07
+Now for short circuiting, we are going to use two operators.
+0:11
+We'll be using the logical or operator represented by these two vertical pipes and the logical and operator represented by the double ampersand.
+0:21
+Now we'll look at both of these in turn but we'll start off with the logical or operator.
+0:27
+Now in the editor, I've got some code that comes from a job search site like LinkedIn.
+0:31
+So we've got an object here which holds a job hunter and it's got name and job search area properties.
+0:39
+The job search area sets the geographical parameters of where the user's happy to work.
+0:44
+So this is me and I'm keeping my job search to Europe.
+0:48
+Now underneath, we've got a standard if else and the if here is just checking if job hunter dot job search area exists, if it's a truthy value.
+0:58
+At the moment it does.
+1:00
+It exists on this object and so therefore we should be able to log out job hunter dot names work location is job hunter dot job search area.
+1:09
+Now of course, if this were to falsie then the code in the else block would execute so we would log out job hunter dot name's work location is worldwide.
+1:18
+So worldwide becomes the default job search area effectively.
+1:23
+Now, let's just see if that works.
+1:26
+And it's looking good.
+1:27
+Down in the console we've got Tom Chance work location is Europe.
+1:30
+Let's comment this out.
+1:32
+And Europe becomes worldwide.
+1:35
+Now down here I've got the same thing with a ternary and I'm just going to bring it up to the top.
+1:40
+And I'll uncomment it and comment out the if else.
+1:43
+Now this ternary should do exactly the same thing.
+1:46
+I've set up a const work location and now we're checking does job hunter dot job search area exist?
+1:53
+Is that truthy?
+1:54
+We're asking the question.
+1:55
+If it is, then job hunter dot job search area is the value that will be assigned to work location And if not, we'll assign the string worldwide.
+2:05
+And then we're just logging out exactly the same sentence.
+2:08
+Let's just check it.
+2:10
+It's looking good.
+2:11
+Tom Chant's work location is worldwide.
+2:12
+Let's uncomment that and it changes to Europe.
+2:16
+So both of these work and now we're going to see how we can short circuit this to make it even more concise.
+2:23
+So again I'm going to set up my const work location and I'll set it equals to jobhunter.
+2:30
+Jobsearcharea and this is where we use the logical or operator.
+2:35
+And then after that all I need is the alternative to jobhunter.
+2:40
+Jobsearcharea which is the string worldwide.
+2:44
+Now we can log out exactly what we logged out down here so let's just borrow that.
+2:49
+And I'll hit save.
+2:50
+And it looks like it's working.
+2:52
+Let's comment this out.
+2:53
+And it changes to worldwide.
+2:55
+Wow, it is working.
+2:57
+But how does this work?
+2:59
+Let's just break it down.
+3:01
+So what's happening here is that all of this code is being evaluated from left to right.
+3:07
+Now this is the important bit.
+3:09
+It's going to stop evaluating when it meets something truthy.
+3:13
+So at the moment Job Hunter dot JobSearchArea does not exist.
+3:18
+We've commented it out.
+3:19
+So let's just log out job hunter dot job search area.
+3:23
+And what we get down in the console is of course undefined.
+3:26
+Now with this having the value of undefined, well undefined is a falsie value and that means that this code will continue evaluating.
+3:35
+It will move on to the right.
+3:37
+Remember it will stop when it meets something truthy.
+3:40
+So this value over here is now going to be assigned to work location and actually what's on the right hand side of the or operator is going to be assigned to work location regardless of whether it's truthy or falsy.
+3:53
+This is a truthy value.
+3:55
+It's a string with some text in it but it would be assigned to work location even if it was a falsy value.
+4:01
+And so that's why when we save this code, we get Tom Chance work location is worldwide logged out.
+4:07
+Now let's uncomment this line of code and save and now it's changed to Europe.
+4:13
+That is because we're evaluating from the left to right.
+4:16
+We come in here, we get a truthy value.
+4:19
+This property does exist.
+4:20
+It's not undefined anymore.
+4:22
+It's holding a string.
+4:23
+The string's got text in it.
+4:24
+That is a truthy value and that means at this point the code will stop executing.
+4:30
+This value here will be assigned to work location and this code here will never be executed.
+4:38
+And that's why they call it short circuiting.
+4:40
+This or operator short circuits this code so this bit here will never run.
+4:45
+Just like with a piece of wire, we're breaking the flow of the electricity so it's never going to get to this point.
+4:52
+Okay so that is short circuiting with the logical or operator.
+4:56
+It can be a little bit tricky to get used to so in the next scrim let's move on to a challenge.
