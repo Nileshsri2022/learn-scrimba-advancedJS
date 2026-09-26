@@ -1,0 +1,100 @@
+
+Transcript
+0:00
+Here's a problem we can face when working with this.
+0:03
+I've got an object here and it's got this method get product info and it's pretty clear what it does.
+0:08
+We've got the name, s k u, the stock and then here, we're just basically summarizing the status of this product.
+0:16
+Down here, I'm calling the method.
+0:18
+Let's hit save and it works.
+0:20
+Stock level for vanilla lip gloss, SKU w twenty three f g is two hundred and seventy six.
+0:27
+So that works fine.
+0:28
+So what's the problem?
+0:30
+Well, the problem is that in JavaScript, we can store a function in a variable and in functional programming, this is quite common.
+0:37
+So let's say I store this get product info method in a const.
+0:41
+So right here, I'll say const and I'll call it product details and we'll set that equals to product dot get product info.
+0:51
+Okay.
+0:52
+Now let's see what happens when we invoke product details.
+0:56
+I'll hit save and we get an error.
+0:58
+It says cannot read properties of undefined reading name.
+1:01
+So we've got issues here.
+1:03
+So why is this happening?
+1:05
+Well, let's do two things.
+1:07
+Firstly, I'm going to comment out this line of code and we'll just log out this.
+1:12
+Again, we'll hit save and we're getting this as undefined.
+1:16
+Now when we were just calling product dot get product info and I'll just comment out that one.
+1:24
+Now we're logging this as the object which is what we would expect.
+1:29
+This is referring to this object.
+1:32
+So something is changing when we save this method to this const.
+1:36
+And that actually makes sense if you think about it like this.
+1:39
+What we're doing here is we're accessing this object product and we're taking what's stored in this property get product info which is actually this function and we're storing it to this const.
+1:52
+Let's just delete this longer console dot log.
+1:54
+So now you can see that what we're storing in product details is in fact just an anonymous function and we're logging out this within the anonymous function.
+2:02
+There's no reference here whatsoever to product.
+2:05
+So unsurprisingly, when we call product details, we get undefined because the value of this here is undefined.
+2:13
+So how do we deal with this problem?
+2:15
+Well, the answer is the bind method.
+2:18
+And the bind method works to bind this.
+2:21
+It's pretty easy to use.
+2:23
+You just need to understand what it's doing.
+2:25
+So back in our code, let's put this back to how it was.
+2:29
+And what we're gonna do right here is chain on bind.
+2:33
+And we need to tell bind what it is we want to bind and what we want to bind is this product object.
+2:40
+So now we're saying take this anonymous function that we've got right here which we're accessing here and then bind the product object to it.
+2:49
+Now, what does that actually do?
+2:51
+What does binding an object mean?
+2:53
+What it means is we're binding the this value of this object.
+2:58
+And we can prove that right here.
+3:00
+We're just logging out this.
+3:02
+So now when we call product details, we log out this and you can see that this is this object right here.
+3:10
+So we've successfully used the bind method to bind that object making it the this value that we want this function to have.
+3:18
+So now if we comment that console dot log and we'll uncomment this one, let's hit save and the product details function is executing this code right here so we are logging out our product info.
+3:30
+Okay.
+3:31
+Take a good look at this code because in the next scrim, we'll have a challenge.
