@@ -1,0 +1,96 @@
+
+Transcript
+0:00
+In the next few scrims, we're going to work towards the overall aim of rendering these images to the DOM but with an added complexity.
+0:07
+What we're going to do is load some image resources from outside of our site, but we don't want to render them until they are all loaded.
+0:16
+After all, it looks pretty horrible when content loads and other content starts jumping about the page.
+0:21
+It's really bad UX.
+0:23
+And bringing in these images can take time especially if they are large files.
+0:28
+In this grim, I want to deal with the non asynchronous parts of the process just to set things up.
+0:33
+We need to programmatically create image elements which might well be something you haven't done before.
+0:38
+We need to add the URLs as source attributes and figure out how we're gonna know if they've loaded successfully or not.
+0:44
+So let's have a look at that now.
+0:46
+Typically, when we create elements in JavaScript, we do something like this.
+0:50
+So we'll set up a const to hold our image and then we'll say document dot create element and the type of element we want to create is an image.
+1:01
+And then we can set the source of that image by saying image, accessing the source attribute and having our URL right here.
+1:12
+Now when we're preloading images, there is an advantage to using the image constructor and it works like this.
+1:20
+So we'll say const image is equals to a new instance of image.
+1:25
+So image with an upper case I is a constructor.
+1:28
+We don't need to pass anything in.
+1:30
+We can then go ahead and add our source whether that's a full path or a relative path or what have you.
+1:37
+Now doing these two things gives us the same result and in fact, let's just change the names so they're separate and we'll just log them out quickly.
+1:47
+Down in the console, we get exactly the same thing.
+1:49
+But for preloading images, there is an advantage in doing it this way because when you create an image using the image constructor, the image starts loading as soon as you set the source attribute before it's been added to the DOM.
+2:02
+So for preloading, it makes sense to do it this way.
+2:05
+So for the next few scrims, we will be creating images using the image constructor.
+2:10
+Secondly, we're going to want to check if our images have loaded or not.
+2:13
+Now image tags along with a few other tags like script and iframe have access to events that tell us if they have loaded or hit an error.
+2:22
+So let me just paste in a quick challenge for you.
+2:25
+So I want you to create two event listeners.
+2:28
+One should listen out for the image loading and log image has loaded.
+2:31
+The other should listen for an error and log image has not loaded.
+2:35
+Now I've left that deliberately vague.
+2:37
+I want you to search online to figure out how you should complete these two event listeners.
+2:41
+So just get to work on that now.
+2:46
+Okay.
+2:46
+Hopefully, you managed to do that without too many problems.
+2:49
+Let's just take our image and we'll add an event listener.
+2:53
+Now the first event is just called load.
+2:56
+So we're listening out for load.
+2:57
+Now we need a callback function and we don't really need to take in the event here.
+3:02
+We can just log out the image has loaded.
+3:05
+Let's set up our second event listener and here we just need to listen out for error.
+3:10
+So error is an event that the image tag has access to and we can just log out image has not loaded.
+3:18
+What's gonna happen if we save?
+3:21
+Image has not loaded because look we haven't got anything here.
+3:24
+Let's just paste in a proper URL.
+3:27
+Now when I hit save, we've got image has loaded because this URL actually works and you're welcome to stick that in your browser and test it if you want to.
+3:36
+Okay.
+3:36
+This is just some of the basics that we're gonna need to use in the next room.
+3:39
+So let's go back to our main task of getting these images rendered once they've all loaded using a promise.
