@@ -1,0 +1,284 @@
+
+Transcript
+0:00
+Let's have a super challenge with classes, inheritance, private properties, and getters and setters.
+0:05
+And this is going to be a big challenge and there's not really a good way of avoiding that.
+0:10
+If we want to practice these concepts in anything like a real world scenario, we're going to have to write a lot of code.
+0:16
+You are going to create some characters for a game.
+0:19
+And I've got a base class here called character and I've also created two child classes, hero and villain.
+0:26
+All of the details of what each class needs to do have been given for you right here.
+0:30
+There is a lot of work to be done, but I promise you every line of code you're going to write is something you've already seen.
+0:37
+Now down at the bottom, I have already set up two new instances of hero.
+0:42
+So we've got Merlin and Medea and one new instance of villain with a troll.
+0:48
+And then underneath that, we've got some tests that we can run.
+0:51
+It's a series of console dot logs and method calls.
+0:54
+And then I've put in comments what you should get from each console dot log.
+0:58
+When your code is correct, this should work.
+1:01
+So read all of the challenge text.
+1:03
+Don't be daunted.
+1:04
+Just take it one line at a time and work your way through it.
+1:07
+And I'll come back and show you my way when you're done.
+1:10
+I really hope you got that working and massive congratulations if you did because this was such a lot of work.
+1:17
+But hopefully, you found as you got into it that it wasn't that bad.
+1:20
+There was a lot to do but it was all things you'd studied before.
+1:24
+So let's start off with this character class.
+1:26
+We know it needs to take in a name as a parameter.
+1:29
+Well, that is gonna go inside the constructor and we'll set it up on this.
+1:34
+Now we need a private property for health and that can be initialized to one hundred.
+1:39
+So because it's a private property we come outside of the constructor and then it's hashtag health.
+1:45
+Now there are two ways of initializing it to one hundred.
+1:48
+You might have come in here and said this dot hashtag health and set that to one hundred.
+1:54
+But as we're not actually accessing health inside the constructor, we can initialize it here just as well.
+2:00
+That saves us a line of code.
+2:01
+You could do it either way but in this case where we're not accessing it inside the constructor, I'm going to do it this way.
+2:07
+If you did it the other way, it's gonna work just fine and that's no problem at all.
+2:11
+We also want to have a static property that will track how many characters have been created.
+2:17
+So up here, I'm going to say static and I'm just going to call this property count and I'll initialize it to zero.
+2:24
+Now every time this constructor runs which means we're creating a new character, we want to update this count.
+2:30
+In a moment we'll create a method to do that but inside the constructor I just want to call that method and I'm just going to call it increment count.
+2:37
+And because it's a static method, we need to access it on character itself.
+2:42
+And just before we go ahead and create this increment count method, I'm just going to delete the challenge text that we've already covered because that's just gonna help us see where we are and what we've got left to do.
+2:53
+So now let's create the static method increment count.
+2:56
+So we need the static keyword and all that method need do is access character dot count and increment it.
+3:04
+And we need another static method get count and that just needs to return character dot count.
+3:11
+So increment count will have the job of updating count and get count will just return whatever count is.
+3:18
+Okay.
+3:19
+We're doing really well.
+3:20
+Let's move on to health management.
+3:22
+So we need a getter and setter for health and we need to ensure that the health value does not fall below zero.
+3:28
+Let's start with the getter.
+3:30
+So we need get health, and that is just going to return this dot hashtag health.
+3:38
+Remember, the getter is gonna access this private property.
+3:42
+Now we need the setter, also for health, and this needs to take in a value as a parameter, and health will be set to this value.
+3:51
+So again, we can access this dot hashtag health, and we want to set it equals to value.
+3:58
+But now we have a bit of a conundrum because it does say to ensure that the health value does not fall below zero.
+4:05
+We could write some logic to do that.
+4:06
+Perhaps we could use a ternary or an if, But I'm going to use an easier way or at least a quicker way.
+4:12
+I'm going to say math dot max and I'm going to pass in zero comma value.
+4:20
+And what math dot max will do is return the higher of these two figures.
+4:25
+So if value is greater than zero, then this dot hashtag health will be set to whatever value is.
+4:30
+But if value drops below zero, then math dot max is going to return zero and this dot health will be set to zero.
+4:37
+So that means a character's health will never be a minus figure.
+4:41
+Okay.
+4:41
+Let's move on to the damage functionality which actually works very closely with the health functionality.
+4:47
+We need a take damage method and that should decrease the health by a specified amount.
+4:53
+So we'll take an amount in as a parameter and then we'll say this dot health minus equals amount.
+5:02
+And remember here, we're not using the hashtag because we're not actually accessing the private property directly.
+5:08
+We are using the setter that we've got right here.
+5:11
+And remember, we use the setter as if it were a property.
+5:14
+We can just set its value.
+5:15
+We don't need to treat it as a method.
+5:18
+Okay.
+5:18
+Let's move on to the alive status.
+5:21
+So we want to implement a getter for is alive.
+5:25
+And this one is going to return a boolean value and a character is considered alive if their health is greater than zero.
+5:31
+Well, that makes sense.
+5:33
+So let's just return this dot hashtag health is greater than zero.
+5:38
+Oh, and we need to return this.
+5:40
+So if health is greater than zero, this is going to return true.
+5:44
+If not, it's going to return false.
+5:46
+And that brings us to the last part of the character class, the status report.
+5:51
+So we'll have a get status method and that will just return a string and the string will say this dot name has this amount of health and then is alive or dead based on the outcome of this ternary.
+6:04
+So we're checking the Boolean here is alive.
+6:07
+If is alive is true, then we'll take the word alive.
+6:10
+If is alive is false, we'll take the word dead.
+6:13
+Okay.
+6:13
+That is the base class completed and that is the bulk of the work.
+6:18
+The other two classes are smaller.
+6:20
+Let's move on to the hero class.
+6:22
+And hero needs to inherit from character so we use the extends keyword and we do need a constructor of course and that needs to take in name.
+6:33
+And because name is being inherited from the base class, we need to call super and pass in name.
+6:39
+We also want an empty inventory for items.
+6:42
+We can use an array for that.
+6:44
+So I'll say this dot items and initialize it to an empty array.
+6:50
+Okay.
+6:51
+That is the first part dealt with.
+6:52
+Let's take inventory management next.
+6:54
+It says implement a method pickup item that allows the hero to add items to their inventory.
+7:00
+So pickup item, it should take in an item as a parameter and then we can access the array that we've initialized right here with this dot items and use the push method to add the new item.
+7:16
+And lastly, we'll deal with item retrieval.
+7:18
+So we want to set up a method get items and that is just going to return a string.
+7:24
+The name of the character has the following items and then we've taken this dot items which is an array and we're using the join method to join each element with a comma and a space.
+7:35
+So that's just gonna give us a list of items.
+7:38
+Okay.
+7:38
+That is the end of the hero class.
+7:41
+And we've just got a little bit more work to do with the villain class.
+7:45
+So again, villain extends character and it needs a constructor.
+7:50
+It needs to take a name and call super passing in name.
+7:55
+It also needs to take in a threat and we'll set the threat up on this.
+8:01
+Lastly, we just need the get threat method and that is just going to return this dot threat.
+8:09
+And that should be the end.
+8:11
+Now we've written quite a lot of code here so it won't be at all surprising if there are some bugs.
+8:16
+Let's save and see what happens.
+8:20
+Well, down in the console, we've got some results.
+8:22
+Let's go through them one by one.
+8:24
+So first, we're logging out troll dot get threat and we see I will destroy your soul down in the console.
+8:30
+So that is working.
+8:32
+Merlin is picking up a sword, Merlin is taking damage of fifteen, Medea is taking damage of five, and Medea is picking up a shield.
+8:39
+So when we log out, Merlin dot get items, Merlin has the following items sword.
+8:44
+I see that in the console.
+8:46
+That is good.
+8:47
+Medea has the following item shield.
+8:49
+Likewise, that is working.
+8:51
+Now the troll takes damage of one hundred and one.
+8:53
+That should take the troll below zero obviously because health was initialized for all characters at one hundred.
+9:00
+So now the troll should be dead.
+9:02
+And when we console dot log troll get status, it says the troll has zero health and is dead.
+9:08
+Well, that makes sense.
+9:10
+Strictly speaking, they have a health of minus one, but we did use this logic right here to make sure that health doesn't go below zero.
+9:18
+So math dot max is returning zero here, not the minus one which would have been the value.
+9:24
+Moving onwards, when we call get status on Medea and on Merlin, Medea has ninety five health and is alive.
+9:31
+Merlin has eighty five health and is alive.
+9:34
+Both of those are working just fine.
+9:36
+And then we have this static counts that we created right here.
+9:40
+We initialized it to zero.
+9:41
+We've created three characters and we're just logging out total characters created character dot get count and that is returning us the number three.
+9:50
+So that's the number of characters we created so that is working perfectly.
+9:56
+So again, massive congratulations if you made your way through that.
+9:59
+Really, really good job.
+10:01
+There was a lot of code to write there and probably quite a lot of thinking to do as well.
+10:05
+Quite a few concepts covered.
+10:07
+So if you made it through that, you can be really proud of yourself and you really are getting advanced at JavaScript.
+10:13
+Okay.
+10:13
+This is nearly the end of the section.
+10:15
+So let's just take one more scrim for a recap.
