@@ -1,0 +1,133 @@
+Transcript
+0:00
+In this scrim, I'm going to give you three challenges on using object methods to create arrays and we're going to be using some array methods as well.
+0:08
+So let's jump in to the first challenge.
+0:10
+We've got the same books object right here and I want you to use object dot keys to get an array of keys and you can store it in a const book keys.
+0:21
+Then I want you to iterate over book keys twice.
+0:25
+The first time I want you to log each individual key in the array And the second time, I want you to log only the book titles.
+0:33
+I've put the expected outputs down here.
+0:36
+So for a, you can just log b double o one, b double o two, etcetera.
+0:40
+And for b, we're just logging out only the titles.
+0:44
+Okay.
+0:44
+There is a bit to think about there especially in b of part two.
+0:48
+So take all of the time you need to do this but do really focus on it and complete the challenge because you have got all of the skills you need to do this.
+0:57
+Okay.
+0:57
+First, let's create the array.
+0:59
+So we need the object constructor and then it's dot keys and we pass in our object.
+1:06
+And let's just log that out to make sure we haven't done anything crazy.
+1:10
+And that's looking good.
+1:11
+We've got an array of book keys.
+1:13
+Okay.
+1:14
+Now we need to iterate over book keys and I'm going to do that with a foreach.
+1:18
+And we need to pass foreach a function and that function is going to take in a parameter to represent each element in the array.
+1:25
+It's an array of keys so let's call that parameter key and this function can just log out key.
+1:32
+Okay.
+1:32
+Let's save that and in the console we're logging out all of our keys as individual items.
+1:38
+Okay.
+1:38
+That is pretty good.
+1:39
+So we've dealt with a right here.
+1:41
+Let's just comment this one out.
+1:43
+Next, we want to log out only the book titles and this one was a little bit more difficult.
+1:49
+Again, I'll use for each and we'll pass in the arrow function with the key as the parameter.
+1:54
+And now what are we going to log out?
+1:57
+Well, we can take the books object and then use bracket notation to access each property with its key and then dot notation to take the title.
+2:07
+Let's hit save and see if it's worked.
+2:10
+And there we are.
+2:11
+We're logging out the titles and that is what I wanted.
+2:14
+That was the output we expected.
+2:17
+Okay.
+2:17
+Really good job if you got that going.
+2:19
+Let's keep up the momentum and move on to the second challenge.
+2:22
+Just bear with me while I set it up.
+2:25
+Okay.
+2:25
+Here's the next challenge.
+2:27
+And I want to admit that I made extra work for you in the last challenge because there's actually a much easier way to access values.
+2:35
+In this challenge, I want you to create an array of values from this object using object dot values.
+2:41
+And you'll remember before the object dot keys gave us the keys, well object dot values is gonna give us the values.
+2:48
+Once you've created that array, I want you to iterate over it and log out each book price only.
+2:54
+And I've started you off by setting up the const so you can just continue writing code here.
+2:59
+Okay.
+3:00
+I'll leave you to puzzle this one out and we'll look together in just a moment.
+3:04
+Okay.
+3:04
+Well done if you completed that challenge.
+3:06
+Let's take the object constructor and then dot values and we'll pass in books.
+3:13
+And again, let's just quickly log that out.
+3:16
+And that's worked.
+3:17
+We've got all of the values.
+3:18
+Remember each one of these objects is a value.
+3:21
+So now we just need to iterate over our array.
+3:24
+And in the function I passed to forEach, I'm going to make val the parameter.
+3:29
+And we just want this function to log out val dot title.
+3:32
+And when we save, in the console we get all of our titles To Kill a Mockingbird, Nineteen Eighty Four, The Great Gatsby, and Moby Dick.
+3:40
+Oh, actually, I said price not title.
+3:42
+So let's just complete the challenge properly.
+3:45
+There we are.
+3:46
+Okay.
+3:47
+That's it for this scrim.
+3:48
+I've got one more challenge with object methods for you, but it's a fairly long one, so I'm gonna give it its own scrim.
+3:54
+When you're ready for that, let's go.
