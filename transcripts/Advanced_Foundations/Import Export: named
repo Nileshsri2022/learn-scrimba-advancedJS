@@ -1,0 +1,102 @@
+
+Transcript
+0:00
+Okay.
+0:00
+Let's take a deeper dive into import and export.
+0:04
+Now what we've seen already in previous projects is a named export and that is exactly what I've got right here.
+0:11
+It's called a named export because when we import it, which we're doing in index dot JS, we have to import it by whatever name it was given in its original file.
+0:21
+So the array that we're exporting here is called Interplanetary Destinations Array and that is exactly what we're calling it when we import it.
+0:30
+Let's just log that out to check it's working.
+0:33
+And down in the console, we can see that we are logging out that array.
+0:37
+And what we're actually logging out is this data for an interplanetary travel firm that runs trips to exotic places all around the universe.
+0:46
+So we've got trips to Nova Prime, Lunar Outpost Alpha, Titan Oasis, and each trip is an object and inside the object we've got the destination, the distance in kilometers which is normally a very long way, the travel time in days which is normally a very long time, the price in US dollars which is extremely high, and a description of what you can do on that trip.
+1:11
+Now although we have to import it using its original name, we don't have to keep that name.
+1:16
+We can change it right here in the import using the as keyword.
+1:21
+So I could say import interplanetary destinations array as and then perhaps I prefer something much shorter like destinations.
+1:31
+Now when I hit save, we're going to get an error and down in the console it says interplanetary destinations array is not defined.
+1:40
+Well, we're still logging it out by its original name, but we can't do that now.
+1:44
+We have to use destinations.
+1:47
+And that works.
+1:48
+Now back in data dot JS, I have actually got more than one dataset.
+1:54
+If we scroll down, I've got another const here called short space trips array, and these trips are much shorter.
+2:02
+The travel time is normally just a couple of days or even one day, and you can do things like pass the moon or orbit the earth, and the prices are much more reasonable.
+2:12
+Although, ten thousand US dollars is not exactly cheap.
+2:15
+Now, it's no problem at all to import two entities from one file to index dot JS.
+2:21
+So let's take this array and over in index dot JS, I'm just going to add it to this import list.
+2:26
+It's coming from the same file data dot JS.
+2:29
+All I need is a comma and I'll paste in the name of the array.
+2:34
+Now let's just log that one out and when I hit save I get an error.
+2:39
+So this is a quick debug challenge.
+2:41
+What's gone wrong here?
+2:42
+Just take a moment to troubleshoot it.
+2:48
+Okay.
+2:48
+All we needed to remember is that over in data dot JS, if we scroll up to the very top, we're using the export keyword with this const.
+2:57
+We need to do exactly the same thing.
+2:59
+Everything we want to export needs to have the export keyword.
+3:04
+Now let's hit save and there we are.
+3:06
+We can see that it is working.
+3:08
+Now as I say, every export needs to have the export keyword but we don't have to do them all individually.
+3:16
+Let's just delete export from here and from here.
+3:20
+And then we're going to come right down to the bottom and I'm going to say export.
+3:26
+And then in curly braces, we'll have the names of our arrays.
+3:30
+And of course, those are separated by a comma.
+3:33
+Now let's hit save and there we are.
+3:36
+That looks like that is working.
+3:38
+Let's just go back to index.
+3:39
+Js and we'll just check that destinations is working and it is.
+3:44
+Now this line of code that we've got across here is pretty long so we could actually break this up onto a couple of lines.
+3:52
+And that still works.
+3:54
+So that could look a bit neater if you're bringing in a lot of imports and actually it has broken the syntax highlighting previously as was colored in orange.
+4:03
+Now I'm just going to put this back as it was and I'm just going to delete this code here which will just make it a little bit more manageable.
+4:14
+Okay.
+4:14
+That's it for the named export, but we're not quite done with this.
+4:17
+There's another type of export which we're going to take a look at in the next screen.
