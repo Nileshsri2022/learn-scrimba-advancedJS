@@ -1,0 +1,64 @@
+
+Transcript
+0:00
+When working with classes, there's a bit more functionality I'd like to show you.
+0:04
+It can be really useful to give powers to the class itself, which are not available to the objects the class creates.
+0:11
+And that's where static methods and properties come in.
+0:13
+Let me show you what I mean.
+0:15
+We've got a basic class here called employee and that is setting up objects with one single property name.
+0:22
+I think it would be cool to know how many employee objects this class had created.
+0:27
+But the individual objects themselves have no need to access that information.
+0:31
+In fact, if they did have that information, it would just be unnecessary memory usage and pollution.
+0:36
+So let's set up a static property here and it's really easy to do.
+0:40
+We just need the static keyword and then the name of the property.
+0:43
+I'm going to call it employeeCount and let's initialize it to zero.
+0:48
+And just to be clear, static properties don't need to go at the top of the class.
+0:52
+I think it's a bit better organized if they are at the top of the class and I am going to refer to it in the constructor underneath.
+0:58
+So that order makes sense to me, but it is just a matter of personal taste.
+1:02
+Now inside the constructor, let's take employee count and increment it.
+1:07
+But that's not going to work how it is because we need to actually access employee count and we can't access it via this because remember this property is not going to be available on the object instance.
+1:20
+So what we need to do is access it via the class name itself.
+1:25
+Okay, we've got a couple of instances of employee right here, so let's see if this works.
+1:31
+First, let's take an instance and see if we can access employee count.
+1:36
+When I hit save in the console, we're getting undefined and that figures because this static property does not exist on the object instance.
+1:45
+Let's take employee, so the actual class itself and now when I hit save, we get two because look, we've set up two instances of Employee.
+1:55
+Let's create a third and now we're counting three.
+1:58
+We can also have static methods and actually it might be better if we had a method to get this count for us.
+2:04
+So right here, I'm going to set up a static method.
+2:07
+Again, it's the static keyword and then just the method name.
+2:11
+And we can just return employee dot employee count.
+2:15
+Let's test it and when I hit save, we're just getting the function, I forgot to invoke it.
+2:20
+Now let's hit save, and there we are, we're getting the number three.
+2:24
+So that static method is working.
+2:26
+Okay.
+2:26
+In the next scrim, let's have a challenge with static methods and properties.
