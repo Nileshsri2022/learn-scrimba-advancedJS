@@ -1,0 +1,158 @@
+
+Transcript
+0:00
+When I first tried to learn recursion, it just kept going round and round in my head.
+0:04
+Oh, I'm sorry.
+0:05
+That was an awful joke.
+0:07
+But actually, recursion can be a bit of a head scratcher.
+0:10
+So let's see if we can break it down and in fact, I want to do this in four parts.
+0:15
+First, we're going to look at a really basic example just to see the mechanics of recursion.
+0:19
+Then we'll move into a more complex example.
+0:22
+Next, we'll talk about what's actually going on under the hood as I think you can't properly understand recursion without that knowledge and that means delving into the call stack.
+0:31
+And lastly, of course, we'll have a challenge.
+0:34
+Okay.
+0:34
+Let's look at recursion in its most basic.
+0:37
+And I'm going to create a timer that will count down from n to zero.
+0:42
+It's going to take in count as a parameter and that will be the starting number for the countdown.
+0:48
+And inside the body of the function, let's have an if clause to check if count is less than or equal to zero.
+0:56
+And if it is, we can just return count because the countdown will have finished.
+1:02
+And next, here comes the recursion.
+1:04
+We're going to call this function countdown from within its own body.
+1:09
+And we'll pass in count minus one.
+1:13
+To see this working, we just need to log out count, and let's call countdown with the number five.
+1:21
+We'll hit save and then down in the console, we are counting down five four three two one zero.
+1:26
+So that is working.
+1:27
+And what we can see here are two really important features of recursion.
+1:31
+The first is right here, it's the function calling itself and it calls itself with the next step completed.
+1:38
+So whatever it is you're doing recursively, the recursive function call is biting off one chunk of it.
+1:44
+In this case, it's reducing count by one.
+1:47
+And then what we have here with this if cause, this is called the base case or the termination case.
+1:52
+And the base case is what stops the function going on and on in an endless loop until the stack blows or your laptop goes up in smoke.
+2:00
+So if we didn't have this exit route, this countdown timer would count down endlessly deep into minus numbers until we get a Stack Overflow error and the browser crashes.
+2:09
+And it's really common to see an if clause used in a recursion to handle the base case.
+2:14
+So let's just go through the whole process.
+2:16
+We call this function passing in five.
+2:19
+We logged five.
+2:21
+We checked if five was less than or equal to zero and of course it's not.
+2:25
+So we skipped this code and we called the function again, this time passing in five minus one which is four.
+2:33
+We logged four.
+2:34
+We checked if four is less than or equal to zero.
+2:37
+Of course, it's not.
+2:38
+So we called countdown again passing in four minus one which is three.
+2:43
+That process continued until we called the countdown function with zero.
+2:47
+We then logged zero to check if zero is less than or equals to zero, which of course it is.
+2:53
+Our base case had been met so we returned count and the function terminated.
+2:58
+Okay.
+2:59
+Let's have a challenge.
+3:00
+I'm going to delete this code so I hope you've had a good look at it.
+3:04
+Okay.
+3:04
+Here's your challenge.
+3:05
+I want you to create a counter which counts up from a provided start number to a provided end number.
+3:12
+It should log each number in turn.
+3:14
+So if you call this count up function passing in a start number of two and an end number of six, it should log two three four five six.
+3:22
+Okay.
+3:23
+Get to work on this.
+3:25
+Okay.
+3:26
+Hopefully, you got that working.
+3:27
+I'm just going to move the challenge text out of the way.
+3:31
+And we're going to start off inside the body of this function just by logging the start number.
+3:36
+Next, let's check the base case.
+3:38
+And the base case here will be met when the start number is the same as the end number.
+3:45
+And when we reach that point we can just return the start number.
+3:48
+And now let's have our recursion.
+3:50
+You could have put this inside an else.
+3:53
+So we'll call count up and we're going to pass in our start number plus one.
+3:58
+And we also need to pass in the second parameter which is end and that will stay the same.
+4:03
+Let's call count up passing in two and six and see if that's worked.
+4:07
+And we'll open up the console and there we are.
+4:10
+We're getting two three four five six.
+4:12
+So that is working.
+4:14
+Now you might have done this without the else.
+4:16
+That also works just fine.
+4:18
+And you also might have checked if start was greater than or equals to end.
+4:24
+And likewise, that does exactly the same thing.
+4:27
+So if you did either of those things, that is absolutely fine.
+4:30
+So the examples of recursion that we've seen in these scrims are pretty basic, but it is really good to see the mechanics and the syntax and to get to know the base case.
+4:39
+But ultimately, you could probably do this just as well with a for loop and and actually do it more efficiently.
+4:45
+So in the next scrim, we are going to up the complexity a notch.
+4:50
+And I do want to warn you, recursion gets harder from here on in.
+4:53
+So take it easy and just allow yourself to to rewatch scrims and run into errors as much as you need to.
+4:59
+Almost everybody finds this difficult.
+5:01
+So just remember to give yourself a break as you watch the rest of this section.
