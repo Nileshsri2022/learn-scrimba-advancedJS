@@ -1,0 +1,126 @@
+
+Transcript
+0:00
+I want to show you two more features of setTimeout.
+0:03
+Here we have a function which displays traffic lights.
+0:06
+When we run the app, a red light appears in the console because we're invoking the function right here.
+0:11
+I want to display green after a three second delay and we know we can do that with setTimeout.
+0:16
+Before we use setTimeout with an inline function, now we're going to do it with this function which we've already got.
+0:22
+So let's create some space and it's setTimeout and we need to pass it the function name and the time in milliseconds.
+0:30
+And here we run into a problem because this function is expecting a parameter and if we come in here and just pass in an argument in the normal way, look what happens when I hit save.
+0:40
+We instantly get the green traffic light.
+0:43
+We're not getting our three thousand millisecond pause and that's because as soon as we add these brackets to the end of the function, we're invoking the function immediately and we don't want to do that.
+0:53
+Luckily, setTimeout has a solution.
+0:55
+So far, we've been used to passing setTimeout two pieces of information.
+1:00
+The code we want it to execute and that is not optional, it needs to know that and a delay in milliseconds which actually is optional.
+1:08
+It will default to zero if you leave that empty.
+1:11
+But we can actually pass it more information because anything more we add to this list will be passed to this function as an argument.
+1:18
+So actually, let's delete these brackets and we're going to take the green light and pass it in like that.
+1:25
+And if this function was expecting more than one parameter we could actually keep going.
+1:29
+But we don't need that now, let's just save with this green light.
+1:33
+We wait three seconds and the green light appears after the three second delay.
+1:39
+Okay.
+1:39
+Pause now and take a good look at that code because in a second, I'm going to delete it and set you a challenge.
+1:47
+Okay.
+1:48
+Let's delete everything we've got here.
+1:51
+And here's your challenge.
+1:52
+We're back with the same quiz question as before, but this time when we use setTimeout, we're going to use this function log answer.
+1:59
+So what we're looking for is this.
+2:01
+After a three second delay, call the log answer function, which we've got right here.
+2:06
+Make sure log answer has all of the info it needs.
+2:09
+So you're going to need to take in some parameters right here and of course replace the question marks that you can see right here in this sentence.
+2:16
+The answer to the question is Lima and it's worth ten points.
+2:20
+You can put your setTimeout right here and while you're welcome to go back and check my code if you absolutely need to, do try and do it from memory.
+2:28
+Okay.
+2:28
+Hopefully you managed to do that without checking my code.
+2:31
+So let's start with the setTimeout.
+2:34
+We'll pass in the function we want to call, the delay in milliseconds, and the two pieces of information we want to pass that function and they are the answer to the question which is Lima and the number of points for getting it right which is ten.
+2:48
+Log answer needs to take in both of those and let's add them into the template literal.
+2:54
+Okay let's hit save and we've got what is the capital of Peru and three seconds later the answer is Lima of course.
+3:00
+If you got that right give yourself ten points.
+3:03
+So that is working and well done for getting that challenge sorted.
+3:08
+Just before we finish, I want to show you something which we don't need in this app, but which is really useful to know about.
+3:13
+We have the ability to interrupt this setTimeout method and stop it before it executes this code.
+3:19
+In the HTML, I have got a button right here with the ID of stop, and I'm just going to uncomment that, and let's hit save, and we'll just see it appear right here in the mini browser.
+3:29
+Now back in index.
+3:30
+Js, I'm going to set up an event listener on that button.
+3:35
+And when this button is clicked, we're going to use the clearTimeout method, which does exactly that.
+3:41
+It clears the timeout so it doesn't execute this code.
+3:44
+Now clearTimeout needs to know which set timeout we're referring to.
+3:48
+We could of course have multiple in one app.
+3:51
+So I'm going to save this one to a const.
+3:54
+Now we can identify it with this name.
+3:56
+So let's pass that to clear timeout.
+3:59
+And I'm also just going to add a console dot log here, so we know what's going on.
+4:04
+Okay.
+4:04
+I'm going to open up the console, and when I hit save, before the three seconds have elapsed, I'm going to click stop.
+4:10
+Let's see what happens.
+4:11
+So clicking save, click stop, we've got canceling and then three seconds elapse and this setTimeout has not fired log answer.
+4:21
+We're not running this code.
+4:22
+So we've successfully interrupted it and used the clearTimeout method to cancel this setTimeout.
+4:29
+And that's a really useful thing to know about.
+4:31
+Okay.
+4:32
+That's the end of setTimeout.
+4:33
+We have got another similar method that we want to look at which will execute code repeatedly at a given time frequency.
+4:40
+So let's come on to that next.
