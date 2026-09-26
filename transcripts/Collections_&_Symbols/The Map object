@@ -1,0 +1,190 @@
+
+Transcript
+0:00
+Let's take a look at another type of object in JavaScript, the map object.
+0:04
+The map object has nothing to do with the array method dot map other than having the same name, which does seem to cause a bit of confusion at first.
+0:13
+So what exactly does the map object do?
+0:16
+Well, the map object holds key value pairs just like a regular object.
+0:20
+But there are some benefits to using the map object which we're going to explore.
+0:25
+Firstly, with a standard object, the key has to be either a string or a symbol.
+0:30
+But with the map object, any value can be a key whether it's an object or one of the primitives.
+0:36
+That's pretty odd, We're so used to using strings as keys we probably haven't considered trying to use anything else, but it can be useful.
+0:43
+So let's build our first map object with regular objects as keys.
+0:48
+Imagine an app where athletes are added to a map object as they finish a race.
+0:53
+We want each key to be an object with the general info for that athlete and the value to be the time they achieved in this race.
+1:01
+So I have three athletes right here and each one's just got a name and an age property in an object.
+1:05
+Let's use the map constructor to initialize our map object and I'm going to save it to a const finishes.
+1:12
+And then we need the new keyword and the map constructor.
+1:16
+You can't access map objects with dot or bracket notation like you can with a regular object.
+1:21
+So here we need to use our first map object method to set each key value pair and we do that with the logically named set method.
+1:29
+So I take finishes, call the set method and I need to pass in my key which is going to be this object here that we've got stored as athlete one.
+1:39
+And the value is going to be the time they completed the race, which in this case is a sprint.
+1:44
+And Alice is a super fast fifty year old, so it only took her ten seconds or ten thousand milliseconds.
+1:51
+Let's log out finishers.
+1:54
+And the ScreenBar console doesn't give us too much, but if you had a look in the Firefox or Chrome console, you would see something like this.
+2:01
+So we've got our map object, and we've got the key here, which is this object with the name Alice and the age fifty, and the value is this ten thousand milliseconds.
+2:11
+Okay.
+2:11
+Let's add two more athletes.
+2:14
+Athlete two finished in ten point two seconds, and athlete three was super fast and finished in nine point eight seconds.
+2:22
+Now the next benefit of a map object is that we can iterate over it with a forEach.
+2:27
+And that is something of course that we can't do with a regular object.
+2:30
+So let's take finishes, call forEach.
+2:34
+ForEach takes a callback function.
+2:37
+And the callback function can have two parameters, the value and the key.
+2:42
+And yeah, that order is a little bit annoying, but that's the way it is.
+2:46
+Okay.
+2:46
+Let's just log out athlete's name and time.
+2:50
+So key dot name and value.
+2:52
+And when we hit save in the console, we get each athlete's name and their time.
+2:57
+Okay.
+2:57
+Let's see a few more properties and methods in action.
+3:00
+I want to find out how many people have finished this race and I can do that by figuring out how many properties we've got in finishers.
+3:08
+Now finishers does not have the length property, but if we go back to what we saw in the console, it has got this size property.
+3:15
+Let's see what happens when we log it.
+3:18
+We get the number three, so really easy to see how many properties we've got in our map object.
+3:24
+Next, I want to access an individual property, and I can do that with the get method.
+3:30
+So finishes dot get and I'll pass in the object that we're using as the key.
+3:37
+And that gets me the value that goes with that key.
+3:39
+That value of nine point eight seconds I think is too fast.
+3:43
+Either they cheated and jumped the gun or the timing equipment was faulty.
+3:46
+So I've decided I want to delete them from my map.
+3:50
+Why don't you see if you can do that as a mini challenge?
+3:52
+You can see that the method names we're using are pretty logical set and get.
+3:58
+I want you to delete athlete three from the map object just see if you can figure out how you would do that.
+4:04
+Okay.
+4:05
+Let's try if we've got a delete method.
+4:08
+So finishes dot delete And how about we just pass in the object that we're using as the key.
+4:15
+We're trying to log that out right here.
+4:17
+Let's see what happens.
+4:18
+We get undefined.
+4:20
+That looks promising.
+4:21
+Now we've also got a has method and has returns a boolean.
+4:26
+So now I'm checking if finishers has athlete three as a key and we're getting false, so athlete three is not included in our map object.
+4:35
+Let's just check athlete two and that returns true because athlete two still exists in the finishers map object.
+4:43
+So just to recap then, those methods and properties are actually really logically named.
+4:47
+We've got the size property to find out how many properties we've got in the map object.
+4:51
+We've got the set method to add a property, the get method to access it, and the delete method, well to delete it.
+4:58
+All pretty logical and easy to remember.
+5:01
+Now the final benefit that I want to show you is insertion order.
+5:05
+An insertion order might not be something you've thought about or you might just have taken it for granted.
+5:10
+I'm just going to comment out the code that we've got and delete some of this.
+5:15
+And let's just bring in a regular object.
+5:18
+So I've got a person with a name, date of birth, location and I'm iterating over this object with this four in and just logging out each value.
+5:27
+And when I hit save, we see those values in the console.
+5:29
+I've got a bit of a typo there.
+5:32
+That's better.
+5:33
+Now as we iterated, we logged out the name, the date of birth, and the location.
+5:37
+So the order we got out was the order that we put in right here, name, date of birth, location.
+5:43
+Let's add a new property.
+5:45
+Hit save.
+5:46
+And now we've added English to the end of the list.
+5:48
+It was put in last, so it gets iterated over last.
+5:52
+The insertion order is maintained.
+5:54
+Next, let's do something a little bit strange.
+5:57
+So I'm adding the key with one hundred as a string and one hundred as text as a value, and likewise two as a string, and then the word two as a value.
+6:06
+Let's see what happens when I save and we iterate over it.
+6:10
+Well look two and one hundred have gone right to the top.
+6:14
+And in fact two was last in but is being iterated over first and then one hundred comes next.
+6:21
+That is pretty strange and the insertion order has gone out of the window.
+6:25
+What's actually happening here is that all of these letter strings like name, date of birth, location, language are following insertion order.
+6:33
+But these number strings are actually being dealt with first.
+6:37
+And this is all a convoluted and contrived way of saying to you that although you normally maintain insertion order in objects, there are edge cases where you can't rely on it.
+6:47
+But what we're doing up here with our map object, and I'll just comment out this strange object we've got here.
+6:54
+Well there, the insertion order is fixed and it's guaranteed.
+6:58
+That is another benefit of map.
+7:00
+Whatever order we insert in using this set method, that is the order they will be iterated over.
+7:06
+Okay.
+7:07
+Take a good look at this syntax because in the next scrim, we'll have a challenge with the map object.
