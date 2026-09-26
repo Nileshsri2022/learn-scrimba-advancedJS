@@ -1,0 +1,68 @@
+
+Transcript
+0:00
+Let's take a visual look at what happens with a recursive function under the hood.
+0:04
+I've got our JavaScript right here.
+0:06
+This represents the call stack and we're gonna see some return values as the recursion unwinds in this box right here.
+0:12
+And I've also got this console for our final result.
+0:16
+So we're calling this function right here, sum to n five that gets passed to the call stack and it sits at the top of the stack.
+0:23
+The function calls sum to n with n minus one.
+0:26
+Well, n is five at the moment.
+0:28
+So n minus one is four, sum to n passing in four is now in the second place in the call stack.
+0:34
+That function in turn calls sum to n with n minus one which in this case is three and then sum to n three calls sum to n two.
+0:41
+Sum to n two calls sum to n one.
+0:44
+Sum to end one finally calls sum to end zero.
+0:47
+Sum to end zero hits our base case and it returns zero.
+0:52
+So the first value we're going to see on the unwind is zero.
+0:55
+And sum to end zero has now finished and it can be removed from the call stack.
+0:59
+Sum to end one now has the return value of sum to end zero which is zero.
+1:05
+So it computes one plus zero because zero is what was returned from the previous function call.
+1:10
+So the unwind value is one plus zero which is one.
+1:14
+Sum to n one is finished, it's removed from the stack.
+1:18
+Sum to n two now has the return value of sum to n one which is one.
+1:23
+And so as it returns, it computes two plus one which is three.
+1:27
+Sum2n2 is done, it disappears from the stack and sum2n3 now has the return value of sum2n2 which is three.
+1:36
+So it computes three plus three and gets six.
+1:39
+And at that point, it leaves the stack.
+1:42
+Now sum to n four has the return value of sum to n three which was six.
+1:47
+It computes four plus six which is ten and leaves the stack.
+1:51
+Finally sum to n five is called, it's got the return value of sum to n four which is ten.
+1:57
+So it does the calculation five plus ten, which is equals to fifteen.
+2:01
+That's the final function in the call stack.
+2:03
+It leaves the call stack and we return fifteen in the console.
+2:07
+So that's what's actually going on under the hood.
+2:10
+That is how recursive functions that return functions unwind to return the final value.
+2:15
+They're passing their value back to the previous function and that's how we're doing this cumulative maths.
+2:21
+Okay, take a while to digest that if you need to and in the next scrim I'm going to give you a challenge using recursion so you can put all of these new skills to the test.
