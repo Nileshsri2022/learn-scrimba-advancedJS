@@ -1,0 +1,260 @@
+
+Transcript
+0:00
+In this super challenge, we're going to tackle recursion.
+0:02
+I've got some company data right here, and you're going to write a recursive function that can search through this data and find an employee by their ID.
+0:12
+Here is what I want you to do.
+0:14
+Write a function that searches for an employee in organization data which we're importing right here.
+0:19
+The function should recursively traverse the nested objects and find all employees with a specified ID.
+0:25
+I'm calling the function down here passing in organization data and the ID we're searching for and then we're just logging out employee.
+0:33
+For a stretch goal, I've put complete the challenge without declaring any variable in the global scope.
+0:39
+That does make it more complicated, but try it if you feel ready.
+0:42
+It's easier to complete the challenge with a variable in the global scope, but that does have disadvantages.
+0:48
+When I do my demonstration, I'm going to show both ways, and I'll talk a bit about the problems that declaring a global variable can cause.
+0:55
+Now for some of you, this is going to be a pretty tough challenge.
+0:58
+So in hint dot m d, I have provided some fairly extensive explanation.
+1:03
+Feel free to use it.
+1:04
+And that covers both the main challenge and the stretch goal.
+1:08
+Okay.
+1:08
+Plenty to do here, a lot to think about, so get to work on this challenge.
+1:13
+Hopefully, you got it working and give yourself a pat on the back if you did, especially if you achieved the stretch goal.
+1:19
+That was quite tricky to do.
+1:21
+Now I'm just going to move the challenge text out of the way.
+1:24
+And let's start off by creating an array to store our results and I'm going to declare this in the global scope.
+1:30
+And you might have used a const here but if you did tackle the stretch goal, then you probably found that that caused problems.
+1:36
+And so I'm just going to use a let from the get go.
+1:39
+Okay.
+1:39
+Let's get to work on search employee by ID.
+1:42
+This function needs to take in two parameters.
+1:45
+First, it's going to take in the data.
+1:47
+And then the employee ID we're searching for, I'll call it target ID.
+1:52
+Inside the function, I'm going to use a for in to iterate over the data object.
+1:57
+So I'll say for let key in data.
+2:02
+And what I want to check is whether the key is employees.
+2:06
+If it is, we know from the data that employees holds an array and that's always the case.
+2:12
+So we can iterate over that array and then we can check for the items ID to see if it matches the target ID.
+2:20
+And we could do this with a four of or with a four each.
+2:23
+I think I'm gonna use a four of.
+2:25
+So I'll say for let item of data and specifically the key which we know will be triple equals to employees in this case.
+2:35
+And then we can check if this item's ID is triple equals to the target ID.
+2:40
+And if it is, let's push it to results.
+2:44
+Now what happens if the key is not employees?
+2:46
+Well, let's use an else if.
+2:49
+And here, we just want to check if we're still dealing with an object.
+2:53
+If we're not dealing with an object, we don't need to do anything.
+2:56
+This is effectively the base case.
+2:58
+But if we're dealing with an object, we should recursively search it.
+3:01
+So let's check using type of and we want to see if data with that key is an object.
+3:09
+And if it is, here comes the recursive function call.
+3:12
+And what do we need to pass in?
+3:14
+Well, we need the same target ID that will actually be the second parameter.
+3:18
+The first parameter needs to be some kind of data and it will be the object that we've actually just been examining.
+3:25
+So it will be data key.
+3:27
+Remember with recursion, we take everything one step deeper.
+3:30
+So while the target ID of course remains the same, this data right here has now moved a step down.
+3:36
+So it was this entire dataset, but now we're going to get down into these nested objects so we can get right down to an array, for example, like this one right here.
+3:48
+Okay.
+3:48
+All we need to do now is return the results and let's hit save.
+3:53
+Oh, and we're getting an error.
+3:54
+It says target ID is not defined but it is a typo that is right here.
+4:01
+Let's try again.
+4:02
+And there we are.
+4:03
+Now it is working.
+4:04
+So we are logging out Kwame Mensah position sales executive ID number five.
+4:10
+That is what we expected and actually we can see that name right here and the position and the ID.
+4:17
+So that is working properly.
+4:18
+And let's try searching for an ID of six.
+4:22
+And again, that looks pretty good.
+4:24
+Let's just check-in here.
+4:26
+Yep.
+4:26
+That is working just fine.
+4:28
+Okay.
+4:29
+Let's just go back to five.
+4:30
+Now we haven't completed the stretch goal and that means the code we've got right now is a little bit clunky.
+4:36
+In fact, it's a bit problematic.
+4:39
+This state right here is exposed to the rest of our app, and this can lead to side effects really, really easily, especially if the function is called multiple times within the same scope without reinitializing results.
+4:52
+What could happen is that it could accumulate results from previous function calls unintentionally and we would get weird results.
+4:59
+And actually, we can see that in action.
+5:02
+If we come down here, let's make a second function call.
+5:05
+I'll call this employee two and we'll pass in six.
+5:09
+Now let's log out employee and employee two and I'm just going to add in some strings here to identify them.
+5:16
+Okay.
+5:17
+Let's hit save and see what we get.
+5:19
+So that is pretty weird.
+5:20
+For employee, we have actually got two objects.
+5:23
+We've got the object with an ID of five and an object with the ID of six.
+5:28
+And then for employee two, we've got exactly the same thing.
+5:31
+And in fact, it might actually be slightly easier to see if we don't log out employee two.
+5:35
+If we just log out employee one, well, we didn't ask for the employee with the ID of six.
+5:42
+That is not what we're looking for right here when we log out employee.
+5:46
+That should just be what we get back from calling the function passing in the ID of five.
+5:50
+So you can really see how this results array has been polluted.
+5:55
+So that is the motivation for this stretch goal.
+5:57
+And if you didn't complete the stretch goal before, why not try it right now?
+6:04
+Okay.
+6:04
+So hopefully, if you didn't achieve it before, you have achieved it now.
+6:08
+Let's take a look together.
+6:09
+So we're going to move this results array right here inside the function.
+6:14
+What happens when I hit save?
+6:16
+We just log out an empty array.
+6:18
+Now the problem we're facing is right down here where we make this recursive function call.
+6:23
+This is probably the trickiest part because what we need to do here is incorporate what we get from the recursive function call into the results array.
+6:32
+We don't want to reinitialize the results array to an empty array which is exactly what's happening every time this function is called.
+6:40
+And the tool we need to solve this problem is the spread operator.
+6:44
+So down here, I'm going to say results equals and now I'm going to set up an array.
+6:50
+And then in this array, I'm going to use the spread operator to join what we've already got in results.
+6:56
+So that's triple dot results and then a comma.
+7:01
+And then whatever array we get returned to us by calling this function again passing in the new data.
+7:08
+So again, it's triple dot and then search employee by ID.
+7:12
+So now results is updated by a joining together of these two arrays, the existing array and whatever comes back from that function call.
+7:20
+Let's try it now.
+7:22
+And again, a typo.
+7:24
+Okay.
+7:25
+Now it's working.
+7:26
+So employee has the ID of five.
+7:29
+Is Kwame Mensah, sales executive.
+7:31
+That makes sense.
+7:32
+Let's log out employee two.
+7:35
+And now you can see that they are working independently.
+7:38
+So each time we log out an employee, we get just that employee not more employees.
+7:44
+And in fact, the only way we would get more employees is if we updated our data so more than one employee had the same ID.
+7:51
+Let's change seven for five.
+7:53
+And look now when we log out employee one, we actually get two objects both with the ID of five because now Emily Smith also has an ID of five.
+8:03
+So that is working exactly what we want.
+8:06
+We've got the state controlled inside this function that keeps it nice and safe and our results predictable.
+8:12
+Okay.
+8:12
+Great job for getting that sorted.
+8:14
+If you used hint dot MD, that is absolutely fine.
+8:17
+Recursion can be really, really tricky especially when you're working to somebody else's specifications.
+8:23
+So this was a hard one, not lots of code, but the code we did write was pretty complicated.
+8:28
+Okay.
+8:29
+We are pretty much done.
+8:30
+Let's go for the recap.
