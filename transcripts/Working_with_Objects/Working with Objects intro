@@ -1,0 +1,37 @@
+Transcript
+0:00
+Wherever you are in JavaScript, you're never too far from an object and there's an awful lot we can do with them.
+0:05
+In this course, I've broken objects down into two sections.
+0:09
+In this first section, we'll be looking at objects and built in methods.
+0:13
+We'll be looking at the has own and has own property methods, examining assignment by value versus assignment by reference which is quite a strange thing in JavaScript.
+0:23
+We'll use the spread operator, another use of the three dot syntax.
+0:27
+We'll look at object dot assign, structured clone.
+0:31
+And finally, we'll talk about this, as in literally the keyword this.
+0:36
+This is a strange one.
+0:38
+In a way, it's so simple, yet it's also so confusing.
+0:41
+It often takes students a while to get their head around it.
+0:44
+So don't worry if you don't understand it at first, we will get to the bottom of it.
+0:49
+In this section, you will also notice the odd array popping up.
+0:52
+And that's because there are some concepts which are relevant to both objects and arrays.
+0:56
+And in fact, hopefully, you remember that arrays are objects in JavaScript.
+1:00
+We tend to think of them as different data types, but they are not.
+1:04
+Also, just to point out, there's no super challenge with this section as we have got quite a lot more to learn about objects in the following section.
+1:10
+Okay.
+1:11
+When you're ready, let's go.
