@@ -1,0 +1,68 @@
+
+Transcript
+0:00
+Okay.
+0:00
+It is challenge time.
+0:02
+I have added a property to this object username.
+0:06
+And down here I've got a const job hunter name and I'm just logging out hey job hunter name.
+0:13
+Your challenge is this, I want you to make it so that if the Job Hunter object does not have a name property, the username is used instead.
+0:22
+So by preference, we call a Job Hunter by their name but if their name does not exist on the object, we use their username instead.
+0:29
+Okay.
+0:30
+Look back to the previous scrim if you need to and get this challenge sorted.
+0:34
+Okay.
+0:35
+Hopefully, you got that working without too much difficulty.
+0:38
+So I'm going to come down here.
+0:40
+We've got the const already set up for us.
+0:42
+Job Hunter name right here.
+0:44
+So I'm going to set that equals to job hunter.
+0:48
+Name.
+0:49
+Now if we hit save that will of course work.
+0:51
+But what happens if there's no name property on that object?
+0:56
+It says, Hey undefined.
+0:57
+Well that's no good so we're going to come in here and we're going to use the or operator.
+1:03
+And now we'll put the alternative which is jobhunter dot username.
+1:08
+And let's hit save and it's looking pretty good.
+1:11
+It says, hey, tcharm forty four.
+1:13
+So this code has executed from left to right.
+1:16
+Job hunter dot name does not exist on the object so that is giving us a full c value.
+1:23
+The code continues executing job hunter dot username is assigned to my const job hunter name.
+1:29
+And just to be clear, we don't really need to set this up as a separate const.
+1:33
+If I just clear all of this challenge text out of the way, we could do all of this right here inside the console.
+1:40
+Log.
+1:41
+All I'd need to do is take this code right here and put it inside these curly braces.
+1:47
+Let's comment out the const and look that is working just as well and if I uncomment the name we're getting the name there as well.
+1:56
+So those two ways of completing the challenge are both absolutely fine.
+2:00
+Okay, that is the logical or operator in short circuiting.
+2:04
+Now, let's move on to the logical and operator.
