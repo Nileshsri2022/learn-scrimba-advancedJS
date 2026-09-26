@@ -1,0 +1,154 @@
+
+Transcript
+0:00
+Let's take a look at debouncing.
+0:02
+So remember with debouncing, we want to delay a function from executing until there have been no attempts to execute that function for a given time.
+0:10
+This event listener down here is detecting inputs in this box and calling the handle input function when an input is detected.
+0:17
+And at the moment, we're just logging out input detected from element with the ID and then we've got e dot target dot ID.
+0:24
+So let's type something in here.
+0:26
+And every time we type we're triggering this function.
+0:29
+So that's happening on every letter that we type and also when we delete.
+0:34
+Now after we've successfully debounced this function, typing in or deleting input will not cause this function to fire until there has been no input into this field for the delay that we specify.
+0:46
+Okay.
+0:46
+Let's delete this event listener and just uncomment this one.
+0:51
+And here I'm calling a debounce function and I'm passing in the handle input function and a delay of five hundred milliseconds.
+0:59
+We've got the debounce function right here already in skeletal form.
+1:02
+We're taking in a function.
+1:04
+We're taking in a delay.
+1:05
+Everything is set up.
+1:07
+Now, I'll give you two options here.
+1:08
+If you'd like to do this as a challenge, go for it.
+1:11
+I want you to write logic inside this function to make handle input fire only when there has been no activity in the input field for delay seconds.
+1:20
+Remember, delay is the parameter we're taking in here.
+1:23
+Handle input should not run when the first event is detected.
+1:27
+And I have given you a hint dot MD file if you need some help.
+1:31
+And just to be clear, I've specified handle input in here, but this should be a reusable function.
+1:36
+We should be able to call debounce passing in a function and a delay for pretty much any function that we want to.
+1:41
+So don't hard code anything.
+1:43
+What's gonna happen in here is kind of similar principles to what we did before.
+1:46
+So you should be able to figure it out either with or without the help in hint dot MD.
+1:51
+Now if you'd prefer to watch me give an example first, that is also absolutely fine.
+1:55
+There is going to be a challenge later where you have to use debouncing.
+1:59
+Okay.
+1:59
+Pause now and go for the challenge or else in a few seconds, we'll dive right in.
+2:05
+Okay.
+2:05
+If you did that challenge, congratulations.
+2:07
+If not, don't worry.
+2:09
+So just like before, we're taking in a function and a delay and the first thing that we're going to do inside the body of this function is declare a timer.
+2:18
+But we don't need to initialize it to anything.
+2:20
+We're not actually going to check if it's truthy or falsy in this case.
+2:24
+Next, let's return a function.
+2:27
+And this function's first job is to clear the time out if one exists.
+2:32
+And we'll just pass in debounce timer.
+2:35
+Once it's done that, it needs to take debounce timer and give it a new set time out.
+2:42
+And that should return the function call.
+2:45
+But we need to use apply because we want to pass in this and arguments.
+2:53
+And it of course needs its delay which I believe down here we're already calling with five hundred milliseconds.
+3:01
+Okay.
+3:02
+So that is pretty much done.
+3:04
+Let's save.
+3:05
+So I'll start typing in here
+3:09
+and nothing is happening and now I'll stop typing and after a five hundred millisecond pause, we actually log our sentence.
+3:17
+And again, I'll delete in quick succession, nothing's happening, I stop deleting and there we are the handle input function fires.
+3:25
+Okay.
+3:25
+That's pretty cool but let's just walk through this function to make sure we understand why it's working.
+3:30
+So when an event is detected, obviously this code here fires the debounce function is called and we're passing in handle input and the delay.
+3:40
+In debounce then we set up a timer but we don't attach any setTimeout to it but we then return this function.
+3:47
+And this function clears the timeout.
+3:49
+At the moment, we don't have a time out to clear so no problem.
+3:53
+Next, debounce timer is set to set interval and so after the delay, our function will be called and we're applying this and our arguments.
+4:01
+But what's important here is if events keep being detected, then this time out will keep being cleared.
+4:08
+And every time it's cleared, the delay goes back to five hundred.
+4:12
+So imagine if I input some text and then two hundred and fifty milliseconds later, I input some more text, the delay will be reset to five hundred and this code right here cannot execute for another five hundred milliseconds.
+4:25
+And again, if I type some more text in here, the delay will once more be set to five hundred milliseconds and this code executing will be delayed even longer.
+4:34
+Now it would be good practice to do this with an arrow function.
+4:37
+Let me just update this challenge text.
+4:40
+Convert this inner function, so this one right here to an arrow function and use rest parameters to handle passing in arguments.
+4:47
+Just get that one sorted.
+4:50
+Okay.
+4:50
+So this shouldn't be too hard.
+4:52
+Let's just delete the function keyword and make this into an arrow function.
+4:56
+And now this is coming from the outer scope.
+4:59
+Then let's take in arguments as a rest parameter and we can delete apply and in here we'll just pass in the args.
+5:08
+Okay.
+5:09
+Let's hit save and let's test it.
+5:14
+And it does indeed appear to be working and now I'll delete deleting deleting deleting and then it fires after the delay.
+5:22
+So all is good.
+5:24
+Okay.
+5:24
+Next up, we are going to take a look at a special kind of function called a generator.
+5:28
+And we will be back with debouncing when we come to the super challenge.
