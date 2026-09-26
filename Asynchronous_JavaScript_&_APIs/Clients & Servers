@@ -1,0 +1,92 @@
+
+Transcript
+0:00
+Let's start off by talking about clients and servers.
+0:03
+So what exactly are clients and what exactly are servers?
+0:06
+Well, a client is any device that connects to the Internet to get data from somewhere.
+0:11
+Now this is a device that you probably use on a day to day basis.
+0:15
+In fact, if if you're sitting here watching this screen cast probably on a laptop or maybe a mobile device, you are using a client.
+0:23
+That client is making requests or sending requests and getting or receiving responses back with some data like for example the audio stream that you're listening to.
+0:33
+And these clients can be more than just your computer although it could be a laptop or a desktop or whatever or other traditional clients we think of like a phone or tablet.
+0:43
+It's really anything that sends signals or requests out to a server and gets a response back like a smartwatch or maybe a video doorbell or a robot vacuum.
+0:52
+And like it says here, even a server in certain circumstances can act as a client.
+0:57
+Well, that's a little more complex to understand.
+0:59
+We won't cover it right now.
+1:00
+So then what exactly is a server?
+1:03
+Well, a server is the computer that's on the other side of this equation.
+1:07
+It accepts requests that come from a client asking for something and then responds to that client with that thing.
+1:15
+Sometimes the request is like an HTML page, an image, or a file, a video stream, or it might just be plain data in, for example, a JSON format.
+1:23
+So I've mentioned request and response a few times already.
+1:26
+You're going to be seeing this diagram where we have the client on the left and the server on the right.
+1:31
+We'll come back to this diagram when we talk about requests and responses, but in the meantime I've written up a little bit of a quiz here.
+1:38
+So I want you to read through these questions and come up with your own answers to them and then we'll go through it together.
+1:43
+Pause now and work on this quiz.
+1:50
+Okay.
+1:50
+Well, what are some examples of clients that you've used today?
+1:53
+Let's see.
+1:54
+I have used well, I'm using my laptop now.
+1:57
+I've used my smartphone.
+2:00
+We do actually have a robot vacuum that cleans at night.
+2:03
+I had to modify something on that.
+2:05
+We actually have a couple silly smart plugs around the house that will turn on and off devices based on the time of day.
+2:12
+And honestly, I'm sure there's probably a dozen more that I'm not even thinking about.
+2:16
+Okay.
+2:16
+This is a fun one for me.
+2:17
+How would you explain what a server is to a five year old?
+2:21
+Well, in reality, a server is just a computer.
+2:25
+Obviously, to a five year old, I wouldn't go into the specs of the computer or the fact that it's probably at a server farm with its own cooling system or anything crazy like that because the truth is it's just a computer.
+2:37
+It's probably running Linux and what its primary job is to listen for requests from a client.
+2:43
+So maybe to a five year old, I might say that it's a computer that sends my own computer things when I ask it to.
+2:52
+I don't know.
+2:53
+Maybe that's too simplistic.
+2:54
+Usually when I'm talking to younger kids, I tend to use examples.
+2:58
+So I might say, for example, when I go to a website on my computer, the server sends me the page that I can actually see.
+3:05
+And that sort of answers question number three.
+3:07
+In what way do clients and servers interact with each other?
+3:10
+Well, a client sends a request to a server and the server sends back a response.
+3:21
+That's pretty much it.
+3:22
+Now let's jump into what that means with request and response, and we'll see again this diagram and kinda walk through an example of that.
