@@ -1,0 +1,134 @@
+
+Transcript
+0:00
+So let's talk about the request and response cycle.
+0:04
+First of all, what exactly is the request response cycle?
+0:07
+Let's just do one at a time.
+0:08
+What is a request?
+0:09
+We've mostly mentioned this in the previous lesson, but it's whenever a device or a client asks for some sort of resource, and that resource could be data or maybe an image, an HTML page, an authentication token.
+0:21
+The list is kind of endless.
+0:23
+But unless your server is actually on the same computer or the same device as your client, which does happen mostly in development purposes.
+0:32
+But unless that's the case, it's going to require some sort of connection to the Internet because it has to send that request out to the server outside of its own little network or its own little device.
+0:43
+Typically, that connection to the Internet will happen either through a wired connection or a WiFi connection or if it's like a smartphone, it'll use the phone data in order to send that request.
+0:54
+So that brings us to the response.
+0:56
+Well, a response is just a reply to the request.
+0:57
+It's when a reply to the request.
+0:59
+It's when a server receives that request, does something, and sends back a response.
+1:04
+Hopefully, if everything went well well in processing the request, it will contain or the response will contain the resource that was asked for like the HTML page or the JSON data or whatever.
+1:15
+However, it's also possible that something might have gone wrong.
+1:18
+For example, if the client device isn't authorized to receive the resource that it asked for, then it might send back a response saying so.
+1:27
+It wouldn't include the resource.
+1:29
+It would just include a message that says, no.
+1:31
+You're not allowed to have that resource.
+1:33
+Now back to our little diagram we're gonna visualize this.
+1:36
+You've got the client or your device on the left and you've got the server on the right and the client might request a resource that says get me the index dot HTML file, please.
+1:46
+This is what happens when you first type in a URL in your browser and hit enter.
+1:51
+It makes a request to the server where the files of that URL or that website live and assuming everything goes okay the server will respond saying here you go and it'll send the HTML page with a status code of two hundred which means that everything went okay.
+2:06
+It's called the status code of two hundred and the status message is okay and that index dot HTML page might have for example a Google font associated with it.
+2:16
+Now in this case, I'm pointing the arrow to the exact same server that had the index dot HTML page.
+2:22
+Likely, this Google font is making a request to a completely different server, but for the sake of simplicity, we'll just point it to the same server.
+2:29
+And again, assuming everything goes okay, it'll respond with two hundred okay.
+2:34
+Then, I don't know, who knows?
+2:35
+Maybe the client makes some kind of cheeky request and asks for some kind of super top secret information that it's not supposed to have access to.
+2:42
+Well, short of some kind of successful hack that happened, the server would likely respond saying, no.
+2:48
+You can't have that.
+2:49
+The status code might be four zero three with the status message of forbidden.
+2:53
+And maybe it's important to point out that these status messages are already tied to the status code.
+2:59
+So a four zero three will always be the status message of forbidden, the same way that the status code of two hundred would always be okay.
+3:06
+And once again so that I'm not just lecturing at you I have a little quiz here.
+3:10
+You're gonna go through and answer these questions.
+3:12
+Number three is a little different.
+3:13
+It's going to require some self study.
+3:15
+I want you to use Google and hopefully it won't be too difficult.
+3:19
+This is a fairly straightforward one.
+3:20
+But the point is I wanna get you out there with your hands on the keyboard, being curious, thinking about what you've learned more than just, I guess, regurgitating what I've told you already.
+3:30
+So pause now and work on this quiz.
+3:37
+Okay.
+3:37
+Three things your computer might request from a server.
+3:41
+Well, the first thing that came to mind was if I were going to YouTube dot com.
+3:44
+So I might have a JSON array of suggested videos.
+3:51
+And because this is JSON, essentially, we're just talking about data, like raw data here.
+3:56
+Then I don't know.
+3:56
+Maybe I click on one of those videos and it needs to get a video stream.
+4:01
+So that might be another thing that I request an actual video stream and well I guess because I've gone to a website it's gonna have pulled in an index dot HTML page.
+4:09
+So let's just say HTML page.
+4:10
+If you actually open your developer tools and go to the network tab and refresh a page, maybe don't refresh here because you're in the middle of listening to me teach something, you'll actually see a list of all the requests that are being made.
+4:23
+Some websites maybe that seem simple are actually making dozens and dozens of requests.
+4:28
+K.
+4:28
+Well, the main job of a server is to receive a request from a client and return a response.
+4:37
+Now in the middle of receiving the request and returning the response, it has to do something.
+4:42
+It's not just going to have the resource right there at its fingertips that it can immediately respond with.
+4:47
+If, for example, you are asking for a JSON array of data, the server is then going to have to interface with the database, gather that data together all in order to return a response to the client.
+4:58
+And then hopefully number three wasn't too difficult to find.
+5:01
+There's a ton of places out there that have server status codes.
+5:05
+The keywords here are internal server error and that is the five hundred code.
+5:11
+Anything in the five hundred range, five hundred five zero one and so forth indicates that the server itself had a problem.
+5:18
+And the reason internal server error is the keywords here is because the status code is five hundred and the status text that's associated with it is internal server error.
+5:28
+K.
+5:29
+Hopefully, that was enlightening.
+5:30
+Let's keep moving forward.
