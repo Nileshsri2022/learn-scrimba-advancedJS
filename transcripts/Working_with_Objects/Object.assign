@@ -1,0 +1,73 @@
+Transcript
+0:00
+I want to show you another way that we can make a shallow copy of an object and that is what object dot assign is for.
+0:06
+So object dot assign copies properties from a source object to a target object and it returns the new version of the target object.
+0:15
+This is something which is definitely easier to understand with an example, so let's head straight to the editor.
+0:20
+I've got an object here which holds the details for a student at Scrimba.
+0:24
+If I just want to make a straight copy of this object using object dot assign, that is really easy.
+0:29
+Let's set up a const right here called studentDetailsCopy.
+0:35
+And we'll set that equals to an empty object.
+0:38
+And now I can use object.
+0:40
+Assign.
+0:41
+So it's object with an upper case first letter and then we're calling the assign method on the object.
+0:47
+We need to give it two pieces of information, the target and the source.
+0:53
+The target in this case will be this new empty object we've just created and the source will be our original object student details.
+1:02
+Let's log out student details copy.
+1:07
+And in the console, you can see we've made a copy of student details and that was a pretty easy process.
+1:13
+Okay.
+1:13
+Time for a quick challenge and I've already written out the text right here.
+1:17
+Knowing what you know about deep versus shallow copy, I want you to prove that what we've done here with object dot assign is create a shallow copy.
+1:26
+And I'm going to leave you to do that in any way you want.
+1:29
+You can add anything to the original and then log out the original and the new object you create with object dot assign and show that a shallow copy was produced.
+1:39
+Okay.
+1:39
+Hopefully, you know by now that the easiest way to show that this is a shallow copy is to take it one level deeper.
+1:47
+So I'm going to set up a new property in here and I'll call it modules completed.
+1:54
+And that is going to hold an array with say HTML, JavaScript and CSS.
+2:00
+Now after we've copied all of this to student details copy, let's do a little bit of reassignment.
+2:06
+So I'll say student details copy dot modules completed.
+2:12
+And let's take the first element and we can set that to react.
+2:16
+Okay.
+2:17
+Now we want to log out both.
+2:18
+So student details copy and student details.
+2:22
+Let's hit save.
+2:24
+And you can see that in both cases, the array of modules completed contains React.
+2:29
+There's no sign of HTML.
+2:31
+So that does prove that we've created a shallow copy.
+2:34
+Okay.
+2:34
+In the next scrim, let's take a look at how we can actually make a deep copy.
+2:38
+And in fact, now it's easier than making a shallow copy.
