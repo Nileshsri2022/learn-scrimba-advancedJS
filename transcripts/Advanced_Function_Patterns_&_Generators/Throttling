@@ -1,0 +1,130 @@
+
+Transcript
+0:00
+Okay.
+0:00
+I've got a window open here and as I resize it, we're logging out this string.
+0:05
+And as you can see, it's happening multiple times per second.
+0:08
+Whenever I'm dragging out this window, that event is firing.
+0:12
+Let's use throttling to make sure this function executes once on the first event and then not again for at least five hundred milliseconds.
+0:20
+So I'll start off with a function called throttle.
+0:24
+And that's going to take another function as a parameter and also a delay in milliseconds.
+0:31
+I'm deliberately giving this function a very generic name because it could be used multiple times in an app.
+0:36
+What we're aiming for is to be able to pass in a function that we want to throttle and to have this function do all of the work.
+0:43
+And this is good practice.
+0:44
+Thinking about reusability means writing less code in the long run.
+0:48
+Okay.
+0:48
+In the body of this function, let's declare a let And I'm going to call this one throttle timeout.
+0:55
+And I'm going to initialize it to null.
+0:58
+Next, we're going to return a function.
+1:01
+And if you've been paying attention, you'll recognize that we're forming a closure here.
+1:05
+This inner function is going to have access to the outer functions parameters and also this let.
+1:12
+At the moment, I've declared this inner function as a function declaration.
+1:15
+That is gonna make some extra work for us later but let's get this working and then we will simplify our code.
+1:21
+So firstly, inside this inner function, I want to check if throttle timeout is truthy or falsy.
+1:27
+So I'm going to say if and I'll check for a falsy value.
+1:32
+And if it is falsy, let's call the function that we're bringing in as a parameter.
+1:37
+And then we'll take this throttle timeout and we'll set that to a new instance of setTimeout.
+1:46
+This setTimeout needs to have a delay.
+1:49
+Well, we're bringing in a delay as a parameter.
+1:51
+So whatever we pass in as the delay can be the delay for this set time out.
+1:55
+And then in the set time out's callback function, we are going to set throttle time out back to null.
+2:02
+So to recap, if throttle time out is full c, which it will be in the first instance because we're initializing it to null, we'll call the function that's been passed in as a parameter and we'll create a set time out which will store to throttle time out and we'll give it a delay.
+2:16
+And when that delay has elapsed, throttle time out will be set to null.
+2:20
+Let's just walk through what's going to happen when a user resizes their window.
+2:24
+So they resize, throttle time out is set to null.
+2:27
+So this code in here is going to execute.
+2:30
+We're going to call handle resize which is the function that we'll be passing in.
+2:34
+Now throttle timeout will hold this set timeout right here.
+2:38
+As the user keeps resizing the window and this throttle function gets called again, well this time throttle timeout will not be set to null.
+2:46
+It will be holding this set time out.
+2:49
+So where we check for a falsie value here, we're actually going to find it's not a falsie value so this code is not going to run.
+2:56
+But once the delay has elapsed, throttle timeout will be set back to null.
+3:00
+So the next time the user resizes the window, throttle timeout will be falsy and this code can run again.
+3:07
+Let's check if it works.
+3:08
+So down here, I'll set up a const and I'll call it throttled handle resize.
+3:15
+And that is going to store what we get returned when we call the throttle function and throttle is expecting both the function and the delay.
+3:22
+The function we want to pass in is of course handle resize and the delay can be five hundred milliseconds.
+3:29
+Now in the event listener instead of calling handle resize, we need to call throttled handle resize and let's save.
+3:35
+Okay, so I'm gonna start dragging the window and we see that is just being logged out every half a second.
+3:43
+And in fact, if we refresh and I'll just change this to one second or a thousand milliseconds.
+3:49
+Now we should see that more clearly.
+3:52
+Right.
+3:53
+We've really slowed it down.
+3:54
+We're really really throttling it.
+3:56
+So that is working.
+3:58
+But we do have a problem because what we want to log out is actually the event as well.
+4:02
+And I did that deliberately to cause this problem because it is a bit of a tricky one to solve.
+4:07
+At the moment, resize happened on event undefined.
+4:10
+So something's going wrong with getting the event into this throttled function.
+4:14
+So we need to do a bit of work down here to deal with arguments.
+4:18
+Now this is a tricky one to debug but if you're up for a challenge, by all means, see if you can work out what we need to do to fix this and I have given you a hint up here in hint dot MD.
+4:28
+If you get this working, what you will expect to see in the console is this.
+4:32
+Resize happened on event and then object and event inside square brackets.
+4:37
+You would get more info in Chrome or Firefox's console, but this is what the Scrimper console gives you.
+4:42
+Okay.
+4:42
+Give that a go if you're up for it.
+4:44
+If you don't feel ready, no problem at all.
+4:46
+This one is optional, and we'll look at the solution in the next scrim.
