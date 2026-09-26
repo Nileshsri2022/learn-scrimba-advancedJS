@@ -1,0 +1,106 @@
+
+Transcript
+0:00
+Similar to the four of in its syntax is the four in.
+0:03
+Let's see it in action and then we'll talk about how to use it and compare it to the four of.
+0:08
+Right here, I've got a single object from the previous array and we're going to use the four in to loop through the keys of this object.
+0:16
+This syntax is virtually identical to the for of.
+0:20
+I'll say for let and then we'll just say property in character one and we'll just log each property.
+0:30
+When we save, we get title emoji and powers in the console.
+0:34
+And of course, we can access the values they hold with bracket notation.
+0:38
+So let's just take character one and wrap property in square brackets.
+0:43
+Now we see ninja, the emoji, and the array of powers.
+0:47
+So the for of and the for in are very similar and it's easy to understand why they get confused.
+0:52
+So let's quickly compare and contrast them.
+0:55
+First, let's talk about the similarities.
+0:57
+They both iterate over objects data structures.
+1:00
+And you might read that and think, wait there in the previous scrim, we used the four of to iterate over an array, not an object.
+1:09
+Yes.
+1:09
+But what you've got to remember is that an array is a type of object and that can cause some confusion.
+1:15
+Arrays are actually objects.
+1:18
+So what about the differences then?
+1:20
+Arrays are objects too.
+1:22
+Okay.
+1:22
+So what about the differences?
+1:24
+Well, let's take the for in.
+1:26
+The for in iterates over all enumerable property keys of an object And that is exactly what we've done right here.
+1:33
+These are the enumerable property keys and we've iterated over them.
+1:37
+On the other hand, the for of iterates over the values of an iterable object and examples of iterable objects include arrays and strings.
+1:45
+That's right.
+1:46
+A string is actually an iterable object.
+1:49
+So if we come back to our code and I try to use the four of with an object like this, we actually get an error.
+1:57
+This is not an iterable object.
+1:59
+But if I put that back how it was and we'll just comment that out for the moment.
+2:04
+Now let's just take a string.
+2:06
+We can now iterate over this string with a four of.
+2:09
+I'll say for let letter of character and let's just log out the letter.
+2:14
+When I hit save, we get the letters n I n j a logged out individually.
+2:19
+And of course, we already know the for of works with arrays.
+2:21
+We saw that in the previous scrim.
+2:24
+So in summary, what you need to remember is this.
+2:26
+Use a foreign to iterate over the innumerable property keys of an object.
+2:30
+And there we're thinking about the kind of object you usually imagine when we use the word object.
+2:35
+We're talking about an object literal like this with curly braces.
+2:39
+And we use the four of to iterate over the values of an iterable object which is often an array but could also be a string or another iterable structure like an HTML collection which is something you might have come across.
+2:52
+Now just before we finish, I want to say a quick word about let and const because in both of these cases, I've used a let.
+3:00
+And you'll see developers do that a lot, and that's actually quite habitual.
+3:04
+I guess it's because the original for loop needed to use a let as it involved reassignments.
+3:09
+Now in the case of a for in and a for of, you could use a const.
+3:14
+Both let and const are gonna work just fine.
+3:16
+But when I say that, I'm assuming that you don't want to reassign property.
+3:21
+If you do want to reassign it, you're going to have to use a let.
+3:24
+Now if you don't want to reassign it, arguably you should use a const as it prevents the danger of accidental reassignment.
+3:31
+But as I say, it is really common to see the let used.
+3:34
+So just something to bear in mind.
+3:37
+When you're ready, let's move on.
