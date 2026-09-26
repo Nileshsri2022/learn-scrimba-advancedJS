@@ -1,0 +1,68 @@
+
+Transcript
+0:00
+Let's look at how we can create a constructor function.
+0:03
+We have still got our game object right here.
+0:05
+Let's just comment that out and we set the constructor function up with the function keyword, but unlike other functions we're going to name it with an upper case first letter.
+0:15
+I'll call it gamer.
+0:17
+The upper case first letter is not absolutely necessary but it is a very very strong convention and you definitely should stick to it.
+0:24
+Okay now things go back to normal.
+0:26
+We need the brackets and the curly braces.
+0:29
+The object this constructor function is going to create needs to have two properties name and score so let's take those in as parameters and then in the body of the function this is where things get a bit different.
+0:42
+We're going to assign these parameters to this.
+0:45
+So I'll say this dot name is equals to whatever comes in with the name parameter and this dot score is equals to whatever comes in with the score parameter.
+0:57
+Okay.
+0:57
+We're not done but let's call a new instance of this gamer constructor and see where we are.
+1:02
+So I'm going to set up a const Dave and here because this is a constructor just like we've seen with other constructors like the error constructor and the date constructor, we need to use the new keyword.
+1:16
+So we're saying give me a new instance of gamer.
+1:20
+And when you build this new instance of gamer use this data.
+1:24
+So we want to pass in the name Dave and let's give Dave zero points.
+1:29
+Okay.
+1:29
+We'll log out Dave and see what we get.
+1:32
+And look we've got our object and it's got two properties name of Dave and score of zero.
+1:38
+Okay.
+1:38
+Next up we need the method and that will also be set up on this.
+1:43
+So it's this dot increment score and we set that equals to an anonymous function and we can just take the same logic as we've got here.
+1:52
+So this dot score plus plus And now we can test it by calling the increment score method on Dave and let's log out Dave a second time after we've called increment score.
+2:05
+Okay.
+2:05
+Let's hit save and it's worked.
+2:08
+We're managing to log out Dave twice.
+2:11
+The first time Dave has got a score of zero, the second time increment score has worked and Dave has got a score of one.
+2:17
+Let's set up a new instance of gamer.
+2:20
+So Sarah can have the name Sarah and let's start Sarah off with two points and we'll repeat exactly what we've done here and hit save and we're successfully setting up a new instance of Sarah.
+2:33
+So that's showing us that we can create as many objects as we want and our method is working.
+2:38
+Sarah's score has gone from two to three.
+2:41
+Okay.
+2:41
+Take a moment to examine this syntax because in the next scrim we're going to have a challenge with constructor functions.
