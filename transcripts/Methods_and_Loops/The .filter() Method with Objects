@@ -1,0 +1,129 @@
+Transcript
+0:00
+Okay.
+0:00
+So this data I've got here is a bit more real world.
+0:04
+We're still working with an array, but this is an array of objects.
+0:08
+And what we've got here are some of the top series as voted for by couch potatoes the world over.
+0:15
+So we've got the series names like The Wire, Game of Thrones.
+0:19
+We've got the location where the series was set, the length of the series in hours, and the genres.
+0:25
+And the genres is actually an array holding three or four genres of that series.
+0:31
+So we could use filter with any of these properties.
+0:34
+Let's just start off with a nice easy example.
+0:37
+So I'm going to say const, and I'm just going to call this New York series, and I'll set that equal to series.
+0:45
+And I will call the filter method, and the filter method takes a function.
+0:50
+Now what should we call this parameter?
+0:52
+This one is a little bit tricky because series is already plural, and we can't have a singular Siri.
+0:57
+It doesn't make any sense.
+0:59
+So I'm just gonna call this one show.
+1:01
+And then in here, I'm going to return the show dot location so we can access the property that we want inside the object in the array just with the dot.
+1:12
+So show dot location triple equals New York.
+1:19
+Now let's just log out New York series, and we'll hit save.
+1:24
+And then down in the console, there we are.
+1:27
+We've got friends.
+1:28
+That is the only one that has a location of New York, so we have successfully found that one.
+1:33
+Now there are lots of other possibilities here.
+1:36
+We could search by length in hours, maybe just find some of the shorter ones.
+1:40
+Do you really wanna sit through a hundred and forty hours of the big bang theory?
+1:45
+Probably not.
+1:46
+But instead of doing that, let's just ramp up the complexity a little bit, and I'm gonna give you a challenge.
+1:52
+I want you to use the dot filter method to create an array of all of the thrillers.
+1:58
+Now that is a little bit tricky because thriller is a genre, and these genres are an array.
+2:04
+So what you'll need to do is access the show, access the genre, and then think of a way of looking in those genres to see if it contains thriller.
+2:16
+Now you know how to do this because we've already done it in this course.
+2:20
+I'm not going to say anymore now.
+2:21
+I'm going to let you have a go.
+2:23
+I want you to give it your best shot.
+2:25
+If you can't do it, before I give you the answer, I am going to give you one more clue.
+2:30
+But see if you can work this out, and I'll see you back here in just a few moments.
+2:35
+Okay.
+2:35
+So if you didn't manage to get that working, I want you to use alongside the dot filter method, the dot includes method.
+2:44
+And if you remember, all we need to do is pass dot includes whatever it is we're searching for.
+2:50
+So in this case, it could be something like romance.
+2:53
+Okay.
+2:54
+So if you didn't manage to do this before, have another go at it.
+2:57
+Use the dot includes method, and I'll see you back here in just a moment.
+3:02
+Okay.
+3:02
+So let's see how it's done.
+3:04
+I'll come in here underneath our previous example, and I'll just say const thrillers, and we'll set that equal to series and call the dot filter method.
+3:15
+Give it its function, take in show as a parameter, and then return show dot genres.
+3:24
+And now in dot genres, this is where we need to call the dot includes method.
+3:29
+And we can pass the dot includes method, the word thriller, and it is lowercase here.
+3:36
+So let's just put that in there.
+3:38
+And now to check it's working, we just need to log out thrillers.
+3:41
+Let's hit save.
+3:43
+And down in the console, there we are.
+3:45
+We have got our thrillers.
+3:48
+And, actually, just to make that a little bit clearer, let's delete this console dot log because it's looking for a moment like friends is a thriller, and it's most definitely not.
+3:55
+Let's save once more.
+3:57
+There we are.
+3:57
+Now we have got just our thrillers.
+4:00
+So we have got the wire, which has got action thriller and detective and suspense genres, and we've got the walking dead, which contains zombie apocalypse thriller and suspense genres.
+4:11
+So we have successfully identified all of the thrillers by using the dot includes method to search through an array, which is part of an object, and then we're using the dot filter method to save only the items that we want to this new array of thrillers.
+4:29
+Okay.
+4:29
+It's really worth your while taking a little bit of time to practice with the dot filter method.
+4:34
+It's a really useful one.
+4:35
+It can be slightly tricky to get your head around, take your time with it.
+4:39
+And then when you're ready, let's move on.
