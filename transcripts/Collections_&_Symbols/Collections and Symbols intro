@@ -1,0 +1,26 @@
+
+Transcript
+0:00
+In this section, we're going to look at just three concepts, symbol, map, and set.
+0:05
+Let's take the briefest overview.
+0:07
+So symbols are used to represent unique values that can be used as identifiers or keys in objects.
+0:13
+The map object is an object where any data type can be used as a key.
+0:18
+It's got nothing to do with the array map method which has a lowercase m.
+0:23
+And no, I have absolutely no idea why the JavaScript gods are so in love with the word map.
+0:28
+We'll also see the set object.
+0:31
+The set object is similar to an array.
+0:33
+They are both collections of values but with the set object, each value is unique.
+0:38
+Now perhaps it's because these are relatively recent additions to the language or perhaps just because their use cases are quite narrow, but these three tend to get ignored which is a shame because they're actually really cool features of the language.
+0:51
+Okay.
+0:52
+When you're ready, let's get stuck into it.
