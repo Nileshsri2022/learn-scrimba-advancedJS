@@ -1,0 +1,54 @@
+
+Transcript
+0:00
+So I want to show you a few quirks and oddities in JavaScript that you might come across.
+0:05
+This first one is kind of cool, and although I don't feel like I see it used all of the time, it's really good to be aware of it.
+0:11
+Check out this app.
+0:12
+So as guests arrive at my venue, they're issued with a ticket.
+0:17
+And right now, the first guest arriving, if we hit save, gets ticket number zero.
+0:23
+And to be honest, that's a bit weird.
+0:25
+There are two obvious solutions to this.
+0:27
+We could just start with ticket number one or we could use a plus one.
+0:33
+Both of those work, but they're both really inelegant to say the least.
+0:37
+So how about we use pre increment instead?
+0:42
+The pre increment operator increments the variable's value before the result of the increment is used in an expression.
+0:49
+And it's really easy to do.
+0:51
+So easy in fact that I'm going to give this to you as a challenge.
+0:55
+And here's your challenge.
+0:56
+Move the increment operator to the front of the expression.
+1:04
+Okay.
+1:04
+So literally all we had to do is take the increment operator, cut it, and paste it at the beginning.
+1:11
+And when we hit save, we can see it's working.
+1:14
+We're now incrementing before we actually use that variable.
+1:18
+We're actually incrementing the value before it gets used.
+1:21
+So the pre increment operator increments the variable's value before the result of the increment is used in an expression.
+1:28
+And by the way, exactly the same thing applies to decrement, so we could right here use minus minus.
+1:36
+And now you can see we start on minus one and go minus two minus three.
+1:39
+Not a good idea in this case, but good to know about.
+1:43
+Okay.
+1:43
+In the next scrim, let's talk numbers and see a new data type.
