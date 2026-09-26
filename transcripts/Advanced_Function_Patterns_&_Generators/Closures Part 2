@@ -1,0 +1,99 @@
+Transcript
+0:00
+Let's get real with closures and create a scoreboard app.
+0:03
+I'm going to set up an outer function called scorePoint, and that's going to take in a player name as a parameter.
+0:12
+Inside the body of the function, let's initialize the score to zero.
+0:17
+And I'm actually going to return an anonymous function.
+0:21
+And this function will increment score and log a string confirming the score.
+0:29
+Next, I'll create two players,
+0:32
+and we'll set each of them equals to whatever is returned when we invoke score point.
+0:38
+And score point is expecting player names.
+0:42
+And now let's invoke player one and player two a couple of times and see what gets logged out.
+0:48
+Oh, and I forgot my dot.
+0:51
+There we are.
+0:52
+Down in the console, Vicky has one point, Leo has one point.
+0:55
+That makes sense.
+0:56
+We have called both of these just one time.
+0:59
+Let's call player one several times.
+1:02
+Now Vicky has three points and Leo still has one point.
+1:06
+So it's working.
+1:07
+Let's just recap what's going on.
+1:09
+So here, where we first invoke scorePoint and we get the function it returns, in each case, the score is being initialized to zero and it's being kept separately in memory and kept alive even though this outer function score point has finished executing.
+1:24
+But we can do even more here.
+1:26
+Imagine if instead of just returning one function, we return an object with many functions.
+1:33
+So inside this object, I'm going to have a key displayScore.
+1:38
+And then this function will be the value.
+1:41
+And because we don't want displayScore to actually increment the score, I'm going to delete that line.
+1:46
+And now when I want to invoke this function, what I need to do then is access player one dot display score.
+1:53
+And when I hit save, it says Vicky has zero points and that figures because we're no longer incrementing the score inside this function.
+2:01
+But that leads me to a mini challenge for you.
+2:04
+Just bear with me while I paste in some instructions.
+2:07
+I want you to add two more functions to this object.
+2:10
+One to increment the score and one to decrement the score.
+2:13
+Call those functions a couple of times for each player and then call display score to check it's working.
+2:19
+Okay.
+2:19
+Get to work on this challenge.
+2:22
+Okay.
+2:22
+So hopefully, you managed to do that.
+2:24
+You're basically just creating functions like I did right here.
+2:27
+So we need to separate these of course with a comma because we're inside an object.
+2:32
+My next key will be increment score and the value will be a function which just increments score.
+2:41
+Then I can repeat the same process for decrement score And decrement score of course needs to decrement.
+2:47
+And now we need to do some testing.
+2:49
+Down here, I'll just bring in some function invocations, and we'll call display score once for each player.
+2:56
+Let's hit Save.
+2:57
+And we see Vicky has two points, Leo has zero points.
+3:01
+Well let's check that.
+3:02
+Player one is Vicky.
+3:03
+So here we're incrementing the score for player one and again incrementing so that makes two points.
+3:09
+Player two Leo we're incrementing here so that's one, two, back down to one, and then down to zero.
+3:17
+So the app is working and we're successfully using our closure to access the outer functions parameters and variables inside the inner functions which we're returning inside this object.
+3:28
+So take a good look at this syntax, check you understand everything because in the next scrim, you're going to have a challenge where you build a closure from scratch.
