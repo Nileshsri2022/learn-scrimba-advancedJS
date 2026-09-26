@@ -1,0 +1,174 @@
+
+Transcript
+0:00
+Let's look at handling rejected promises.
+0:02
+We are back with our traditional fetch request and these then methods and we're working with the dog API.
+0:09
+We know this code works but let's break it and see what happens.
+0:13
+So I'm just going to mess with the base URL and I'll hit save and we get an error, type error failed to fetch.
+0:20
+Now if we have a look in the console of a browser like Chrome or Firefox, we'd actually get quite a lot more detail.
+0:27
+What we have here is a rejected promise and this bit right here gives us a big clue it's an unhandled rejection.
+0:34
+We need to handle promise rejection so we have the capability to execute some code, For example, to convey a message to our users or perhaps to try a different API or provide a default image we keep for when the API is down.
+0:47
+And we can do that pretty easily with this traditional method by chaining on a catch.
+0:53
+Just like these Vens, catch takes in an arrow function as a callback function and the parameter will be an error.
+0:59
+It's often abbreviated to e double r but you can actually call it anything.
+1:03
+I'm going to stick to the convention and call it e double r or air.
+1:08
+Now we have options here.
+1:09
+Of course, we can just log out the error.
+1:11
+And if we do that, we're going to see exactly the same message in the Scrumba console.
+1:15
+But the important point of using this catch is to be able to execute some code which mitigates the problem.
+1:21
+So at this point, we might for example update the DOM with a message for the user or perhaps access an alternative API or do whatever else we want to do to handle this error gracefully.
+1:33
+We could of course throw a custom error, but do remember that when we throw a new error that does stop any more code in this block from executing.
+1:41
+Now I'm just going to delete that and while we're here, I want to show you one more feature which is not directly related to error handling but this would be a good moment to mention it.
+1:51
+We can also chain on a finally.
+1:54
+It also takes a callback function but no parameter this time.
+1:58
+And this callback function will run at the end of the process whether the promise rejected or resolved.
+2:03
+So nothing to do with error handling, just a good thing to know and a good moment to mention it.
+2:08
+So let's just log out the operation completed.
+2:12
+And if we unbreak this base URL, the API call works and then again we get this message in the console the operation completed.
+2:21
+So this finally method is useful in some situations where you need some code to execute at the end of the asynchronous operation.
+2:28
+Okay.
+2:28
+Now we're handling this fake network error.
+2:31
+We want to do the same with the async await syntax.
+2:34
+And for this we're going to use try catch blocks.
+2:37
+And actually you're going to do this as a challenge but no problem if you haven't used try catch before.
+2:42
+I'm going to talk you through it.
+2:43
+Let's just comment out this code and create some space for ourselves.
+2:48
+So we start off with a try block.
+2:50
+We just use the keyword try and open up the curly braces.
+2:55
+In here we have the code we want to try to execute.
+2:59
+Next, we have a catch block.
+3:01
+And catch needs a parameter and that will be an error.
+3:05
+Again, I'll use the abbreviation error but you can actually call it whatever you want.
+3:09
+Error or error is the strong convention.
+3:12
+And in here, we have the code to execute on an error.
+3:16
+And of course you have access to this error parameter in here.
+3:19
+And just like before we can also have a finally block and that's the code to execute at the end of the operation.
+3:27
+And remember this code will execute whether the fetch request was successful or not.
+3:32
+Okay.
+3:33
+So here is your challenge.
+3:34
+I want you to convert the above code that we've got commented out right here to use async await and I want you to handle errors with try catch blocks and add a finally block.
+3:44
+And you're welcome to actually copy and paste any code you want to from here and just put it inside these try catch finally blocks.
+3:52
+Okay.
+3:52
+Get to work on that.
+3:56
+Okay.
+3:56
+Hopefully, you managed to get that working.
+3:59
+So let's take the fetch request.
+4:01
+So I can copy that from there and I'll put it inside this try block and we want to save it to a const response.
+4:08
+Now we have the const data and we'll need to await calling the JSON method on response.
+4:16
+And it looks like I forgotten the await keyword right here.
+4:19
+And the other thing we had right here was just to log out that data.
+4:23
+So let's do that.
+4:25
+Now if it fails, I'm just gonna take all of this code and paste it right here.
+4:30
+And then I'll take the console dot log from this finally and paste it in here.
+4:35
+Let's hit save and see if that's worked.
+4:38
+And it's looking good.
+4:39
+We've got type error failed to fetch.
+4:41
+The operation completed.
+4:43
+And in fact we could throw a custom error in here again.
+4:47
+And that just shows us that this catch block is working.
+4:50
+Let's unbreak the base URL.
+4:53
+And there we are.
+4:53
+Everything works just fine.
+4:55
+So the try catch block is successful.
+4:58
+One interesting thing to check is over in index dot HTML.
+5:01
+At the moment, we've got type equals module.
+5:03
+Let's delete it so we're no longer working in modular JavaScript.
+5:07
+I'll hit save and we get the same error as we got before.
+5:10
+So this try catch would need to be inside a function if you're not working in modular JavaScript.
+5:16
+But I'm just gonna undo that for now.
+5:18
+And I just want to show you one last thing which is going to take us into the next scrim.
+5:23
+We broke the base URL right here and we saw what happens but what would happen if we broke the endpoint?
+5:28
+Let's just change image to images.
+5:31
+So you can imagine now we've got the correct base URL.
+5:35
+So it's like we've gone into an office block.
+5:37
+We've made it through the entrance, but now we've got lost somewhere on our way to the right floor which is this endpoint.
+5:44
+So what happens now is if you look down in the console, we've got something back.
+5:48
+The fetch was successful, the promise fulfills, But we're not getting a suggestion so the overall operation has not been a success.
+5:55
+The object in the console contains the status error at the beginning but this is not an actual error because the fetch itself was successful.
+6:03
+Now if we don't handle this then the app will fail silently and that will be super frustrating for the users.
+6:09
+But guess what we have another trick up our sleeve which is going to help us solve this problem and we'll look at it in the next screen.
