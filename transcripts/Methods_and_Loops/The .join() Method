@@ -1,0 +1,76 @@
+
+Transcript
+0:00
+I want to show you the join method which is a really useful accompaniment to the map method.
+0:06
+Join is an inbuilt JavaScript method for creating strings from arrays.
+0:11
+Let's just be clear about exactly what it does.
+0:14
+So the join method concatenates the elements of an array into a string.
+0:18
+It lets you choose how those elements are separated within the string and it then returns the new string it has created.
+0:25
+Okay.
+0:25
+Let's jump straight over to the editor and see the join method in action.
+0:30
+So up here I've got an array called guests array and that holds a basic list of names, no other information.
+0:37
+I want this array of names as a string and I'm going to use the join method to do that and I'm going to do it all in the console.
+0:44
+So let's just log out guests array and I'll call the join method on the end.
+0:49
+And it is a method so it needs parenthesis.
+0:52
+Let's just save and see what the join method gives us straight away.
+0:56
+So in the console you'll see that we've got a list of names just like we've got up here but now they are a string and we can prove that using type of.
+1:05
+And that confirms we have indeed got a string.
+1:08
+And let's just go back to that string.
+1:10
+Now you'll notice in the console that the elements of the original array are separated with commas.
+1:15
+We don't want those commas to be there and luckily the join method gives us a great way of deciding how we want the different elements to be separated.
+1:23
+All we need to do is pass in a separator and we put the separator between inverted commas.
+1:29
+The default separator is the comma that we see at the moment but imagine we want to change that to a dot.
+1:35
+Well we just put a dot between the inverted commas.
+1:38
+Now we've got the names separated by dots.
+1:41
+Now it's actually very flexible as to what you can use as a separator.
+1:45
+Imagine you wanted to use a dog emoji.
+1:49
+Let's try it.
+1:50
+And it works.
+1:51
+Now we have a puppy separating each name.
+1:53
+I have no idea why that would ever be a good idea but it would work.
+1:58
+Now perhaps more importantly, we could just leave a space.
+2:01
+So by enclosing a space in the inverted commas, the list is now separated out just by spaces.
+2:07
+Now sometimes we don't want any separator.
+2:10
+We just want whatever is in the array to be joined together in one continuous stream and we can do that by passing the join method an empty string.
+2:20
+And that means we have the inverted commas still but nothing between them, not even a space.
+2:25
+Let's hit save and all of those names are joined together.
+2:29
+That is completely useless for this particular case but I think we're going to use something like that really very soon.
+2:36
+Okay.
+2:36
+Now you've seen the join method so let's head on to the next scrim where we will be back with our playlist which is being rendered with annoying commas.
+2:44
+I've got a challenge waiting for you there and you can probably guess what it is.
