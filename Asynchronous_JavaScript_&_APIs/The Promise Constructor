@@ -1,0 +1,110 @@
+
+Transcript
+0:00
+Sometimes it can be useful to create a promise using the promise constructor.
+0:04
+The most common use case for this is when you need to create your own asynchronous action.
+0:09
+Perhaps there's some resource you need to load that's not coming from a typical API so you can't use a fetch request.
+0:15
+In this scrim, we're going to take a really basic example of a homemade promise then we're going to work on something a bit more real world in the coming scrims.
+0:23
+So I'll store our homemade promise in a const promise and I'm using a lowercase p here and promise is going to store a new instance of the promise constructor which takes of course an upper case p.
+0:36
+And just to be clear, I didn't have to call this promise.
+0:39
+I could call it whatever I want but as it's storing a promise for now, let's just call it promise.
+0:44
+Now the promise construct that takes in a callback function and that callback function is going to have two parameters resolve and reject.
+0:53
+And as we'll have some logic here, let's open up the curly braces.
+0:57
+I want to give this promise a fifty percent chance of being successful, a fifty percent chance of resolving.
+1:02
+So I'm going to set up a const success and that is just going to hold a Boolean and we're going to create that Boolean using math dot random.
+1:11
+So let's just see if math dot random returns a number greater than or smaller than zero point five.
+1:18
+So there's around a fifty percent chance every time that the number returned will be greater than zero point five and therefore, this Boolean success will be true.
+1:26
+If it's lower than zero point five, it will be false.
+1:29
+Now let's use an if else to decide whether we resolve or reject our promise.
+1:33
+So if success is true, we can resolve and else we can reject.
+1:41
+Now what are resolve and reject?
+1:43
+Well they are functions which pass down a value to the first then that we chain or to the try block if we use the asyncawait syntax when we consume the promise.
+1:53
+So I'm just going to pass in a string.
+1:56
+So operation successful when we resolve and operation failed when we reject.
+2:03
+So these strings are going to be passed down when we consume the promise but just be aware that we don't have to pass a string in here we can actually pass anything we want.
+2:12
+It could be an array, it could be an HTML element like an image, it could be a function, you name it.
+2:18
+Okay.
+2:19
+That is our promise.
+2:20
+Let's consume it.
+2:22
+So we can take this const, chain on then, take the response just like we did before and log it.
+2:30
+Let's just hit save and we're getting operation successful.
+2:33
+Hit save a couple of times, we'll get failed and successful.
+2:37
+It is fifty fifty.
+2:38
+And of course, we could bring this onto a new line but as we only need one then with this promise, it actually seems a bit strange to do that.
+2:45
+The syntax there is already quite neat.
+2:48
+Now we can also use the async await syntax.
+2:51
+We're in modular JavaScript so I don't need to put this inside a function.
+2:55
+We'll do it using a try catch block.
+2:58
+So we await the promise and store it in a const response and then let's catch any errors and give that a save.
+3:06
+And we get the same outcome except we don't because I've forgotten to log out the response.
+3:11
+There we are.
+3:12
+Now it's working.
+3:13
+We're getting operation successful or failed depending on this Boolean.
+3:17
+Okay.
+3:17
+So this is a rather contrived promise but before we move on to something more real world, let's have a quick challenge.
+3:24
+Have a really careful look at this code and make sure you understand it because I'm just going to remove some of these strategic parts of it and you are going to put them back in.
+3:33
+There we are.
+3:33
+I've broken the promise so your challenge is to get the promise working so it returns operation successful if it resolves and operation failed if it rejects.
+3:42
+So just get that code back to how it was.
+3:47
+Okay.
+3:47
+I'm sure that wasn't too hard but it is just good to practice the syntax a little bit and build up some muscle memory.
+3:54
+So we needed to use the new keyword here to introduce the promise constructor so we're asking for a new instance of the promise constructor.
+4:02
+The callback function had two parameters resolve and reject.
+4:06
+And then we had resolve right here if it was successful and that's where we logged out the string operation successful and reject right here.
+4:16
+So if success is not true, we reject with the string operation failed.
+4:21
+Let's just check it's working and it is looking good.
+4:26
+Okay.
+4:26
+Let's take what we've learned and use it in a more real world scenario starting in the next script.
