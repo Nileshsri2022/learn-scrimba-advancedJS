@@ -1,0 +1,110 @@
+
+Transcript
+0:00
+In this scrim, we're going to take a look at Currying.
+0:02
+What is Currying?
+0:04
+Well it's an advanced JavaScript pattern where we transform a function from one that takes multiple parameters into a set of nested functions each taking a single parameter.
+0:15
+Sounds confusing?
+0:16
+Well, let's dive into an example so you can see what I'm talking about and then we'll look at why it can be useful.
+0:21
+Take this simple function that calculates volume for a regular sided prism.
+0:25
+So it takes in the length, width and height and just returns a multiplication of them.
+0:30
+We're invoking the function here so let's hit save and in the console we're getting our calculation which is twenty four.
+0:37
+Now we can curry this function by giving each parameter its own function and nesting them within each other.
+0:43
+So each nested function is returned by the one before it.
+0:47
+Let me show you what I mean.
+0:48
+So calculate volume is just going to take in length as a parameter.
+0:52
+So we'll delete width and height And it's going to return a function and that function will take in width.
+1:00
+This function will also return a function.
+1:03
+And that function will take in height.
+1:06
+And as the last function this function will just return the multiplication.
+1:12
+And as we know when you return a function the inner function has access to the outer function's parameters.
+1:18
+They form closures.
+1:20
+So now to calculate our volume we can do this.
+1:23
+I'm going to say const with length and in this const I'm going to store what we get returned when we call this function here the outer function passing in length which in this case is two.
+1:36
+So now with length holds the function which is returned when we call calculate volume and that is of course this function right here, this inner function.
+1:45
+And because we're forming a closure this inner function has access to this length parameter.
+1:50
+Now I'll set up a const called width, length and width.
+1:54
+And here we're going to store whatever gets returned when we call the function that's stored in width length.
+2:00
+And we need to pass in our width which is three.
+2:04
+So with length is storing this first nested function with the length passed in and with length and width is storing this second nested function with the width passed in.
+2:17
+So now to calculate our volume we need to call the function that we've got stored here and pass in our height which is four.
+2:24
+Let's hit save and see if it's worked and look at that down in the console we're getting twenty four.
+2:30
+Now there is actually a way we can do this which is less verbose.
+2:33
+Let me just comment out these three lines right here and I'll say const volume and then let's call calculate volume and we can actually just chain on the function invocations with the arguments.
+2:47
+So calculate volume with the length two and whatever that returns can be invoked with the width of three and whatever that returns can be invoked with the height of four.
+2:57
+Let's hit save and again in the console we get twenty four.
+3:01
+So what we're doing here is calling calculate volume with one argument, whatever that returns, that returns a function which we're calling with this argument and that is returning the length and the width and the height multiplied together to give us the volume.
+3:15
+For super conciseness, we can do this with arrow functions.
+3:18
+So let me set you a challenge.
+3:20
+There we are.
+3:21
+Convert this to arrow functions.
+3:23
+Take as much time as you need, you might need to give it some thought but do persevere with this one.
+3:28
+Get this working with arrow functions and be as concise as possible.
+3:32
+Okay, hopefully you managed to do that just fine.
+3:35
+I'm going to comment out this curried function and I'll set up a const right here and let's call it calculateVolume and that's going to store an arrow function which takes in length as a parameter.
+3:47
+We've got a single parameter so we don't need parenthesis.
+3:51
+That's going to return an arrow function and again we don't need parenthesis because we've got a single parameter width.
+3:57
+And that's going to return a function which again takes in a single parameter height.
+4:03
+And that one can return our multiplication and remember with arrow functions we have an implicit return.
+4:08
+We don't need to use the return keyword if it's just one simple line of code.
+4:14
+Okay.
+4:14
+Let's hit save and see if that works.
+4:16
+And look it does.
+4:17
+We've got twenty four in the console.
+4:19
+So now we could actually just delete all of this and look at how concise that is.
+4:26
+Okay.
+4:26
+That is how currying works but why is it useful?
+4:29
+Let's talk about that in the next scrim.
