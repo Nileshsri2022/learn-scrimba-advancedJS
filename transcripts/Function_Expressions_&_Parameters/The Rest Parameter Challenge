@@ -1,0 +1,172 @@
+
+Transcript
+0:00
+Okay.
+0:00
+It's time for a challenge.
+0:02
+It's the end of the year at my company and as a generous boss, I want to give some of my workers a gift to thank them for all of their hard work.
+0:11
+Now this function get labels HTML is going to print out labels for all of the gifts.
+0:18
+And I've set up the function called down here.
+0:20
+So whatever the function returns is going to be rendered out by this document dot get element by ID right here.
+0:27
+As we call this function, we're passing in at the moment six arguments.
+0:32
+Firstly, we've got the text and we can see that right here and we've also got the sender which is me and then we've got four objects and these are the staff members that are going to receive gifts.
+0:44
+Now just because there's four at the moment, it doesn't mean that number won't change.
+0:49
+It might be three if I decide I don't like one of them.
+0:52
+It might be six if I'm feeling extra generous.
+0:55
+Now what we want this function to do is this.
+0:58
+It's going to render out four labels, one for each of the objects we've got right here.
+1:04
+All of the CSS and HTML needed for this has already been done so you only need to worry about the JavaScript.
+1:12
+Now I am upping the complexity here just a little bit because instead of passing in strings, we are passing in objects.
+1:19
+That doesn't matter at all.
+1:20
+The same principle applies and I'm absolutely sure that you are ready for this challenge.
+1:26
+So what I want you to do is this.
+1:29
+I want you to add parameters to this function get labels HTML.
+1:33
+I want you to update the HTML template where you see name and we've got that right here.
+1:40
+So this is the HTML template string and this is the bit you need to change.
+1:45
+And then lastly, we need to return HTML template for each label.
+1:50
+So each label means each of the employees who's going to get a gift.
+1:55
+So this is quite an involved challenge.
+1:57
+There are a few bits and pieces that you'll need to remember and as long as you're using the rest parameter, you're welcome to use any other JavaScript you want to use as well.
+2:06
+So I'm going to leave it to you to figure out and we'll have a look together in just a few moments.
+2:11
+Okay.
+2:12
+Hopefully, you got that working just fine.
+2:14
+So the first thing we need to do then is add parameters to this function.
+2:19
+So we've got the two regular parameters text and sender and then we need to take in these objects.
+2:26
+We don't know how many there are going to be so I'll use the rest parameter so it's triple dot and then because these are objects of staff names, I'm just going to call this rest parameter staff objects.
+2:39
+Now before we do anything else, let's just log out staff objects and see what we've got.
+2:44
+So I'll hit save and down in the console, you can see that we've got an array of objects.
+2:51
+So the rest parameter is giving us an array but instead of an array of strings, this time it's an array of objects.
+2:57
+That's pretty cool because we've worked with arrays of objects before, so we kind of know what we're doing.
+3:02
+So to create this HTML string, let's map over staff objects.
+3:06
+So I'm going to come in here and set up a const, and I'm going to call this const labels HTML.
+3:13
+So this function is called get labels HTML because it's going to be returning labels HTML.
+3:20
+I think that's quite a neat naming convention and I'll delete the console.
+3:24
+Log before it gets annoying.
+3:26
+Okay, so let's set labels HTML equals to staff objects.
+3:31
+And now let's immediately map over staff objects.
+3:35
+And remember map takes in a function as a parameter.
+3:38
+We'll use an arrow function to keep it nice and concise.
+3:42
+I need to give that function a parameter and that parameter is going to be each object in the array in turn.
+3:48
+This is an array of staff objects, so I'm just going to call it staff object.
+3:54
+Next, we need the arrow.
+3:56
+And now I'm going to come down onto a new line and we'll just take this template string right here.
+4:02
+And we need to update the name, so we'll delete that and let's use the dollar sign and the curly braces.
+4:09
+And then it will be staff object dot name.
+4:12
+And we know that because down here we've got the name property on each object.
+4:17
+What's going to happen now if I hit save?
+4:20
+We open up the mini browser and we just see undefined and that figures because down here we're rendering out whatever is returned by get labels HTML and at the moment, we're not explicitly returning anything and that's why in fact we're just returning undefined.
+4:37
+What we need to do then is explicitly return labels HTML.
+4:44
+Oh, and we need to be careful that we don't put that inside the map.
+4:47
+Okay.
+4:47
+To make it clearer, I'm just going to delete this challenge text.
+4:50
+So we've got the return statement at the end of the function but obviously not inside the map method.
+4:56
+Right.
+4:56
+Let's hit save.
+4:58
+And there we are.
+4:59
+We've got some labels and they're rendered out in a long list and we actually were expecting them to be next to each other.
+5:05
+That could be a problem with these commas so we need to deal with them using the join method.
+5:11
+So let's join our array of template strings and the separator is just going to be an empty string.
+5:17
+And there we are, that's looking a bit better.
+5:20
+Now we can see each of our four labels and each one is personalized.
+5:25
+So that is it.
+5:26
+Good job if you got that sorted.
+5:28
+Quite a lot going on here with this code, with the rest parameter and the map method working together.
+5:34
+So give yourself a pat on the back for getting that challenge sorted.
+5:38
+Now you might have done it a slightly different way.
+5:41
+We don't need to set up this const.
+5:43
+As we said earlier, the map method is going to give us a new array and typically we've been saving that to a const but we don't have to.
+5:51
+We could actually just return that array directly and then we can delete this return statement down here and let's hit save and it works just as well.
+6:02
+So all we're doing there is saving ourselves the hassle of having to set up a new const and then return that const.
+6:08
+Instead, we're just returning the array that the map method gives us.
+6:11
+That array doesn't need to be stored in a const.
+6:13
+It doesn't need to be named.
+6:15
+We're returning it and then it's being rendered by this code down here.
+6:19
+Okay.
+6:19
+So that is the rest parameter.
+6:21
+And now what can be quite confusing in JavaScript is that the rest parameter is not the only syntax that uses the triple dot.
+6:29
+So later in the course, you will see another use of this triple dot syntax.
+6:33
+But now we're nearly at the end of this section and there's a little bit more on functions that I want to say.
+6:38
+So when you're ready, let's move on.
