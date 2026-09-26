@@ -1,0 +1,34 @@
+
+Transcript
+0:00
+You did it.
+0:00
+Give yourself a round of applause for getting through that section.
+0:04
+There was an awful lot there and some of it, especially those constructive functions, is pretty hard.
+0:10
+Let's just recap what we studied.
+0:12
+So we looked at factory functions and easy way to return objects.
+0:16
+We looked at constructor functions, a more complex but more versatile way to create objects.
+0:21
+Classes gave us a syntactically more pleasant way to create objects with all of the versatility of constructor functions.
+0:27
+And we used the apply and call methods to control the context and arguments of the functions that we call.
+0:33
+Inheritance, this was a big one.
+0:35
+We looked at how objects can inherit from other objects and access their properties and methods.
+0:41
+We looked at static methods.
+0:42
+So methods on the class itself, not the objects it creates.
+0:46
+Private fields helped us to protect our code from unwanted changes and getters and setters allowed us to update those private fields.
+0:54
+If your brain is still functioning after all of that, I salute you.
+0:58
+I also bet you're super bored of hearing me tell you to take a break.
+1:02
+So I won't say it, but you know what to do before moving on.
