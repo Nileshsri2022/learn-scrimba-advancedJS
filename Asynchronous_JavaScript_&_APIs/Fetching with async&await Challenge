@@ -1,0 +1,92 @@
+
+Transcript
+0:00
+Okay.
+0:00
+We're back with the board API you saw a few scrims ago.
+0:03
+This is a link through to the documentation if you need it.
+0:06
+We are actually going to tackle pretty much the same challenge, but we're going to do it with async await.
+0:12
+So your challenge is this, make a fetch request to the board API.
+0:16
+We've got the base URL and endpoints right here.
+0:19
+Log an object containing an activity suggestion to the console.
+0:22
+Make sure you use the async await method.
+0:25
+And I have given you help in hint dot MD right here if you need it.
+0:30
+Why not try it without any help at first?
+0:33
+Okay.
+0:34
+Get to work on that.
+0:38
+Okay.
+0:38
+Congratulations if you got that challenge solved.
+0:42
+Let's make a start.
+0:43
+So I'm going to set up a const called response and I'll set that equals to my fetch request.
+0:50
+And let's just have the base URL and the endpoint.
+0:54
+So far, so good.
+0:56
+And we know we need to await this, so we'll put the await keyword right here.
+1:01
+Next, let's set up a const data and there we are going to await calling the JSON method on the response.
+1:08
+Let's log out our data and when I hit save, of course, we get an error because I tricked you a little bit.
+1:15
+Over in index dot HTML, I've removed type equals module.
+1:19
+We're going to have to put this inside a function.
+1:22
+Is it gonna work now?
+1:24
+Of course not.
+1:25
+We've still got an error.
+1:26
+We've got the await keyword twice inside this function.
+1:29
+We need to make this an async function.
+1:32
+Let's hit save now and it is working.
+1:35
+We have got our suggestion, take your cat on a walk.
+1:39
+Okay.
+1:40
+Yeah.
+1:40
+Could do that.
+1:41
+To be honest, I could probably come up with a better idea without this API.
+1:44
+Let's hit save again.
+1:46
+Match your storage containers with their lids.
+1:49
+Okay.
+1:49
+That's perhaps a better idea.
+1:51
+Anyway, so far so good.
+1:53
+We've seen two ways of making fetch requests and we've accessed some APIs.
+1:57
+This is a great start but we need to go on a deeper dive to really understand what is going on here.
+2:04
+Because look what happens if I just take away this await keyword.
+2:08
+Let's comment out this line and we're going to log out the response.
+2:12
+When I hit save, what we see in the console is a promise.
+2:16
+And to really understand asynchronous JavaScript, you need to understand promises and that is what we're going to talk about next.
