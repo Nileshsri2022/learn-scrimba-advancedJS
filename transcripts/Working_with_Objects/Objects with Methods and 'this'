@@ -1,0 +1,146 @@
+
+Transcript
+0:00
+I've got an object here holding some details for a gamer and I'm sure you're pretty comfortable working with objects by now so this should probably look quite familiar.
+0:08
+We've got a name property holding the string Dave and a score holding the number zero.
+0:13
+Now here, we've got a property holding a function and a function that's stored on an object and can be used by that object is called a method.
+0:21
+And this method increment score does exactly that.
+0:25
+It increments the gamer's score by one.
+0:28
+Now let's just log out this gamer object twice and in the middle I'm going to call the increment score method.
+0:35
+So to call the method we take the gamer object and then we access increment score.
+0:40
+And because a method is a type of function we need to invoke it with brackets.
+0:44
+Okay.
+0:45
+Let's hit save and open up the console.
+0:47
+And we can see that the method is working.
+0:50
+So the first time that we've logged out gamer we've got the name Dave and the score of zero.
+0:54
+The second time we log it out, we've got the name Dave and the score of one.
+0:59
+So this method here increment score has incremented Dave's score by one.
+1:04
+Now let's take a closer look at how this increment score works.
+1:08
+We're accessing the score property on the gamer object and that's not the end of the world but there is a better way of doing this.
+1:15
+And imagine if the name of the object changed, we would have to update the code in two places.
+1:21
+So that gives us a really good opportunity to talk about the this keyword.
+1:26
+Now this is something which can often seem quite confusing so let's just start by logging it out inside this method and see what it is.
+1:35
+And before we save that and to stop us getting confused, I'm just going to comment out the code that we don't need right now.
+1:41
+Okay.
+1:42
+So when I hit save, we're going to access the increment score method on the gamer object and all that method is going to do is log out this.
+1:50
+Let's hit save and look what we get down in the console is the object.
+1:54
+So now inside this object anywhere inside these curly braces when we need to refer to the object we can use this.
+2:03
+So let's uncomment this line of code, but instead of accessing the score property using gamer, let's use this.
+2:12
+I'm just going to comment out the console.
+2:14
+Log here and uncomment these console.
+2:17
+Logs.
+2:18
+So we're back to our original experiment when I hit save.
+2:21
+We see gamer logged out twice and in the second one the score has been incremented from zero to one.
+2:28
+So this is working.
+2:30
+We're managing to access the properties on this object using the this keyword.
+2:36
+Now at the moment you might not be that impressed by the ability to use this here but that is about to change.
+2:43
+I'm going to make a second gamer object and I'm just going to call it gamer one.
+2:51
+Okay.
+2:52
+So here's the gamer one object and it's basically the same as the gamer object but the name property is now holding the string Sarah.
+3:00
+The score is still zero in each case and we've got the increment score method.
+3:05
+So down here, I'm calling the increment score method on each of the objects and we're just logging out those objects.
+3:12
+Let's hit save.
+3:15
+And we can see that that has been successful in both cases.
+3:18
+So the scores are now at one because we've called the increment score method before logging out the object.
+3:25
+So that's great but if we have a look at these objects, this is not dry at all.
+3:31
+The name properties need to hold different strings.
+3:33
+The score properties will need to hold different scores at some point in the future.
+3:38
+But the increment score method will always be exactly the same for each object.
+3:45
+So if we wanted say fifty gamer objects, we'd be repeating ourselves fifty times and that code would be a nightmare to maintain.
+3:52
+So wouldn't it be great if we could make some kind of template and then have a machine which uses that template to provide us with objects that have the same methods and properties but different values stored in those properties.
+4:06
+Well, we've already seen how JavaScript's inbuilt constructors like the Date constructor give us an object each time we need one.
+4:13
+So it's starting to sound a bit like we need to build our own constructor function.
+4:18
+And when we do that, this is going to be very very important.
+4:22
+So we're going to check that out in the next scrim.
+4:25
+Now just before we do that, I want to quickly tidy up another common source of confusion.
+4:30
+I've used an anonymous function here but I'm declaring it with the function keyword.
+4:34
+But you might be tempted to use an arrow function.
+4:37
+Well, arrow functions use this in a different way to function declarations and if we change this method to an arrow function, this would no longer refer to the object.
+4:50
+It would actually refer to the context surrounding the object which in this case is the window object.
+4:56
+And actually, we can see that really easily.
+4:58
+I'm just going to delete these three lines right here and I'm going to remove this gamer one object.
+5:05
+Now inside this increment score method, let's log out this.
+5:09
+We're calling increment score right here.
+5:11
+We'll hit save and in the console, unsurprisingly, we get the object.
+5:16
+Let's convert this to an arrow function.
+5:18
+So I'll delete the function keyword, add in the arrow, hit save and look what we log out.
+5:23
+We log out the window object.
+5:26
+So that really shows how arrow functions deal with this differently.
+5:30
+Now that can be useful or it can be a pain.
+5:33
+Sometimes you don't want a function to have its own this, You want it to take its this from its outer scope.
+5:39
+Remember the outer scope here is the window object because this is the only code we've got in this script.
+5:44
+This object could actually exist in another scope.
+5:47
+However, normally with methods on objects, we actually want to use the function keyword so that this behaves more predictably.
+5:56
+In the coming scrims, we are going to see a lot more of the this keyword as we learn about creating our own objects.
+6:02
+Now is a really good time to take a break, and then when you're ready, let's keep moving.
