@@ -1,0 +1,108 @@
+
+Transcript
+0:00
+Okay.
+0:00
+So I've increased the complexity of this conditional logic.
+0:04
+What we're doing now then if exercise time in minutes is less than thirty and if that's truthy, the message is you need to try harder.
+0:11
+If that's not the case, let's check if exercise time in minutes is less than sixty sixty, in which case the message should be doing good.
+0:19
+And if exercise time in minutes is greater than thirty and greater than sixty, we want the message to say excellent.
+0:26
+So can we do more complex conditional logic with a ternary?
+0:30
+Yes, we can.
+0:31
+Should we?
+0:32
+Well, that's a really good question.
+0:34
+Let's code this out and then we'll talk about it.
+0:37
+So again I'm going to comment out this if else and the let and then let's uncomment the ternary we've already got and we're just going to update this code.
+0:47
+Now the first part stays the same.
+0:49
+We've got the condition right here.
+0:52
+And if that's truthy, we'll execute this code right here.
+0:55
+So this string will be stored in the const message.
+0:59
+Now things need to change.
+1:00
+After this colon, let's introduce a second condition.
+1:05
+So I'm going to take the condition we've got here but let's increase the number of minutes we're looking for to sixty.
+1:11
+Now here we're asking another question.
+1:13
+Is exercise time in minutes less than sixty?
+1:16
+So we need a question mark.
+1:17
+If that's truthy, then we need this string right here, doing good.
+1:21
+And now we want to introduce the final expression so we need the colon and we're just going to have this string excellent.
+1:28
+Okay.
+1:28
+Let's just see if it's working.
+1:30
+So I'll hit save and there we are.
+1:32
+It says doing good.
+1:34
+Now we've got exercise time in minutes set to forty.
+1:37
+I'm just going to delete this old code so we can see things a little bit more clearly.
+1:41
+Now we've checked if it's less than thirty, that would be full c.
+1:45
+So it moves on over here, exercise time in minutes is less than sixty.
+1:50
+Well that would return truthy.
+1:52
+So message is storing doing good and that is what we're seeing down in the console.
+1:58
+Let's whack this up to a hundred and forty and there we are.
+2:01
+Now it says excellent.
+2:03
+Take it down to twenty.
+2:05
+You need to try harder.
+2:06
+So this is working.
+2:08
+Now it is a bit of a pain the way it stretched out across the screen so much.
+2:12
+So one thing we can do is break this up onto new lines.
+2:16
+And that looks a lot neater.
+2:17
+Let's just save and it still works.
+2:20
+So by breaking this up onto multiple lines, we've made it easier to read.
+2:24
+And that raises a question.
+2:26
+Just because you can do more complex conditional logic with ternaries, it doesn't mean that you should.
+2:32
+What we've done here is not awful.
+2:34
+But just be aware that as ternaries become more complex, they become harder to read.
+2:39
+So it's best to keep it simple and revert to chained if else statements to improve readability if necessary.
+2:45
+And likewise, assigning a value to a variable is a great use case for a ternary.
+2:50
+But when you need to perform more complex logic, it's likely that an if else is going to be better just because it will be easier to read for you at a later date and for your colleagues.
+3:00
+Okay.
+3:01
+It's time for you to write some code.
+3:02
+So in the next scrim, let's take on a challenge.
