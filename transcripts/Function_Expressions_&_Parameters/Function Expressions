@@ -1,0 +1,80 @@
+
+Transcript
+0:00
+In this scrim, I want to introduce you to function expressions which differ from the functions we've seen so far in both syntax and behavior.
+0:08
+Let's take a look at some code.
+0:09
+So right here, I've got a function from a finance security app and it alerts you every time your credit card is used.
+0:16
+We're calling the function right here and passing in an amount and when the function runs, we're logging out a warning.
+0:24
+Now this type of function has a name.
+0:26
+It's called a function declaration, but you might well just think of it as a normal function.
+0:32
+Now I can call a function declaration right here like I'm doing now underneath the function or I can call it before the function has been declared.
+0:40
+So let's change this to two hundred and when I hit save, it works just fine.
+0:46
+So it doesn't matter whether I call the function before it's been declared or after it's been declared.
+0:52
+Now the reason for that is that function declarations are hoisted.
+0:56
+And if you haven't heard of hoisting before, it means that function declarations are moved to the top of their scope before code execution.
+1:05
+And what that means in this example is that we can call this function anywhere in this file and it will work just fine.
+1:13
+Okay.
+1:13
+Let's compare and contrast that with function expressions.
+1:17
+So to create a function expression I declare a const.
+1:21
+I'll give it a name and I'm going to take the same name as we used for this function.
+1:26
+And this const is going to hold an anonymous function.
+1:29
+So I'm just using the function keyword, the parenthesis and of course the curly braces.
+1:35
+And that is very similar to the anonymous functions that we've passed to methods in previous projects.
+1:41
+Now I'll take the logic that we've got from here and of course it needs to take in amount as a parameter.
+1:47
+Now let's bring this console.
+1:49
+Log underneath this function expression and I'm just going to comment out this code right here.
+1:56
+Now let's change this amount to one hundred and fifty and I'll hit save.
+2:00
+And there we are.
+2:01
+That function works just fine and the end result is exactly the same as the function declaration.
+2:07
+And that brings us to the question, why would you want to use a function expression?
+2:12
+Well firstly, what's interesting about these function expressions is that they're not hoisted.
+2:17
+We can prove that by trying to call it before it's been expressed.
+2:21
+So I'm just going to move this console dot log above the function expression.
+2:26
+And when I hit save, we get an error cannot access GetSpend alert before initialization.
+2:33
+So this function expression is not hoisted in the same way that this function declaration was.
+2:38
+Now the fact that function expressions are not hoisted is generally seen as an advantage.
+2:43
+The ability to call function declarations like this one anywhere in their scope can cause confusion and lead to bugs.
+2:51
+Secondly, function expressions are cleaner and easier to read and I've put here arguably that is of course a matter of taste.
+3:00
+And finally, because of the above, function expressions are the chosen style of some development teams.
+3:06
+So they're definitely something that you need to know.
+3:09
+Okay.
+3:10
+Make a mental note of this syntax because in the next scrim, we'll have a challenge with function expressions.
+3:16
+When you're ready for it, I'll see you there.
