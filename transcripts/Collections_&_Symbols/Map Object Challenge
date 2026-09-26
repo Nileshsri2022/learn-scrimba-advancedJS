@@ -1,0 +1,59 @@
+Transcript
+0:00
+Okay.
+0:00
+It's time for a challenge.
+0:01
+I have got four athletes right here.
+0:03
+Each one has got a name and an average time for a ten kilometer race in minutes.
+0:09
+This is what I want you to do and it comes in three parts.
+0:12
+Firstly, and you can write the code for this right here, create a map object athletes to store these athletes.
+0:19
+This function right here is actually gonna do the work of adding athletes to this map that you create right here and we're calling that function here four times with each athlete and the time for their latest race.
+0:33
+This final function get summary should log out the following sentences in the console.
+0:38
+So you're going to have something like Alice's average time is fifty eight point three, but today Alice achieved fifty seven point three.
+0:46
+Okay.
+0:46
+Quite a lot to do there.
+0:47
+So take all of the time you need, get to work on this, and we'll have a look together in just a moment.
+0:54
+Okay.
+0:54
+Hopefully, you got that working.
+0:56
+No problem at all if you had to check back to the previous scrim.
+0:59
+Let's start off by creating our new map object, and we'll store it to a const athletes.
+1:04
+This function right here, add athlete, is taking in an athlete at a time.
+1:09
+As it's called, we're passing in each athlete object and a time, so that's fine.
+1:14
+We just need to use the set method.
+1:15
+So let's take athletes and we can say athletes dot set and we'll take the athlete which we're using as the key and the time that we're using as the value.
+1:26
+This function get summary actually wants to log out information for each of the four athletes, so it looks to me like we need to do some iteration.
+1:35
+So let's say athletes dot forEach, and the callback function takes in the value and key as parameters.
+1:43
+And I'm just going to paste in the template string we want to log out for each of our athletes.
+1:47
+Okay.
+1:48
+Let's hit Save and see if that works.
+1:50
+And down in the console, we're getting these sentences logged out, which is exactly what we want.
+1:55
+So congratulations if you completed that challenge, especially if you managed to do it from memory.
+2:01
+But really no problem if you had to check back because there is quite a bit of new syntax here.
+2:05
+In the next scrim, let's look at the set object.
