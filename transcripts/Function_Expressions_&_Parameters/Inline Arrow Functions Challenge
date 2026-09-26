@@ -1,0 +1,68 @@
+
+Transcript
+0:00
+The good news is Elon loves your work.
+0:03
+He's got one last request.
+0:06
+This array over here holds the distances a Tesla was driven before needing to recharge.
+0:14
+The distances are listed in miles, but now Elon wants them in kilometers.
+0:20
+We've got a dot map method set up here, which is iterating over this array and turning it into an array of kilometers.
+0:29
+And we're just rounding to the nearest integer with this math dot round here.
+0:33
+Here's your challenge.
+0:35
+Can you swap out this inline function and replace it with an arrow function?
+0:40
+And be sure to write as little code as possible.
+0:44
+Now I haven't demonstrated how to do this because I think you can work it out.
+0:48
+We've looked at several examples of arrow functions already, and using one as an inline function does not require any extra skill or knowledge.
+0:58
+So give this your best shot, search online if you need to, and when you're done, we'll have a look together.
+1:04
+Okay.
+1:05
+Hopefully, you managed to work that out.
+1:07
+So all we need to do is get rid of this function keyword.
+1:13
+And now we're only returning one line of code here, so let's delete these curly braces.
+1:21
+And we're going to bring it all up onto one line, and we're going to delete the return keyword as well.
+1:27
+And, of course, we need our arrow.
+1:29
+We've only got one parameter here with the dot map method, so let's delete those brackets.
+1:35
+How's that looking if we just space it out a little bit?
+1:38
+It's getting quite long here across the page.
+1:40
+Let's just save.
+1:43
+And there we are.
+1:44
+It is working.
+1:46
+Ah, but look.
+1:46
+We've got a little bit of a problem because we've got one bracket hanging down onto the next line.
+1:51
+That's looking a bit tidier.
+1:53
+So there we are.
+1:54
+You can do it with a very concise arrow function.
+1:58
+Now I've been encouraging you to write the least amount of code possible just to get used to this really concise syntax.
+2:05
+You don't necessarily have to use it, and you might actually think it's easier to read if you do include the brackets or perhaps you return this inside the curly braces on a new line.
+2:17
+Now we've learned about inline arrow functions, let's do a bit of refactoring with some old code.
+2:22
+You'll see what I mean in the next screen.
