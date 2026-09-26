@@ -1,0 +1,218 @@
+
+Transcript
+0:00
+I really hope you got that working and congratulations if you did.
+0:04
+Let's make a start.
+0:06
+So we need to export what we've got right here so we can just use the export keyword.
+0:11
+And then in index dot JS, let's import it.
+0:15
+And to make sure that's working, let's just quickly log it out.
+0:20
+And it looks like it is.
+0:21
+The next thing we need is an event listener, and we're listening out for clicks on this button right here.
+0:27
+And we've got that saved as pattern search submit.
+0:32
+We're listening out for clicks.
+0:34
+And I'll use an external function to do the heavy lifting of the search but because I'm going to be passing in arguments I'll set it up inside an inline function.
+0:42
+So this function is going to call a function which has the specific task of finding matching contacts.
+0:48
+So I'll call it find matching contacts.
+0:51
+And we'll pass it the contacts array and also whatever has been inputted in this field.
+0:57
+And we've already got pattern search input saved right here.
+1:01
+So let's take that and on the end we can just add dot value.
+1:06
+Now let's get to work on find matching contacts.
+1:09
+And it needs to take in two parameters, the contacts array and the pattern.
+1:14
+And the pattern will be whatever came in as the pattern search input.
+1:18
+So it could be a couple of letters or a full name.
+1:21
+Let's just check this is working again with a console dot log.
+1:25
+I'm going to hit save and then in here I'll just put the name Jane.
+1:29
+Oh, and I've just misspelled console.
+1:31
+Let's try again.
+1:33
+And that's fine.
+1:33
+We're managing to log something out so we know we've wired it up correctly.
+1:37
+Now inside this function we need to set up some regex.
+1:41
+And I'll just save that in a const called regex.
+1:44
+And we can set that equals to a new instance of the regular expression constructor.
+1:49
+And we'll pass in the pattern and also the letter I which will make it case insensitive.
+1:55
+Now we need to take this array and do some filtering.
+1:59
+An array takes in a function and the function needs a parameter which will be each contact in turn so I'll just call it contact.
+2:07
+Inside the function, let's return the test.
+2:10
+So we'll take our regex, we'll use the test method, and we'll pass in contact dot name.
+2:18
+So now our pattern is going to be tested against contact dot name.
+2:22
+And if there's a match, that contact object will pass the test and it will be returned to the array we're creating.
+2:29
+Now we don't need to save that array to a const.
+2:32
+We can actually iterate over it by chaining on a foreach.
+2:36
+So just to be clear, one option would be to come in here with a const and then take that new array and call the foreach method on it.
+2:44
+But I'm just saying that's not necessary.
+2:46
+We're actually chaining on the foreach so we don't need to specifically save this new array.
+2:51
+And just to keep things neater, I'll move the for each onto a new line.
+2:55
+Let's pass a function to the for each.
+2:58
+And of course, the function needs a parameter.
+3:00
+That parameter will represent again each contact.
+3:03
+So I'll use contact.
+3:04
+It doesn't matter that we've used it up here.
+3:06
+These are completely separate.
+3:08
+They're in completely different scopes.
+3:10
+And for each contact, I just want to call our render function.
+3:13
+And that's expecting an object as a parameter.
+3:17
+So we pass in the contact.
+3:19
+And then finally we've got some DOM work to do inside renderContact but I think we might at first just log out contact object.
+3:27
+And I'll input something in here.
+3:29
+I'll go with Joe.
+3:31
+And look, it looks like it's working.
+3:32
+We're logging out two objects.
+3:34
+We've got John Smith and Alan Johnson.
+3:36
+Both of those have got j o in them.
+3:38
+So things are looking good.
+3:40
+We just need to wire up the dom.
+3:41
+The first thing I'm going to do is destructure contact object.
+3:45
+So we want the name, email, and phone properties.
+3:50
+And then it tells us here we need to create paragraph elements for each of these.
+3:55
+So I'll say const name elements and that will be document dot create element and it's a paragraph element that we want to create.
+4:05
+And I'm just going to repeat that then for email and phone.
+4:10
+Now we can access the inner text or text content and just place the name, email, and phone inside the contact card.
+4:18
+So name element dot inner text will be equals to name.
+4:23
+And I'll just do the same thing with email and phone.
+4:27
+And then lastly, we need to append it all to contact card.
+4:31
+So that's the name element.
+4:33
+Now we have the email element and the phone element.
+4:36
+And to make it display, well, we want it to sit down here.
+4:39
+We've actually already got an element for that.
+4:42
+It is this one right here.
+4:44
+It's this section with the class of contact display.
+4:47
+And if we have a look at the top of index.
+4:50
+Html, we've got it saved right here.
+4:52
+I think we can actually safely bring it inside this function.
+4:56
+And let's take contact display, append child and pass in contact card.
+5:03
+Okay.
+5:03
+Let's hit save and see if it's working.
+5:05
+So we'll go for John.
+5:07
+That brings us to John Smith and Alice Johnson.
+5:10
+Now let's just go for the letter A.
+5:13
+And that brings up a couple more Kofi Mensah, Jane West, Alice Johnson, Amina Hassan, etcetera etcetera.
+5:19
+Now we've got a little bit of a problem here which is that we're just making this list longer and longer.
+5:24
+If I search on the letter H now it's a really long list.
+5:29
+So what we really want to do is clear this on each search.
+5:32
+So if we come up here and just at the start of the find matching contacts function we can empty contacts display.
+5:39
+And actually it was a bad move to stick it down there inside the render contacts function because we won't be able to access it from there.
+5:46
+Let's put it back where it was.
+5:49
+Now we can access it from anywhere in this script and we can just take it in a HTML and set that to an empty string.
+5:56
+Let's try one more time and a new search query.
+6:00
+That's better.
+6:00
+So now it clears on each search.
+6:03
+So we're done.
+6:04
+And great work for getting that super challenge sorted.
+6:06
+And as ever, it doesn't matter if it took you a long time or if you had to do extra research.
+6:11
+And if you did it a different way and you checked against the JavaScript that I intended to use which was import export, regex, filter, foreach, object destructuring.
+6:21
+That is absolutely fine.
+6:23
+If you would like some feedback on it, you can check out the Scrimper community.
+6:27
+Go to our Discord, go to our forum.
+6:29
+These screenshots are actually links.
+6:31
+You can just click on them and it will take you right there.
+6:33
+And you can just share your code and ask some questions.
+6:36
+Okay.
+6:36
+We're pretty near the end of this section.
+6:38
+Let's just take one more scrim for a recap.
