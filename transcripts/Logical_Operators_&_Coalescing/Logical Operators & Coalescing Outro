@@ -1,0 +1,14 @@
+
+Transcript
+0:00
+Section complete, but that was a tough one.
+0:02
+Sure, but quite a lot of fiddly JavaScript.
+0:05
+Let's just recap what we did.
+0:07
+So we looked at short circuiting with the or operator.
+0:11
+We looked at short circuiting with the and operator, And we looked at nullish coalescing which lets you use a default value when something is null or undefined.
+0:20
+As ever, if you're feeling like this, do take a break and take some time to practice practice practice what you've learned and then come back to this course when you're ready for the next section.
