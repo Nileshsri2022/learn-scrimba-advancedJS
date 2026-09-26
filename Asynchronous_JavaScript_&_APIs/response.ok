@@ -1,0 +1,72 @@
+
+Transcript
+0:00
+Let's look at our second tool for handling errors which is the okay property on the response object.
+0:05
+The response object that we get back from fetch has an okay property which holds a Boolean and indicates whether the HTTP request was successful.
+0:15
+And we know this from the status code and let's just touch on status codes for a moment.
+0:21
+So if the status code is in the range two hundred to two nine nine, it's a successful response and the Boolean will be true.
+0:28
+Other possibilities outside of that range are, for example, four zero four for not found and five hundred server error.
+0:34
+Both of these will give us a boolean of false.
+0:37
+So this check just helps determine if the request was successful from the perspective of the server even if no error was thrown by fetch.
+0:45
+And that's the situation we've got right now.
+0:47
+We're not successfully getting what we want but we don't actually have an error message.
+0:52
+Let's just have a quick look at that response.
+0:56
+And I'm just going to log response dot okay.
+1:00
+Let's hit save and we get false.
+1:02
+If we unbreak this endpoint, we get true.
+1:05
+Okay.
+1:06
+Let's use this to handle an error.
+1:08
+So what we want to do then is check if response dot okay is false.
+1:13
+So I've added the exclamation mark right there and this is where we can handle the problem gracefully.
+1:18
+Let's throw a custom error.
+1:22
+Okay.
+1:23
+Let's save that.
+1:24
+And we see error.
+1:25
+There was a problem with the API.
+1:26
+This error is actually being picked up by the catch block.
+1:29
+If we comment out this console dot log here, you see we don't get to see that error.
+1:35
+So the catch block is still doing its thing.
+1:37
+And so of course, updating the DOM to warn the user or accessing an alternative API, all of those options are still available for us and we can do them right here inside the catch block.
+1:47
+So this is now handling the error successfully and what we're seeing is response dot okay and try catch working in tandem together.
+1:55
+But let's just summarize the differences between them.
+1:58
+So try catch catches exceptions and errors that occur during the execution of code including network errors and other unexpected issues.
+2:06
+Response dot okay checks the success of the HTTP response status which might not throw an error but still indicates a failure.
+2:14
+So response dot okay working together with try catch is a really really powerful combination.
+2:20
+Now that's it for error handling.
+2:22
+Next, we're gonna look at some more advanced fetching techniques because we can do a lot more than just get data from a server.
+2:28
+But I do just want to say now that we'll be moving away from promises for a few scrims but there is a little bit more that I want to say about promises but I want to deal with the rest of fetching first.
+2:37
+So we will be coming back to promises a little bit later.
