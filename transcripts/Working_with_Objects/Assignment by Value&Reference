@@ -1,0 +1,129 @@
+Transcript
+0:00
+We need to talk about making clones or copies of our variables because when we make copies of arrays and objects, we can actually see some pretty weird behavior in JavaScript.
+0:08
+Now to understand this properly, I want to start off by talking about assigning by value or reference.
+0:14
+And we're going to actually begin with the humble string.
+0:17
+I'm going to set up a let here, first name, and I'm setting that to hold Thomas.
+0:23
+Now when, like me, you're called Thomas, you see lots of varieties of how to spell Thomas.
+0:28
+This is one of them.
+0:29
+It's not actually how I spell my name.
+0:31
+So I'm going to set up a new variable called new name.
+0:36
+And for the moment, I'm just going to set that equals to first name.
+0:40
+Now let's take new name and I'm going to reassign it Thomas spelled with an h which is how I spell it.
+0:50
+Now let's just log out both of those.
+0:54
+And I'll save that and open up the console And we see that we've got first name of Thomas without the h and new name is Thomas with the h.
+1:03
+So that is exactly what you'd expect.
+1:05
+And let's just imagine with a diagram what's happening under the hood.
+1:09
+So we've set up name and we've set it to Thomas with no h.
+1:13
+In the memory, that's been created and name holds Thomas.
+1:16
+Now we come in and we say new name equals name.
+1:20
+Well, that creates a new entity in the memory, new name and it also stores Thomas.
+1:25
+When we reassign new name to Thomas with an h, this Thomas without the h is deleted and the new Thomas with the h is added in its place.
+1:34
+And this actually holds true for all of the primitive data types.
+1:37
+So string, number, Boolean, etcetera.
+1:40
+And you might be wondering why am I even bothering to show you this?
+1:43
+Obviously this is how it works.
+1:46
+But consider this array.
+1:50
+So four names all beginning with b as it happens And now I'm going to set up a new const called updated names.
+1:57
+And I'll set that equals to names.
+2:01
+Now let's change one of the elements in updated names.
+2:05
+So I'll take the element at position zero which is Ben and let's change that to Zoe.
+2:11
+Okay.
+2:11
+Now let's just log out names and updated names.
+2:16
+And when I hit save, let's see what we get in the console.
+2:19
+Well, look what has happened.
+2:21
+Names, our original array has also been updated.
+2:25
+There's no sign of Ben.
+2:27
+In both cases, Ben has become Zoe.
+2:30
+Because in memory, this array has only been created once and our variables both names and updated names reference to it.
+2:39
+That means if you change names or updated names, this array as it exists in the memory will be updated and any reference that points to it will reflect that change.
+2:48
+Let's just consider a diagram.
+2:50
+So right here we've got name array.
+2:53
+It's just got one element Tom and here it is in memory.
+2:56
+We've got name array and it's storing Tom.
+2:59
+Now let's take new array and we'll set it equals to name array.
+3:03
+That is not going to create a new instance in memory.
+3:06
+Instead, it's just going to point to the existing instance in memory.
+3:10
+Now, let's take new array position zero and change it to Matt.
+3:14
+So Tom will be deleted and Matt will be added in its place.
+3:18
+So when you assign an object or an array to a variable, you're actually assigning a reference to the object or the array as it exists in memory not making a new copy of it in memory.
+3:28
+This means that multiple variables can actually reference the same object or an array in memory and so if we keep adding some more, they're all just going to point to the same instance in memory.
+3:39
+And of course changes made through any of these references will change the original in memory and that will be reflected across all of the other references as we just saw with our code.
+3:49
+So you might well have come across the phrase pass by value or pass by reference and that's roughly what we can see here.
+3:56
+The primitives, strings, numbers, Booleans are passed by value.
+4:00
+The objects and arrays, well it's a simplification to say they're passed by reference but their references point to the original in memory.
+4:07
+So that brings us to the big question.
+4:09
+How do we copy arrays and objects?
+4:10
+Because that is something we definitely need to do.
+4:13
+And actually what we're going to see is that there are two levels of copying arrays and objects in JavaScript, and they are deep copy and shallow copy.
+4:21
+The shallow copy creates a new object or an array, but only at the first level.
+4:26
+For nested objects or arrays, a shallow copy will still hold references to the original nested objects or arrays in memory.
+4:34
+They will not actually be copied to the new object or array.
+4:38
+They will not get their own space in memory.
+4:41
+A deep copy on the other hand, does copy the entire array or object.
+4:45
+So what we're going to do next is see some examples and we'll see some methods of shallow copying in the next scrim.
+4:51
+And after that, we will come to the deep copy.
+4:53
+But let's start with shallow copy and the spread operator.
