@@ -1,0 +1,44 @@
+
+Transcript
+0:00
+Let's talk about creating objects.
+0:02
+We know that we can create an object using an object literal like this.
+0:07
+And that's fine if you need one hard coded object in your app.
+0:10
+But oftentimes, we need to create lots of objects maybe even thousands and we need to do it programmatically.
+0:16
+Imagine we were working on the payroll for a company with thousands of employees.
+0:20
+We might need to create an object for each employee and the objects would be similar in terms of the properties they had.
+0:27
+Each one would need a name, a payroll number, a department, and perhaps a method.
+0:31
+But the actual data held in each object would be different for each employee.
+0:36
+So what we need is some kind of machine that can produce objects for us.
+0:40
+So we pass in our template and some data and objects come out.
+0:45
+There's the first object, but now it's got the template and some data, it can just keep producing objects all day long, as many as you need.
+0:54
+JavaScript gives us multiple ways of doing this.
+0:57
+And there are pros and cons to each method, but as you'll likely see them all out in the real world, we're gonna take a look at them each in turn.
+1:04
+We're going to start off with factory functions.
+1:07
+This is the most basic way of creating objects programmatically and in fact, you already know all of the syntax you need.
+1:13
+Then we'll look at constructor functions.
+1:15
+They have some advantages over factory functions, but also involve extra complexity.
+1:20
+And finally, we'll move to the class syntax, which is arguably just syntactic sugar for constructive functions, but they're much easier to work with when things get complex.
+1:30
+By the way, if you haven't heard the phrase syntactic sugar before, it just means it's syntax that does the same thing, but is easier to read and work with.
+1:37
+Once we've covered each of those three methods and had some challenges, we are gonna dive into the more complex issue of inheritance, but let's worry about that later.
+1:46
+Right now, let's kick things off with factory functions in the next scrim.
