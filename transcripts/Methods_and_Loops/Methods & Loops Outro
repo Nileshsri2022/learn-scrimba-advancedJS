@@ -1,0 +1,24 @@
+
+Transcript
+0:00
+Congratulations on finishing this section on methods and loops.
+0:03
+We have pretty much covered all of JavaScript's options for looping and iterating.
+0:08
+We saw the for of and the for in and then we used the for each to iterate over arrays, the includes method to check if an element exists, the map method to iterate over an array and return a new array, and we used it alongside the join method.
+0:24
+We also looked at filter to return an array with selected parts of the original and reduce to get an array down to one piece of output.
+0:32
+The break and continue keywords showed us that the for loop isn't dead.
+0:36
+And we took a quick look at a stack of other methods which were really not too complicated.
+0:41
+The string replace and replace all methods alongside the regex all work together to find patterns in text.
+0:47
+Okay.
+0:48
+So there was a lot to work on there.
+0:50
+Now is a really, really good time to take a break.
+0:52
+And when you're ready and feeling refreshed, come back for the next section.
