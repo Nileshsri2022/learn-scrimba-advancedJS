@@ -1,0 +1,92 @@
+
+Transcript
+0:00
+You might well have heard that in JavaScript functions are considered first class citizens.
+0:04
+What this means is that functions in JavaScript have the same capabilities as other data types like numbers, strings, or objects.
+0:12
+Specifically, that means functions can be assigned to variables and we've seen that already with function expressions.
+0:19
+Functions can also be passed as arguments to other functions.
+0:22
+And we've seen that several times already as well.
+0:25
+And that brings me to a quiz.
+0:27
+Can you list some of the times we've passed functions as arguments to other functions?
+0:32
+And you can just list them here one, two, three and feel free to go on if you can think of more examples.
+0:39
+Okay.
+0:39
+So we've definitely done that with the array methods.
+0:43
+So map, for each, reduce, etcetera.
+0:48
+We've also seen that with the asynchronous methods setTimeout and setInterval.
+0:54
+And lastly, we've seen it with the event listeners.
+0:58
+So in all of those cases, we have passed functions as arguments to other functions.
+1:03
+So if we take say the foreach, we have an array, perhaps an array of names.
+1:09
+We call the foreach method.
+1:12
+And what we pass to foreach is a function.
+1:15
+And we tell foreach to take every element in the array and do something with it.
+1:21
+Now the functions that we pass into other functions like this foreach method are called callback functions.
+1:27
+And that's a somewhat odd thing to call them and it's not that intuitive but they're called that because they are called back on each element in the array we are working on in the case of an array method like for each or in the case of a set time out or set interval, they're called when the delay is up or perhaps when an event has been detected.
+1:44
+So the name callback function is somewhat unintuitive but just remember, it's a function which is passed to another function to be utilized when that function deems necessary.
+1:54
+Now we can also make our own functions that expect a callback function as a parameter.
+1:58
+And we're gonna make a really basic example of that right now.
+2:02
+So this function will notify a user.
+2:05
+It's going to take in a callback function as a parameter.
+2:08
+Now I could of course call that anything.
+2:10
+I could call it callback.
+2:12
+That seems very generic.
+2:13
+What this function is going to do is actually notify a user.
+2:16
+So I'm actually going to call it notification function.
+2:20
+And I'll just abbreviate function to f n.
+2:23
+Inside the body of this function all we're going to do is invoke whichever function comes in as a parameter.
+2:30
+Now let's create two functions that we can pass in to notify user.
+2:35
+I'll call this first one email notification and I'm going to make it using an arrow function.
+2:41
+And all it's going to do is log email sent.
+2:45
+Our second function is going to be called SMS notification, and that will just log SMS sent.
+2:53
+Now let's call notify user twice and in each case we'll pass in a different callback function.
+2:59
+So what we're doing here is we're giving notify user a function and we're allowing notify user to decide when to invoke that function.
+3:07
+Let's hit save and in the console we get predictably email sent and SMS sent.
+3:13
+Okay.
+3:13
+So this was just a really very basic contrived example of passing a callback function to another function.
+3:19
+But I just really wanted to draw your attention to the idea of a callback because they are so important in JavaScript.
+3:26
+You have seen them a lot already and you are going to see a lot more of them going forwards and we'll be talking about them more in the asynchronous JavaScript section of this course.
+3:35
+Okay.
+3:36
+When you're ready, let's move on.
