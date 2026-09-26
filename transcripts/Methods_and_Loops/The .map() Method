@@ -1,0 +1,121 @@
+Transcript
+0:00
+In this scrim we're going to look at another JavaScript method for iterating over arrays.
+0:04
+This is the map method and mapping over arrays is a core front end developer skill.
+0:10
+So let's jump straight into the code and have a look.
+0:13
+I'm tracking my exercise and this array here shows the number of miles I've walked during each of the last six months.
+0:22
+I want to share this on my social media but most of my friends are from countries that use kilometers and anyway kilometers sound much more impressive because the number is always higher.
+0:32
+Now I've got the conversion factor right here it's one point six.
+0:36
+So all we need to do is multiply these figures in miles by one point six to get the figure in kilometers.
+0:44
+So we're going to do that using the map method which is going to iterate over the array and it's going to convert each number for me.
+0:51
+And this should be kind of familiar because we've seen something similar before with the ForEach.
+0:56
+The map method is going to call a function on each element in the array in turn.
+1:01
+Now the first thing to remember about the map method is that it gives us a new array and we're going to store that array in a const.
+1:09
+So I'm just going to come down here and set up a new array called distanceWALKEDKILOMETERS array and I'm going to set that equals to the original array, the array we're going to map over and I'll call the map method directly on the end.
+1:23
+And because map is a method it needs its brackets or parentheses if you prefer the longer word.
+1:29
+Now here inside these brackets we're going to pass map the function that's going to be called on each element in the array in turn And we can build that function right here as an anonymous inline function.
+1:40
+So I'll declare it using the function keyword and give it its brackets and then this function that we're passing to the map method receives a parameter and this parameter is really important.
+1:51
+It's the element in the array that is currently being worked on.
+1:56
+And of course, it's a good convention to give it a name that makes it clear that it represents one item of the items in the array.
+2:02
+So if this was an array of bikes we might call this parameter bike.
+2:06
+Well this is an array of distances in miles so I'm going to call this parameter distance miles.
+2:13
+Now inside the body of this function let's just experiment by logging out what this parameter distance miles actually is.
+2:21
+So I'll save that and if we open up the console what we see is that we're getting everything that was in the original array.
+2:27
+Except that what's in the console is not an array we're just getting it logged out element by element.
+2:32
+So we can see really clearly that as the map method iterated over the array, distance miles, the parameter that we passed into this function was just the first element in the array one hundred and forty then the second element then a hundred and sixty one etcetera etcetera until we reached the end of the array.
+2:50
+Now let's do the calculation.
+2:51
+So all we need to do is multiply distance in miles by the conversion factor.
+2:57
+And down in the console we can see that we've converted our distance
+3:02
+in kilometers.
+3:03
+Now at the moment we're not using the map method's full potential because we're just logging out these figures.
+3:10
+The map method gives us this new array.
+3:12
+That's what's so useful about it and in fact if we're not going to use this array we shouldn't be using the map method.
+3:18
+So instead of logging something out right here, let's just return this line of code.
+3:24
+And what that will do is return each converted distance to the new array that we're storing in this const.
+3:31
+So let's just come down here and log out this array.
+3:35
+And now when I save look what we get in the console.
+3:38
+We've got an array.
+3:39
+It's the same length as the original array and each element in the original array has had this function called on it in turn and each distance in miles has been converted to a distance in kilometers.
+3:51
+And the map method has returned this array which we're logging out down here.
+3:55
+Now there's one last thing that I want to show you.
+3:57
+Just like with the forEach method, we can include a second parameter here and we'll call it index and if we use it we can see that it gives us the index of the item as it maps through the array.
+4:09
+So that would be index zero, index one, index two, etcetera.
+4:14
+So let's just update what we've got here to make use of the index.
+4:19
+And now if I hit save we can see that we've still got an array.
+4:23
+We've converted what's inside the array to strings and for each one we've got the month and the distance in kilometers and in fact we could just whack kilometers on the end and that makes it a little bit clearer.
+4:35
+Now I'm not saying that's a very useful thing to do here in this example but this index parameter can be very very useful.
+4:41
+So it's worth remembering that we do have access to the index of each element with this parameter if we need it.
+4:48
+Now just before we finish I want to point out that just because the map method gives us a new array we don't necessarily need to store it in a const, although it is quite common to do so and that's exactly what we've done here.
+5:00
+If for example all of this were happening inside a function, we could just return it directly and I'll just show you quickly what that might look like.
+5:12
+Okay, I've just put all of that logic inside a function and we're calling the function down here and if we hit save we get exactly the same thing.
+5:20
+Now what I want to do is delete the const that we've got right here and instead we're just going to return this entire block of code which contains the map method and what you'll see is that we've now got these two returns and that is absolutely fine.
+5:35
+This return is working with this function and that's going to return this string to the new array and then this return statement right here is returning everything from this ConvertMilesToKlometers function.
+5:47
+So now we've done that let's delete this console.
+5:50
+Log and we'll log out whatever gets returned when we call this function.
+5:54
+So let's just wrap this in a console dot log.
+5:57
+And when I hit save there we are.
+5:59
+We're getting exactly the same thing.
+6:01
+So what that demonstrates is that we're using the map method to create a new array but we're not actually storing that array in a const.
+6:09
+We're just returning it from this function and then we can see it when we call that function and log out what it returns.
+6:16
+So you'll commonly see the map method used to create a new array and store it to a const but you'll also see it used to create an array which is then instantly returned And both of those are perfectly legitimate uses for the map method.
+6:28
+Okay, I think I've talked quite a lot and it's definitely time for you to get hands on with the code.
+6:33
+So I've got a challenge waiting for you in the next scrim.
