@@ -1,0 +1,64 @@
+
+Transcript
+0:00
+It's time for a challenge and I want to talk holidays.
+0:03
+This is a picture of the fair city of Austin, Texas and I want to go there.
+0:08
+But I don't want to mess around on the water like these people.
+0:11
+I just want to spend my holidays at the Tesla factory.
+0:15
+Doesn't sound like your idea of fun?
+0:17
+No problem.
+0:18
+Right here I have given you an object populated with empty strings.
+0:23
+Your challenge is this.
+0:25
+I want you to complete the object dream holiday with whatever information is true for you and feel free to add extra properties or change the existing ones as much as you want.
+0:36
+When you've done that, I want you to destructure the object and use the individual variables to log out one or more sentences about your dream holiday.
+0:44
+And I've put an example right here for me.
+0:47
+I'd love to go to Austin, Texas to visit the Tesla HQ.
+0:50
+I'll sleep in a luxury ranch and hang out with Elon Musk all day.
+0:55
+Now you've probably got other ideas.
+0:57
+Complete this object and give this your best shot.
+1:00
+And I'll see you back here in just a moment and we'll have a look together.
+1:05
+Okay.
+1:05
+Hopefully you got that working just fine.
+1:07
+I'm going to come in here and speed type my dream holiday data.
+1:11
+And now I'm going to destructure that object.
+1:14
+So I'll say const and I'll open up the curly braces and I'm going to list out all of these properties separated by a comma.
+1:22
+So we've got destination, activity, accommodation and companion and I'll set that equals to the object name.
+1:29
+And that is all I need to do.
+1:31
+Now I'll log out my sentence.
+1:33
+So I'll take what I've written in my example and bring it into the console dot log.
+1:38
+And I'm going to put it of course between back ticks.
+1:41
+And now I'll use the dollar sign and the curly braces to bring in these variables.
+1:46
+And let's just open up the console.
+1:48
+I'll hit save.
+1:49
+And there we are.
+1:50
+We have successfully destructured this object and logged out my sad holiday idea.
