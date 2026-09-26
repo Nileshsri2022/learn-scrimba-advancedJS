@@ -1,0 +1,142 @@
+
+Transcript
+0:00
+In this scrim, we're going to look at how we can make some code repeatedly execute at regular intervals using the set interval method.
+0:07
+What we're going to do is log a message that warns you that your device is shutting down in a certain number of seconds.
+0:13
+So far, I've got this function called start countdown which we're invoking right here and we just want to count down for three seconds.
+0:20
+So I'm going to set up a let seconds remaining and I'll set that equals to three.
+0:25
+Now let's use setInterval and I'm going to save it to a const called shutdownTimer.
+0:31
+Okay.
+0:31
+The syntax for setInterval is incredibly similar to the syntax we used for the setTimeout method.
+0:37
+So I think you can do this as a challenge And it's a challenge which comes in two parts.
+0:42
+Firstly, every one thousand milliseconds, I want you to log out.
+0:46
+Your device will shut down in seconds remaining seconds.
+0:51
+And don't forget to decrement seconds remaining after you've done that.
+0:56
+The second part is that when seconds remaining hits zero, you should log out your device is shutting down.
+1:02
+And at this point, the set interval should be cleared.
+1:04
+We don't want it to keep logging out messages after the device is shut down.
+1:08
+Now I've just put here, what method can you use to do that?
+1:11
+We use clear time out to cancel the set time out and that's a big clue as to which method you can use to clear the set interval.
+1:19
+Now it's probably easiest to do this challenge as an inline function.
+1:22
+That's what I'm going to do, but I'll leave the final decision up to you.
+1:26
+Take all of the time you need because there is quite a lot to do here and quite a lot to think about.
+1:30
+You are welcome to go back to the previous scrim and check out the syntax if you need to.
+1:34
+Do try and do it without and then in a few moments we'll have a look together.
+1:38
+Okay.
+1:39
+I really hope you got that working and congratulations if you did because there was quite a lot to do.
+1:44
+Let's start off with an inline function and we know we want the code in this block to run every one thousand milliseconds, so let's just put that right here.
+1:54
+And that is of course exactly the same as we did with the setTimeout.
+1:59
+Now what we want to happen every one thousand milliseconds is we want to log out this phrase.
+2:05
+And we also want to decrement seconds remaining.
+2:08
+Okay.
+2:09
+That is the first part sorted.
+2:11
+Now the second part reminds us that we only really want this code to run when seconds remaining is greater than zero.
+2:18
+So let's actually put this inside an if.
+2:21
+And then when seconds remaining hits zero we can execute the else block.
+2:26
+So here we want to log out your device is shutting down and we also want to clear the interval and we do that with the clear interval method.
+2:35
+So just like we used clear timeout to cancel setTimeout, we're using clear interval to cancel set interval.
+2:41
+Now we do need to pass in the identifier of our interval which is shutdown timer and that should work.
+2:47
+Let's hit save, open up the console
+2:52
+and it does work perfectly.
+2:53
+We counted down three two one and then your device is shutting down and at that point the interval was cleared.
+3:00
+Okay.
+3:00
+So that works but imagine I want to pass in an argument where we're calling this start countdown function.
+3:07
+Let me just delete all of this challenge text so we can see everything without scrolling.
+3:11
+So I could come in here and say for example, MacBook.
+3:15
+And then here and here, we could use some template literals.
+3:19
+Now if I run this, it's going to fail.
+3:22
+There we are.
+3:22
+We're getting a reference error device is not defined.
+3:25
+And And in fact, it's gonna keep doing that forever.
+3:27
+So let's just comment that out.
+3:29
+Okay.
+3:29
+So what do I need to do to make this work?
+3:31
+Just pause for a second and debug this.
+3:34
+See if you can figure out how I can get MacBook to appear right here and right here when we're logging out these sentences.
+3:45
+Okay.
+3:46
+Hopefully you figured it out.
+3:47
+You might have been tempted to try and bring in a parameter right here and then if we uncomment this it would make sense to bring in the parameter right here.
+3:56
+So now it's in the outer function and the inner function.
+4:00
+Let's see if that works.
+4:03
+It doesn't work.
+4:04
+We're getting undefined but at least this time the clear interval has worked.
+4:08
+Now the problem that we've got is right here because neither set interval or setTimeout will pass arguments into its callback function in this way.
+4:18
+Now all we actually need to do here is delete this one Because actually this callback function right here does have access to the parameters that come in with the enclosing function.
+4:28
+So let's test that.
+4:34
+And now it works.
+4:35
+And just to be clear, if this wasn't an inline function, if we took all of this code and we set up a new function down here, we could still pass it arguments just like we did with the setTimeout.
+4:46
+We would just come in here and list them.
+4:49
+But that's not gonna work with an inline function.
+4:52
+Okay.
+4:52
+Now we've seen two asynchronous methods setTimeout and setInterval.
+4:56
+Let's take a moment to really understand how they work in JavaScript under the hood.
+5:00
+So we'll look at that in the next screen.
