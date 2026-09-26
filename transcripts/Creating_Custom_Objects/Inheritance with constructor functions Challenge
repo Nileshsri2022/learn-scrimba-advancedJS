@@ -1,0 +1,118 @@
+
+Transcript
+0:00
+Okay.
+0:00
+Let's have a challenge with inheritance and constructive functions.
+0:03
+And this challenge is basically going to be recreating what we just did.
+0:08
+So what I want you to do is set up a constructor for conference, and conference should take in keynote speaker as a parameter.
+0:15
+Conference should inherit from event and we've still got the event constructor right here.
+0:20
+And conference should have its own method, get details which calls events get details method.
+0:26
+We've got that one right here.
+0:28
+And conferences get details is going to return a string with name, location, date, and keynote speaker.
+0:34
+So when you set up an instance of conference and call display details, you should log out this.
+0:39
+And actually, I've set up a new instance of conference for you right here passing in all of the parameters you need.
+0:45
+So all you need to do is work on the constructor and the method, and you can put your code right here.
+0:51
+Now I have just put a note down here, the new method should be on the prototype.
+0:55
+I don't want it to be on the instance of the object.
+0:58
+Now up here in concert dot MD, I've put some of the code from the previous two scrims.
+1:03
+That will help you if you get stuck.
+1:05
+I've just put that there so you don't have to flip back to previous scrims because there's so much new syntax here.
+1:10
+It's almost inevitable that you won't remember everything.
+1:13
+Although, if you can do it without checking, that is fantastic.
+1:17
+Oh, and I've just remembered.
+1:18
+I've said I want this method to return a string, but down here I've just called getDetails.
+1:24
+So you will need to wrap this in a console dot log.
+1:27
+In fact, I'm gonna do that for you because else nothing will happen when you save and that could get frustrating.
+1:33
+Oh, and look what else I've done here.
+1:35
+I've called get details, display details.
+1:38
+That will teach me to be less indecisive.
+1:41
+Okay.
+1:41
+Now everything's correct, so take all of the time you need to get this challenge sorted.
+1:47
+Okay.
+1:47
+Hopefully, you managed to do that just fine.
+1:49
+No problem at all if you had a look at the code up here.
+1:52
+If you managed to complete this challenge, congratulations.
+1:56
+Okay.
+1:56
+Let's set up the conference constructor.
+2:00
+Conference will take in keynote speaker as a parameter, and we'll assign it to this.
+2:06
+Now we need to work on the inheritance.
+2:09
+The event class takes in three parameters, name, location, and date, So we need to pass those into the conference constructor as well.
+2:17
+And before we assign these parameters, let's use the call method on event and pass the this of conference along with the arguments name, location, and date.
+2:27
+Also, we need to make sure conference's prototype is set to event dot prototype.
+2:32
+So we'll say conference dot prototype,
+2:36
+and we'll set that equals to object dot create event dot prototype.
+2:42
+And we also need to reset conferences constructor to conference.
+2:47
+Okay.
+2:48
+That's the inheritance done.
+2:49
+Now let's work on the get details method.
+2:52
+So we'll set up get details on conferences prototype.
+2:56
+And in the body of this method, we need to access what gets returned by get details on event.
+3:02
+So let's set up a const to hold that.
+3:07
+This method is going to return a string and we want all of this information right here which will come from the parent constructor.
+3:15
+It will be now returned to us as event basics.
+3:19
+And then we'll add in keynote speaker and keynote speaker is available to us at this dot keynote speaker.
+3:27
+Okay.
+3:27
+We should be ready to go.
+3:28
+Everything is set up for us.
+3:30
+Let's hit save and see what we get.
+3:33
+And we get ten nights of JavaScript, location, Scrimper HQ, the date, and the keynote speaker, Ashley Smith.
+3:41
+If you achieve that, the challenge is sorted and the job is well done.
+3:45
+Okay.
+3:46
+Now we can leave the horrible syntax of the constructor function behind and move on to classes.
