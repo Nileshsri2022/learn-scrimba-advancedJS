@@ -1,0 +1,114 @@
+
+Transcript
+0:00
+JSON stands for JavaScript object notation, and the reason is because it looks, well, basically like JavaScript.
+0:06
+You can see I have here an object, and this object has a name property, age property, gender property, a hobbies property which is an array of strings and essentially this looks almost identical to a JavaScript object.
+0:20
+Now as you can see this is person dot JSON not person dot JS so this is a JSON file.
+0:25
+The major difference here is that our keys in the object need to be surrounded in double quotes and as long as the keys are in double quotes your values can be any regular JavaScript value type that you normally would have.
+0:38
+For example, you can see I have here age is the number forty two.
+0:42
+I wouldn't wanna put this as the string forty two because that well, it's a different data type.
+0:47
+And if I wanted to have a boolean value, I wouldn't use the string true for example.
+0:52
+It would just be the value true which is its own boolean data type.
+0:56
+It's not a string.
+0:57
+Now strictly speaking, JavaScript object notation JSON is valid as just a plain string.
+1:02
+I could just have the string high and this is valid JSON.
+1:05
+Same with like, true.
+1:07
+I could just have the value true here.
+1:08
+However, you're pretty much never going to see any JSON that's just a bare value like this.
+1:14
+It's possible, I suppose, that you may come across something simple like an array of strings like this, but almost exclusively, you will either have a single object or, like we see over here in people dot JSON, an array of objects.
+1:30
+Hopefully, most of that is review for you.
+1:32
+I thought one thing that could be useful to look at is the network tab.
+1:36
+Now in this module, we are mostly concerned with JSON because it's the format for the data that is going to be sent to us well and that we're gonna be sending out as well.
+1:45
+Now I'm using a site called JSON Lint as my example here mostly I guess to kill two birds with one stone.
+1:51
+You can see that I've taken this person dot JSON object, copied it over into JSON Lint and I hit this validate JSON button and what that will do is it'll tell me that it's valid JSON.
+2:02
+This is useful if, for example, I'm typing out my own JSON for something and I just wanna make sure I formatted it exactly.
+2:08
+It needs to be exactly right with the double quotes and the commas at the end and everything.
+2:13
+So JSON Lint is helpful.
+2:14
+You can come click on the link up here that'll take you there.
+2:17
+But while I was there, I thought I would show you how you can look at your own network tab and see the JSON that comes in.
+2:23
+So if you were to right click, this doesn't have to be on JSON Lint.
+2:26
+It can be on any website and click the inspect icon.
+2:30
+This may be a little bit different depending on which browser you're using.
+2:33
+This will bring up your developer tools.
+2:35
+By default, it will show you the elements tab which is great if you're doing HTML and CSS kind of debugging or testing, but I would like you to go over to the network tab.
+2:46
+And once you're over to the network tab, you'll see something that kinda looks like this.
+2:50
+And one thing you might notice is I've clicked this XHR filter, which means it's not going to show me every request or network request and response that I have made from this website but instead it's just going to filter out the X HR requests.
+3:05
+We haven't really talked much about XHR but it's an AJAX request that usually receives JSON as a response.
+3:11
+Don't be too concerned about that.
+3:13
+But the point is I was able to see that JSON lint for example on this third Ajax request or XHR request.
+3:19
+I was able to click on it and see that it was sending a post request out to Stripe and it got a status code of two hundred in return.
+3:28
+And if you click the preview tab in sort of this sub menu, you can actually see the JSON data that was being sent out.
+3:34
+This top line in black is a representation of the object.
+3:37
+You can see there's an ellipsis here that says there's more properties to this object and if you click the little drop down arrow, it'll actually enumerate the keys and values that were being sent.
+3:47
+Now I'm not like logged into JSON Lint or anything.
+3:50
+I'm assuming that these numbers don't really mean anything meaningful to us.
+3:54
+But this is kind of a fun little habit to get into.
+3:57
+You can go to any website that you normally might use.
+3:59
+Maybe try going to Facebook, opening your developer tools, going to the network tab.
+4:04
+If you wanna make it a little easier to parse through the long list of network requests that are being made, you can click the XHR filter and you can just start seeing the JSON that's going back and forth between whatever page you're on like Facebook and their server.
+4:18
+In fact, if you were to then type up a new Facebook post and hit submit, you would look here and you might see another JSON request or an XHR request that's sending JSON and you could even take a look at what comes back.
+4:30
+It's actually pretty interesting.
+4:31
+I know maybe this is a little boring for some of you.
+4:33
+If you're curious, this little timeline here is a way to see how long each request took and what order everything kind of played out when the site refreshed.
+4:42
+Anyway, that was just meant to be a quick recap of JSON.
+4:45
+Hopefully, that's helpful.
+4:46
+We're going to be using JSON pretty extensively.
+4:50
+We won't actually be typing too much of our own JSON, but because JSON is sort of the language of data on the web, I thought it would be good to kind of refresh our knowledge of JSON.
+5:01
+Play around in your dev tools.
+5:02
+Check out JSONLint dot com.
+5:04
+And when you feel ready, let's keep going forward.
