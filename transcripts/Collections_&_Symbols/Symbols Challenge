@@ -1,0 +1,38 @@
+
+Transcript
+0:00
+Let's have a challenge with symbols.
+0:02
+I've got an object right here, book, and I want you to add a hidden property to the book object holding a librarian's note to say that the book has gone missing.
+0:11
+And once you've done that, you can just log out the new property.
+0:15
+Okay.
+0:15
+Get that challenge sorted.
+0:18
+Okay.
+0:18
+So hopefully, you managed to do that without too many problems, and no problem if you check back to the previous scrim.
+0:24
+So I'm going to set up a const called librarian note, and that will hold a symbol.
+0:31
+Now let's take the book object, and using square brackets, I'll add a property with librarian note as the key, and the note can just say this title has gone missing.
+0:43
+Let's log it.
+0:45
+And it's worked.
+0:46
+I've got this title has gone missing down in the console.
+0:49
+And I haven't used a description here because you absolutely don't need to.
+0:52
+It can be helpful for you and colleagues to be able to identify what the symbol is for, but it is optional.
+0:58
+So if you used one when solving this challenge, that is fine.
+1:02
+Okay.
+1:02
+Great job with this little introduction to symbols.
+1:05
+Let's move on.
