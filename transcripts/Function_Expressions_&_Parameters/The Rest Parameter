@@ -1,0 +1,145 @@
+Transcript
+0:00
+I want to take a look at the rest parameter which is a way of catching the rest of the arguments.
+0:06
+And rather than get caught up in theory, let's go straight to the editor where I've got a problem that the rest parameter is going to solve.
+0:13
+So this function that we've got right here, set permission level, allows a network administrator to assign users a particular permission level and it works like this.
+0:23
+It's taking in four parameters.
+0:26
+The first one is the position level and when we call this function, we're passing in admin as the first argument.
+0:34
+Then we've just got name one, name two, name three and here I am passing in the usernames of the three users that I want to give the admin permission level to.
+0:44
+Okay.
+0:44
+I'm going to hit save and if we open up the console, well it's worked.
+0:48
+We've set Dave, Sally and Mike admin level access.
+0:52
+But obviously this function is really nasty.
+0:56
+It's hard coded and it's totally inflexible.
+0:58
+So what would actually happen if I wanted to give more than three users admin level access?
+1:03
+Well, let's add somebody else on the end.
+1:06
+Now I'll hit save and look Claire has just been ignored.
+1:11
+So what if I want to give fewer than three people the admin access level?
+1:15
+Well, let's delete Mike and Claire.
+1:17
+So now we're just going to add Dave and Sally.
+1:20
+And look in the console, undefined now has admin level access and we really don't want that.
+1:26
+So this function presents us with a classic problem.
+1:29
+We've got a function that takes in parameters but we don't actually know how many arguments are going to be passed to it.
+1:36
+So what can we do about that?
+1:38
+Well, the rest parameter is coming to the rescue.
+1:41
+What the rest parameter will do is capture all of the arguments which don't explicitly match an existing parameter.
+1:49
+So let's delete all of this name one, name two, name three rubbish, which were horrible parameter names.
+1:54
+And instead, let's introduce a rest parameter.
+1:57
+And all we need to do that is dot dot dot and the name of the rest parameter.
+2:03
+And in examples, you might often just see it put as rest.
+2:06
+But I actually want to give this a descriptive name and what we're expecting here are strings of names.
+2:13
+So I'm just going to call this names.
+2:15
+So now we have the first parameter which will set the permission level and then the other parameters can be names which we're going to pick up with this rest parameter names.
+2:26
+So now hopefully you get why it's called the rest parameter.
+2:29
+It's nothing to do with sleeping.
+2:31
+It's all about taking in the rest of the arguments.
+2:34
+The arguments that don't match directly to a parameter like admin matches to position level.
+2:40
+And the syntax is dead easy, it's just the dot dot dot and then the name you want to give to this rest parameter.
+2:47
+Okay.
+2:47
+I'm going to comment out all of this for just a moment.
+2:50
+And now let's just log out this rest parameter.
+2:54
+And let's save and let's just paste in here what we see down in the console.
+2:59
+So obviously we've logged out the two names that we were passing in as arguments but look what we've got here.
+3:06
+We have got square brackets and that tells us we've got an array.
+3:11
+So now we can list as many arguments here as we want and they are going to end up in this array.
+3:17
+And as we know, arrays are iterable.
+3:19
+We can use methods like the map and foreach to iterate over them and do things with their elements.
+3:25
+So let's do exactly that now.
+3:28
+I'm going to add back another name so we've got three but we could have any number we wanted.
+3:32
+And now I'm going to come in here and I'm going to take names and then I'm going to use the forEach method to iterate over that array.
+3:41
+So we need to pass forEach a function and I'll use an arrow function and then each element in the array we can call name.
+3:49
+And all we need to do now is return one of these lines right here and we can do that all on one line.
+3:55
+Now we do need of course to update this.
+3:57
+We haven't got name one anymore that will just be name.
+4:00
+Now let's delete all of this code that we don't need and I'll hit save.
+4:05
+And there we are.
+4:06
+Down in the console we can see that we're assigning admin level access to each of our three names right here.
+4:12
+And let's just add one more.
+4:14
+We'll put Claire back in.
+4:15
+And it doesn't matter how long or indeed how short we make this list of arguments, we can just log out one sentence for each argument.
+4:23
+And that is quite a long line of code so I think we might want to just bring that onto a second line.
+4:28
+There we are.
+4:29
+That is a little bit neater.
+4:31
+So to recap then, the rest parameter has scooped up the rest of the arguments that we've got here, The ones that were not explicitly matched to a parameter like permission level is matched to admin.
+4:43
+These extra arguments then get stored in an array and we can iterate over that array.
+4:48
+Now I just want to draw your attention to the positioning here.
+4:52
+The explicitly listed parameter is first and the rest parameter is last.
+4:58
+And that's really important.
+4:59
+If we swap them around, look what happens.
+5:03
+We get an error.
+5:04
+It tells us the rest parameter must be the last formal parameter.
+5:08
+So let's just put that back.
+5:10
+So now we can pass in as many arguments as we want but the rest parameter must go last and of course there can be only one rest parameter.
+5:20
+Okay.
+5:20
+Let's move on to the next scrim and tackle a challenge.
