@@ -1,0 +1,166 @@
+
+Transcript
+0:00
+We have got a really great built in JavaScript method for checking to see if an array holds a given value, and that method is called includes.
+0:11
+Now this is one of the more accessible JavaScript methods.
+0:15
+What I'm saying is it's one of the easier ones to get your head around.
+0:18
+So let's see it in action.
+0:20
+Up here, I've got a const called emojis, and it just holds three animal emojis.
+0:26
+Now if I want to check if that array holds a specific emoji, I can do that using the includes method.
+0:33
+So let's come down here.
+0:34
+I'm going to set up a console dot log, and I'm just going to take this array emojis, and I'm going to ask a question.
+0:42
+Does it include and then in brackets, I'm going to provide it with whatever I'm looking for.
+0:48
+In this case, I'm going to say I am looking for this chick emoji.
+0:53
+So let's put that one in there.
+0:55
+And this is going to give me an answer to my question.
+0:57
+Does the array emojis include this chick emoji?
+1:02
+Yes or no?
+1:04
+So true for yes, false for no.
+1:07
+Let's hit save and see what we get in the console.
+1:09
+And we get true because the chick emoji is indeed there.
+1:13
+Let's try with a different emoji and I'm going to go for a horse and let's hit save and we're getting false.
+1:20
+There is no horse in this array.
+1:23
+So the syntax is really straightforward.
+1:26
+We have just got the array.
+1:27
+We call the dot includes method and we pass it whatever it is we're looking for.
+1:32
+In this case, it was emoji.
+1:33
+It could also be a string.
+1:36
+Okay.
+1:36
+Let's close the console, and I'm just going to comment out all of that and uncomment some code down here.
+1:42
+Right.
+1:43
+What I've got here is a straightforward shopping list app.
+1:46
+The way it works is you can type an item that you want to buy in here, and you can add it to your list.
+1:52
+So let's go ahead and I'll put in rice and I'll also add bread to my list.
+1:58
+So all that's happening is that we've got an event listener on the button and when the event listener is triggered, this function here is taking the item input value, which is of course coming from this input box here, and it is pushing it to the shopping list array.
+2:14
+Then it's calling this render function, and this render function is just iterating through the array and creating HTML for each item on the shopping list.
+2:25
+If you want to take a moment just to get your head around that, by all means, now and just take a look at that code.
+2:34
+Okay.
+2:35
+So this is working pretty well, but I have got one problem.
+2:38
+At the moment, I've got rice and bread on my list.
+2:41
+Let's go ahead and add rice and add bread.
+2:45
+And as the list goes on, well, we've got repeats there.
+2:49
+I don't need to buy rice twice.
+2:51
+I don't need to buy bread twice.
+2:53
+What I want is to only be able to add an item to the shopping list if it's not already in the shopping list.
+3:01
+K.
+3:01
+Here is your challenge.
+3:03
+I want you to come in here inside this function in the event listener, and I want you to set up an if else.
+3:10
+Only add an item to the shopping list array if it's not already in the shopping list array.
+3:17
+If an item is a duplicate, just clear the input field, which we're already doing down here, and log out the phrase no duplicates.
+3:25
+Now I'm leaving this console dot log up here just to remind you of the syntax to use the dot includes method.
+3:32
+Quite a tricky challenge because this is your first time using the includes method, but I know you're capable of this.
+3:40
+Okay.
+3:40
+So get this working.
+3:41
+Really give this your best shot.
+3:43
+Take all of the time you need.
+3:44
+And when you're ready, come back, and we'll have a look together.
+3:48
+Okay.
+3:48
+So hopefully, you managed to get that working just fine.
+3:52
+So the first thing that I want to do then is come in here and set up an if else.
+3:59
+So I'm just going to have an if and then down here, let's open up the else.
+4:06
+So what do we want to check for with this if?
+4:10
+Well, what we're looking to see is whether the shopping list array includes the item that we're getting in the value from the input.
+4:19
+So let's just go ahead and do that.
+4:21
+So I'm going to say shopping list dot includes and then I need to tell it what we're looking for and what we're looking for is item input dot value.
+4:30
+So if that's the case, we have got a duplicate.
+4:34
+So what we want to do then is we want to log out no duplicates.
+4:39
+Now we also need to make sure we clear the input field.
+4:42
+That's okay.
+4:43
+I'm just going to leave this line of code right here because we want to clear the input field in any case.
+4:48
+Let's deal with what happens in this else down here.
+4:52
+So this means there's no duplicate.
+4:54
+So in that case, we can just push the item input dot value to shopping list.
+4:59
+Now we only need to call the render function if we're pushing something to the list.
+5:03
+So let's just go ahead and we can include this line of code here, which calls the render function inside the else.
+5:10
+Let's just sort out the formatting a little bit.
+5:13
+Okay.
+5:13
+Let's hit save and see what happens.
+5:15
+So I'm going to put in rice and I'll put in bread.
+5:20
+And now I'm going to try and put in rice again, and it says no duplicate.
+5:25
+So it is working.
+5:26
+We can add new items, but we cannot repeat existing items.
+5:32
+Fantastic.
+5:33
+If you got that working, that is really, really good.
+5:36
+Big pat on the back because you're now using a really useful array method, and that is absolutely fantastic.
+5:43
+When you're ready to move on, let's go.
