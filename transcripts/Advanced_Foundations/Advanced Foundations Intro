@@ -1,0 +1,35 @@
+Transcript
+0:00
+Let's dive into the first section of this course, advanced foundations.
+0:04
+What does that mean?
+0:05
+It means I want to look at a bunch of JavaScript concepts which are not necessarily super complex or weird, but that you really need to understand before your JavaScript journey can continue.
+0:16
+There's not going to be one theme running through this section like there are with the other sections.
+0:21
+These are just some of the building blocks you need to build your JavaScript knowledge into a towering colossus, a mighty citadel of knowledge, a pyramid of coding power which will stand for a century.
+0:35
+Okay.
+0:36
+I think we're getting a little bit over excited.
+0:38
+Let's just check out what we're going to study.
+0:41
+We will be looking at the ternary operator, the switch statement, object destructuring, set time out, set interval, two asynchronous methods there.
+0:50
+We'll look in detail at the event loop and we'll talk about scope which will lead us into hoisting.
+0:56
+Next up, we'll have import and export.
+0:58
+We'll look at the date constructor and the error constructor.
+1:01
+Our first two built in constructors.
+1:03
+And then we'll look at a JavaScript oddity pre increment, the big int data type, and we'll finish off on numeric separators.
+1:11
+And, of course, there'll be plenty of challenges, and we'll finish up with a super challenge.
+1:16
+Okay.
+1:17
+When you're ready, let's jump in.
