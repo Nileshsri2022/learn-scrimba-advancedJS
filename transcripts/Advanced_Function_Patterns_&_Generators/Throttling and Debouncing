@@ -1,0 +1,84 @@
+
+Transcript
+0:00
+Let's take a look at two concepts in JavaScript which are kind of similar, throttling and debouncing.
+0:05
+Before we look at the code, I think it's going to help to take a quick overview of them and understand the aims of each of these techniques.
+0:12
+Both throttling and debouncing reduce unnecessary code execution.
+0:17
+Think about the events we often listen out for with event listeners.
+0:20
+So events such as resizing a window, moving a mouse over an element, clicking a button, submitting a form, or inputting text.
+0:29
+All of these can easily be triggered multiple times per second causing code to execute multiple times.
+0:35
+Imagine we have a form element and impatient users keep hitting the submit button.
+0:40
+Well, we don't need the code that sends the form data to the server to execute several times.
+0:44
+In fact, in this case, once would be enough.
+0:47
+This kind of situation can cause a waste of resources and performance issues and throttling and debouncing solve this problem in two different ways.
+0:57
+Let's start with throttling.
+0:58
+The purpose of throttling is to ensure a function is called at most once in a specified period of time.
+1:04
+When an event continuously triggers, throttling will call the function only at regular intervals ignoring any additional triggers.
+1:12
+So on the first event, the function will be called but then it won't be called again until the delay has elapsed.
+1:18
+So without throttling, we have an event such as an input and immediately our code executes.
+1:24
+And the next input event fires some code.
+1:27
+The next input event fires code and that will just keep happening forever.
+1:31
+With throttling however, we have an input which fires some code.
+1:35
+Now, a timer starts.
+1:37
+There's another input but that does not fire code because the timer is still running.
+1:42
+In fact, that timer is gonna last for several more milliseconds.
+1:46
+So some more inputs come along but they do not fire code.
+1:49
+And then eventually after the delay has ended, there's some input and that does fire code again.
+1:55
+So throttling make sure the code can fire at regular intervals but not more frequently than that.
+2:01
+Let's take a look at debouncing.
+2:03
+The purpose of debouncing is to ensure a function is only called after a certain period has passed since the last triggering event.
+2:11
+So when an event continuously fires, debouncing will delay the function call until after the event has stopped for a specified duration.
+2:19
+And let's see that in a diagram form.
+2:21
+So without debouncing again, we have some input which fires code and that will just keep happening every time we add input the code fires.
+2:29
+With debouncing we have some input and all that does is triggers the start of a timer.
+2:34
+Our function does not fire.
+2:36
+That timer starts ticking away.
+2:38
+Now comes some more input and what that does is it resets the timer.
+2:43
+So the timer starts again from zero.
+2:45
+And now, two things can happen.
+2:47
+If there's no more input, the timer continues until the delay is complete and then the code executes.
+2:55
+But if that doesn't happen, if there are more and more inputs, each time the timer goes back to zero and the code will not execute until there's been a delay in which no inputs were recorded.
+3:06
+So in the case of an input that might suggest that the user has finished typing in the field or at least taken a sufficiently big pause and we can now take their data and send it off to the server.
+3:17
+So both throttling and debouncing can prevent tons of unnecessary code execution.
+3:21
+That's the idea of both of them.
+3:23
+So in the next scrims, let's see them in code with some practical examples.
