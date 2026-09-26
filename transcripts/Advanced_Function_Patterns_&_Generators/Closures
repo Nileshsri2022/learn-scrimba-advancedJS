@@ -1,0 +1,94 @@
+
+Transcript
+0:00
+Let's take a close look at closures which have a reputation for being a bit tricky.
+0:05
+But we're going to break them down and see if we can smooth out some of the pain points.
+0:10
+Now I want to think back first to lexical scope.
+0:13
+I'm declaring a let right here, first name and it stores the string Tom.
+0:18
+We're logging it out from inside this function.
+0:20
+Let's hit save and of course, in the console, we're logging Tom.
+0:24
+And that works because this let first name exists in its lexical scope which at the moment is this entire script.
+0:32
+So I can access it from anywhere including inside this function.
+0:36
+And if I want, I can reassign it.
+0:39
+And when I hit save, now we're logging John.
+0:41
+But let's see what happens when I move this declaration inside this function.
+0:46
+When I hit save, we get an error because first name exists in its lexical scope which is actually this function block because both lets and consts are block scoped which is actually really useful.
+1:00
+This let is safe from outside interference, so we can't reassign it by accident from outside of the function like we're trying to do here and cause a bug.
+1:09
+However, that does present a problem.
+1:11
+What if we needed to use this variable and continue using it even after the function has executed from outside that function?
+1:19
+Well, normally once the function has finished executing any led or const declared within it is no longer accessible and their value is lost.
+1:28
+Now right now you might be thinking so what when the function finishes why would I need to access its variables?
+1:34
+Well in this scrim and the next we're going to do two things.
+1:37
+Firstly, we're going to look at the mechanics of a closure so you can see exactly what I'm talking about and then we're going to move into a real world example and I'll show you why closures can be really really useful.
+1:49
+So with that primer about scope out of the way, let's clear this code and I'm going to create a function and this function is just going to be called outer function.
+1:59
+And for this whole example, I'm going to be using completely contrived names just to show you the mechanics of how a closure works.
+2:07
+Now this function is going to bring in a parameter and I'm just going to call it param.
+2:12
+And inside this outer function, we're going to have an outer variable.
+2:16
+I'll use a const and it's just going to hold a string I am from the outer function.
+2:23
+Next, we're going to have an inner function.
+2:25
+I can declare that with the function keyword in the same way and I'm just going to call it inner function.
+2:31
+And this function is going to do two things.
+2:33
+It's going to log the parameter and it's going to log the outer variable.
+2:38
+The last thing I need to do inside this function is return the inner function.
+2:43
+And what you can see already is that this inner function has access to the outer function's scope so it can access its parameter and the const or lets declared within it.
+2:54
+Now here comes the clever part.
+2:56
+I'm going to set up a const.
+2:58
+I'll call it closure because this will be our closure.
+3:02
+And this is going to hold whatever is returned when we call out a function and we'll pass in an argument I am an argument.
+3:10
+So what we're doing here is we're storing in this closure what gets returned by the outer function and what gets returned by the outer function is in a function.
+3:19
+We've got it right here and is accessing the parameter and the variables from the outer function.
+3:25
+And now because we've stored a function in this const closure, it's a function expression and we can just invoke it like so.
+3:34
+Let's hit save.
+3:36
+And in the console, we see I am an argument which is what we passed in right here and I'm from the outer function which is of course the variable in the outer function scope.
+3:45
+Now let's just invoke this function twice.
+3:49
+And unsurprisingly, we log out the parameter and the outer variable twice.
+3:53
+And what we're actually proving here is that a closure allows a function to remember and continue to access variables from the lexical scope of its outer function even after that function has executed.
+4:07
+So we're only executing outer function this one time, but we access its variables and parameters as many times as we want when we call closure, which is actually holding the inner function which we know has access to the outer functions, variables, and parameters.
+4:25
+Now if right now that doesn't seem so cool, don't worry.
+4:28
+This really contrived example is just to show you the mechanics of a closure.
+4:32
+In the next scrim, let's do something more real world where you are going to start to see the benefits of this and it's going to make much more sense.
