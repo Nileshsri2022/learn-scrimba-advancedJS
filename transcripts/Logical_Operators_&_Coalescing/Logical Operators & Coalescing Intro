@@ -1,0 +1,30 @@
+
+Transcript
+0:00
+Let's get stuck into this relatively short section where we will be looking at logical operators and coalescing.
+0:05
+Now one of the topics we're going to look at is short circuiting.
+0:09
+And short circuiting is generally a bad thing.
+0:12
+Right?
+0:12
+Like when I was a kid, I short circuited my microwave when I was trying to make a time machine and nearly blew up the whole street.
+0:19
+Well, in JavaScript, short circuiting is a rather more positive thing.
+0:24
+Let's take a quick look at what we're going to cover.
+0:26
+So we'll be looking at short circuiting with both the or operator and the and operator.
+0:31
+And short circuiting is behavior where evaluation stops as soon as the outcome is determined.
+0:36
+So that can be really, really useful.
+0:38
+We're also going to be looking at nullish coalescing, and that lets you use a default value when something is null or undefined.
+0:46
+Now if that makes no sense to you, do not worry.
+0:48
+It makes no sense to anyone at first, but it will become clear.
+0:53
+So when you're ready, let's buckle up and head on in.
