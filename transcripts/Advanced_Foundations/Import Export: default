@@ -1,0 +1,90 @@
+
+Transcript
+0:00
+Now there is another way of exporting which is called the default export and I'm going to come over here and set up a new file called search function dot JS and just bear with me while I paste a function into this new file.
+0:14
+Okay.
+0:14
+So what we've got here is a function called get matching trips array, and it takes in two parameters, an array and a keyword.
+0:22
+And then we're using the filter method to iterate over the array.
+0:27
+And what it's going to do is return us a new array which includes trips where the description includes the keyword.
+0:35
+So if, for example, we go back to the data, we could search through our interplanetary destinations array and we could find all of the trips which include the word exotic.
+0:46
+Now in order to use this function get matching trips array in index dot JS, of course, we need to import it.
+0:54
+And for this, I'm going to use export default.
+0:57
+So in its function, I'm going to come up here and say export default.
+1:03
+Now over in index dot JS, I need a similar line of code to the one we've got here but I'm actually going to delete all of this because we don't need the curly braces.
+1:13
+What we do need is the file the function is being exported from.
+1:17
+And then in here we need to give it a name.
+1:20
+Now we could use the name of the function.
+1:23
+And let's try using that.
+1:24
+So I'm going to come in here, I'll delete interplanetary destinations array and let's try running this function.
+1:31
+Now, we know the function is expecting two parameters, an array and a keyword.
+1:36
+I'm going to give this the array InterPlanetary Destinations array and the keyword I'll choose is exotic.
+1:44
+Now let's hit Save and down in the console we've got an array and it's got two objects in it.
+1:51
+You can see that each of them contains the keyword exotic.
+1:55
+So how does a default export differ from a named export?
+1:58
+Well, we can call this one whatever we want.
+2:01
+So I could change its name to filter function.
+2:05
+Let's just try it and see if it works.
+2:08
+And it does.
+2:09
+We get exactly the same result.
+2:11
+Okay.
+2:11
+So let's just consider the pros and cons of this.
+2:14
+We've got the advantage that we can call this function whatever we want and that's useful if we've got no control over the name of the original function and the name that it's got is likely to cause confusion by making the code less readable.
+2:26
+But this ability to change the name is also a disadvantage in that it can cause confusion and bugs if a team is using the same function under different names in different files.
+2:38
+So here's a convention for you.
+2:40
+Let's use the function's name in the file name and in the import name.
+2:44
+And to be honest, I gave this a pretty silly vague name deliberately to demonstrate how problematic it could be.
+2:50
+So let's just go back to this file.
+2:52
+We're going to take get matching trips array and I'm actually going to change the name of this file.
+2:58
+And you can't see that in Scrivenber but if you right click a file, you have an option to change its name.
+3:04
+Now let's update index dot JS and there we are.
+3:07
+It's working.
+3:08
+Everything has the same name so it's hard to get confused.
+3:11
+Now one thing to be clear about, you can only have one default export from a file.
+3:17
+If you try to add another one with the default keyword, you're just going to get an error.
+3:22
+And the last thing to point out is that we could just declare the function normally here and then come down underneath and say export default and the name of the function right there and that will also work.
+3:35
+Okay.
+3:36
+So quite a lot there to remember about import and export and you'll be seeing it much more in the scrims ahead.
+3:42
+We're a bit more than halfway through this section now so this is a great time to take a break.
