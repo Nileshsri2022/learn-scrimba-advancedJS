@@ -1,0 +1,116 @@
+
+Transcript
+0:00
+Let's look at the more modern way of making fetch requests using async await.
+0:04
+We are back with our old code and we're getting a dog image.
+0:08
+Now I just want to take away this DOM manipulation because I want to look at this in its purest form.
+0:15
+And by the way, I've left the slide for this API right here in case you need to refer to it.
+0:21
+But what we're trying to achieve here is exactly the same thing but with updated code.
+0:26
+So let's comment out this and I'm going to take the same fetch request but I'm going to store what we get back in a const called response.
+0:36
+But here is our first new syntax.
+0:38
+We need to use the await keyword.
+0:42
+So we're saying await this fetch request and store the response right here.
+0:47
+And as we know already this response is coming back as JSON and we want it to be a JavaScript object.
+0:53
+So now let's store data in a const and again we will await calling the JSON method on this response.
+1:02
+So we're saying wait until we have the response and then call the JSON method on it and store the converted data right here in this const.
+1:11
+Okay.
+1:11
+Let's log out the data.
+1:13
+And in the console you can see that we have got our dog.
+1:16
+In this case we've got an Afghan hound.
+1:18
+And we could go ahead and add back our DOM manipulation.
+1:22
+Let's hit save.
+1:23
+And look this time we've got a Shetland sheepdog and there it is right there rendered in the browser.
+1:29
+Now again in these two lines of code, we are glossing over some complexity at the moment.
+1:34
+But when we've done some practice with the syntax, we will dive into it a bit more deeply.
+1:38
+But before we move on to the challenge, I want to show you something strange.
+1:43
+I'm going to go over to index dot HTML and I'm going to delete this little bit of code right here where it says type equals module.
+1:51
+Now let's hit save and look we get an error.
+1:55
+That is pretty weird.
+1:56
+But let me explain.
+1:58
+When we include type equals module like we had right here, we're telling the browser we are working with modular JavaScript.
+2:05
+That means that in index dot JS, we could be importing or exporting multiple files.
+2:11
+This error that we see in the console right now, if I just paste it in right here, tells us that await is only available at the top level of bodies of modules.
+2:23
+Now by removing type equals module, this is no longer modular JavaScript.
+2:28
+And at the top level just means outside of another block of code like a function.
+2:34
+So we're using the await keyword right here.
+2:37
+It's not inside a function.
+2:38
+It's not inside any other block of code.
+2:40
+It's at the top level.
+2:42
+Now this isn't a big problem and in fact often you want to fetch inside a function.
+2:47
+So let's just solve this by pasting our code inside a function.
+2:50
+And I'll just tidy a few things up as I go.
+2:52
+So we can delete that and let's delete this old fetch request right here.
+2:57
+And we can say function get dog image.
+3:02
+Let's paste everything inside.
+3:05
+And this is a slightly badly named function because we're not just getting the image, we're also rendering it but let's not worry about that too much for now.
+3:12
+And we'll just invoke that function and look what happens.
+3:16
+We get the same error.
+3:19
+So fetching inside a function using this technique comes with one more complexity.
+3:24
+Let's just read the first part of this error.
+3:27
+It says await is only valid in async functions.
+3:31
+So the fact that we're using the await keyword inside a function makes this function a bit special.
+3:37
+It is now an asynchronous function and that means we need to introduce it with the async keyword.
+3:43
+Okay.
+3:44
+Let's try again.
+3:45
+And now it's working.
+3:47
+We have got our Bloodhound.
+3:49
+Okay.
+3:49
+So although there are some complexities here with the await and the async keywords, Most people find this new approach a bit easier to use and a bit more intuitive than chaining all of those thens on after the fetch request.
+4:02
+We're going to do some practice with this method in the next scrim.
+4:05
+So do take a good look at the syntax and then when you're ready, let's go.
