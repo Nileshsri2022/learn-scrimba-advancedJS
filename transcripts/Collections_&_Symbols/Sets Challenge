@@ -1,0 +1,45 @@
+Transcript
+0:00
+Let's have a challenge with sets.
+0:02
+I'm building an ad which adds tags to articles on my blog.
+0:05
+At the moment, I'm using an array and inside this add tag function, I'm just pushing tags to that array.
+0:12
+Here, I'm calling add tag five times and we're getting some duplicates here.
+0:16
+When I hit save, we're logging out history three times.
+0:20
+That's a pretty bad look.
+0:22
+So here's your challenge, refactor this code to use a set instead of an array so no tags can be duplicated.
+0:28
+Take all of the time you need to do this and we'll have a look together in just a moment.
+0:34
+Okay.
+0:34
+Hopefully, you managed to do that just fine.
+0:36
+So basically, we need to change this to a set.
+0:40
+So post tags is going to equal a new set.
+0:44
+And instead of pushing to it, we need to add to it.
+0:47
+Everything else should still work.
+0:49
+We should be able to use the for each on this post tag set.
+0:52
+Let's just hit save and see if we get rid of the duplicates.
+0:56
+And we do.
+0:56
+Now we've just got history, Romans, sociology, no duplicates.
+1:00
+So that is working.
+1:02
+Good job if you got that done.
+1:03
+We're reaching the end of this section.
+1:05
+So let's just take one more scrim to recap what we've studied.
