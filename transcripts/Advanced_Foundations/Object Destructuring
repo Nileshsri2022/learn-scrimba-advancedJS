@@ -1,0 +1,96 @@
+
+Transcript
+0:00
+Let's take a look at object destructuring, which is going to make your coding life much easier.
+0:05
+What exactly is it?
+0:07
+Well, object destructuring enables us to extract properties from objects into distinct variables.
+0:13
+And if that doesn't immediately make sense to you, don't worry.
+0:17
+Let's head straight into a practical example.
+0:19
+Can you recognize my favorite film from this picture?
+0:23
+It is Top Gun, of course, an absolute classic.
+0:26
+You've gotta love Tom Cruise.
+0:28
+Right?
+0:29
+No?
+0:30
+Well, anyway, I've created an object called favorite film and I've stored some data in there about Top Gun.
+0:37
+Now if I wanted to extract these and save them as individual variables that I could use throughout the app, as we already know I would have to do something like this.
+0:46
+And now say I wanted to log out a sentence which looks something like this.
+0:50
+But instead of hard coding all of these details like the film name, I wanted to take the data from this object.
+0:57
+Well I'm going to have quite a bit more typing to do.
+0:59
+Let me just do it quickly.
+1:02
+Okay.
+1:02
+That was boring and obnoxious to do and there were only five properties in the object.
+1:07
+Imagine if there had been fifty.
+1:09
+But at least now I can log out my sentence.
+1:11
+So if I hit save, we can see that down in the console we're getting the sentence.
+1:17
+So it works.
+1:18
+But this is only a small object and we have written out the word const five times.
+1:24
+And we've written out favorite film five times.
+1:27
+And all of these other words, title, year, genre, we've had to write twice.
+1:32
+Now I'm sure you've heard the acronym DRY, do not repeat yourself.
+1:36
+Well, this is not DRY.
+1:38
+It's actually really annoying and if there were fifty properties in here that we wanted to use, that would take forever.
+1:45
+Luckily there is another way.
+1:47
+Let me comment out all of this code.
+1:50
+Now I'm going to come in here and I'm going to write const just once.
+1:54
+And then, and this is the new bit, I'm going to immediately open up curly braces.
+2:00
+And inside the curly braces, I'm going to list as many property names from the object as I want.
+2:05
+And in this case, I'm going to take them all.
+2:07
+So I'll say Title, Year, Genre, Star and Director.
+2:11
+And there they are in a comma separated list.
+2:14
+And now I'm going to set this equals to the name of the object I'm destructuring.
+2:19
+So that is favorite film.
+2:21
+Let's hit save and see what happens.
+2:24
+And it looks like it is working.
+2:26
+Down in the console we have got exactly the same sentence and the code we've written is so much drier, easier to write and it's so much quicker.
+2:35
+Const and favorite film have gone from being written five times to being written just once each.
+2:41
+And all of these property variable names here like title, year, these were written twice in the first example and now have also been written only once.
+2:51
+Now if you're geeky enough to count, in this small example we've gone from using twenty words here to just seven words here.
+2:59
+I just checked that and it is a pretty impressive saving.
+3:02
+So from now on when you want to get data from an object and store it in its own const or let you can use this technique.
+3:09
+In the next scrim, let's take a challenge.
