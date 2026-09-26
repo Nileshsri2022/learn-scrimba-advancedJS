@@ -1,0 +1,38 @@
+
+Transcript
+0:00
+Let's do a challenge with the dot reduce method.
+0:03
+A teacher has saved the individual grades of their students to this array.
+0:08
+Now the head teacher wants to know the class average.
+0:12
+Now your challenge is to use the dot reduce method to find the total of the grades, and I'll leave it to you to work out what maths you need to do to convert that to a class average.
+0:24
+When you're done, you can just update the template string that we've got here so that we can log out the class average.
+0:30
+Have a go at that, and I'll see you back here in just a moment.
+0:35
+Okay.
+0:35
+Hopefully, you managed to do that just fine.
+0:38
+If you needed to pop back to the previous scrim to check the syntax, that is absolutely fine.
+0:44
+So let's come down here, and I'm going to set up a new const called total grades.
+0:49
+And I'm going to set that equal to our original array grades, and I'm going to call the dot reduce method.
+0:57
+And we'll give it the inline callback function, and we know this function needs two parameters.
+1:03
+So I'm going to call them total, and perhaps instead of calling them current element, we'll call them current grade because we know that each of the figures in this array represents a student's grade.
+1:16
+Now let's open up the body of the function and because our aim is to keep adding the elements of the array together until we get one final total, I am going to return total plus current grade.
+1:31
+Now down here we've got this console dot log and we've got this template string with these backticks and that means that we can use the dollar sign and the curly braces to do a little bit of logic right here inside the template string.
+1:45
+So I'm going to take total grades and to figure out the average, I am just going to divide it by the number of the students in the class and we can access that by saying grades dot length.
+1:59
+Now if I save that and open up the console, it's telling us the class average is just over seventy one percent.
+2:06
+They are very good students, but you are a better student and now you understand the fundamentals of the dot reduce method will put this knowledge to good use.
