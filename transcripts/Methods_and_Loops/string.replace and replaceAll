@@ -1,0 +1,220 @@
+
+Transcript
+0:00
+In JavaScript, there are plenty of array methods, but in this scrim, I want to examine two methods we use to manipulate strings.
+0:07
+Here's a sentence with some errors JS right here and here is lowercase when it should be upper case.
+0:14
+We're going to use the replace method to correct the error.
+0:17
+So let's take the string, call the replace method and we need to give the replace method two pieces of information.
+0:24
+We're going to give it the pattern we're looking for and what we want to replace it with.
+0:30
+So in this case, the pattern is very simple.
+0:32
+We're just looking for lowercase JS.
+0:35
+So we can pass that in as a string and the replacement likewise is very simple.
+0:40
+We want to replace it with uppercase JS.
+0:43
+So the replace method is going to return us a string.
+0:46
+Let's just log it out and see what we get.
+0:50
+And we get some quite interesting results there because in the first case it has worked lowercase JS has been replaced by uppercase JS.
+0:57
+But here, it hasn't worked.
+0:59
+So out of the box, the replace method replaces the first instance of the pattern that it finds.
+1:06
+If we want to replace them all, we can just change this method to replace all And that as the name suggests will find every pattern.
+1:15
+So it's found the first one and the second one.
+1:17
+Okay.
+1:17
+Just take a good look at that because in a moment, I'm going to delete it and set you a very small challenge.
+1:26
+Okay.
+1:26
+Here comes your challenge.
+1:30
+So in this string, we've got lowercase I, and right here, your challenge is to change the lowercase i's.
+1:36
+And I've got to warn you, I'm setting you up to fail here.
+1:39
+So if you notice something's not quite right when you finish this, don't worry.
+1:43
+We're going to talk about it.
+1:44
+Okay.
+1:44
+We'll work on that challenge.
+1:47
+Okay.
+1:47
+Let's set up a console dot log.
+1:49
+We'll take the string, call replace all, and the replacement is uppercase I.
+1:55
+We hit save, and it's worked.
+1:57
+We've replaced the lowercase i's with uppercase, but here's the problem, Australia also has an I and we've actually made that upper case as well.
+2:06
+So we need to bring in a tool here to deal with more complex scenarios.
+2:10
+We're going to use regex and if you don't know too much about regex, don't stress.
+2:15
+It's something which looks and sounds complex but for various reasons is not too bad.
+2:19
+So firstly, what is regex?
+2:21
+Well regex or regular expression to give it its full name is a sequence of characters that specifies a match pattern in text.
+2:29
+It can look complicated.
+2:31
+Here's a couple of examples.
+2:33
+This first example will find any letter a to zed lowercase or upper case or any number one to nine.
+2:39
+Or this more complex example down here actually validates US zip codes.
+2:44
+So the postal identifier that you get with any address.
+2:48
+And there's obviously quite a lot going on in there.
+2:50
+The good news is you don't need to worry about it.
+2:53
+There are loads of examples online that you can just find by searching and AI is really good at creating regex.
+3:00
+And in fact most devs do not write their own regex unless it's something very simple they will nearly always Google it or ask AI.
+3:07
+So all we have to do to make this work is change this pattern right here.
+3:12
+Instead of looking for a lowercase I, I'm going to bring in some regex which will find an I which is standing on its own and is not part of a longer word.
+3:22
+That's the regex we need.
+3:23
+Let's give it a try.
+3:25
+And it's worked.
+3:26
+We've converted the first I, this I right here but we've ignored the I which was part of the word Australia.
+3:33
+So using regex for your pattern gives you loads and loads of powers and there's actually more we can do here because instead of just using a simple string right here, we could replace this with a function.
+3:45
+I'm just going to delete all of this and show you another example.
+3:49
+Okay.
+3:49
+In this string, I want to take the words love and heart and append a heart emoji to them.
+3:55
+So for my pattern, I need regex which will find me both the words love and heart.
+4:00
+And then right here, I'm going to use a function.
+4:04
+And this function will take in a parameter and I'm going to call it match.
+4:08
+And let's just log out match and see what we get.
+4:13
+And what we get is quite interesting.
+4:15
+We get love, heart, and then I undefined you with all my undefined.
+4:20
+Okay.
+4:20
+So what's actually going on here?
+4:22
+Well, what we're doing right here is very very similar to what we do with the map method.
+4:27
+This parameter is representing each of the matches found by this regex in turn.
+4:33
+So first it found love and then it found heart and if we put the word love again at the end, what we see in the console is it finds love then heart then love.
+4:44
+Now the last thing that it's doing is returning the string with these replacements, but because we've just got a console dot log here, we haven't told it what to do with the replacement, it's just passing in undefined.
+4:56
+Now what I actually want to do is append a heart emoji to the words love and the word heart.
+5:02
+So let's return and then we can use a template string here, the match and a heart emoji.
+5:09
+And down in the console, we have got our emoji after the words love and heart.
+5:13
+And in fact, we could actually delete the match here which also means we don't need to take in that parameter.
+5:19
+And now we've just replaced both of those words with emoji.
+5:23
+So doing something like this can be really useful when you want to find multiple examples of something and then have options on how to manipulate that pattern match.
+5:32
+Okay.
+5:33
+Let's finish off with a challenge.
+5:34
+Just bear with me while I type it out.
+5:37
+Okay.
+5:38
+So here's your challenge.
+5:39
+We're back with our original paragraph.
+5:41
+It's got three sentences and obviously each one should start with an upper case first letter.
+5:46
+But at the moment, each of the first letters of the sentences are lower case.
+5:50
+Now this is going to be more complex than just changing a lowercase I to an upper case I because obviously each of the first letters are different.
+5:58
+So here's your challenge.
+6:00
+Use replace all and regex to ensure the first character of each sentence is upper case.
+6:05
+You'll need to use a string method which converts characters to upper case.
+6:09
+You've probably seen that before.
+6:10
+It's probably lurking somewhere in the back of your mind if you don't know it already.
+6:14
+I won't say more about that.
+6:15
+It's a really easy search online if necessary.
+6:18
+Now I have given you the regex that you need but I put it in this file up here regex dot md and I've hidden it away there because if you're up for a challenge you could actually do your own research on this.
+6:29
+Search online or use AI instead of just taking the regex I've given you here.
+6:33
+But if you'd rather not do that, I have given you the regex in this file.
+6:37
+And by the way, the regex I'm using for this is a little bit simplistic.
+6:40
+It assumes that every sentence ends with a period or a full stop and of course that's not always the case.
+6:46
+They can end with question marks or exclamation marks but for the purposes of this challenge, I think this is gonna be absolutely fine.
+6:53
+Okay.
+6:53
+Get to work on this challenge.
+6:56
+Okay.
+6:57
+Hopefully, you managed to do that just fine and special congratulations if you found your own regex.
+7:02
+And if it was a bit different to mine, that's also fine.
+7:05
+There's often more than one way of doing things with regex.
+7:08
+So let's take the paragraph, there's the replace all method, let's bring in the regex and then here we'll have our function.
+7:16
+It's going to take in all of the matches one by one as a parameter and all it needs to do is return those matches, but we'll call the toUpperCase method.
+7:26
+Let's see if that's worked and it has.
+7:28
+We have got uppercase J, I, and b.
+7:32
+So that is working really well.
+7:34
+Okay.
+7:35
+That is the replace and the replace all methods really, really useful when working with strings.
+7:40
+In the next scrim, we'll go into regex in more detail.
