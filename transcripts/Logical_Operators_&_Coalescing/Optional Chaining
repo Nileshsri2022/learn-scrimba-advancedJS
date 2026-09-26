@@ -1,0 +1,184 @@
+
+Transcript
+0:00
+Let's dig a bit deeper into objects and how we access their properties.
+0:04
+I've got an object here which is a small part of a library database, and we could class this as a slightly more complex object due to the amount of nesting.
+0:12
+So if for example, I wanted to get to the hobby's publication year, I would have to say library dot sections dot fiction dot genres dot fantasy, fantasies and array and we want the first element in the array at position zero and then dot year.
+0:30
+Let's just log that out to see what it looks like.
+0:34
+Quite a long line of code and in the browser we do get nineteen thirty seven.
+0:38
+So it works.
+0:40
+And we can be sure that this code will work and will continue to work because this is an object that we can both see and control which is actually a luxury.
+0:49
+Oftentimes, we'll be working with data that comes from an outside source like an API and we have no control over it.
+0:55
+And so in the real world, this line of code right here would actually be rather fragile.
+1:00
+If the structure of this object were suddenly to be changed by forces beyond my control, for example genres becoming genre, what happens when we save, we get a type error.
+1:11
+Cannot read properties of undefined.
+1:13
+And this is something of course I want to avoid as now my library app has just come crashing to the ground.
+1:18
+Okay.
+1:18
+Let's put that back to how it was.
+1:20
+To make this more robust, I want to have it return instead of throwing an error if for any reason the property chain breaks.
+1:28
+Errors of course are very useful and important, but there's no need to break an entire app because of a non existent property on some data.
+1:35
+So one way we can achieve this is with the short circuiting we've already seen.
+1:39
+I'm going to comment out this console.
+1:41
+Log and set up a new one.
+1:43
+And in here, I'm going to say library, and then I'll use the logical and operator, and then I'll say library dot sections.
+1:52
+So this and operator returns the value of the first falsie operand encountered when evaluating from left to right.
+1:59
+If all the values are truthy, the last operand will be returned.
+2:03
+So that could be pretty useful to us here.
+2:05
+Let's hit save and we're managing to log out what I expected which is library dot sections.
+2:12
+But if we just break this, now we're logging out undefined and not a type error.
+2:16
+Okay.
+2:16
+Let's put that back to how it was.
+2:18
+Now there is a big drawback with this.
+2:21
+Let me set you a challenge and you'll see what I mean.
+2:25
+So here's your challenge, use the logical AND operator to log the Hobbit object.
+2:30
+So what I mean by that is this object right here.
+2:34
+And when you've done that, notice how undefined is returned if you break the chain.
+2:39
+So you could just come in here and take the s off the end of genres for example.
+2:43
+And hopefully, you're gonna see that you don't get an error.
+2:45
+So you can just continue the line of code that I've started right here inside this console dot log.
+2:50
+Pause now, get that sorted, and I'll see you back here in just a moment.
+2:58
+Okay.
+2:59
+So you probably noticed the drawback to this as you were doing it because there is really quite a lot to write.
+3:05
+So these two are truthy and at the moment we're returning library sections.
+3:09
+Let's continue the chain.
+3:11
+So next we want library dot sections.
+3:15
+Fiction and then again for the next section of the chain library dot sections dot fiction dot genres.
+3:22
+And then finally the last section will have library dot section dot fiction dot genres dot fantasy and then we can take the element which is at index zero of that array.
+3:34
+Okay.
+3:34
+Let's hit save and that has worked.
+3:36
+We are logging out the Hobbit object.
+3:38
+But look at all of the code we had to write and look at how much we had to repeat ourselves.
+3:43
+So in terms of verbosity this is a nightmare and if we were going deep into an object it would be really really difficult to read and of course really time consuming to update if something changed.
+3:55
+So we can do this much more easily with optional chaining And this is the syntax right here, a question mark and a dot.
+4:02
+And this is gonna save us a lot of time.
+4:04
+Okay.
+4:04
+What we need to do then is comment out this and we'll just set up a new console dot log right here and I'll take library and now I'm going to optionally chain on sections and I do that with a question mark and a dot.
+4:18
+Okay.
+4:18
+Right now I'm seeing some red squiggly lines and that's suggesting we've got an error, but actually we haven't.
+4:23
+This syntax is correct.
+4:25
+The Scrimba editor at the present time doesn't like optional chaining.
+4:29
+It is going to work but it will show you these red squiggly lines as if there were an error.
+4:33
+Let's just hit save and open up the console and there we are.
+4:36
+We can see it's worked.
+4:38
+We were logging out library dot sections and indeed we have logged out the entirety of this.
+4:44
+Now if I just change sections to section, we get undefined.
+4:49
+We do not throw an error.
+4:51
+That is pretty good.
+4:52
+But if I now chain on fiction, when we hit save, we do get an error.
+4:58
+So we need more optional chaining and that is a challenge for you.
+5:04
+So there's your challenge.
+5:06
+I want you to apply optional chaining along the line of code to log out the Hobbit's year, which we know is nineteen thirty seven.
+5:13
+I'm just going to put the s back on the end of sections, and then you can get it working and then break it to test and get this challenge sorted.
+5:20
+Okay.
+5:21
+Hopefully, you got that working.
+5:22
+Let's come along here and do some optional chaining.
+5:24
+So we need ?mark.
+5:26
+Before fiction.
+5:27
+That should log out the entire fiction object.
+5:30
+Now let's chain on genres.
+5:32
+Next we need ?mark.
+5:34
+Fantasy.
+5:35
+We want the item at the zero index of the array.
+5:38
+And then our final optional chain is year.
+5:41
+Okay.
+5:41
+Let's hit save and we are logging out nineteen thirty seven.
+5:45
+And if we change something up here, for example deleting this s, we get undefined.
+5:51
+And there are three things to really like about this.
+5:53
+We're preventing runtime errors by safely handling undefined.
+5:57
+Look at the amount of syntax here compared to what we did right here and remember this wasn't even taking us to the year.
+6:03
+This was stopping at the fantasy array.
+6:06
+But also we're really communicating here the possibility that parts of this property chain might not exist.
+6:13
+So that's a great pointer to anybody else who might be working on this code.
+6:16
+Okay.
+6:17
+That's optional chaining to access properties from an object.
+6:20
+When you're ready, let's move on.
