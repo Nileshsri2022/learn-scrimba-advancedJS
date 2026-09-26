@@ -1,0 +1,78 @@
+
+Transcript
+0:00
+Here's the constructor function from the scrim before last.
+0:02
+Your challenge is to rebuild it as a class.
+0:06
+Feel free to go back to the previous scrim if you need to check the class syntax.
+0:10
+In fact, it's very likely that you'll need to do that the first time.
+0:13
+But don't copy and paste.
+0:15
+Make sure you type everything by hand.
+0:17
+Build up that muscle memory.
+0:19
+It's the only way to learn new syntax and make it stick.
+0:22
+Okay.
+0:23
+Take all of the time you need and we'll have a look together in just a moment.
+0:27
+Okay.
+0:28
+Hopefully, you managed to do that just fine.
+0:30
+So I am going to come in here and I'll use the class keyword.
+0:35
+And we're going to keep the same name character with the upper case c and then I'll open up the curly braces.
+0:42
+Now we need our constructor method and this is where we will initialize the properties.
+0:48
+So I'm just going to take these two right here.
+0:51
+And this first one name needs to come into the constructor as a parameter.
+0:56
+Okay.
+0:56
+Underneath the constructor, we can set up our own method.
+0:59
+So remember we don't need this and we don't need the function keyword.
+1:03
+Let's just take the name of the method add item and then give it the brackets and the curly braces.
+1:09
+Now remember this method also took in a parameter in the constructor function and it's no different here.
+1:15
+And again, we can keep the same logic.
+1:18
+Okay.
+1:18
+Let's delete this constructor function and check if everything's working.
+1:23
+And in the console, we've got Merlin now has a wand.
+1:27
+So that is working.
+1:28
+Let's give Merlin a few new items
+1:32
+and that is working just fine.
+1:34
+Let's just create one more instance.
+1:39
+So now we've got a new instance called witch and I'm just adding a map and a rope to the witch's collected items.
+1:47
+Let's save that and there we are.
+1:49
+It is working just fine.
+1:51
+Okay.
+1:51
+That's the basics of classes and constructor functions.
+1:54
+Now is a great time to take a break.
+1:56
+And when you come back, we are going to look at two JavaScript methods that we'll need in the coming scrims on inheritance.
+2:02
+So while it might seem strange to talk about methods in the middle of this object section, I want to take that brief diversion so we're ready for what comes next.
