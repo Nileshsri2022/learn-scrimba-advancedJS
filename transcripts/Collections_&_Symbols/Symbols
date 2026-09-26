@@ -1,0 +1,110 @@
+
+Transcript
+0:00
+Let's take a look at a JavaScript data type you don't hear too much about.
+0:04
+It's the symbol.
+0:05
+So what is a symbol?
+0:07
+Well, a symbol is a primitive data type.
+0:09
+It represents an immutable identifier used as a property key in objects.
+0:14
+Each symbol is guaranteed to be unique.
+0:16
+You can think of these a bit like uids or GUIDs, the universally unique identifiers or globally unique identifiers, but in the case of a symbol, it's actually built into JavaScript.
+0:27
+We create a symbol using the symbol function and optionally, we can pass in a string with a description.
+0:34
+And notice how I didn't use the new keyword right here, like we would do with most constructors.
+0:40
+In the case of symbol, that would actually give you an error.
+0:44
+And something else which is a bit strange, when we log out a symbol, we can't actually see the symbol itself.
+0:50
+And in the Scrimber environment, I have to manually coerce this to a string using the two string method.
+0:55
+But in a browser like Firefox or Chrome that would actually happen automatically.
+1:00
+Right.
+1:00
+Let's just hit save.
+1:02
+And in the console, you can see that we just get symbol and our description username.
+1:07
+It's important to know that this description does not affect uniqueness.
+1:11
+Let's just set up two symbols with the same description, and let's see if they are the same.
+1:17
+And we get false, so although they have the same description, they're not the same values.
+1:21
+But obviously, giving them the same description does make things harder to debug, so it's not a good idea.
+1:27
+In the real world, it's the uniqueness of symbols that makes them useful.
+1:30
+So let's look at a use case where we can use them to create hidden properties on objects.
+1:36
+Imagine we have this object which is owned by another code base.
+1:40
+We want to add a property to it for our own use, but we don't want to cause clashes or confusion with the owner of the object.
+1:47
+So we're going to do this using a symbol.
+1:49
+Now we could do this right here in the object.
+1:53
+Or perhaps like before we have our symbol stored in a const.
+1:57
+And when we add this to the object, we need to remember to keep these square brackets.
+2:02
+Else, username will just be treated as a string and the name of the key.
+2:06
+But as we're not owners of this object and we're trying not to interfere with it, we're more likely to add to it like this.
+2:13
+So we're using the square brackets to set up our symbol as the key for this property.
+2:18
+Okay.
+2:18
+To show that this is working, let's iterate over this object using a foreign.
+2:24
+And let's save that.
+2:25
+And in the console, we only see the name property.
+2:28
+We can't see the symbol we just added.
+2:31
+Let's see what we get if we use object dot keys.
+2:35
+Same result, we can see the name property, but we can't see what we've added here using a symbol as the key.
+2:42
+Lastly, let's try json.
+2:44
+Stringify.
+2:46
+And as expected, our JSON just gives us the name property and the value Benny.
+2:50
+But let's prove that the username holding Benny sixty seven does exist.
+2:55
+So we'll just log out the user object and then in square brackets username.
+3:01
+And there we are, we get Benny sixty seven.
+3:03
+So we were successfully adding it to the object using this technique right here, but usefully it was hidden.
+3:08
+So we're not disturbing any other users and as it's unique, nobody else is going to override it.
+3:14
+So we use symbols when we need to add properties to objects without the risk of property name conflicts.
+3:20
+But do bear in mind just a couple of things.
+3:23
+Symbols are not one hundred percent private.
+3:25
+There are methods which can access them.
+3:28
+And also, misuse or overuse of symbols can lead to confusion or complexity in code maintenance, so don't overuse them.
+3:36
+Keep them for that specific use case where you need a property on an object to be hidden.
+3:41
+Okay.
+3:41
+Take a good look at the syntax because in the next scrim, we'll have a challenge.
