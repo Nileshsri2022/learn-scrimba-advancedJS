@@ -1,0 +1,84 @@
+
+Transcript
+0:00
+It's time for the first super challenge.
+0:02
+What is a super challenge?
+0:04
+Well, throughout this course, I'm aiming to break everything down into bite sized chunks.
+0:08
+But of course, real life isn't like that.
+0:11
+The apps you'll be building in the future will be a complex combination of concepts.
+0:15
+So in these super challenges, I will give you an overall aim and maybe a few pointers and a little bit of code, and it will be your job to figure out how best to achieve the aim.
+0:25
+And of course, afterwards, I'll show you my way.
+0:28
+Here is the first challenge.
+0:30
+You need to wire up this stock ticker app.
+0:32
+It's a very simple app that displays the stock price for a fictional company called Qtech AI and updates every one point five seconds.
+0:41
+The app displays five pieces of information.
+0:44
+We've got the name, Qtech AI, the symbol, QTA, the price, in this case, two point seven seven, a time stamp, and then this triangle.
+0:53
+And the triangle here compares the current stock price to its previous price.
+0:58
+If the price has increased, it will be a green triangle pointing up.
+1:01
+If the price has decreased, it will be a red triangle pointing down.
+1:05
+And if there's been no change, it will be a gray triangle pointing to the right.
+1:09
+We're not using a real company with real data for this because I just want to focus in on some of the JavaScript we've been studying.
+1:16
+Instead, we've got this file right here, fake stock API and it contains this function, get stock data.
+1:23
+And all this function does is return an object.
+1:26
+And you've got two tasks here.
+1:27
+You need to return a time stamp and we've got the format right here.
+1:31
+We just want the hours, the minutes and the seconds.
+1:33
+So that's exactly what you can see in this screenshot.
+1:36
+And also, we need to generate a price.
+1:39
+So we're going to return a random number between zero and three to two decimal places.
+1:44
+And again, in the screenshot, the example here, the price is zero point nine five.
+1:48
+So you're going to be writing code in two places.
+1:50
+You can start off right here in fake stock API and then move over to index dot j s.
+1:56
+Up here, I've put an explanation of the challenge in text form so you can go through it in your own time.
+2:01
+And then this is the challenge, Find a way to get fresh stock data every one point five seconds, call the render stock ticker function with the fresh data.
+2:10
+You've got that function right here and I've just put add logic to render stock ticker to display the correct information.
+2:17
+So quite a lot of work to do inside this function but also work to do outside of the function.
+2:22
+And your reminder, you need to write code here in index dot j s and also in fake stock API dot j s.
+2:28
+Now I've put together a list of JavaScript concepts that I'm expecting you to use to complete this super challenge.
+2:34
+They are actually in the next slide and you can access them just by pausing and clicking the right arrow key.
+2:40
+If you'd rather just tackle the challenge without looking at my list, that's great and that's why I've kept it hidden for now.
+2:46
+But do check back after you've completed the challenge to make sure you've used all of the JavaScript concepts I've listed and refactor your code if necessary.
+2:55
+Okay.
+2:55
+Get to work on that.
+2:56
+These super challenges are big, so take your time and really focus on it.
+3:00
+And I will show you how I solve this in the next script.
