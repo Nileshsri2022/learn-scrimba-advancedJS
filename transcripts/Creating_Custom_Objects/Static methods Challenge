@@ -1,0 +1,62 @@
+
+Transcript
+0:00
+Let's have a challenge with static methods.
+0:02
+Often, static methods on classes are used as factory functions.
+0:07
+Remember them, functions that return an object.
+0:10
+So here's your challenge.
+0:12
+Set up a static method called get new intern should return an object with a name property, a role property, which is hard coded to intern, and a start date property, which should be the time of code execution.
+0:24
+And I've just put here, how can you use JavaScript to get the time right now?
+0:28
+That's a bit of extra practice for you.
+0:30
+You do know this, but you might be a bit rusty on it.
+0:32
+So search online if you need to.
+0:35
+Down here, we're calling the static method get new intern on employee, and I'm passing in the name Dave.
+0:41
+So all you need to do is write code here inside the class.
+0:45
+Okay.
+0:46
+Hopefully, you managed to do that just fine, and no problem, of course, if you needed to do some searching to figure out the date aspect.
+0:53
+So let's start off with the static keyword.
+0:56
+The method name is get new intern.
+0:59
+That can take in the name as a parameter.
+1:01
+And it will return an object.
+1:04
+For the name property, we can use the shorthand.
+1:07
+So that's equivalent to saying name colon name when the property and the variable we're using for the value, which is name, are the same.
+1:14
+The role can be hard coded to intern and start date.
+1:20
+And for that, we need a new instance of date.
+1:23
+And to make it look nice, let's wrap this in brackets and call toDateString.
+1:28
+Okay, let's save and see if it's worked.
+1:31
+And in the console, there we are.
+1:32
+We've got our object.
+1:33
+It's got a name of Dave, a role of intern, and the start date which is the day I'm recording this.
+1:39
+Thursday, April twenty fifth twenty twenty four.
+1:42
+Okay.
+1:42
+Congratulations on completing that challenge.
+1:45
+Next up, we're going to look at how we can protect the properties on our objects with private fields.
