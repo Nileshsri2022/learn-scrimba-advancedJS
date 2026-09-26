@@ -1,0 +1,146 @@
+
+Transcript
+0:00
+Okay.
+0:00
+So far, we've used the reduce method with relatively simple arrays.
+0:04
+We've had an array of numbers and we've added them together.
+0:07
+But life is often more complex than that.
+0:09
+What if we wanted to work with an array of objects?
+0:13
+Well, that is exactly what I've got here.
+0:16
+It's an array of objects and each object is a student.
+0:19
+They've got a name and a grade.
+0:21
+And I've kept this really simple.
+0:23
+We've just got three students and our aim is to get an average of their grades.
+0:28
+Over in index dot JS, I've set up a function to do exactly that.
+0:33
+So the function takes in the student array as a parameter, and I'm importing the student array right here.
+0:38
+So let's use the reduce method to total these grades and then we'll divide them by the length of the array to get the average.
+0:46
+So I'll come in here and set up my const total grades and then I'll set that equals to the array that we're bringing in students array and I'll call the reduce method right here.
+0:58
+Now I'm going to do this with an anonymous inline function and not an arrow function just for the first time because the syntax is actually a little bit tricky and it's easier to demonstrate it this way.
+1:09
+But we will convert it to an arrow function at the end.
+1:12
+So I'll say function and we know that the function we passed to reduce takes in two parameters.
+1:18
+The first is going to store the total and the second will be the current student.
+1:24
+And what we did before for an addition was to return the total plus the second parameter, in this case, current student.
+1:31
+Now is this going to work?
+1:32
+Well, we'll uncomment this console dot log and save.
+1:36
+And down in the console, we're getting undefined.
+1:39
+And actually, that's my fault because we're not actually returning total grades.
+1:43
+We'll try again and we're failing because look, we get object object object object object object.
+1:49
+But to be honest, that figures because at the moment reduce starts, total is the first object in the array, this one right here.
+1:57
+And current student is the second object in the array, which is this one right here, Emma.
+2:04
+So what we're actually doing at the moment is just adding two objects together and that is not good.
+2:10
+It's not possible just to add two objects.
+2:12
+What we need to do is access the grade property in these objects so we can add these numbers together.
+2:19
+So how are we going to do that?
+2:21
+Well, the obvious answer might be to come in here and say that we want to take total dot grades.
+2:27
+There we are.
+2:28
+We've got access to the grades property in the first object, except we haven't.
+2:33
+We've got this red line and we're going to get exactly the same thing if I try to access the grade of subsequent objects in the array.
+2:40
+When I hit save, syntax error.
+2:43
+So that is not the way to do it.
+2:46
+So how on earth do we go about accessing these specific numbers in this array with the reduce method?
+2:53
+Well, luckily, the reduce method has got an answer for us.
+2:57
+So remember, this first parameter, total, is the first element from the array, so this object, by default.
+3:04
+But it doesn't have to be that way and we don't want it to be that way in this case.
+3:10
+We actually want total here to be a number, not an object, because then we can do some addition.
+3:17
+And ideally, we want total to be the number zero because if total is zero, as reduce iterates through this array, it can just add the numbers.
+3:27
+So zero plus seventy five will of course be seventy five.
+3:30
+And then seventy five plus eighty three, and then the total of those two will be added to Seth's sixty six.
+3:37
+So we're going to achieve this by giving the reduce method a second parameter.
+3:42
+Now this function has already got two parameters and we are not going to change that.
+3:48
+Those parameters will stay as they are.
+3:51
+But remember that this function is itself a parameter.
+3:55
+The reduce method takes in a function as a parameter and this function is it.
+4:01
+So what I'm going to do is come to the end of this function between the closing curly brace and this bracket which closes the reduce method and I'm going to put a comma and I'm going to add another parameter right here.
+4:14
+And what this parameter is going to do is it's going to override the default value of total, the first parameter in the function that we're passing the reduce method.
+4:25
+And we want that to be the number zero.
+4:28
+Now we're not quite done.
+4:29
+If total is zero, what we want reduce to do is add the grade of each student and we can access that by saying current student dot grade.
+4:40
+Now let's hit save and there we are we have got a total of our students grades.
+4:46
+Now we're looking for an average so why don't we just return total grades divided by students array dot length.
+4:54
+And there we are.
+4:55
+We've got our average grade.
+4:57
+Okay.
+4:57
+So let's just recap what this extra parameter is doing.
+5:01
+So by default, total is the first element in the array.
+5:04
+In this case, it's an object and current student starts as the second element in the array and will then move on and be the third element, the fourth element, etcetera, etcetera.
+5:14
+But now we've added the second parameter, everything changes.
+5:19
+Now the starting value of total is zero regardless of whatever is in this first element in the array.
+5:26
+That no longer matters because the first element in this array is now the business of the second parameter in the function that we pass to the reduce method.
+5:36
+So current student, instead of starting as the second element in the array, will now start as the first element in the array And seventy five will be added to zero, eighty three will be added to that, and then sixty six will be added to the total of seventy five plus eighty three.
+5:52
+And what we then get is the total that we're returning right here.
+5:57
+You are going to have a challenge with this, but not yet.
+6:00
+We're going to revisit this code a little bit later after we've looked at arrow functions and that will have the added bonus of spacing out the learning just a little bit.
+6:09
+So just make sure you're familiar with this concept.
+6:12
+Have a look through this code.
+6:13
+Make sure you understand it, and then we will come back to it a bit later.
