@@ -1,0 +1,72 @@
+
+Transcript
+0:00
+Hey there, and welcome to this course on advanced JavaScript.
+0:03
+I am so excited to bring you this course, and we have got so much to study.
+0:08
+JavaScript is used on the front end of ninety nine percent of websites.
+0:12
+That probably doesn't surprise you.
+0:14
+But it's also now used on servers, in mobile developments, in non browser applications, and even in the embedded systems on electrical devices.
+0:23
+It truly is an awesome and wide ranging language, and you are about to learn a lot more about it.
+0:29
+Let's talk about this course.
+0:31
+This course is designed to take you from the intermediate level where you probably are right now to an advanced level.
+0:37
+And along the way, you will have tons of challenges to solve.
+0:40
+This is a course which is very much about doing and not sitting back and watching.
+0:44
+You're going to have your hands on the keyboard throughout.
+0:47
+And as well as regular challenges, there will be super challenges.
+0:50
+These challenges are more complex.
+0:52
+You will have to use multiple concepts from the lessons to solve a given problem.
+0:57
+And don't worry, we'll be tackling lots of the weird stuff and tricky complex bits as well.
+1:02
+JavaScript can be tough and unless you've studied some advanced JavaScript concepts before, you're going to find some of this course difficult.
+1:09
+This is perfectly natural and perfectly normal.
+1:12
+And the most successful JavaScript developers out there have had many many moments scratching their heads and trying to figure out what the heck is going on.
+1:21
+That is part of the job.
+1:22
+Now this course is a bit different to some other Scrivener courses.
+1:26
+In this course, we are not building one big project.
+1:30
+Instead, the concepts are broken down into bite sized chunks and we'll be working a lot in the console.
+1:36
+The emphasis here is on the Java script and not on HTML and DOM manipulation.
+1:41
+Although, of course, there is some of that.
+1:44
+Also, we're sticking to vanilla JavaScript.
+1:47
+There are no frameworks or TypeScript in this course, but becoming better at JavaScript and really understanding how the language works will benefit all areas of your coding life.
+1:57
+So what are we actually going to study?
+1:59
+Well, the course starts off with what I've called advanced foundations.
+2:03
+These are concepts which might be more at the intermediate end of the spectrum, but which are important to understand now so we can use them as we move on.
+2:10
+Then we'll look at methods and loops, function expressions and parameters, asynchronous JavaScript and APIs, logical operators and coalescing, working with objects, creating custom objects, collections and symbols, and advanced function patterns and generators.
+2:29
+Now if you don't know what some of that stuff is, don't worry at all.
+2:33
+We'll be taking it from the very basics.
+2:36
+And if you've been around Scrim for a while and you've done the front end developer career path, in some places, in this course, you might recognize some of the material.
+2:44
+This will likely be in the advanced foundation section, the asynchronous JavaScript section, and the creating custom objects section.
+2:52
+Only a few scrims appear in both the front end path and this course.
