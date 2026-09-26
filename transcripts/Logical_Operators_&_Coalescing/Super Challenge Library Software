@@ -1,0 +1,157 @@
+Transcript
+0:00
+For this super challenge, we are going to refactor some code.
+0:03
+This challenge is a little bit smaller than the other super challenges you've seen so far, but it still requires some thought.
+0:10
+Let's take a look at what we're going to do.
+0:13
+We have got some code here.
+0:15
+In fact, we've got quite a lot of it.
+0:17
+And we're calling this function, add book to collection down at the bottom.
+0:21
+We're actually calling it three times and in each case we're passing in some arguments.
+0:26
+We've got a book title, a book author, a year of publication and in most cases we've got this object which has got some location data.
+0:35
+Now in some cases we're passing in an empty string or null and what this function does is it replaces any missing data with some defaults such as unknown title and then eventually it pushes an object to an array collection.
+0:53
+And we've got the collection array right here.
+0:56
+So what you can imagine is that this is some kind of library software.
+1:00
+This code gives the capability of adding new items to the library collection.
+1:05
+Let's hit save and if we open up the console, we can see that it is working.
+1:10
+We have got the three objects that this function is creating and pushing to collection.
+1:16
+We're actually logging out collection down here.
+1:18
+So it's fine, sort of.
+1:20
+Because it's a very very basic function.
+1:22
+It's just got loads of ifs, it's got some logical or operators and it's got some quite nasty nesting going on down here which I'm not a big fan of.
+1:32
+And so your job is to refactor it.
+1:35
+And I've put a bit more explanation up here in the text, but what we're focusing on is refactoring using short circuiting, nullish coalescing and optional chaining.
+1:45
+So take a moment to read through this text, have a look at the code, decide what you want to change and then get to work refactoring.
+1:53
+And of course, afterwards, I'm going to show you how I solved this challenge.
+1:57
+Feel free to go back and check anything that you need to or do any extra research and get to work on this challenge.
+2:04
+Okay.
+2:05
+As ever with these bigger challenges, great work if you manage to do it.
+2:09
+As I said before, it's not about writing loads of code this time.
+2:12
+In fact, we'll be writing much less code than we started with.
+2:15
+But there was quite a lot of thinking involved especially if you're new to short circuiting and nullish coalescing etcetera.
+2:22
+So let's make a start right here.
+2:25
+I'm actually going to comment out this code and we can short circuit this by saying title is equals to title if it exists.
+2:33
+And then we can have the logical or operator to short circuit and we'll just say unknown title.
+2:40
+Let's just hit save and make sure that's working.
+2:43
+And we see our objects, the title is still working.
+2:46
+And actually in the second book, the one by William Shakespeare, it's saying the title is unknown and that is because we're passing in an empty string.
+2:54
+So that is working exactly as we want it to.
+2:57
+Let's just delete that old redundant code.
+2:59
+Now we can do a very similar thing with author.
+3:02
+So I'll say author equals author or unknown author.
+3:09
+And just before we hit save, I might make a little bit of a change to our data because we've got an author in each case.
+3:15
+But if I just delete William Shakespeare, which seems like a shame, let's hit save now and then in the console we do see unknown author in the second object.
+3:24
+So that is working just as we wanted it to.
+3:27
+Now the next section is a little bit more complicated.
+3:31
+We are going to move on to the year.
+3:35
+And we're explicitly checking if the year published is undefined or null with this code here.
+3:40
+So So we can't do that with just the regular short circuiting but we can do it with nullish coalescing.
+3:45
+So let's say, year published is year published and then the nullish coalescing operator the double question mark and we can just say not specified.
+3:56
+And that covers situations where other falsie values might be wanted like perhaps an empty string if a book is unpublished.
+4:03
+And I think if we scroll down it says here House of Giants is not yet published and the publication date is just an empty string.
+4:10
+Well when we hit save now, for the second book we've got year published not specified and that's because we're passing in null.
+4:19
+But for the third book the year published is an empty string and that is what we're passing in.
+4:25
+So that is exactly what we want.
+4:27
+Okay.
+4:27
+So we've got one more bit to refactor.
+4:29
+Let's just delete this old code.
+4:31
+To check if the book is available at main library, we can use optional chaining and the logical and operator.
+4:38
+So optional chaining will make sure each property in the object exists to prevent any errors if they don't exist.
+4:44
+And if it's a truthy value, we can short circuit to available, else we'll say not available.
+4:51
+So let's comment out all of this and we can say const availability and that can equals library data which as you will recall is the object which is coming in under this parameter library data.
+5:04
+So we're passing in an object right here at the end of the function call.
+5:08
+So library data and then let's do some optional chaining.
+5:12
+So question mark full stop, we need to check for locations, question mark full stop And then main library, so we're just following what we had right here.
+5:21
+And now we can say logical and, available, logical or, not available.
+5:30
+So let's just recap this line of code because it is quite complicated.
+5:34
+So what we're doing here is assigning a value to availability based on whether main library is defined as truthy.
+5:41
+If it is, availability becomes available.
+5:45
+If main library is undefined or null or any other foresee value, availability becomes not available.
+5:52
+This is quite a common pattern to handle potentially undefined data gracefully I e without breaking and provide a default output.
+6:00
+So remember the logical or operator returns the first truthy value that it encounters and if none of the values are truthy, it will return the last foresee value.
+6:11
+So in either case, it's going to return not available.
+6:14
+The logical and operator is used to check two conditions.
+6:17
+It returns the value of the second operand if the first is truthy and the first operand if it is falsy.
+6:23
+And because the or operator is going to return the left hand side if it's truthy, It is available which will be stored in availability if the main library is set to true.
+6:35
+Okay.
+6:35
+Let's just hit save and make sure it's actually working.
+6:38
+And it is so we can delete all of this code and we're done.
+6:43
+So not much code to write but quite a lot of thinking involved in the refactor process.
+6:47
+So really really good job for getting it completed.
+6:50
+Let's just take one more scrim to recap this section.
