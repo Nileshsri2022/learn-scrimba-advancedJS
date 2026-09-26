@@ -1,0 +1,34 @@
+
+Transcript
+0:00
+Amazing.
+0:01
+You have wrapped up the final section of the course.
+0:04
+That section was really, really tough.
+0:07
+Let's just recap it.
+0:08
+So we looked at closures.
+0:09
+Closures are functions that have access to the variables in their parent scope even after the parent function has completed execution.
+0:17
+Ill fees or immediately invoked function expressions are well as the name gives away functions which invoke immediately.
+0:25
+A recursive function is a function which calls itself so it can work its way through a multi layered problem.
+0:31
+With currying, we transform functions with multiple arguments into a sequence of functions, each taking one argument at a time.
+0:38
+Throttling and debouncing allow us to control how often our code executes.
+0:42
+If we have a trigger for code execution like an event, we might not want our code to execute every time that event is detected.
+0:49
+Throttling and debouncing give us that flexibility.
+0:53
+And finally, generators, a really cool type of function that provide us with values which are generated at the time they're needed and not before.
+1:00
+Now at this point, it doesn't really matter if you take a break or not.
+1:04
+You can sit there and stare at your screen for as long as you like.
+1:08
+But to be honest, I would take a break.
