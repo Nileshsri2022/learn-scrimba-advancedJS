@@ -1,0 +1,64 @@
+
+Transcript
+0:00
+It's time for a challenge.
+0:01
+We're adding a new feature to our financial security app.
+0:05
+This function, get theft alert, takes in the number of transactions recorded on a credit card in a one hour period.
+0:13
+If the number of transactions is greater than five in a given hour, it returns this warning.
+0:19
+This challenge is pretty predictable.
+0:22
+I want you to convert this function declaration to a function expression.
+0:27
+Okay.
+0:27
+Pause now.
+0:28
+Look at the last scrim to check the syntax if you need to but don't cut and paste and do try to do this from memory first.
+0:35
+And when you're ready, we'll have a look together in just a moment.
+0:44
+Okay.
+0:45
+Hopefully you managed to get that working just fine.
+0:48
+So let's just take this function and I'm just going to comment it out.
+0:52
+And then I'll set up my const.
+0:54
+We'll keep the same name.
+0:56
+And now here's my anonymous function.
+0:58
+We'll borrow the parameter and of course the logic.
+1:02
+And to keep things tidy, I'm just going to delete all of this.
+1:06
+Let's save and see if it's worked.
+1:08
+And it has.
+1:09
+We're getting the warning logged out down in the console.
+1:13
+So there is our function expression.
+1:15
+And of course if we move up this line of code right here, we hit save and we get the error because get theft alert is not hoisted.
+1:25
+So we can't call it before it's been expressed.
+1:28
+So we need to move that line of code right back to where it was.
+1:32
+And there we are.
+1:33
+And to be honest, six transactions an hour is not bad for me.
+1:36
+I can probably manage ten times that amount and sometimes I wish my credit card had been stolen.
+1:42
+Anyway, we're not quite done talking about functions.
+1:45
+Next, let's look at a super concise function expression called the arrow function.
+1:49
+When you're ready for that, let's move on.
