@@ -1,0 +1,90 @@
+
+Transcript
+0:00
+Let's see how promises can save us from the callback hell that we've got right here.
+0:05
+So firstly, I'm going to convert each one of these functions to a promise.
+0:09
+And in this case, because it's just for demonstration purposes, the promise is only going to resolve.
+0:14
+We're not going to be breaking anything.
+0:16
+So upload file will no longer take in a callback.
+0:19
+Instead, it's going to return a new instance of the promise constructor.
+0:24
+We need to pass promise a callback function, and that takes in two parameters resolve and reject.
+0:31
+We don't really need reject today because I'm not going to be handling a rejection, but I'll leave it there because in the real world we would be handling it.
+0:39
+Now the body of this promise can take this logic but instead of using the callback which we don't have anymore we'll just resolve at this point.
+0:47
+And I'll quickly convert these two functions to promises as well.
+0:52
+Okay.
+0:52
+Now we've got our three promises.
+0:54
+It's time for a challenge.
+0:55
+I want you to await these promises in order in a try catch block, and then when they're done, log all steps completed.
+1:02
+And remember, this is our expected output.
+1:05
+Before you do that, I'm just going to comment out this old method down here, but we will just keep it here so we can compare in a moment.
+1:12
+Okay.
+1:13
+Get to work on that.
+1:17
+Okay.
+1:17
+So hopefully, you saw how easy this can be.
+1:20
+Let's take a try block and a catch block which of course takes in the error and we can console dot log the error although we are not gonna get one in this case.
+1:30
+Okay.
+1:31
+I just said await these promises in order.
+1:33
+Well, let's give it a try.
+1:34
+So we will await upload file, then we'll await process file, and lastly, we'll await notify user.
+1:45
+Oh, not quite lastly because we need to console dot log all steps completed at the end.
+1:51
+Oh, and I've got myself in a bit of a mess here.
+1:53
+Okay.
+1:54
+So we've awaited our three functions in turn and then we're logging all steps completed.
+1:59
+Let's open up the console and hit save.
+2:05
+And there we are.
+2:06
+It is working perfectly.
+2:08
+And if we compare this right here with what we've got underneath and if I just close the console, we can remind ourselves how nasty this was.
+2:16
+This try catch block right here is much neater, much easier to read, much easier to debug, better in every way.
+2:23
+Yes.
+2:24
+It's true.
+2:24
+We had to be a bit more verbose up here.
+2:27
+We had to use promises and the promise constructor.
+2:30
+But still, I don't think this code is difficult to read.
+2:32
+And if you had to debug a sequence which was twenty functions long, which would you prefer, this or this?
+2:40
+Well, I think it's pretty clear promises make life much easier here.
+2:44
+Okay.
+2:44
+We're not done with promises.
+2:46
+In the next scrim, I want to look at how we can handle multiple promises all at once.
