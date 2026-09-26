@@ -1,0 +1,25 @@
+Transcript
+0:00
+In this final section, we're going deeper into functions.
+0:03
+We've already seen the fundamentals of functions, the different types of functions and how they deal with parameters.
+0:09
+Now let's look at some advanced patterns that we can use with functions.
+0:13
+And when I say advanced, I really do mean advanced.
+0:16
+We're getting into the kind of stuff here where you can stick your nose up at other junior developers and just apologize for confusing them in frankly a really smug and unpleasant way.
+0:26
+Okay.
+0:27
+What are we going to study?
+0:28
+Well, we're gonna look at closures, ill fees, recursion, currying, throttling and debouncing, and generators.
+0:37
+A lot of that is probably new to you, but that is why you're here.
+0:40
+I am pretty excited for this one.
+0:42
+There's a lot to learn.
+0:43
+Let's go.
