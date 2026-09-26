@@ -1,0 +1,128 @@
+
+Transcript
+0:00
+Let's dive into inheritance with constructor functions.
+0:03
+This is going to take a couple of scrims and the code we're going to see is rather complex and verbose.
+0:09
+It's a good idea for you to know about it because you will see it in legacy code bases.
+0:13
+But later, when we look at how to do the same thing using classes, you're going to see why the more modern syntax is considered preferable.
+0:21
+So we're building an app for an events venue.
+0:24
+We've got a constructor right here, event, with general properties for events, name, location, date, and this method, get details, which just returns a string with the details of the event.
+0:36
+Let's set up a constructor for a specific event type, in this case, a concert, which will inherit from event.
+0:42
+So I'll say function concert, of course, with an upper case first letter.
+0:47
+And I want it to take in a parameter for the headline act for the concert, so I will call that headliner, and I'll assign it to this.
+0:56
+So far, this is just a regular constructor function.
+0:58
+So let's start on the inheritance.
+1:01
+The first thing we need to do is take in the same parameters as the parent constructor.
+1:06
+So I'll add name, location, and date.
+1:09
+And now this is where things get more complex and verbose.
+1:12
+We need three lines of code which are going to link this constructor to the parent constructor so it can inherit.
+1:18
+Firstly, right here before we assign this, and it's important that we do it before we assign this, we need to take the parent constructor and use the call method.
+1:29
+The call method is used to call a function with a specified this value and arguments And that is what we want to do here.
+1:36
+We want to call event with the this value of concert.
+1:39
+And we also need to pass in the parameters it's expecting as arguments.
+1:44
+That's how inheritance works.
+1:46
+So now each concert instance will receive the properties of name, location, and date from the event constructor.
+1:53
+And these properties will be initialized to the values passed to the concert constructor when we use it.
+1:59
+The next step is to set concerts prototype to event.
+2:03
+Remember, by default, concerts prototype is the object object, the base object.
+2:08
+So underneath concert, let's access concerts prototype.
+2:12
+And we do that with concert.
+2:14
+Prototype.
+2:15
+And we'll set that equals to object.
+2:18
+Create.
+2:18
+And that's an upper case O for object because we're accessing the object constructor.
+2:23
+And so this will create a new object instance.
+2:26
+And we're going to pass in what we want to have as concerts prototype.
+2:30
+And that is going to be events prototype, which is available at event dot prototype.
+2:36
+So just to recap, concerts prototype will be a reference to another object.
+2:41
+By default, it's a reference to the base object or the object object.
+2:45
+What we're doing here is creating a new object instance and setting it to event dot prototype.
+2:51
+So event dot prototype will now be concerts prototype.
+2:55
+Now we're not done.
+2:56
+I did say this was verbose.
+2:58
+In doing this, we've made ourselves a problem because now concert's constructor has been set to event which we don't want.
+3:06
+Concert needs to be its own constructor so let's reassign it back to concert.
+3:11
+So we say concert dot prototype dot constructor, and we just need to set that equals to concert.
+3:18
+Okay.
+3:18
+If those last few lines of code are really confusing, that is totally understandable.
+3:23
+It's probably best just to look at these three lines of code.
+3:26
+So this one right here and these two as being necessary to achieve inheritance because they connect up the properties from the prototype of our parent constructor which is event and our child constructor concert.
+3:38
+Just know that they do that and at this point it's good to remind yourself that we will see a much easier way to do this with classes soon.
+3:46
+Okay.
+3:46
+Let's set up a new instance of concert and I'm just going to call it concert with a lowercase c.
+3:53
+So that's new concert with an uppercase c to access the constructor.
+3:58
+And let's pass in a name, a location, a date, and a headline at.
+4:02
+And let's just log out concert and see what we get.
+4:06
+In the Console, we see our new instance of the Concert constructor.
+4:10
+We've got Summer Beat, City Stadium, the date, and the headliner.
+4:14
+So that is working.
+4:15
+Inside the Console.
+4:17
+Log, let's call the getDetails method, which we've got right here.
+4:22
+And I'm invoking it with these brackets and there we are.
+4:25
+We log out our phrase, events, summer beats, location, city, stadium and date.
+4:29
+Of course, we haven't got anything there about this headline act, the electrons, but that is what we're going to be coming to in the next script.
+4:37
+Remember how I said a child could actually borrow a parent's method and change it for its own use?
+4:42
+Well that actually serves up some new complexity because we can't actually do that when we've declared this method right here inside the body of the constructor.
+4:51
+We're going to have to change how we create this method so let's examine that in the next scrim.
