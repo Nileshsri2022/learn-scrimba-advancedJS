@@ -1,0 +1,356 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Advanced JavaScript
+Methods & Loops
+The .filter() Method
+5:58
+/
+6:01
+Preview
+Ctrl+L
+/index.html
+Files
+Dependencies
+const ages = [1, 5, 9, 23, 56, 10, 47, 70, 10, 19, 23, 18]
+
+const adults = ages.filter(function(age){
+    return age >= 18
+})
+
+console.log(adults)
+
+/*
+Challenge:
+1. Use the .filter method to create an array 
+   called "children" which holds all of the ages 
+   that are under 18.  
+*/
+
+const children = ages.filter(function(age){
+    return age < 18 
+})
+
+console.log(children)
+11121314151617181920
+abcd 0123
+Console
+›
+[23, 56, 47, 70, 19, 23, 18]
+›
+[1, 5, 9, 10, 10]
+As developers, 
+we tend to work with a lot of data. 
+And oftentimes, 
+we need to go through that data and extract exactly what we want. 
+There's a JavaScript array method that we can use to help us do that, and it is called filter. 
+So imagine we have an array of ages, 
+and I want to know how many adults aged eighteen and over we have in our array. 
+I can do this with the dot filter method. 
+The dot filter method is going to iterate over the array and it's going to test each individual element in the array one by one. 
+This is the test that we're going to use. 
+We want to see if a given element is greater than or equals to eighteen. 
+If the element is greater than or equals to eighteen, 
+this test is going to return true and that element will be added to this new array. 
+However, if the element is less than eighteen, 
+then this test is going to return false and that element will not be added to this new array. 
+So let's see this in action. 
+Filter comes to the first element. 
+It runs the test. 
+Eight is not greater than or equals to eighteen. 
+So this test returns false and eight is filtered out. 
+It is not passed to this new array. 
+Filter moves on to the second element and it runs the test and twelve is also not greater than or equals to eighteen. 
+So this returns false and twelve is filtered out. 
+Filter moves on to the third element, 
+thirty four is greater than eighteen. 
+So this one returns true and thirty four will get added to this array. 
+Filter moves on to the final element, 
+forty five, it returns true. 
+So forty five is also added to this array. 
+And there the filter method finishes having filtered out all of the elements that didn't pass the test. 
+The original array is still intact and the new array holds just the elements that we're looking for. 
+And if we're not very good at counting and we want to figure out how many adults there were in this list, we could just use the dot length property to see that it is two. 
+ Okay. 
+Let's take this over to the editor and see the same example with code. 
+Here's our array of ages. 
+It's a little bit longer. 
+And I'm going to set up a new const here called adults. 
+ And I'm going to set that equals to the ages array and I will call the dot filter method. 
+Now we need to give dot filter a function and this function is going to hold the test that we're going to call on each element in the array. 
+ And we need to give function a parameter which will be assigned to each element in the array in turn. 
+And as this is an array of ages, I'm just going to call that parameter age. 
+Inside the body of the function, 
+this is where we need to set up our test. 
+ So I'm going to use an if else. 
+I'm going to say if age is greater than or equals to eighteen, 
+return true. 
+Else, 
+return false. 
+ Now let's just log out adults and see what we get. 
+And I'll hit save. 
+And there we are down in the console. 
+We can see that it's working. 
+We have got seven elements in that array and each of them are eighteen or over. 
+And we can just use dot length to confirm how many adults we've got. 
+There we are. 
+We have got seven. 
+Now I have actually written too much code here and I did that deliberately. 
+I wrote it out longhand just to make it really easy to see what's going on. 
+ For a start, we don't actually need this else. 
+Let's just try it without. 
+There we are. 
+We get exactly the same effect. 
+The element is going to pass this test if this returns true. 
+It doesn't specifically need it to return false if it's not true. 
+But we can do a bit better than that. 
+So here's a very quick mini challenge. 
+ I want you to get rid of this if statement and reduce the logic in this function to just one line of code. 
+So give that some thought and I'll see you back here in just a minute. 
+ Okay. 
+So hopefully you got that sorted just fine. 
+Actually, 
+we don't need an if statement here at all. 
+All we need to do is return age is greater than or equals to eighteen. 
+We can now delete all of that code right there and this one line will do all of the work for us. 
+If age is under eighteen, it will return false and if age is equal to or greater than eighteen, it will return true. 
+Let's just give it a try and there we are. 
+It works. 
+Okay. 
+I have got one more challenge for you. 
+Give me just a moment to copy and paste it. 
+ Okay. 
+So I want you to use the dot filter method to create an array called children, 
+which holds all of the ages from this ages array that are under eighteen. 
+Now you've got the code up here, which of course will be a big help, but please don't be tempted to copy and paste. 
+It's really important that you write this out yourself, 
+build up the muscle memory and get used to the syntax. 
+Okay. 
+Get this sorted out and I'll see you back here in just a second. 
+ Okay. 
+So hopefully you got that working just fine. 
+I'm going to come down here and I'll set up this new const of children and we'll set that equals to ages and I'll call the dot filter method. 
+ We'll pass in the function and I'll use the same parameter that we used before age. 
+And now inside the curly braces then, we'll do this all on one line. 
+I'm going to say return age is less than eighteen. 
+So on each element, if the age is less than eighteen and this returns true, 
+then that element will be added to this new array called children. 
+Okay. 
+Let's log it out and see if it's working. 
+And it is working down in the console. 
+We have got two arrays. 
+So we're logging out the adults from line seven and the children from line twenty. 
+So our filter method is working. 
+ Okay. 
+In the next scrim, we're going to stay with the filter method, but we're going to up the complexity just a little bit. 
+We're going to work with an array of objects. 
+When you're ready for that, I'll see you there. 
+Transcript
+0:00
+As developers, we tend to work with a lot of data.
+0:03
+And oftentimes, we need to go through that data and extract exactly what we want.
+0:08
+There's a JavaScript array method that we can use to help us do that, and it is called filter.
+0:14
+So imagine we have an array of ages, and I want to know how many adults aged eighteen and over we have in our array.
+0:22
+I can do this with the dot filter method.
+0:24
+The dot filter method is going to iterate over the array and it's going to test each individual element in the array one by one.
+0:32
+This is the test that we're going to use.
+0:35
+We want to see if a given element is greater than or equals to eighteen.
+0:40
+If the element is greater than or equals to eighteen, this test is going to return true and that element will be added to this new array.
+0:48
+However, if the element is less than eighteen, then this test is going to return false and that element will not be added to this new array.
+0:57
+So let's see this in action.
+0:58
+Filter comes to the first element.
+1:01
+It runs the test.
+1:02
+Eight is not greater than or equals to eighteen.
+1:05
+So this test returns false and eight is filtered out.
+1:08
+It is not passed to this new array.
+1:11
+Filter moves on to the second element and it runs the test and twelve is also not greater than or equals to eighteen.
+1:19
+So this returns false and twelve is filtered out.
+1:23
+Filter moves on to the third element, thirty four is greater than eighteen.
+1:27
+So this one returns true and thirty four will get added to this array.
+1:33
+Filter moves on to the final element, forty five, it returns true.
+1:37
+So forty five is also added to this array.
+1:41
+And there the filter method finishes having filtered out all of the elements that didn't pass the test.
+1:45
+The original array is still intact and the new array holds just the elements that we're looking for.
+1:51
+And if we're not very good at counting and we want to figure out how many adults there were in this list, we could just use the dot length property to see that it is two.
+2:00
+Okay.
+2:01
+Let's take this over to the editor and see the same example with code.
+2:05
+Here's our array of ages.
+2:07
+It's a little bit longer.
+2:09
+And I'm going to set up a new const here called adults.
+2:13
+And I'm going to set that equals to the ages array and I will call the dot filter method.
+2:19
+Now we need to give dot filter a function and this function is going to hold the test that we're going to call on each element in the array.
+2:28
+And we need to give function a parameter which will be assigned to each element in the array in turn.
+2:34
+And as this is an array of ages, I'm just going to call that parameter age.
+2:38
+Inside the body of the function, this is where we need to set up our test.
+2:43
+So I'm going to use an if else.
+2:46
+I'm going to say if age is greater than or equals to eighteen, return true.
+2:54
+Else, return false.
+2:57
+Now let's just log out adults and see what we get.
+3:00
+And I'll hit save.
+3:02
+And there we are down in the console.
+3:04
+We can see that it's working.
+3:05
+We have got seven elements in that array and each of them are eighteen or over.
+3:10
+And we can just use dot length to confirm how many adults we've got.
+3:15
+There we are.
+3:16
+We have got seven.
+3:17
+Now I have actually written too much code here and I did that deliberately.
+3:21
+I wrote it out longhand just to make it really easy to see what's going on.
+3:26
+For a start, we don't actually need this else.
+3:29
+Let's just try it without.
+3:31
+There we are.
+3:32
+We get exactly the same effect.
+3:34
+The element is going to pass this test if this returns true.
+3:38
+It doesn't specifically need it to return false if it's not true.
+3:42
+But we can do a bit better than that.
+3:44
+So here's a very quick mini challenge.
+3:47
+I want you to get rid of this if statement and reduce the logic in this function to just one line of code.
+3:55
+So give that some thought and I'll see you back here in just a minute.
+3:59
+Okay.
+3:59
+So hopefully you got that sorted just fine.
+4:02
+Actually, we don't need an if statement here at all.
+4:05
+All we need to do is return age is greater than or equals to eighteen.
+4:11
+We can now delete all of that code right there and this one line will do all of the work for us.
+4:17
+If age is under eighteen, it will return false and if age is equal to or greater than eighteen, it will return true.
+4:24
+Let's just give it a try and there we are.
+4:26
+It works.
+4:28
+Okay.
+4:28
+I have got one more challenge for you.
+4:30
+Give me just a moment to copy and paste it.
+4:33
+Okay.
+4:34
+So I want you to use the dot filter method to create an array called children, which holds all of the ages from this ages array that are under eighteen.
+4:43
+Now you've got the code up here, which of course will be a big help, but please don't be tempted to copy and paste.
+4:50
+It's really important that you write this out yourself, build up the muscle memory and get used to the syntax.
+4:56
+Okay.
+4:57
+Get this sorted out and I'll see you back here in just a second.
+5:00
+Okay.
+5:01
+So hopefully you got that working just fine.
+5:04
+I'm going to come down here and I'll set up this new const of children and we'll set that equals to ages and I'll call the dot filter method.
+5:13
+We'll pass in the function and I'll use the same parameter that we used before age.
+5:18
+And now inside the curly braces then, we'll do this all on one line.
+5:23
+I'm going to say return age is less than eighteen.
+5:27
+So on each element, if the age is less than eighteen and this returns true, then that element will be added to this new array called children.
+5:35
+Okay.
+5:36
+Let's log it out and see if it's working.
+5:38
+And it is working down in the console.
+5:41
+We have got two arrays.
+5:42
+So we're logging out the adults from line seven and the children from line twenty.
+5:47
+So our filter method is working.
+5:50
+Okay.
+5:50
+In the next scrim, we're going to stay with the filter method, but we're going to up the complexity just a little bit.
+5:56
+We're going to work with an array of objects.
+5:58
+When you're ready for that, I'll see you there.
