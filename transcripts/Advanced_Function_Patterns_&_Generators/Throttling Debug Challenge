@@ -1,0 +1,153 @@
+Transcript
+0:00
+So we have this problem.
+0:01
+Our throttling is working but we're failing to pass in any arguments.
+0:05
+And that's why right here when we use this console dot log, we're actually logging out undefined and not the event.
+0:11
+And this problem is caused by the fact that we're calling this function down here.
+0:15
+It's It's actually being passed into this throttle function as a parameter and that means it's losing its context.
+0:21
+And when we talk about a function losing its context, what we mean is it's losing its this value.
+0:27
+Functions call from within event listeners which is effectively what we're trying to do are called with a this context which is usually the element that triggered the event.
+0:35
+But by passing this function in as a parameter, we're actually losing that context.
+0:39
+That's what happens when you pass functions as parameters.
+0:42
+So it is a good thing to watch out for because you can run into trouble with it and get bugs.
+0:47
+Now we can get round this problem right here by using apply.
+0:51
+So we'll just take the function dot apply and we'll pass in this and arguments.
+0:59
+So remember the apply method is a way to call a function with a specified this value and arguments provided as an array.
+1:06
+So arguments right here, we don't need to declare.
+1:09
+They simply exist for us.
+1:10
+They're part of the language.
+1:12
+And when I say they're provided as an array, actually the arguments are provided as an array like object to be precise.
+1:18
+Okay.
+1:18
+Let's hit save and see if this has solved the problem.
+1:21
+I'll start dragging out the browser and there we are.
+1:24
+Look, we're getting an object event.
+1:26
+And actually that is all the console is gonna tell us about this but at least it's not undefined.
+1:31
+We are managing to log out the event.
+1:33
+Now there is a second way of solving this problem and that is by using arrow functions because arrow functions don't have their own this context.
+1:42
+They take this from the surrounding scope and this solves half of the problem.
+1:47
+So I'm actually going to delete all of the logic we've got right here and set you a challenge.
+1:53
+Okay.
+1:53
+So here's your challenge.
+1:54
+I want you to recreate the logic that we just had but using an arrow function.
+1:59
+And I want you to think what's the best way to pass arguments remembering that ideally this throttle function is reusable.
+2:07
+So we don't want to be too specific.
+2:09
+We don't want to be hard coding anything.
+2:11
+And I have put a hint dot m d file up here for help if you need it.
+2:15
+As you do this, you will be recreating a lot of the same code that we had before.
+2:19
+That's deliberate on my part.
+2:20
+The mechanics of the throttle are not changing.
+2:23
+So this is just giving you some extra practice.
+2:26
+Okay.
+2:26
+Get this challenge sorted.
+2:28
+Okay.
+2:29
+Hopefully, you managed to do that just fine.
+2:31
+No problem at all.
+2:32
+If you needed to search online or you checked out hint dot m d, that is absolutely fine.
+2:37
+This challenge was a bit tricky.
+2:39
+Okay.
+2:39
+So what we're going to do here then is return an arrow function.
+2:45
+And inside the arrow function, let's check if throttle time out is truthy or falsy.
+2:51
+And if it's falsy, let's call the function.
+2:54
+And then throttle timeout can hold a set timeout
+3:00
+which has its delay.
+3:01
+And then inside the set timeout's callback we can just set the throttle timeout to null.
+3:07
+Okay.
+3:07
+Let's hit save and see how that's working so far.
+3:12
+Alright.
+3:13
+So we've got back to where we were before.
+3:15
+We're logging out undefined.
+3:17
+So I did put in the challenge text what is the best way to pass arguments remembering that ideally this throttle function is reusable.
+3:25
+Well we could just hard code something.
+3:27
+We could come in here and say e for event and then pass that into this function.
+3:32
+Let's try that.
+3:34
+And now that is working.
+3:36
+But we've hard coded this event and I don't like that very much because that might not be a suitable parameter name or there might well be more parameters.
+3:44
+Remember I want this throttle function to be reusable.
+3:47
+We just pass in a function and a delay.
+3:50
+We don't want to worry about how many parameters we've got or how many arguments the function is calling.
+3:54
+We can get round that problem using the rest parameter.
+3:57
+So that is just dot dot dot and let's call this args to take in multiple arguments.
+4:04
+And then likewise in here, we'll take in the args.
+4:07
+Now when I hit save and we drag out the window,
+4:12
+it is working.
+4:13
+So I think that code is a little bit easier.
+4:15
+There's no need to use the this keyword because arrow functions don't have their own this.
+4:19
+They're taking it from the surrounding scope anyway which is what we want to happen here.
+4:24
+So that is a pretty good way of doing this.
+4:26
+Okay.
+4:27
+In the next scrim, let's move on to debouncing.
