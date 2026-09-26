@@ -1,0 +1,112 @@
+
+Transcript
+0:00
+Let's take a look at the set object.
+0:02
+A set object stores unique values as individual items, not key value pairs.
+0:08
+It's a bit like an array, but with each item unique, no duplicates.
+0:13
+Let's see one in action.
+0:14
+Here is a wish list.
+0:16
+I want some shoes, aftershave, a Tesla, aftershave, and shoes.
+0:21
+So as is often the case, I've ended up with duplicates in my wish list.
+0:25
+Luckily, a set only holds unique items.
+0:28
+That means we can use it to remove duplicates from this array.
+0:32
+So let's say const wish list set, and we want a new instance of set, and we can pass in this array.
+0:40
+Let's just log that out.
+0:42
+And in the Scrimper console, we don't see too much.
+0:45
+But if you did this in Firefox or Chrome, you would actually see this.
+0:49
+And you would see that we've successfully removed the duplicates.
+0:53
+Now we can prove that here by iterating over this set with a for each.
+0:57
+Let's try that.
+0:59
+And now in the console we're successfully iterating over it and we can see there that the duplicates have indeed been removed.
+1:05
+Now I can use a for each on this set but that doesn't mean that I have access to all of the same methods that I have on an array.
+1:13
+For example, if I try to do this with the map method, it's not going to work.
+1:18
+So sets do not have access to all of the array methods.
+1:22
+So if I wanted to use some array methods on this set, I would need to convert it back to an array and that actually gives us a cool use case of the array from method.
+1:31
+Let's just see how that would look and we could actually do that all on one line of code.
+1:37
+So here, we could use the array constructor and then dot from and pass in our set.
+1:44
+Let's hit save And now we're successfully mapping over the array we've just created and logging out each of our items.
+1:51
+So what we've actually done here is really neat.
+1:54
+We're creating an array from this set and the set is being created with this array right here.
+2:00
+So what we're doing here is actually really neat.
+2:02
+We've got an array with duplicates.
+2:04
+We're converting it to a set right here to remove the duplicates and then using the array from method to convert it back to an array so we can access all of the array methods.
+2:14
+But we're going off on a tangent here.
+2:15
+Let's put this back to a set and iterate over it with a foreach.
+2:20
+Now let's add some items using Set's add method.
+2:25
+I can add in diary and there we are, it gets added to the list and the insertion order is maintained.
+2:32
+So whatever we add last will be iterated over last.
+2:35
+Next, let's delete an item and just like with the map object, we have the delete method.
+2:41
+Let's delete shoes.
+2:43
+And there we are, shoes has gone.
+2:46
+We can check if we have an item.
+2:47
+And again, like with the map object, we do that with the has method.
+2:52
+And that's going to return us a boolean, so we need to log this out.
+2:56
+And it's saying false because we've deleted shoes right here.
+2:59
+Let's just comment out that line of code.
+3:02
+And now it says true, we have got shoes in our set.
+3:05
+And lastly, we've got the clear method.
+3:07
+And as you would expect, that just clears everything.
+3:11
+So we're logging out true right here because that's obviously before we've cleared the set.
+3:15
+But when we try to iterate over the set, we're not logging out anything because the set has been cleared.
+3:21
+Now set also comes with a funky bunch of other methods which allow you to compare two sets to see for example what items they have in common.
+3:29
+And MDN have got this graphic with these Venn diagrams which show you what each of the methods do.
+3:35
+Unfortunately, at the moment, these methods do not enjoy wide browser support even among mainstream browsers.
+3:42
+So we're not going to look into them now.
+3:44
+But you can click on this graphic.
+3:45
+It's a link which will take you through to MDN and you can read up on them there if you're interested.
+3:51
+Okay.
+3:51
+Take a look at this syntax because in the next scrim, we'll have a challenge with sets.
