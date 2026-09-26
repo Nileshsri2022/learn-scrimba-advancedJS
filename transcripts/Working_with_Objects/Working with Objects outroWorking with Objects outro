@@ -1,0 +1,21 @@
+Transcript
+0:00
+Congratulations on completing this first section on objects.
+0:03
+We studied objects with built in methods to get the keys and values of entries.
+0:08
+We saw has own and has own property to check what properties exist on an object.
+0:13
+We learned about the odd outcomes you get when trying to make copies of objects and arrays due to JavaScript's assignment by value versus assignment by reference behavior.
+0:22
+We use the spread operator to make a shallow copy of an array and we used object dot assign to make a shallow copy of an object.
+0:30
+And then structured clone showed us how it's actually really easy to make a deep copy.
+0:34
+Finally, we talked about this and we saw that with objects, this refers to the object itself and we saw how we can control what this refers to in a function by binding this.
+0:44
+Now, I always say it's a good time to take a break but this time, I really do recommend it.
+0:49
+The next section is fairly heavy with a good deal of complex JavaScript.
+0:54
+So make sure you're well rested before coming back to that.
