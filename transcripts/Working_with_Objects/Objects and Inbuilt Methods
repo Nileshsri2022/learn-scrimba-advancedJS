@@ -1,0 +1,100 @@
+
+Transcript
+0:00
+Let's jump into objects and take a look at some inbuilt methods.
+0:03
+Here's a pretty standard object holding an inventory of books.
+0:07
+Each key is a unique ID and each value is an object with a title, a price and availability.
+0:14
+We know we can access some values from this object with dot notation or bracket notation.
+0:19
+So I could say console dot log books dot b double o one.
+0:25
+And in the console we're logging out this first value.
+0:28
+But what if we wanted to iterate over this object?
+0:31
+Let's try with a foreach.
+0:34
+When I save that, we get a type error.
+0:37
+Books dot foreach is not a function.
+0:39
+And to be honest, I think you and I both knew that that wouldn't work.
+0:42
+We can't just use an array method on an object.
+0:45
+But we might well want to iterate over what we have in an object and programmatically access the keys and values in it.
+0:50
+And JavaScript gives us some static methods to do just that.
+0:54
+I just said static methods and that's gonna need a bit of explanation.
+0:58
+We know that JavaScript has plenty of inbuilt methods.
+1:01
+We've seen some of them on arrays.
+1:03
+But where actually are they?
+1:06
+How can we access them?
+1:07
+Well the array methods that we've already seen for example the foreach are available right there on an array.
+1:14
+So we'll take the name of an array and we call foreach on the end of it.
+1:19
+So you can say the method foreach is available on this instance of an array.
+1:24
+And there are some methods which live on the instance of the object as well.
+1:28
+So in that case the syntax would be similar.
+1:30
+We would take books and call a method.
+1:34
+And we will actually see an example of that a bit later in this course.
+1:37
+But static methods are a bit different because they live on the constructor.
+1:42
+And to understand that, we need to understand that like nearly all data types in JavaScript, object has a constructor.
+1:49
+So actually we could create an object like this.
+1:53
+So we use the new keyword to create a new instance of object and we've got an upper case first letter here on object and then we can assign some properties to it.
+2:02
+And there we have created an object.
+2:04
+It's got one property, the key is name and the value is coffee machine.
+2:08
+Now we never do it this way.
+2:10
+It's just much too complex and verbose and less efficient than creating an object literal like we're doing here.
+2:16
+But I wanted you to know about this constructor to understand the syntax we're about to use.
+2:22
+Okay.
+2:22
+Let's get more practical.
+2:24
+I want to use a method which will return me an array of the keys in my object.
+2:29
+So what I can't say is this, I can't just take the books object and call my keys method.
+2:36
+Because this method lives on the constructor.
+2:38
+So we start with the constructor, which is object with an upper case first letter.
+2:43
+We want the keys method dot keys and we pass in the object we're working with.
+2:50
+Let's just log out what we've got here.
+2:52
+And we'll save that.
+2:54
+And now we have an array.
+2:56
+The sky's the limit because we've got all of the array methods at our disposal.
+3:00
+Okay.
+3:00
+In the next scrim, let's have some challenges using some of these static methods on the object.
+3:05
+When you're ready for that, let's go.
