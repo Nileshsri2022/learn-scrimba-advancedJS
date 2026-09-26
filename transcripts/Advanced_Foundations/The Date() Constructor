@@ -1,0 +1,112 @@
+
+Transcript
+0:00
+In JavaScript, a constructor gives you an object.
+0:03
+That's fundamentally what constructors do.
+0:05
+But there are many varying use cases for constructors.
+0:09
+Firstly, let's break them down into two categories.
+0:12
+We have got inbuilt constructors that come as part of JavaScript.
+0:17
+So these provide objects in various predetermined formats like date objects, error objects, and we've got objects for each of the data types.
+0:25
+And we're going to have a look at date objects and error objects in this scrim and the next scrim, and we'll also have a quick look at using constructors to create objects for each of the data types.
+0:35
+Now, the other category we've got is custom constructors.
+0:38
+So we can actually design our own constructors to produce objects for our own specific purposes.
+0:44
+This second option is rather more complex than the first and we're going to be covering it in detail later in this course.
+0:51
+So let's start off with one of JavaScript's inbuilt constructors.
+0:55
+I'm sure you've noticed that down at the bottom of most websites, there's a copyright message and it's got the date.
+1:01
+And that date is pretty much always correct.
+1:04
+And of course, web devs don't spend the thirty first of December updating all of these manually.
+1:09
+It happens programmatically.
+1:11
+So how is it done?
+1:12
+Well, there's plenty of ways you could automate this, but probably the easiest by far is to use the date constructor.
+1:19
+So the date constructor is like a machine which gives you a date object every time you ask for one.
+1:25
+Let's have a look in code.
+1:26
+So I'm going to set up a const to hold my new date object and I'm going to call it date snapshot.
+1:34
+Now, we use the new keyword and we summon the date constructor and that is date with an upper case first letter and the upper case first letter is crucial.
+1:44
+The inbuilt constructors always have an upper case first letter.
+1:47
+Now, a constructor is a type of function so we need the brackets and that is all we need.
+1:52
+What we're saying here to this date constructor is give us a new instance of the date object.
+1:57
+Let's log it and see what we get.
+2:01
+I'll hit save and in the console, we get the time and date that I'm recording this.
+2:05
+And if you pause and run the code, you should get your own time and date.
+2:09
+But wait a second, this format is actually a bit weird and for me, it's an hour out.
+2:15
+It's saying it's nine fifty six, it's actually ten fifty six.
+2:18
+Also, I said we'd get an object and this looks like a string.
+2:22
+Let's just use type of in here to check and actually, it is an object.
+2:28
+And if you were to look at this in the console of a browser like Chrome or Firefox, you will see that this object has been made more human readable and we can actually imitate that behavior right here in Scrimba by calling the two string method on this object.
+2:43
+So I'll say date snapshot dot two string and when we save that, now we get something much more human readable and now the time is correct.
+2:53
+So all of the info we needed was hidden away in that object even if it didn't look like the regular objects we've been working with.
+3:00
+Now to see the value of a constructor, let's just hit save a couple of times and each time you'll see the seconds change because each time we're getting a brand new date object.
+3:11
+Okay.
+3:12
+I want my website to have a footer message just like this.
+3:15
+I just want the year.
+3:16
+I don't need all of this extra information that is GMT plus one British summertime, etcetera.
+3:23
+So let me paste you in a challenge.
+3:25
+So this is a Google challenge.
+3:27
+I want you to search online to find out how we can get just the year using the date constructor then update the code that we've got in this console dot log right here.
+3:36
+Okay.
+3:37
+Get searching and come back when you're done.
+3:39
+Okay.
+3:40
+Hopefully, what you found is that we can use the get full year method and we can just add it right here into the chain.
+3:47
+Let's save that.
+3:48
+And look, I'm just getting twenty twenty four so we could now create our copyright message.
+3:55
+And that code is going to get a new date snapshot every single time the page loads so it will always have the correct year.
+4:02
+And I'm sure you noticed when you were searching that there's actually a ton of things you can do with the date constructor in JavaScript.
+4:09
+And there are also some commonly used packages like luxon which can make working with date and times in JavaScript easier because honestly, the date constructor can be a bit of a pain when you're trying to do something complicated.
+4:21
+Okay.
+4:21
+Now, we've seen this date constructor in action.
+4:23
+Let's take a look in the next screen at the error constructor which is really really useful and we'll also take a quick look at a few other inbuilt constructors.
+4:31
+When you're ready, let's move on.
