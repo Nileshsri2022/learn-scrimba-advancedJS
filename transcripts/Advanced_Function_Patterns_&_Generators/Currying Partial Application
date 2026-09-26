@@ -1,0 +1,56 @@
+
+Transcript
+0:00
+Why might we want to curry a function?
+0:02
+Well, currying allows for partial application and that means you can fix some arguments and defer the rest.
+0:09
+This can be particularly useful if you have a situation where you repeatedly call a function with some of the same arguments.
+0:15
+Let's go back to our code and I'll show you what I mean.
+0:17
+So imagine a situation where a number of prisms have the same length and the same width but differing heights.
+0:23
+We could calculate the base area volume, so multiplying length and width in one step.
+0:29
+Let's set up a const here called calculateBaseAreaVolume.
+0:34
+And we'll set that equals to a call of calculateVolume.
+0:38
+And let's pass in a length of two and a width of three.
+0:43
+So this is now a partial application where we have the innermost function stored in calculateBaseAreaVolume with two arguments already applied.
+0:52
+And then we can call it and pass in the final argument.
+0:54
+So to calculate total volume with a height of four, we could say const total volume
+1:01
+one and set that equals to calculate base area volume and pass in four.
+1:07
+Let's delete this old line of code just to keep things clear.
+1:10
+And I'm actually going to do this another time.
+1:13
+Let's pass in a height of six and lastly a height of ten.
+1:21
+Okay.
+1:21
+Let's hit save and see what we get.
+1:23
+And in the console, we're logging out twenty four, thirty six, and sixty.
+1:27
+So in each case, the total volumes have got the same length and width but different heights.
+1:32
+So this is the partial application which is useful to us because we want to call these functions with some of the same arguments.
+1:39
+So this is all about flexibility.
+1:41
+We can reuse this partial application to suit our needs.
+1:44
+If we wanted to do this without currying, we could but we would need to hard code our variables and then we would probably end up writing more code and repeating ourselves.
+1:53
+Okay, this has been quite a basic example and it's shown us what currying looks like and why it's useful.
+1:59
+Let's take a look at a more complex real world example and this will be a challenge for you.
+2:04
+When you're ready for that, move on to the next scrim.
