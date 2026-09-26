@@ -1,0 +1,92 @@
+
+Transcript
+0:00
+Let's get access to our private field with getters and setters.
+0:03
+This class is creating holiday objects and destination is locked down because it's a private field.
+0:09
+So now if I try to access safari.
+0:11
+Destination, I get undefined.
+0:14
+And if I put the hashtag in, I get the error.
+0:16
+So to get this information, we need a getter.
+0:19
+And to create a getter, we just need the get keyword with a method.
+0:24
+And because this is the getter for destination, it's called destination.
+0:28
+All this method needs to do is return the private field.
+0:31
+So it's return this.
+0:34
+Hashtag destination.
+0:35
+And one benefit of a getter is that we can now access this information as if it were a property and not a method.
+0:42
+So when we call it, we don't actually need these parenthesis.
+0:45
+Let's just remove the hashtag and now when I hit save, we get Kenya.
+0:50
+So why is this an improvement?
+0:52
+Well firstly, we can't modify it, so access is still strictly controlled And also, we could include some more logic in here.
+0:59
+We could, for example, check that the user is logged in.
+1:02
+But for now, let's leave it as it is, just returning this destination.
+1:06
+Now we might need to modify destination, and we're going to do that with a setter.
+1:11
+A setter is a method declared with the set keyword.
+1:15
+It's the setter for destination.
+1:17
+And let's really show how the setter gives us more control.
+1:20
+So what we're going to do here is check if any modification that we want to make to the destination is a valid string.
+1:27
+So I'll say if and then we can have type of.
+1:30
+And here we need to think what we're checking the type of.
+1:33
+So when we modify destination we'll be taking in some kind of new destination.
+1:38
+So let's have a parameter right here.
+1:41
+So if type of new destination and let's see if it's not a string.
+1:46
+And we should also guard against the string that comes in being an empty string.
+1:51
+But if that's the case, let's throw an error.
+1:55
+Assuming all is good, we can set this dot hashtag destination to the new destination.
+2:01
+Okay.
+2:02
+I'm going to open up the console and hit Save.
+2:05
+At the moment, we're still logging out destination, which is fine.
+2:08
+Let's see if we can modify destination.
+2:13
+I'll pass in Tanzania, and that works.
+2:16
+Let's try passing in an empty string.
+2:18
+That fails, we get the error destination not valid.
+2:22
+Let's try passing in an array.
+2:25
+And again, typeof is not string, so that fails.
+2:29
+So now we can modify destination, but we've got some control over it, and that control is right there inside the class.
+2:36
+Okay.
+2:37
+Price is still public.
+2:38
+We have not set that one to be a private field.
+2:41
+So let's have a challenge in the next scrim.
