@@ -1,0 +1,94 @@
+
+Transcript
+0:00
+I have a const holding my bank balance in GB pounds.
+0:03
+And this figure is really quite impressive.
+0:06
+But actually, I find these numbers difficult to read, especially on a screen and with a small font.
+0:13
+Luckily, we can use the numeric separator in JavaScript to make longer numbers easier to read, and all we need is an underscore.
+0:21
+And in fact, this is so easy.
+0:23
+I'm just setting it to you as a challenge.
+0:25
+Use numeric separators the underscore to separate out the digits into chunks of three so they're easier to read go ahead and do that right now okay that shouldn't have been too difficult so let's just take three numbers and have a separator and I'll just repeat that throughout.
+0:42
+Now when I hit save what we see in the console is just the number so we haven't altered the number in any way and if we use type of we can see we're still getting a number.
+0:52
+So those numeric separators don't interfere in any way.
+0:56
+They just make the number easier for us to read.
+0:59
+And now it's really clear how much money I've got.
+1:02
+It is nine quadrillion seven trillion one hundred and ninety nine billion two hundred and fifty four million seven hundred and forty four thousand nine hundred and ninety one pounds.
+1:12
+And actually, this number is not just my bank balance or a random number.
+1:17
+It just happens to be the maximum safe integer in JavaScript.
+1:21
+That means it's the highest number that can be accurately represented and used in calculations without losing precision.
+1:29
+That doesn't mean it's the biggest number we can have.
+1:31
+We could multiply it by two.
+1:33
+But that number you see in the console now is not safe.
+1:36
+We cannot be sure we will get precision.
+1:39
+And I want my money to be accurate.
+1:41
+Unless you can be sure you're going to overestimate and not underestimate.
+1:44
+But what would happen if I got richer?
+1:46
+Or should I say what will happen when I do get richer?
+1:49
+Well, for numbers bigger than this, JavaScript gives us the big int and big int is short for big integer and we can create a big int in two ways.
+1:59
+Let's just add some extra digits to this number and one way to make it a big int is just to append an n on the end.
+2:06
+When we hit save, we're still logging out the number but if we use type of, we'll see that it's not actually the number data type, it is a big int.
+2:14
+The second way of creating a big int is to use the big int constructor.
+2:18
+Now it's called a constructor but it is different to other constructors.
+2:21
+We don't use the new keyword.
+2:23
+So it's just big int and then we pass in the number.
+2:26
+We don't want this n.
+2:28
+Let's hit save and again we get a big int and if we delete type of, there we are.
+2:32
+We're getting the actual number that that big int represents.
+2:36
+Okay now we have a big int let's see how that differs from a number.
+2:40
+Well for a start we can't do basic maths I can't just minus one.
+2:44
+When we do that we get an error we can't mix big int and other types and it's not going to coerce one or other to a number or a big int.
+2:52
+Also, let's try and use math.
+2:54
+So I'm going to say, math dot square root.
+2:57
+We'll pass in the big int.
+2:59
+Hit save.
+2:59
+Cannot convert a big int value to a number.
+3:02
+So there's lots that you can do with a number that you can't do with a big int.
+3:06
+So you might be wondering why would I ever actually use a big int and the answer is it's useful in context requiring precise handling of large integers such as cryptography or when interacting with databases that use large integers as identifiers.
+3:20
+So there are use cases for it and it's definitely good to know it's there.
+3:24
+Okay.
+3:25
+Let's move on.
