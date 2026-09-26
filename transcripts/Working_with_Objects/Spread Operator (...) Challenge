@@ -1,0 +1,153 @@
+Transcript
+0:00
+Okay.
+0:00
+It is challenge time.
+0:02
+Here's the situation.
+0:04
+I've got the monthly average share prices for my company, but they're split over four arrays.
+0:10
+So there's one array for each quarter.
+0:12
+Quarter one, quarter two, quarter three, and quarter four.
+0:15
+And of course, there's three months data in each quarter.
+0:18
+So we've got twelve months data in total.
+0:21
+Now underneath, I've got this function called find price extremes and it takes in a single array as a parameter.
+0:28
+The purpose of this function is to find the highest average price that we've got here and the lowest average price and just log them out.
+0:36
+So it's going to log out these sentences, the highest average share price was and then it will take the highest number of the twelve numbers here and then the lowest average share price was and it will take the lowest of the twelve numbers here.
+0:50
+So your challenge is this and it comes in two parts.
+0:54
+Down here, this is the function call and I want you to call this function with one array holding all of the data from the four arrays above.
+1:03
+So what I'm talking about here is the argument that you're going to put in here.
+1:07
+This argument will be one array holding all of the data from these four arrays.
+1:13
+Now when you've done that, you can come down inside the find price extremes function body and then I want you to find the highest number from the array and store it in the const highest.
+1:24
+So you can write the logic to do that right here.
+1:27
+And then you're going to do the same thing, find the lowest number from the array and store it in the const lowest so the logic for that can go right here.
+1:36
+Now there are a couple of rules and a gotcha.
+1:39
+Firstly, don't change this parameter.
+1:41
+This function can only accept one parameter and it has to be an array.
+1:47
+Secondly, to find the highest and the lowest numbers, I don't want you to do something really complicated with an array method.
+1:53
+What I want you to use is one of the math methods that come with JavaScript.
+1:58
+And if you're feeling rusty on the math object, just Google something like, how do I use math to find the highest number in JavaScript?
+2:07
+And you're gonna find the answer really quickly.
+2:09
+Now when you do this, there's a little gotcha waiting for you.
+2:14
+And I've put a file up here called hint dot MD and I've put a little bit of help in there in case you get stuck.
+2:21
+Now I'm not saying you will get stuck.
+2:23
+Actually, I think you've got all of the skills you need to solve this challenge and definitely do do a little bit of Googling.
+2:29
+That is absolutely fine.
+2:30
+In fact, I encourage it.
+2:32
+That is what learning is all about.
+2:34
+Okay.
+2:34
+Take all of the time you need.
+2:36
+It's not a race.
+2:37
+And in a few moments, we'll have a look at it together.
+2:41
+Okay.
+2:41
+Hopefully you got that working.
+2:43
+If you needed to do some Googling that is absolutely fine.
+2:46
+That is a really good way of learning in itself.
+2:49
+So let's start off down here and we're going to take the first array and inside this function call this is where I'm going to join the arrays into one big array.
+3:01
+So these arrays are just called Q1, Q2, Q3 and Q4 at the end.
+3:05
+So I'll just update that quickly.
+3:07
+And of course they need to be separated by commas.
+3:10
+And now let's spread them all.
+3:13
+And lastly, this needs to be an array so we need these square brackets.
+3:18
+Okay.
+3:19
+Let's move up into the body of the find price extremes function.
+3:23
+And before we do anything else, let's just log out the array that we're bringing in and make sure we've successfully combined these four arrays.
+3:31
+And so we don't get an error, let's just comment out these lines here.
+3:35
+And if we open up the console we've got an array with twelve numbers so that is working.
+3:41
+Now to find the highest number from that array we can come down here and say math.
+3:46
+Max and we can pass in the array.
+3:50
+And then let's do the same thing for lowest, but this time we're using math dot min and passing in the array.
+3:58
+Now is this going to work?
+4:00
+Let's hit save.
+4:02
+If we look down in the console, we're getting the highest average share price was nan, and the the lowest average share price was nan.
+4:10
+And you're probably aware that nan in JavaScript stands for not a number.
+4:15
+So that is telling us something has gone wrong.
+4:17
+And the problem we face is that we've passed an array to the max method on the math object.
+4:23
+And actually, this method does not take an array.
+4:27
+It just takes a sequence of individual numbers.
+4:29
+And of course, the same applies to the min method.
+4:32
+So how can we expand this array into its individual values?
+4:36
+Well, of course, we spread it.
+4:39
+And the same right here.
+4:41
+Now let's hit save.
+4:43
+And look what we've got down in the console.
+4:45
+The highest average share price was a hundred and twenty six point one.
+4:49
+The lowest average share price was eighty nine point four.
+4:53
+And if you look through this data, you can see that that is absolutely correct.
+4:58
+Okay.
+4:58
+That was quite a tricky challenge.
+5:00
+So congratulations for getting that done.
+5:03
+That is the end of the spread operator section.
+5:06
+So now is a really good time to take a break and then come back when you're feeling refreshed
