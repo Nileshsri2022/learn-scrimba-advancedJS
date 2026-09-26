@@ -1,0 +1,94 @@
+
+Transcript
+0:00
+It is challenge time and I have a message logging app right here.
+0:04
+This arrow function which is stored to logMessage takes in two parameters a level and a message and it returns in square brackets the level to upper case and then the message as a string.
+0:18
+And when we're calling this function for example down here we're passing in the level which in this case is info but we also have warn and error and we're passing in a message.
+0:27
+When we hit save, down in the console we've got all of our messages logged as info, warn or error.
+0:34
+Now I think this function could be improved by currying.
+0:38
+So this is what I want you to do.
+0:40
+I want you to set up three partially applied functions called info logger, warn logger, and error logger.
+0:45
+The partially applied functions should have their own level, info, warn, or error, and you should be able to call these functions and pass in a message.
+0:54
+So for example, if we set up a console dot log, we have the warn logger function and we pass in load disk space, what we would log out would be this.
+1:03
+Worn in square brackets in upper case and then the message load disk space.
+1:08
+So we should actually be able to achieve what we're getting at the moment in the console but with a curried partially applied function.
+1:14
+Okay.
+1:14
+Give this some thought and try to do it without extra help.
+1:17
+But if you get stuck, there is a walk through up here in hint dot md.
+1:21
+I've put that one right here and that will point you in the right direction.
+1:25
+Okay.
+1:25
+Get to work on this challenge.
+1:28
+Okay.
+1:28
+Hopefully, you managed to get that challenge sorted.
+1:31
+No big deal if you did need to use hint dot m d.
+1:33
+The most important thing is that you completed the challenge or at least had a very very very good go at it.
+1:39
+Right.
+1:39
+I'm gonna set up a const here called create logger.
+1:43
+And I'm going to set that equals to an arrow function which takes in level as a parameter.
+1:49
+And that arrow function will return another function which takes in message as a parameter.
+1:55
+And message can actually return exactly what we're returning right here.
+1:59
+And now I'm just going to delete this line of code.
+2:02
+We don't need it anymore.
+2:03
+Now we need some partially applied functions, info logger, one logger and error logger.
+2:11
+And each of these are going to store what we get returned by createLogger when we call it passing in a level.
+2:18
+So for InfoLogger, we'll pass in info.
+2:21
+Warn logger, we'll pass in warn.
+2:24
+And error logger, we'll pass in error.
+2:27
+Okay.
+2:27
+We need to make some adjustments to these console dot logs.
+2:30
+So down here, we're just using log message all of the time.
+2:33
+Well, we deleted log message.
+2:35
+So these ones which are for info level messages, I'll take info logger and now I don't need to pass in the level.
+2:44
+Next we'll take warn logger and do exactly the same thing right here and then ErrorLogger.
+2:52
+Okay.
+2:52
+Let's hit save and see if it's working and down in the console we are indeed logging out all of our messages.
+2:59
+We've got the level info warn error in the square brackets and then the message as a string.
+3:04
+So we've successfully curried and partially applied functions.
+3:08
+Currying is a pretty neat JavaScript concept.
+3:10
+It's also quite an advanced concept.
+3:12
+So if you've got your head around that, congratulations.
