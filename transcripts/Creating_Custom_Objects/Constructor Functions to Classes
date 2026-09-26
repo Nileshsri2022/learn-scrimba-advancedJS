@@ -1,0 +1,132 @@
+
+Transcript
+0:00
+In this scrim, we're going to rebuild our constructor function as a class.
+0:03
+But first, let's answer the question, what are classes?
+0:08
+Well, the class syntax gives us another way of doing what constructor functions do, producing an infinite number of objects with the same properties and methods.
+0:17
+So, are classes exactly the same as constructor functions?
+0:21
+Well, no.
+0:22
+There are differences under the hood.
+0:24
+But for now, it's absolutely enough to know that a class is a special kind of function that works as a template for creating objects.
+0:32
+And the output that we're going to see in this scrim, an object, will be exactly the same as the output we got from the constructor function.
+0:39
+Okay.
+0:39
+Over in the editor, I'm going to move this constructor function out of the way into its own file.
+0:45
+But I'm not going to delete it because I want to refer to it later.
+0:49
+Okay.
+0:49
+Let's get started on building the class.
+0:52
+So I'm going to start with the class keyword and we're going to call this class gamer.
+0:58
+And just like with the constructor function, I've used an upper case first letter.
+1:03
+Now I'm going to open up the curly braces and notice how we've gone straight from the name of the class to the curly braces.
+1:10
+There are no brackets.
+1:12
+Now inside the body of the class, I want to introduce a new concept.
+1:16
+We're going to have a constructor method and we create that with the constructor keyword.
+1:22
+Now a method is a function so we need the brackets and then we can open up the curly braces.
+1:28
+And just to be clear, constructor is a keyword.
+1:30
+It's fixed.
+1:31
+It cannot be called anything else.
+1:34
+So what do we do with this constructor method?
+1:36
+Well, this is where we initialize the objects that we're creating with their properties And just like a constructor function, classes can have one or more methods but anything that we might later use in one of our own methods needs to be set up first in the constructor method.
+1:52
+Let's just pop back to the constructor function and we've got these two properties name and score.
+1:57
+So I'm going to take both of them and we can just paste them in right here.
+2:02
+Now in the Constructor Function, we took in the data to initialize these properties as parameters name and score and we're going to do exactly the same thing with this constructor.
+2:13
+They're going to go right here in these brackets.
+2:17
+Now underneath the constructor we can add our method.
+2:21
+The syntax for this again is a little bit different.
+2:24
+We don't need to use this and we don't need to use the function keyword.
+2:28
+All we need to do is declare a function name which in this case is increment score And then we need the brackets and the curly braces.
+2:37
+The logic in this method will be exactly the same as the logic we had before in the constructor function.
+2:42
+So let's just borrow that.
+2:45
+And now I can hit save and see what we get.
+2:47
+And if we look down in the console, we have got our object.
+2:51
+Name Dave and score of one.
+2:54
+Because we kept this code from before in exactly the same way we're setting up a new instance of gamer, we're passing in Dave, we're passing in the score, and and then we're calling the increment score method.
+3:04
+So it's working and it does look a little bit different to a constructor function but it's doing essentially the same thing.
+3:10
+Let's set up another instance of gamer and we're going to call this one Sarah.
+3:15
+I'll log out Sarah as well and when we hit save, we see two objects in the console.
+3:20
+Dave has got a score of one because we've called increment score.
+3:24
+Sarah has got a score of zero because we have not incremented her score.
+3:29
+And that is the class syntax.
+3:31
+Now the biggest difference that you're likely to notice between constructor functions and classes is this.
+3:37
+If we take these two lines of code right here and I cut them and paste them above where we've declared the class, Let's see what happens when we save.
+3:48
+We get an error.
+3:49
+Reference error cannot access gamer before initialization.
+3:54
+Now that doesn't happen with a constructor function because a constructor function is a type of function declaration and function declarations are hoisted, which means it doesn't matter if you call them before or after they've been declared.
+4:06
+Now classes are not hoisted which means you have to call them after they've been declared.
+4:11
+So let's put that back where it belongs.
+4:14
+Now whether you prefer to use a constructor function or a class is mostly a matter of personal taste.
+4:20
+Or in professional circumstances, it depends on the house style that your team is using.
+4:25
+But actually, and this is quite important, most developers don't use constructor functions or classes in vanilla JavaScript very much.
+4:33
+A lot of what used to be done with classes and constructor functions is now done much more easily with frameworks like React.
+4:39
+And that's why we're only taking this relatively quick look at constructor functions and classes.
+4:44
+There is a lot more you can do with classes.
+4:47
+You can create classes that inherit properties and methods from other classes, for example.
+4:51
+But as I say, you rarely write this code in the real world and from our experience of speaking to hiring managers and developers, a deeper understanding of classes is really not necessary at this stage.
+5:02
+It's much better to have a deeper understanding of the aspects of JavaScript and the frameworks like React which are used on a day to day basis.
+5:11
+So by all means, do some Googling around classes and inheritance if you'd like to.
+5:15
+Background knowledge is always a good thing, but I wouldn't recommend spending too long on it.
+5:21
+Okay.
+5:21
+With that said, in the next scrim, let's have a class based challenge.
