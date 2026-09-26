@@ -1,0 +1,148 @@
+
+Transcript
+0:00
+Okay.
+0:00
+So we've had some practice with the map method and you might be saying, now I know how to iterate over arrays and call a function on each element in the array.
+0:09
+And that is true.
+0:10
+But wait a moment.
+0:11
+Is there an elephant in the room?
+0:13
+And if so, what is this elephant saying?
+0:16
+Well, it's saying, what about for each?
+0:19
+Because let's face it, for each and map seem kind of similar.
+0:23
+So if you found yourself thinking, well, we can do everything that the map method does with the for each, you're definitely not alone.
+0:30
+The benefit of using the map method is not always apparent and actually, it can be hard to decide which method to use in any given situation.
+0:38
+So let's do an experiment and turn this map into a foreach.
+0:43
+And I'll hit save.
+0:45
+And of course, it doesn't work.
+0:47
+We've got an error down in the console.
+0:48
+We've got a blank page right here.
+0:51
+Why is that?
+0:52
+And what would we have to do to make it work?
+0:55
+Well, if you're up for a challenge, pause now and figure out how you could make a for each work here.
+1:00
+And while you're doing it, notice the problems you have and what the solutions are.
+1:05
+So have a go at that and I'll take you through it in just a moment.
+1:14
+Okay.
+1:15
+So hopefully, you did everything you needed to get it working.
+1:18
+Now, you've probably seen in the console, the error is referring to the join method.
+1:23
+So I'm just going to close down the mini browser.
+1:25
+We'll come down here to the join method and let's just try moving it to the other position.
+1:31
+And again, I'll save and we have the same problem.
+1:34
+So for now, I'm just going to delete this join method and we'll come back to it later.
+1:40
+Okay.
+1:40
+Let's try again without the join method.
+1:43
+And look what happens.
+1:44
+We render the word undefined and this brings us to the key difference between foreach and map.
+1:50
+Foreach does not return a new array.
+1:53
+Let's just prove that by trying to log out the array that we create right here.
+1:57
+Look what we get in the console, undefined.
+2:00
+So while the map method returns a new array, foreach actually returns undefined and that is why when we try to render our array from here, we actually get undefined rendered into the mini browser.
+2:13
+So if we want this to work, we're going to have to manually create a new array and push some items to it.
+2:18
+So let's give that a go.
+2:20
+I'll come up here and we'll take this array then and I'm going to move this down onto a new line and I'm just going to initialize this to an empty array.
+2:29
+And then instead of this function for each calls on each element in the array returning something, we're going to make it push to our new array.
+2:38
+Okay.
+2:38
+Let's try that and look that works.
+2:41
+And if we scroll down we're still logging that out.
+2:44
+We don't need to do that anymore but we can see we've got our cards rendered out and the commas are back.
+2:50
+Let's come in here and see if we can chain on the join method.
+2:54
+I'll hit save and we're back to errors and it is exactly the same error.
+3:00
+So that's not going to work and we're back to exactly the same problem.
+3:04
+For each does not return a new array.
+3:06
+It returns undefined and that means you cannot chain onto it.
+3:11
+You can only chain onto an array method if it returns a new array.
+3:16
+If it returns undefined then the array method you chain onto it will have nothing to work with.
+3:20
+So what we need to do then is take this join method and come down here and put it on the end right here.
+3:28
+And there we are.
+3:28
+Now we've got it working with the ForEach without the commas but what we've ended up with is code which works but which is inferior to the map version we had before.
+3:37
+It's longer, it's more complex, and honestly, it's a bit clunky.
+3:42
+So I'm going to put this back to how it should be.
+3:45
+Okay.
+3:45
+There we are.
+3:46
+That is much better.
+3:48
+So how do you decide which to use?
+3:50
+Map or ForEach?
+3:52
+Well, all of the problems we faced when converting this map to a foreach came down to the fact that the foreach doesn't return a new array.
+3:58
+And then we found that if there's no new array, there's nothing to chain the join method onto.
+4:03
+So in summary, we can say this.
+4:05
+Use the map method if you need to make use of the new array it returns.
+4:10
+Use a for each if you don't need to create a new array.
+4:14
+So you might think to make life easier, why don't I just use the map method every time?
+4:19
+Well, no.
+4:19
+That is a bad idea.
+4:21
+We should use array methods for the purpose they were designed for.
+4:25
+If you use the map method but you don't make use of the array it returns, that is what's called an anti pattern.
+4:32
+It's bad practice.
+4:33
+So if you need to iterate over an array and do something with each element in the array but don't need to return a new array, use the forEach.
+4:42
+And if you do need the new array, use the map method.
