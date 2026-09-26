@@ -1,0 +1,158 @@
+
+Transcript
+0:00
+We saw some pretty complex looking regex in that last scrim.
+0:03
+And as I said, we won't take a deep dive into regex, but I do want to draw your attention to flags.
+0:10
+This regex here finds the first letter in a sentence or to be precise the first letter after a full stop or period and a space.
+0:17
+But that is not quite accurate because it's actually doing a little bit more.
+0:21
+This between the slashes is the regex.
+0:24
+This g that comes afterwards is a flag and the g flag signals global.
+0:30
+And what this means is that we're using this regex to find not just the first instance of our match, but all instances of it in the string we're searching.
+0:39
+Okay.
+0:39
+But we are using the replace all method.
+0:42
+Surely that finds all instances of what we're looking for anyway.
+0:46
+Well, yes, it does.
+0:47
+But look at this.
+0:48
+If we remove the global flag and I hit save, we get a type error and it's saying replace all called with a non global regex argument.
+0:57
+So when we use replace all with regex and not just a string, we need to include the global flag.
+1:04
+And actually, that does the same as using the replace method not replace all but including the global flag.
+1:11
+If I hit save again, we get exactly the same thing.
+1:14
+But using replace all is superior because it signals to other developers reading our code that that is what we're doing.
+1:21
+We're looking for all instances.
+1:23
+It's annoying for them if they have to go through the regex and find the global flag to identify what's going on.
+1:29
+Another flag option we have is the I flag which makes the regex case insensitive.
+1:35
+So let's take another string to see that in action and actually I'm going to delete all of this.
+1:40
+And I've chosen this sentence because WiFi is often spelled either with camel case or all caps.
+1:46
+So it could be a word that's difficult to find.
+1:48
+Let's set up some regex in a const.
+1:52
+And this regex will be pretty simple.
+1:53
+We're just looking for Wi Fi.
+1:56
+Now I'm going to use regex's test method which gives us a boolean.
+2:00
+So I'm going to say const does match and we'll take our regex, call the test method and pass in our text.
+2:10
+And we just need to log does match.
+2:13
+Okay.
+2:13
+What's gonna happen when I hit save?
+2:15
+We know this returns a Boolean.
+2:18
+So will it be true or false?
+2:19
+What do you think?
+2:20
+Well, let's find out.
+2:22
+We get false because look we're searching here for wifi or lowercase and in text we've got wifi camel case.
+2:29
+Well, we know we can add a flag for that.
+2:31
+The I makes it case insensitive.
+2:33
+So let's just come here and add the I.
+2:36
+Now when I hit save, we get true.
+2:38
+And this will actually find WiFi whether it's all lowercase or upper case or a mixture of the two and we could prove that by making this entirely upper case and we're returning true.
+2:49
+Take off the I, we're returning false.
+2:52
+Now if you want the global flag and you want it to be case insensitive, you can just add g for global, I for case insensitive.
+3:00
+Hit save and there we are.
+3:01
+We're getting true.
+3:02
+That works.
+3:03
+We don't actually need the g in this case but it's good to know that you can just add it there and have both of those flags.
+3:10
+One last thing that I want to show you is the regular expression constructor.
+3:14
+That's right.
+3:15
+We've got another built in constructor and it has a very important use because we might want to create regex programmatically.
+3:22
+So you might think that we could build regex with a string literal.
+3:25
+Let's say const user input
+3:29
+equals wifi.
+3:30
+And then perhaps we could come in here, use dollar sign and curly braces.
+3:36
+Include user input.
+3:37
+Doesn't look like it's working.
+3:38
+Perhaps wrap it all in back ticks.
+3:41
+Let's give that a try.
+3:42
+And look we're getting an error there.
+3:45
+So you just can't do this.
+3:46
+JavaScript doesn't allow it.
+3:48
+So if we want to programmatically create regex, we have to use the regular expression constructor.
+3:54
+So let's delete this.
+3:56
+We'll use the new keyword and then it's upper case r for reg and upper case e for expression or just exp.
+4:05
+And we can pass in two things.
+4:07
+So there's the pattern we actually want to find which in this case is wifi.
+4:11
+We could do that with a string or we could do it with a variable.
+4:15
+Secondly, we can pass in whatever flags we want.
+4:17
+Again, that will be a string.
+4:19
+If I want both the global and the case insensitive flag, I just pass in a g and an I.
+4:24
+There's no space between them.
+4:26
+They are all in the same string.
+4:27
+Let's hit save now and it is working.
+4:30
+We're getting true.
+4:31
+Take away the I and we're getting false.
+4:35
+Okay.
+4:35
+All of those matching and testing skills are going to pop up again in a super challenge.
+4:39
+So make sure you understand them before moving on.
