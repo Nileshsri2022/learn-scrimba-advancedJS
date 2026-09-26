@@ -1,0 +1,188 @@
+
+Transcript
+0:00
+Congratulations for getting through that super challenge and I really hope you got the app working.
+0:05
+Your way might well be different to my way but that is absolutely fine.
+0:09
+This is how I solved it.
+0:11
+So we're going to start here with this function get stock data in fake stock API.
+0:16
+To get the price we need, let's use math dot random and we want a number between zero and three.
+0:22
+And if we wrap it in brackets, we can set it to two decimal places using two fixed and passing in two.
+0:30
+Next, we need a timestamp with the time in this format and we can do that with the date constructor.
+0:36
+So we want a new instance of date and then we want to call the two local time string method.
+0:44
+Let's export this function.
+0:46
+And then in index dot j s, we need to come to the top and import it.
+0:51
+And this will be a named import inside these curly braces.
+0:55
+And to check it's working, let's just log out a function call.
+0:59
+So we'll hit save and down in the console, we get an object.
+1:03
+We've got the name, the symbol, the price and a time stamp.
+1:06
+So that is working perfectly.
+1:08
+Okay.
+1:08
+Next, we want to call the function that we've got down here, render stock ticker every five seconds.
+1:14
+And just before we do that, I think I'm just going to move this function up here so we've got all of the challenge text out of the way at the bottom.
+1:21
+We can refer to it if we need to.
+1:23
+So to call render stock ticker every one point five seconds, we're going to use set interval And we can pass in an anonymous function and the delay will be one point five seconds or fifteen hundred milliseconds.
+1:36
+And inside this function that we're passing to set interval, we want to get some stock data and we're going to save it to a const.
+1:44
+And then let's call render stock ticker and we'll pass in stock data.
+1:49
+And remember, stock data will hold the object that we get returned to us by the get stock data function.
+1:55
+Okay.
+1:55
+Let's get to work inside render stock ticker.
+1:58
+And the first thing I'm going to do is destructure this object.
+2:01
+So let's say const and then we can take everything that we've got in that object.
+2:06
+So we've got name, sim, price, and time and set that equals to stock data.
+2:13
+And we can go ahead and render these to their correct element which we've taken control of already.
+2:18
+The only one we're not going to deal with right now is this one, stock display price icon.
+2:22
+That is the triangle and we'll deal with that at the end.
+2:25
+So let's take stock display name and we'll set the inner text to name.
+2:31
+And I'll do the same for symbol, price, and time.
+2:36
+Let's hit save, and we'll open up the mini browser.
+2:39
+And it's working every one point five seconds.
+2:41
+We're getting a new price, and the timestamp is updating.
+2:45
+So all we need to worry about then is this arrow.
+2:48
+And to get this arrow working, we need to compare the previous price with the current price.
+2:53
+So the first thing that I'm going to do then is come outside of this render stock ticker function and declare prev price or previous price using a let.
+3:03
+And we're using a let here because we will be updating this.
+3:06
+Now let's initialize it to null because of course when the app first loads we don't have a previous price.
+3:12
+And now we can use prev price inside this function and we'll use a ternary to choose which color and direction we want the triangle to have.
+3:21
+So I'll say const and I'll call this price direction icon and the ternary will be like this.
+3:27
+We'll take the price.
+3:29
+So that's the current price which we're generating with this get stock data function and we'll ask the question, is it greater than prev price?
+3:37
+And just in case you were wondering, when prev price is set to null as it will be when the app loads, price will be greater than null.
+3:45
+And if that's true, we want to use the green SVG.
+3:48
+And if that's not true, we need to check if price is less than the previous price.
+3:53
+And if that's the case, we want to use the red SVG.
+3:56
+And if that's not the case, that means the prices must be the same, so we'll go for the gray SVG.
+4:02
+Now let's render the icon.
+4:04
+And to do that, we need to set up a new image element.
+4:08
+We need to give that element a source attribute.
+4:11
+And that source we've got saved here as price direction icon.
+4:15
+We should also give it some out text to make it accessible.
+4:19
+And then we can take the element where this is going to be displayed and append the image element we've just created.
+4:27
+Let's hit save and give this a test.
+4:31
+And it looks like we've got some problems here and for some extra practice you can go ahead and debug this.
+4:37
+Okay.
+4:38
+So the problem is the path to the image here.
+4:40
+I've just put green dot SVG for example.
+4:43
+They need to be inside the SVG folder.
+4:45
+Well, we could do that individually three times or we could do it right here.
+4:49
+Let's wrap this in back ticks.
+4:52
+Use the dollar sign and the curly braces to access price direction icon.
+4:56
+And then here, we can just have SVG slash.
+4:59
+So that should take us to the SVG folder.
+5:02
+And now let's see if it's working.
+5:05
+And it is working.
+5:07
+We're getting the green triangle but the problem is we're only getting the green triangles.
+5:11
+We're not getting the red triangles and that's because we're not updating prev price yet.
+5:16
+We could do that right at the bottom of this function and let's save again.
+5:22
+And now we're seeing the green triangles and now we see a red triangle.
+5:27
+So all we've got now is the problem that we've got too many triangles.
+5:31
+We want to just have one.
+5:33
+And the solution to that is to take this element right here, stock display price icon and clear its HTML before we actually append the new child.
+5:43
+So we'll set the inner HTML to an empty string.
+5:46
+Let's save again.
+5:49
+And now it's working.
+5:50
+We've got just one triangle.
+5:51
+It's either a green triangle pointing up, a red triangle pointing down, or if the prices are the same, it would be a gray triangle pointing to the right.
+5:59
+So we've got it working just as intended.
+6:02
+And if you did it differently, that is fine.
+6:05
+I just hope that you made it through all of the JavaScript that I wanted you to use.
+6:09
+So we have the import and export, we use the date constructor, we use the math method, we use set interval, the ternary operator, and object destructuring.
+6:19
+If you didn't use all of those, now would be a good time to go back to the code that you wrote and just see if you can incorporate those concepts.
+6:26
+If you don't use them, you won't learn them properly.
+6:29
+And if you did do it a bit differently and you would like some feedback on your code or you just like to show off what you've achieved, why don't you head over to Scrumba's Discord server or to our forum and there you can share your code, chat to other students, get feedback, give feedback and celebrate your successes and wins.
+6:47
+These mini screenshots right here are links.
+6:49
+They will take you straight through to the Discord server or the forum.
+6:53
+Okay.
+6:53
+We're going to take one more scrim to wrap up this section.
+6:56
+When you're ready, let's move on.
